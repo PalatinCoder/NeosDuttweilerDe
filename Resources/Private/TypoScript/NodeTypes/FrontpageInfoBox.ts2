@@ -1,0 +1,10 @@
+prototype(GSL.DuttweilerDe.Content:FrontpageInfoBox) < prototype(TYPO3.Neos:Content) {
+	contentRenderer = TYPO3.Neos:ContentCollection
+
+	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/FrontpageInfoBox.html'
+
+	isImportant = ${q(node).property('isImportant')}
+
+	headline = ${q(node).property('headline')}
+	content = ${q(node).children('content').get(0)}
+}

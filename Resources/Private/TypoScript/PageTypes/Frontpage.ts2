@@ -1,0 +1,56 @@
+frontPage = Page {
+	head {
+		stylesheets.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+			sectionName ='stylesheets'
+		}
+		javascripts.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+			sectionName = 'headScripts'
+		}
+	}
+	body {
+		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+		sectionName = 'body'
+        
+        hasBanner = ${q(node).property('hasBanner')}
+
+		parts {
+			menu = Menu {
+                renderHiddenInIndex = true
+            }
+		}
+
+		content {
+			rightColumn = PrimaryContent {
+				nodePath = 'rightColumn'
+			}            
+                       
+			main = TYPO3.TypoScript:Array {
+                /**
+                 * to be done... 
+                */
+                
+                /*10 = PrimaryContent {
+                    nodePath = 'main'
+                }*/
+                
+                
+                20 = GSL.DuttweilerDe.Content:FrontpageNewsList {
+                    newsItem = GSL.DuttweilerDe.Content:FrontpageNewsItem
+                }
+            }
+            
+            banner = PrimaryContent {
+                nodePath = 'banner'
+            }
+		}
+
+		javascripts.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+			sectionName = 'bodyScripts'
+		}
+	}
+}
+ 
+ 

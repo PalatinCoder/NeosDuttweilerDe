@@ -1,0 +1,15 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+<article class="FrontpageNewsItem">
+	<header>{headline}</header>
+	<div class="NewsItemDate">{date -> f:format.date(format: 'd. F Y')}</div>
+	<div class="NewsItemSubheading">{subheadline}</div>
+	<div class="NewsItemBody">
+        <f:if condition="{image}">
+            <img class="typo3-neos-alignment-right" height="150" src="{media:uri.image(image: image)}" alt="{imageAlternativeText}" />
+        </f:if>
+        {text -> f:format.raw()}
+        <div class="clearfix"></div>
+    </div>
+    <neos:link.node node="{node}">weiterlesen...</neos:link.node>
+</article>

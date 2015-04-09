@@ -1,0 +1,11 @@
+/**
+ * Root TypoScript template for the Duttweiler site
+ */
+
+include: NodeTypes/*
+include: PageTypes/*
+
+root.frontPage {
+	condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:Frontpage]')}
+	renderPath = '/frontPage'
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<f:section name="stylesheets">
+	        <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Frontpage.css', package: 'GSL.DuttweilerDe')}" />
+        <link rel="shortcut icon" type="image/x-icon" href="{f:uri.resource(path: 'Images/wappen.ico', package: 'GSL.DuttweilerDe')}" />
+	</f:section>
+
+	<f:section name="headScripts">
+
+	</f:section>
+    </head>
+    <body>
+	<f:section name="body">
+        <div id="Wrapper">
+            <div id="PageHeading">            
+                <nav id="IndexPageTopMenu">
+			{parts.menu -> f:format.raw()}
+                </nav>
+            </div>
+            <f:if condition="{hasBanner}">
+                <div id="FrontpageBanner">
+                    {content.banner -> f:format.raw()}
+                </div>
+            </f:if>
+            <div id="PageBody">
+                <div id="NewsColumn">
+			{content.main -> f:format.raw()}
+                </div>
+                <div id="RightColumn">
+			{content.rightColumn -> f:format.raw()}
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+	</f:section>
+	<f:section name="bodyScripts">
+
+	</f:section>
+    </body>
