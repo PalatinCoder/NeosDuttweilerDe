@@ -1,0 +1,294 @@
+# 
+# GSL.DuttweilerDe NodeTypes
+#
+
+# Page Types
+
+'GSL.DuttweilerDe.Pages:Frontpage':
+  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  ui:
+    label: 'Startseite'
+    inspector:
+      groups:
+        general:
+          label: 'Allgemein'
+          position: 20
+        chronik:
+          label: 'Chronik'
+          position: 30
+  childNodes:
+    rightColumn:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'GSL.DuttweilerDe.Content:FrontpageInfoBox': TRUE
+          '*': FALSE
+    banner:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    hasBanner:
+      type: boolean
+      ui:
+        label: 'Banner'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+# would be nicer, but doesn't wanna work...
+#    chronikRootNode:
+#      type: 'reference'
+#      ui:
+#        label: 'Chronik Wurzelseite'
+#        reloadIfChanged: TRUE
+#        inspector:
+#          group: 'chronik'
+#          editorOptions:
+#            nodeTypes: ['GSL.DuttweilerDe.Pages:ChronikRoot']
+  constraints:
+    nodeTypes:
+      'GSL.DuttweilerDe.Pages:Default': TRUE
+      'TYPO3.Neos:Shortcut': TRUE
+      '*': FALSE
+      
+'GSL.DuttweilerDe.Pages:IndexPage':
+  superTypes: ['GSL.DuttweilerDe.Pages:Default']
+  ui:
+    label: 'Inhaltsverzeichnis'
+    inspector:
+      groups:
+        related:
+          label: 'Links'
+          position: 50
+  properties:
+    relatedPages:
+      type: 'references'
+      ui:
+        label: 'Verwandte Seiten'
+        inspector:
+          group: 'related'
+          #editorOptions:
+            #nodeTypes: ['TYPO3.Neos.NodeTypes:Page']
+        
+'GSL.DuttweilerDe.Pages:Default':
+  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  ui:
+    label: 'Standardinhalt'
+    inspector:
+      groups:
+        general:
+          label: 'Allgemein'
+          position: 20
+        headerImageGroup:
+          label: 'Kopfzeile - Bild'
+          position: 30
+        presse:
+          label: 'Pressespiegel'
+          position: 40
+  childNodes:
+    pressespiegel:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'GSL.DuttweilerDe.Content:PressespiegelItem': TRUE
+          '*': FALSE
+  constraints:
+    nodeTypes:
+      'GSL.DuttweilerDe.Pages:Default': TRUE
+      'TYPO3.Neos:Shortcut': TRUE
+      'GSL.DuttweilerDe.Pages:IndexPage': TRUE
+      '*': FALSE
+  properties:
+    subheadline:
+      type: 'string'
+      defaultValue: 'Unterüberschrift'
+      ui:
+        inspector:
+          group: 'general'
+        label: 'Unterüberschrift'
+        reloadIfChanged: TRUE
+    date:
+      type: 'date'
+      ui:
+        label: 'Datum'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+    headerImage:
+      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      ui:
+        label: 'Kopfzeilenbild'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'headerImageGroup'
+    headerImageAlternativeText:
+      type: 'string'
+      ui:
+        label: 'Alternativtext'
+        inspector:
+          group: 'headerImageGroup'
+    hasPressespiegel:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: 'Pressespiegel'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'presse'   
+    pressespiegelTitle:
+      type: 'string'
+      defaultValue: 'Pressespiegel'
+      ui:
+        label: 'Überschrift Pressespiegel'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'presse'
+
+'GSL.DuttweilerDe.Pages:ChronikRoot':
+  superTypes: ['GSL.DuttweilerDe.Pages:IndexPage']
+  ui:
+    label: 'Chronik - Wurzel'
+    group: 'chronik'
+  constraints:
+    nodeTypes:
+      'GSL.DuttweilerDe.Pages:ChronikBranch': TRUE
+      '*': FALSE
+'GSL.DuttweilerDe.Pages:ChronikBranch':
+  superTypes: ['GSL.DuttweilerDe.Pages:IndexPage']
+  ui:
+    label: 'Chronik - Jahr'
+    group: 'chronik'
+  constraints:
+    nodeTypes:
+      'GSL.DuttweilerDe.Pages:ChronikItem': TRUE
+      '*': FALSE
+'GSL.DuttweilerDe.Pages:ChronikItem':
+  superTypes: ['GSL.DuttweilerDe.Pages:Default']
+  ui:
+    label: 'Chronik - Meldung'
+    group: 'chronik'
+
+# Content NodeTypes
+
+'GSL.DuttweilerDe.Content:PressespiegelItem':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Pressespiegel - Eintrag'
+    group: 'general'
+    inspector:
+      groups:
+        pressespiegel:
+          label: 'Pressespiegel'
+          position: 3
+  properties:
+    title:
+      type: 'string'
+      ui:
+        label: 'Titel des Artikels'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'pressespiegel'
+    publication:
+      type: 'string'
+      ui:
+        label: 'Name der Publikation'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'pressespiegel'
+    date:
+      type: 'date'
+      ui:
+        label: 'Datum'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'pressespiegel'
+    itemLink:
+      type: 'reference'
+      ui:
+        label: 'Link'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'pressespiegel'
+          
+'GSL.DuttweilerDe.Content:FrontpageNewsList':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'News Liste'
+    icon: 'icon-list'
+    group: 'hidden'
+
+'GSL.DuttweilerDe.Content:FrontpageNewsItem':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'News Meldung'
+    group: 'frontpage'
+    inspector:
+      groups:
+        news:
+          label: 'News'
+          position: 2
+  properties:
+    headline:
+      type: 'string'
+      defaultValue: 'Überschrift'
+      ui:
+        inspector:
+          group: 'news'
+        label: 'Überschrift'
+        reloadIfChanged: TRUE
+    subheadline:
+      type: 'string'
+      defaultValue: 'Unterüberschrift'
+      ui:
+        label: 'Unterüberschrift'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'news'
+    text:
+      type: 'string'
+      defaultValue: 'Text'
+      ui:
+        label: 'Inhalt'
+    date:
+      type: 'date'
+      ui:
+        label: 'Datum'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'news'
+          
+#'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone':
+#  superTypes: ['GSL.DuttweilerDe.Content:FrontpageNewsItem']
+#  ui:
+#    label: 'Newsmeldung ohne Chronik'
+#    group: 'frontpage'
+
+'GSL.DuttweilerDe.Content:FrontpageInfoBox':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Infobox'
+    group: 'frontpage'
+    inspector:
+      groups:
+        general:
+          label: 'Allgemein'
+          position: 2
+  properties:
+    headline:
+      type: 'string'
+      defaultValue: 'Überschrift'
+      ui:
+        label: 'Überschrift'
+        inlineEditable: TRUE
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+    isImportant:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: 'Eilmeldung'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'

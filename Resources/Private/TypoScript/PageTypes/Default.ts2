@@ -1,0 +1,59 @@
+page = Page {
+	head {
+		stylesheets.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
+			sectionName ='stylesheets'
+		}
+		javascripts.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
+			sectionName = 'headScripts'
+		}
+	}
+	body {
+		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
+		sectionName = 'body'
+        
+        subheader = ${q(node).property('subheadline')}
+        header = ${q(node).property('title')}
+        
+        headerImage = ${q(node).property('headerImage')}
+        headerImageAlternativeText = ${q(node).property('headerImageAlternativeText')}
+        
+        date = ${q(node).property('date')}
+        
+        hasPressespiegel = ${q(node).property('hasPressespiegel')}
+        pressespiegelTitle = ${q(node).property('pressespiegelTitle')}
+        
+        isIndexPage = ${q(documentNode).is('[instanceof GSL.DuttweilerDe.Pages:IndexPage]')}
+        menuCollection = ${q(documentNode).property('relatedPages')}
+        
+        parts {
+            subpages = Menu {
+                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/TypoScriptObjects/DefaultPageMenu.html'
+                entryLevel = 0
+                maximumLevels = 1
+            }
+            relatedPages = Menu {
+                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/TypoScriptObjects/DefaultPageMenu.html'
+                itemCollection = ${q(documentNode).property('relatedPages')}
+            }
+            parentPage = Menu {
+                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/TypoScriptObjects/DefaultPageMenu.html'
+                itemCollection = ${q(documentNode).parent().get()}
+            }
+        }
+        content {
+            main = PrimaryContent {
+                nodePath = 'main'
+            }
+            pressespiegel = PrimaryContent {
+                nodePath = 'pressespiegel'
+            }
+        }
+
+		javascripts.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
+			sectionName = 'bodyScripts'
+		}        
+	}
+}

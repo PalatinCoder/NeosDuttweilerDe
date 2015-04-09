@@ -1,0 +1,10 @@
+prototype(GSL.DuttweilerDe.Content:FrontpageNewsItem) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/FrontpageNewsItem.html'
+	
+	headline = ${q(node).property('title')}
+	subheadline = ${q(node).property('subheadline')}
+	date = ${q(node).property('date')}
+    text = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').first().children().first().property('text')}
+    image = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').first().children().first().property('image')}
+    imageAlternativeText = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').first().children().first().property('alternativeText')}
+}

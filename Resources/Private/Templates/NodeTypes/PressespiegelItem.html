@@ -1,0 +1,11 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div class="ArticlePressespiegelItem">
+    <div class="ArticlePressespiegelItemIcon"></div>
+    <div class="ArticlePressespiegelItemInner">
+        <span class="ArticlePressespiegelItemTitle">{title}</span>
+        <span class="ArticlePressespiegelItemDate">{publication}, <f:format.date date="{date}" format="d. F Y" /></span>
+    </div>
+    <f:if condition="{itemLink} != ''">
+        <div class="ArticlePressespiegelItemLink"><neos:link.node node="{itemLink}" /></div>
+    </f:if>
+</div>

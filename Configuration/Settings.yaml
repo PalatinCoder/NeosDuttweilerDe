@@ -1,0 +1,12 @@
+# Content NodeTypes Groups
+
+TYPO3:
+  Neos:
+    nodeTypes:
+      groups:
+        frontpage:
+          label: 'Duttweiler - Startseite'
+          position: 50
+        chronik:
+          label: 'Duttweiler - Chronik'
+          position: start 10
