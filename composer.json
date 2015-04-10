@@ -1,7 +1,7 @@
 {
     "name": "gsl/duttweilerde",
     "type": "typo3-flow-site",
-    "description": "Add description here",
+    "description": "Neos Site Package for duttweiler.de (c) www.jan-sl.de",
     "require": {
         "typo3/neos": "*",
         "typo3/neos-nodetypes": "*"
