@@ -2,25 +2,1171 @@
 <root>
  <site name="Duttweiler" state="1" siteResourcesPackageKey="GSL.DuttweilerDe" siteNodeName="duttweilerde">
   <nodes formatVersion="2.0">
-   <node nodeName="duttweilerde">
-    <variant workspace="live" nodeType="GSL.DuttweilerDe.Pages:Frontpage" sortingIndex="100" version="1" removed="" hidden="" hiddenInIndex="">
+   <node identifier="403b8bed-1f13-1ca8-93b0-6ea819639191" nodeName="duttweilerde">
+    <variant sortingIndex="100" workspace="live" nodeType="GSL.DuttweilerDe.Pages:Frontpage" version="6" removed="" hidden="" hiddenInIndex="1">
+     <dimensions/>
      <accessRoles __type="array"/>
      <properties>
-      <title __type="string">Home</title>
-      <uriPathSegment __type="string">home</uriPathSegment>
+      <title __type="string">Herzlich Willkommen</title>
+      <uriPathSegment __type="string">index</uriPathSegment>
+      <subpageLayout __type="string"></subpageLayout>
+      <layout __type="string"></layout>
+      <hasBanner __type="boolean"></hasBanner>
+      <chronikRootNode __type="string">529a59e2-1849-2782-471c-7635f47167de</chronikRootNode>
      </properties>
     </variant>
-    <node nodeName="main">
-     <variant workspace="live" nodeType="TYPO3.Neos:ContentCollection" sortingIndex="100" version="1" removed="" hidden="" hiddenInIndex="">
+    <node identifier="e1244cda-97a9-5625-2f0b-f2ee16527981" nodeName="banner">
+     <variant sortingIndex="550" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
       <accessRoles __type="array"/>
+      <properties/>
      </variant>
-     <node nodeName="text1">
-      <variant workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" sortingIndex="100" version="1" removed="" hidden="" hiddenInIndex="">
+    </node>
+    <node identifier="6fc8b438-fd1b-9752-0596-b523a7cc0d6e" nodeName="main">
+     <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="1" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <properties/>
+     </variant>
+    </node>
+    <node identifier="bb5879ad-b374-f384-874f-b705076e2c73" nodeName="node-551c040d4ec10">
+     <variant sortingIndex="400" workspace="live" nodeType="GSL.DuttweilerDe.Pages:IndexPage" version="12" removed="" hidden="" hiddenInIndex="1">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <properties>
+       <uriPathSegment __type="string">A-bis-Z</uriPathSegment>
+       <subheadline __type="string"></subheadline>
+       <hasPressespiegel __type="boolean"></hasPressespiegel>
+       <title __type="string">A bis Z</title>
+       <subpageLayout __type="string"></subpageLayout>
+       <layout __type="string"></layout>
+       <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+       <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+       <headerImage __type="string"></headerImage>
+      </properties>
+     </variant>
+     <node identifier="d097d681-0d34-d9f4-6cde-ac29e7f0c73d" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties/>
+      </variant>
+      <node identifier="98bf4a6d-53ba-75c3-6746-05139cbee463" nodeName="node-552520aba69ee">
+       <variant sortingIndex="400" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Menu" version="5" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties>
+         <startLevel __type="string">0</startLevel>
+         <maximumLevels __type="string">2</maximumLevels>
+         <selection __type="array">
+          <entry0 __type="string">bb5879ad-b374-f384-874f-b705076e2c73</entry0>
+          <entry1 __type="string">b9a263de-4c27-34cb-db9b-ac8bfad90a9a</entry1>
+         </selection>
+        </properties>
+       </variant>
+      </node>
+     </node>
+     <node identifier="b9a263de-4c27-34cb-db9b-ac8bfad90a9a" nodeName="node-551c03a01d6f8">
+      <variant sortingIndex="400" workspace="live" nodeType="GSL.DuttweilerDe.Pages:Default" version="6" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
        <accessRoles __type="array"/>
        <properties>
-        <text __type="string">&lt;p&gt;This is the homepage&lt;/p&gt;</text>
+        <uriPathSegment __type="string">Das-Dorf</uriPathSegment>
+        <subheadline __type="string">Unterüberschrift</subheadline>
+        <hasPressespiegel __type="boolean">1</hasPressespiegel>
+        <title __type="string">Das Dorf</title>
+        <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+        <subpageLayout __type="string"></subpageLayout>
+        <layout __type="string"></layout>
        </properties>
       </variant>
+      <node identifier="aa1718ef-0cbd-8de2-54df-e9349e38694a" nodeName="main">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="4" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+      <node identifier="34f62240-4b66-1e5e-ec60-30baedc6260b" nodeName="pressespiegel">
+       <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="4" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+       <node identifier="f64a16f0-8e50-9422-d5e0-33e31afdf611" nodeName="node-551c096c83e90">
+        <variant sortingIndex="100" workspace="live" nodeType="GSL.DuttweilerDe.Content:PressespiegelItem" version="6" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <itemLink __type="string">bb5879ad-b374-f384-874f-b705076e2c73</itemLink>
+          <publication __type="string">duttweiler.de</publication>
+          <title __type="string">Liste aller Inhalte</title>
+          <date __type="object" __classname="DateTime">2015-04-01T17:24:11+02:00</date>
+         </properties>
+        </variant>
+       </node>
+       <node identifier="f51dd293-ad58-35a8-773d-fbfad996d95f" nodeName="node-551c0e833a96d">
+        <variant sortingIndex="50" workspace="live" nodeType="GSL.DuttweilerDe.Content:PressespiegelItem" version="6" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <date __type="object" __classname="DateTime">2015-04-01T17:28:19+02:00</date>
+          <publication __type="string">duttweiler.de</publication>
+          <title __type="string">Noch ein Eintrag</title>
+         </properties>
+        </variant>
+       </node>
+      </node>
+     </node>
+     <node identifier="ef2bd94c-3f4f-ebf3-f9a6-9c79780fee5a" nodeName="node-551d16214bc1b">
+      <variant sortingIndex="500" workspace="live" nodeType="GSL.DuttweilerDe.Pages:Default" version="6" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties>
+        <uriPathSegment __type="string">Vereine</uriPathSegment>
+        <subheadline __type="string"></subheadline>
+        <hasPressespiegel __type="boolean"></hasPressespiegel>
+        <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+        <title __type="string">Vereine, Institutionen und Interessengruppen</title>
+        <subpageLayout __type="string"></subpageLayout>
+        <layout __type="string"></layout>
+       </properties>
+      </variant>
+      <node identifier="dc2a7b87-b6ff-3eb4-05fe-57005707bd64" nodeName="main">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+      <node identifier="2ba76913-1b2c-1200-f8d0-99c063fe77d1" nodeName="pressespiegel">
+       <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+     </node>
+     <node identifier="cc57d8ad-9b56-6f84-93db-4ee44fcbbf7e" nodeName="node-551d1663321ee">
+      <variant sortingIndex="550" workspace="live" nodeType="GSL.DuttweilerDe.Pages:Default" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties>
+        <uriPathSegment __type="string">Weinbau</uriPathSegment>
+        <subheadline __type="string">Unterüberschrift</subheadline>
+        <hasPressespiegel __type="boolean"></hasPressespiegel>
+        <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+        <title __type="string">Weinbau</title>
+       </properties>
+      </variant>
+      <node identifier="2778eb75-52ff-1545-48b7-611562d46689" nodeName="main">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+      <node identifier="8a062a5b-9deb-140a-7e3a-0da4136732d8" nodeName="pressespiegel">
+       <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+     </node>
+     <node identifier="c04523a8-901e-4268-b042-b1917554077d" nodeName="node-551d16739bc0f">
+      <variant sortingIndex="600" workspace="live" nodeType="GSL.DuttweilerDe.Pages:Default" version="5" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties>
+        <uriPathSegment __type="string">Gastgeber</uriPathSegment>
+        <subheadline __type="string">Unterüberschrift</subheadline>
+        <hasPressespiegel __type="boolean"></hasPressespiegel>
+        <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+        <title __type="string">Gastgeber in Duttweiler</title>
+        <subpageLayout __type="string"></subpageLayout>
+        <layout __type="string"></layout>
+       </properties>
+      </variant>
+      <node identifier="8e4152b2-f104-c512-3cc7-48ec0b1bd25d" nodeName="main">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+      <node identifier="a8731fee-7be8-9777-318f-6fb169f4b3b9" nodeName="pressespiegel">
+       <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+     </node>
+     <node identifier="053789d0-d313-8cdf-1e6c-601ad235c3c3" nodeName="node-551d16bb1ce50">
+      <variant sortingIndex="650" workspace="live" nodeType="GSL.DuttweilerDe.Pages:Default" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties>
+        <uriPathSegment __type="string">Gewerbe-in-Duttweiler</uriPathSegment>
+        <subheadline __type="string">Unterüberschrift</subheadline>
+        <hasPressespiegel __type="boolean"></hasPressespiegel>
+        <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+        <title __type="string">Gewerbe in Duttweiler</title>
+       </properties>
+      </variant>
+      <node identifier="a9e5cf39-78ed-8574-87ba-d83c8cfd3184" nodeName="main">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+      <node identifier="1b7e45d9-9716-64de-c143-4865d31033f8" nodeName="node-551d16cd024ea">
+       <variant sortingIndex="300" workspace="live" nodeType="GSL.DuttweilerDe.Pages:Default" version="4" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties>
+         <uriPathSegment __type="string">Ehemalige-Geschafte-in-Duttweiler</uriPathSegment>
+         <subheadline __type="string">Unterüberschrift</subheadline>
+         <hasPressespiegel __type="boolean"></hasPressespiegel>
+         <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+         <title __type="string">Ehemalige Geschäfte in Duttweiler</title>
+        </properties>
+       </variant>
+       <node identifier="7af29e8a-e080-85ee-e3f4-3abb61317e9e" nodeName="main">
+        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties/>
+        </variant>
+       </node>
+       <node identifier="d552cdee-14bf-ddf0-f73e-53c60dafc5c9" nodeName="pressespiegel">
+        <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties/>
+        </variant>
+       </node>
+      </node>
+      <node identifier="1e2c0e23-02d5-73ee-1fc1-503d51bd5941" nodeName="pressespiegel">
+       <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+     </node>
+     <node identifier="529a59e2-1849-2782-471c-7635f47167de" nodeName="node-55201964ec3fd">
+      <variant sortingIndex="750" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikRoot" version="6" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties>
+        <uriPathSegment __type="string">Chronik</uriPathSegment>
+        <subheadline __type="string">Unterüberschrift</subheadline>
+        <hasPressespiegel __type="boolean"></hasPressespiegel>
+        <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+        <title __type="string">Chronik</title>
+        <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+        <headerImage __type="string"></headerImage>
+        <subpageLayout __type="string"></subpageLayout>
+        <layout __type="string"></layout>
+       </properties>
+      </variant>
+      <node identifier="439c9548-9a59-7353-b36c-68bb74caff0c" nodeName="main">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+      <node identifier="00201ae8-2ac0-f0cd-4ea2-3f9d7e85a03b" nodeName="node-55201976a54cf">
+       <variant sortingIndex="300" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikBranch" version="7" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties>
+         <uriPathSegment __type="string">Chronik-2015</uriPathSegment>
+         <subheadline __type="string">Unterüberschrift</subheadline>
+         <hasPressespiegel __type="boolean"></hasPressespiegel>
+         <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+         <title __type="string">Chronik 2015</title>
+         <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+         <headerImage __type="string"></headerImage>
+         <subpageLayout __type="string"></subpageLayout>
+         <layout __type="string"></layout>
+         <relatedPages __type="array">
+          <entry0 __type="string">c88fd7f5-204a-333f-a471-b2fc0740354c</entry0>
+         </relatedPages>
+        </properties>
+       </variant>
+       <node identifier="78d97bde-912c-19ca-d66d-fb2ef4b1aab5" nodeName="main">
+        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties/>
+        </variant>
+       </node>
+       <node identifier="0b92a71e-f818-a75f-86c1-ca669fb5e55a" nodeName="node-55201e6764be6">
+        <variant sortingIndex="900" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikItem" version="7" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <uriPathSegment __type="string">erste-meldung-im-cms</uriPathSegment>
+          <subheadline __type="string">Jetzt wird alles gut :)</subheadline>
+          <hasPressespiegel __type="boolean"></hasPressespiegel>
+          <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+          <title __type="string">Erste Meldung im CMS</title>
+          <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+          <headerImage __type="string"></headerImage>
+          <subpageLayout __type="string"></subpageLayout>
+          <layout __type="string"></layout>
+          <date __type="object" __classname="DateTime">2015-04-04T20:10:40+02:00</date>
+         </properties>
+        </variant>
+        <node identifier="ea21b005-781a-a89a-4a80-925b59da6826" nodeName="main">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+         <node identifier="60c5666c-c54a-2c7b-9913-625cf4225ad2" nodeName="node-55202a1bea9a8">
+          <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" version="8" removed="" hidden="" hiddenInIndex="">
+           <dimensions/>
+           <accessRoles __type="array"/>
+           <properties>
+            <text __type="string">&lt;p&gt;Ich bin der Anreiser&lt;br/&gt;&lt;/p&gt;</text>
+           </properties>
+          </variant>
+         </node>
+         <node identifier="0d2c6409-b1aa-fa4b-43e4-a1119e5157d4" nodeName="node-55202a2e7f8d9">
+          <variant sortingIndex="150" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" version="7" removed="" hidden="" hiddenInIndex="">
+           <dimensions/>
+           <accessRoles __type="array"/>
+           <properties>
+            <text __type="string">&lt;p&gt;Und mit mir geht's weiter&lt;br/&gt;&lt;/p&gt;</text>
+           </properties>
+          </variant>
+         </node>
+        </node>
+        <node identifier="c23f4ebf-7b3f-f3c7-d558-c6a61719c9b7" nodeName="pressespiegel">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+       </node>
+       <node identifier="9250a3bb-5fd8-1daf-0c6b-2a56b2190b26" nodeName="node-55202b21681d0">
+        <variant sortingIndex="800" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikItem" version="8" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <uriPathSegment __type="string">Gute-Nachrichten</uriPathSegment>
+          <subheadline __type="string">Es scheint zu gehen</subheadline>
+          <hasPressespiegel __type="boolean"></hasPressespiegel>
+          <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+          <title __type="string">Gute Nachrichten</title>
+          <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+          <headerImage __type="string"></headerImage>
+          <date __type="object" __classname="DateTime">2015-04-04T20:19:31+02:00</date>
+          <subpageLayout __type="string"></subpageLayout>
+          <layout __type="string"></layout>
+         </properties>
+        </variant>
+        <node identifier="c41a6f0b-103c-6e38-c41a-43811dac2631" nodeName="main">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+         <node identifier="ec309a68-bcf7-95e2-0c83-7aae57dbbdd1" nodeName="node-55202b3f18cf5">
+          <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:TextWithImage" version="15" removed="" hidden="" hiddenInIndex="">
+           <dimensions/>
+           <accessRoles __type="array"/>
+           <properties>
+            <text __type="string">&lt;p&gt;Jetzt fehlt bloß noch der Teaser...&lt;br/&gt;&lt;/p&gt;</text>
+            <caption __type="string"></caption>
+            <alignment __type="string">right</alignment>
+            <hasCaption __type="boolean"></hasCaption>
+            <link __type="string"></link>
+            <title __type="string"></title>
+            <alternativeText __type="string"></alternativeText>
+            <image __type="object" __classname="TYPO3\Media\Domain\Model\ImageVariant" __encoding="json">{&quot;originalImage&quot;:{&quot;title&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;alice-2.jpg&quot;,&quot;hash&quot;:&quot;0641ce611d5171161c853f70ff1ae0f33dd4dc24&quot;,&quot;__identity&quot;:&quot;2de69658-9cc7-f108-b361-50de3ebd3587&quot;},&quot;__identity&quot;:&quot;93c55a28-4047-f153-22fa-a0d956b4df01&quot;},&quot;processingInstructions&quot;:[{&quot;command&quot;:&quot;crop&quot;,&quot;options&quot;:{&quot;start&quot;:{&quot;x&quot;:0,&quot;y&quot;:0},&quot;size&quot;:{&quot;width&quot;:353,&quot;height&quot;:500}}},{&quot;command&quot;:&quot;resize&quot;,&quot;options&quot;:{&quot;size&quot;:{&quot;width&quot;:&quot;142&quot;,&quot;height&quot;:201}}}]}</image>
+           </properties>
+          </variant>
+         </node>
+         <node identifier="1fa18cfd-2a9a-d15c-d531-8a0231ffe4a6" nodeName="node-55211efeca301">
+          <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" version="3" removed="" hidden="" hiddenInIndex="">
+           <dimensions/>
+           <accessRoles __type="array"/>
+           <properties>
+            <text __type="string">&lt;p&gt;weiterer Text folgt dann auf der Detailseite...&lt;br/&gt;&lt;/p&gt;</text>
+           </properties>
+          </variant>
+         </node>
+        </node>
+        <node identifier="4a14cfb3-f7e1-ea2c-2dcd-5bdce52af5b4" nodeName="pressespiegel">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+       </node>
+       <node identifier="d20e31f9-dfa6-61de-332d-071ad4040a07" nodeName="node-552529ccda22d">
+        <variant sortingIndex="300" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikItem" version="7" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <uriPathSegment __type="string">Oberflache-wird-abgefrast</uriPathSegment>
+          <subheadline __type="string">Baubeginn an L540</subheadline>
+          <hasPressespiegel __type="boolean"></hasPressespiegel>
+          <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+          <title __type="string">Oberfläche wird abgefräst</title>
+          <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+          <headerImage __type="string"></headerImage>
+          <subpageLayout __type="string"></subpageLayout>
+          <layout __type="string"></layout>
+          <date __type="object" __classname="DateTime">2015-03-31T15:15:21+02:00</date>
+         </properties>
+        </variant>
+        <node identifier="5701fce9-34c5-2867-1c13-283f3bffe30f" nodeName="main">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+         <node identifier="bffd812a-a5b8-af97-b9a8-781bd1a05a87" nodeName="node-55252a0b53968">
+          <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" version="5" removed="" hidden="" hiddenInIndex="">
+           <dimensions/>
+           <accessRoles __type="array"/>
+           <properties>
+            <text __type="string">&lt;p&gt;hier sind (keine) bilder&lt;br/&gt;&lt;/p&gt;</text>
+           </properties>
+          </variant>
+         </node>
+        </node>
+        <node identifier="c29c6528-2cb2-ade7-1a9d-b8e04019d742" nodeName="pressespiegel">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+       </node>
+       <node identifier="9ad89e69-e135-b4fa-db0b-3ff6870025c9" nodeName="node-55252a2b20992">
+        <variant sortingIndex="400" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikItem" version="7" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <uriPathSegment __type="string">Nachbarschaftshilfe</uriPathSegment>
+          <subheadline __type="string">Duttweiler Wehr unterstützt Haßloch</subheadline>
+          <hasPressespiegel __type="boolean">1</hasPressespiegel>
+          <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+          <title __type="string">Nachbarschaftshilfe</title>
+          <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+          <headerImage __type="string"></headerImage>
+          <date __type="object" __classname="DateTime">2015-03-31T15:16:31+02:00</date>
+          <subpageLayout __type="string"></subpageLayout>
+          <layout __type="string"></layout>
+         </properties>
+        </variant>
+        <node identifier="23427ae1-1b21-dfbb-0bd0-6884350e7840" nodeName="main">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+         <node identifier="eed9f93d-2e70-1a6c-66ae-b194bae64c05" nodeName="node-55252a493b318">
+          <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" version="4" removed="" hidden="" hiddenInIndex="">
+           <dimensions/>
+           <accessRoles __type="array"/>
+           <properties>
+            <text __type="string">&lt;p&gt;Auf der Bundesstraße 39 zwischen dem Neustadter Ortsteil Geinsheim und 
+der Abbiegung zur L 529 war ein Baum umgestürzt und blockierte die 
+Fahrbahn. Beim Eintreffen der Kräfte aus Geinsheim und Duttweiler an der
+ Einsatzstelle in Höhe der Aumühle war bereits die Wehr aus Haßloch vor 
+Ort.&lt;a href=&quot;http://duttweiler.de/d150331.html&quot;&gt;&lt;br/&gt;&lt;/a&gt;&lt;/p&gt;</text>
+           </properties>
+          </variant>
+         </node>
+         <node identifier="3269efbd-3534-e647-1954-b68fcd5cc5aa" nodeName="node-55252a5eaf084">
+          <variant sortingIndex="150" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" version="5" removed="" hidden="" hiddenInIndex="">
+           <dimensions/>
+           <accessRoles __type="array"/>
+           <properties>
+            <text __type="string">&lt;p&gt;Gemeinsam hatte man das Hindernis zügig beseitigt und die Fahrbahn 
+gereinigt. Während des Einsatzes kam es kurzzeitig zu 
+Verkehrsbehinderungen.&lt;br/&gt;Bei der ersten Sturmtief des Jahres wurde Duttweiler von nennenswerten Schäden verschont.
+
+&lt;/p&gt;</text>
+           </properties>
+          </variant>
+         </node>
+        </node>
+        <node identifier="9c9125f5-dade-a862-ed1a-79889b43e94e" nodeName="pressespiegel">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+         <node identifier="3a2eb9a5-8b36-c959-fdbf-cea91a72b3cb" nodeName="node-55252a77eff85">
+          <variant sortingIndex="100" workspace="live" nodeType="GSL.DuttweilerDe.Content:PressespiegelItem" version="4" removed="" hidden="" hiddenInIndex="">
+           <dimensions/>
+           <accessRoles __type="array"/>
+           <properties>
+            <date __type="object" __classname="DateTime">2015-03-31T15:17:47+02:00</date>
+            <publication __type="string">fwnw.de</publication>
+            <title __type="string">Sturmschaden</title>
+           </properties>
+          </variant>
+         </node>
+        </node>
+       </node>
+       <node identifier="cbb18ace-6da9-ebb4-aba7-c807bfd93570" nodeName="node-55252a9ebf7bb">
+        <variant sortingIndex="500" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikItem" version="6" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <uriPathSegment __type="string">Harmloser-Rauch</uriPathSegment>
+          <subheadline __type="string">Feuerwehr im Einsatz</subheadline>
+          <hasPressespiegel __type="boolean"></hasPressespiegel>
+          <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+          <title __type="string">Harmloser Rauch</title>
+          <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+          <headerImage __type="string"></headerImage>
+          <date __type="object" __classname="DateTime">2015-03-28T14:18:27+01:00</date>
+          <subpageLayout __type="string"></subpageLayout>
+          <layout __type="string"></layout>
+         </properties>
+        </variant>
+        <node identifier="1525aee7-5990-fef7-3be0-ff0296c0ada3" nodeName="main">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+        <node identifier="35561c54-b4fd-dc80-a67c-c496aac7f2cc" nodeName="pressespiegel">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+       </node>
+       <node identifier="632ecff4-c21d-f887-2764-7e382d8866b7" nodeName="node-55252acc7333a">
+        <variant sortingIndex="600" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikItem" version="6" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <uriPathSegment __type="string">Fahrzeugbrand-in-Geinsheim</uriPathSegment>
+          <subheadline __type="string">Löschgruppe Duttweiler unterstützt im Nachbardorf</subheadline>
+          <hasPressespiegel __type="boolean"></hasPressespiegel>
+          <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+          <title __type="string">Fahrzeugbrand in Geinsheim</title>
+          <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+          <headerImage __type="string"></headerImage>
+          <date __type="object" __classname="DateTime">2015-03-17T14:19:12+01:00</date>
+          <subpageLayout __type="string"></subpageLayout>
+          <layout __type="string"></layout>
+         </properties>
+        </variant>
+        <node identifier="754d7725-4ea5-d30d-4ac9-91bf6d820e21" nodeName="main">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+        <node identifier="6dec53b0-7f66-5ca9-c81c-0e8ad653edb5" nodeName="pressespiegel">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+       </node>
+       <node identifier="8e045684-186b-6dd0-48fb-52b0f6644ffe" nodeName="node-55252b04dddad">
+        <variant sortingIndex="700" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikItem" version="6" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <uriPathSegment __type="string">Sperrabfall-wird-nicht-mehr-abgeholt</uriPathSegment>
+          <subheadline __type="string">ESN gibt bekannt</subheadline>
+          <hasPressespiegel __type="boolean"></hasPressespiegel>
+          <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+          <title __type="string">Sperrabfall wird nicht mehr abgeholt</title>
+          <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+          <headerImage __type="string"></headerImage>
+          <date __type="object" __classname="DateTime">2015-01-09T14:20:08+01:00</date>
+          <subpageLayout __type="string"></subpageLayout>
+          <layout __type="string"></layout>
+         </properties>
+        </variant>
+        <node identifier="540bc414-4da2-09e3-b617-7ae59403f3d3" nodeName="main">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+        <node identifier="24c0b9b3-4987-c0af-9b07-a8fb67661d4b" nodeName="pressespiegel">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+       </node>
+       <node identifier="b51dce73-878a-50cf-ddce-aef631cf6cf4" nodeName="node-55252b390405c">
+        <variant sortingIndex="750" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikItem" version="7" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <uriPathSegment __type="string">Programm-steht-noch-nicht</uriPathSegment>
+          <subheadline __type="string">Kirchenmusikfestival</subheadline>
+          <hasPressespiegel __type="boolean"></hasPressespiegel>
+          <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+          <title __type="string">Programm steht noch nicht</title>
+          <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+          <headerImage __type="string"></headerImage>
+          <subpageLayout __type="string"></subpageLayout>
+          <layout __type="string"></layout>
+          <date __type="object" __classname="DateTime">2015-01-08T14:21:10+01:00</date>
+         </properties>
+        </variant>
+        <node identifier="5fe00c1f-2bfc-1113-e682-4f49b8547942" nodeName="main">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+        <node identifier="6b7df22b-830d-ce08-9353-d315aa7f95a4" nodeName="pressespiegel">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+       </node>
+       <node identifier="85399916-5da2-6406-f30c-b37ea7e366fa" nodeName="node-55252b6256f5e">
+        <variant sortingIndex="775" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikItem" version="5" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <uriPathSegment __type="string">Erfolgreiche-Sternsinger</uriPathSegment>
+          <subheadline __type="string">3800€ gesammelt</subheadline>
+          <hasPressespiegel __type="boolean"></hasPressespiegel>
+          <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+          <title __type="string">Erfolgreiche Sternsinger</title>
+          <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+          <headerImage __type="string"></headerImage>
+          <subpageLayout __type="string"></subpageLayout>
+          <layout __type="string"></layout>
+         </properties>
+        </variant>
+        <node identifier="7b3e48ce-d15b-32d0-71ce-896fbc12a5f6" nodeName="main">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+        <node identifier="52ca3b26-1604-254b-7e42-825894944f9b" nodeName="pressespiegel">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+       </node>
+       <node identifier="0db5df52-fe0f-c7be-b9e6-f8e7d2e3577a" nodeName="node-55252ba497fe8">
+        <variant sortingIndex="788" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikItem" version="5" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <uriPathSegment __type="string">Kultur-um-den-Wein</uriPathSegment>
+          <subheadline __type="string">Neujahrsempfang in Duttweiler</subheadline>
+          <hasPressespiegel __type="boolean"></hasPressespiegel>
+          <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+          <title __type="string">Kultur um den Wein</title>
+          <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+          <headerImage __type="string"></headerImage>
+          <date __type="object" __classname="DateTime">2015-01-05T14:22:48+01:00</date>
+          <subpageLayout __type="string"></subpageLayout>
+          <layout __type="string"></layout>
+         </properties>
+        </variant>
+        <node identifier="e59aa5db-ec24-96d6-8688-c3c02170dc6f" nodeName="main">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+        <node identifier="dcdd769c-84d3-60fb-b5b5-c3258f158f63" nodeName="pressespiegel">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+       </node>
+       <node identifier="703090ff-1b04-0b32-cedb-ab2c6b26ac48" nodeName="node-55252bcc453e3">
+        <variant sortingIndex="794" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikItem" version="5" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <uriPathSegment __type="string">Treffpunkt-Dorfplatz</uriPathSegment>
+          <subheadline __type="string">Duttweilerer stoßen miteinander an</subheadline>
+          <hasPressespiegel __type="boolean"></hasPressespiegel>
+          <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+          <title __type="string">Treffpunkt Dorfplatz</title>
+          <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+          <headerImage __type="string"></headerImage>
+          <date __type="object" __classname="DateTime">2015-01-01T14:23:29+01:00</date>
+          <subpageLayout __type="string"></subpageLayout>
+          <layout __type="string"></layout>
+         </properties>
+        </variant>
+        <node identifier="e8cfa021-869a-f607-2ac7-725c29dc4e8a" nodeName="main">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+        <node identifier="13ccbcdc-5041-d373-3849-b326a4486354" nodeName="pressespiegel">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions/>
+          <accessRoles __type="array"/>
+          <properties/>
+         </variant>
+        </node>
+       </node>
+       <node identifier="9a01eee3-fa6f-496e-5ad1-fb1e49e8d7bb" nodeName="pressespiegel">
+        <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties/>
+        </variant>
+       </node>
+      </node>
+      <node identifier="c88fd7f5-204a-333f-a471-b2fc0740354c" nodeName="node-552557373ea1e">
+       <variant sortingIndex="350" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikBranch" version="7" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties>
+         <uriPathSegment __type="string">Chronik-2014</uriPathSegment>
+         <subheadline __type="string">Unterüberschrift</subheadline>
+         <hasPressespiegel __type="boolean"></hasPressespiegel>
+         <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+         <title __type="string">Chronik 2014</title>
+         <relatedPages __type="array">
+          <entry0 __type="string">16e90b22-8b29-e6ec-07b1-675380a0f5a1</entry0>
+          <entry1 __type="string">00201ae8-2ac0-f0cd-4ea2-3f9d7e85a03b</entry1>
+         </relatedPages>
+         <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+         <headerImage __type="string"></headerImage>
+         <subpageLayout __type="string"></subpageLayout>
+         <layout __type="string"></layout>
+        </properties>
+       </variant>
+       <node identifier="713c009c-c9d1-6d72-6363-87ac191e2e65" nodeName="main">
+        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties/>
+        </variant>
+       </node>
+       <node identifier="4dddb5d3-3d7e-554b-138d-8efa0e5f3b20" nodeName="pressespiegel">
+        <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties/>
+        </variant>
+       </node>
+      </node>
+      <node identifier="16e90b22-8b29-e6ec-07b1-675380a0f5a1" nodeName="node-55255ed6a59d3">
+       <variant sortingIndex="400" workspace="live" nodeType="GSL.DuttweilerDe.Pages:ChronikBranch" version="5" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties>
+         <uriPathSegment __type="string">Chronik-2013</uriPathSegment>
+         <subheadline __type="string">Unterüberschrift</subheadline>
+         <hasPressespiegel __type="boolean"></hasPressespiegel>
+         <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+         <title __type="string">Chronik 2013</title>
+         <relatedPages __type="array">
+          <entry0 __type="string">c88fd7f5-204a-333f-a471-b2fc0740354c</entry0>
+         </relatedPages>
+         <headerImageAlternativeText __type="string"></headerImageAlternativeText>
+         <headerImage __type="string"></headerImage>
+         <subpageLayout __type="string"></subpageLayout>
+         <layout __type="string"></layout>
+        </properties>
+       </variant>
+       <node identifier="36672d44-d7dc-4678-87db-1f1826265cea" nodeName="main">
+        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties/>
+        </variant>
+       </node>
+       <node identifier="1aedbc75-baf3-a04e-df89-fdd7616bfda2" nodeName="pressespiegel">
+        <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties/>
+        </variant>
+       </node>
+      </node>
+      <node identifier="e981357c-2e95-8376-02a1-340ab6966e39" nodeName="pressespiegel">
+       <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+     </node>
+     <node identifier="320b1756-e1ea-6677-be1e-3aaccac9885a" nodeName="pressespiegel">
+      <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties/>
+      </variant>
+     </node>
+    </node>
+    <node identifier="af186db7-44d9-0e27-fa68-75fc569b6827" nodeName="node-551c1481110ad">
+     <variant sortingIndex="300" workspace="live" nodeType="TYPO3.Neos:Shortcut" version="3" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <properties>
+       <uriPathSegment __type="string">Das-Dorf</uriPathSegment>
+       <targetMode __type="string">selectedTarget</targetMode>
+       <title __type="string">Das Dorf</title>
+       <target __type="string">node://b9a263de-4c27-34cb-db9b-ac8bfad90a9a</target>
+      </properties>
+     </variant>
+    </node>
+    <node identifier="5e205ccb-090c-db21-5aa8-a74926f00ff4" nodeName="node-551c18d727cba">
+     <variant sortingIndex="450" workspace="live" nodeType="GSL.DuttweilerDe.Pages:Default" version="13" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <properties>
+       <uriPathSegment __type="string">Impressum</uriPathSegment>
+       <subheadline __type="string"></subheadline>
+       <hasPressespiegel __type="boolean"></hasPressespiegel>
+       <pressespiegelTitle __type="string">Pressespiegel</pressespiegelTitle>
+       <title __type="string">Impressum</title>
+       <subpageLayout __type="string"></subpageLayout>
+       <layout __type="string"></layout>
+       <headerImageAlternativeText __type="string">GSL</headerImageAlternativeText>
+       <headerImage __type="object" __classname="TYPO3\Media\Domain\Model\ImageVariant" __encoding="json">{&quot;originalImage&quot;:{&quot;title&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;gsl-0013.gif&quot;,&quot;hash&quot;:&quot;26b477cef1ba3abf79a19f4ba66d0f471a6023bd&quot;,&quot;__identity&quot;:&quot;851c44b0-9bb3-9c7b-e3b1-789eb7eaa261&quot;},&quot;__identity&quot;:&quot;f80e2ab5-43cd-a7dd-34e5-df1b4160d4b6&quot;},&quot;processingInstructions&quot;:[{&quot;command&quot;:&quot;crop&quot;,&quot;options&quot;:{&quot;start&quot;:{&quot;x&quot;:0,&quot;y&quot;:0},&quot;size&quot;:{&quot;width&quot;:100,&quot;height&quot;:62}}},{&quot;command&quot;:&quot;resize&quot;,&quot;options&quot;:{&quot;size&quot;:{&quot;width&quot;:100,&quot;height&quot;:62}}}]}</headerImage>
+      </properties>
+     </variant>
+     <node identifier="9d98dc01-b8de-a5fe-b84d-ff44f90ee8da" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties/>
+      </variant>
+      <node identifier="f94ed565-56ce-9c11-0665-d16188fb714b" nodeName="node-551c190c79f8d">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:TextWithImage" version="53" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties>
+         <text __type="string">&lt;p&gt;&lt;strong&gt;Dies ist eine private Seite von&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Gerhard Syring-Lingenfelder&lt;br/&gt;Altdorfer Straße 5&lt;br/&gt;67435 Neustadt-Duttweiler&lt;br/&gt;E-Mail: &lt;a href=&quot;mailto:redaktion@duttweiler.de&quot;&gt;redaktion@duttweiler.de&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Verantwortlich für den redaktionellen Inhalt&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Gerhard Syring-Lingenfelder&lt;br/&gt;Altdorfer Straße 5&lt;br/&gt;67435 Neustadt-Duttweiler&lt;br/&gt;E-Mail: &lt;a href=&quot;mailto:redaktion@duttweiler.de&quot;&gt;redaktion@duttweiler.de&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Noch ein paar Anmerkungen&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;duttweiler.de gibt es schon seit etwa 1997. Damit war dieser 
+Internetauftritt einer der ersten einer Gemeinde im weiten Umkreis und 
+auch lange vor Neustadt an der Weinstraße im Netz. Seit dieser Zeit wird
+ die Domäne (so wie verwandte Namen) auch von mir privat bezahlt und 
+wurde anfangs auch auf eigenem Webspace gehostet. Da die Datenmenge 
+rapide gewachsen ist, erfolgte ein Umzug auf einen Webserver der Stadt 
+Neustadt an der Weinstraße. Dafür herzlichen Dank für die Unterstützung.&lt;br/&gt;Seit
+ Mitte 2009 liegt der Inhalt wieder bei einem professionellen Hoster, 
+auch diesen Webspace habe ich auf eigene Kosten gemietet.&lt;br/&gt; Die 
+Einrichtung der Homepage geschah ursprünglich in der Absicht, den 
+exklusiven Namen für meinen Heimatort zu reservieren, bevor ihn sich 
+irgend jemand für private Zwecke (wie z.B. duttweiler.com) wegschnappt.&lt;br/&gt;Von
+ Anfang an stand dahinter aber auch die Absicht, Duttweiler im 
+weltweiten Netz zu präsentieren und ein Nachschlagewerk zu schaffen - 
+und das überparteilich und unabhängig. Es gibt keinerlei finanziellen 
+Hintergrund, deshalb kann auch niemand irgendwelche Rechte (Links auf 
+seine Seite, Erwähnungen etc.) beanspruchen. Nach wie vor wird die 
+gesamte Programmierung mit einem einfachen Texteditor geschrieben. Das 
+verhindert viel Programmbalast, wie er von professionellen Editoren 
+erzeugt wird und verkürzt somit die Ladezeiten. Das ist aber auch der 
+Grund, warum es manchmal etwas länger dauert, bis eine Meldung erscheint
+ und die durch die Umstellung des Designs noch nicht alle Seiten 
+angepasst sind. Dafür bitte ich um Verständnis.&lt;br/&gt;Und manchmal 
+vertauschen Kobolde die Tasten der Tastatur, so dass irgend etwas 
+anderes erscheint, als ich eigentlich schreiben wollte. Deshalb: Es gilt
+ grundsätzlich nur, was wirklich gemeint ist und nicht das was 
+geschrieben steht.&lt;br/&gt;&lt;/p&gt;</text>
+         <caption __type="string"></caption>
+         <alignment __type="string">right</alignment>
+         <hasCaption __type="boolean"></hasCaption>
+         <link __type="string"></link>
+         <title __type="string"></title>
+         <alternativeText __type="string"></alternativeText>
+         <image __type="object" __classname="TYPO3\Media\Domain\Model\ImageVariant" __encoding="json">{&quot;originalImage&quot;:{&quot;title&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;gsl-pb1.jpg&quot;,&quot;hash&quot;:&quot;3d795a1ed43668986f348a22b3b49296fb52ebbc&quot;,&quot;__identity&quot;:&quot;c44b3d2f-5e4e-fc22-4bf7-15f6d4dd7e1f&quot;},&quot;__identity&quot;:&quot;8f85f6e0-1dc5-5c8b-f033-a3f420f51225&quot;},&quot;processingInstructions&quot;:[{&quot;command&quot;:&quot;crop&quot;,&quot;options&quot;:{&quot;start&quot;:{&quot;x&quot;:0,&quot;y&quot;:0},&quot;size&quot;:{&quot;width&quot;:170,&quot;height&quot;:200}}},{&quot;command&quot;:&quot;resize&quot;,&quot;options&quot;:{&quot;size&quot;:{&quot;width&quot;:170,&quot;height&quot;:200}}}]}</image>
+        </properties>
+       </variant>
+      </node>
+     </node>
+     <node identifier="48162855-ae8c-404a-23af-67b01e3d168a" nodeName="pressespiegel">
+      <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties/>
+      </variant>
+     </node>
+    </node>
+    <node identifier="3d6186a1-fb92-3458-a861-e086df02ee73" nodeName="node-551d17b5e1379">
+     <variant sortingIndex="350" workspace="live" nodeType="TYPO3.Neos:Shortcut" version="5" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <properties>
+       <uriPathSegment __type="string">Vereine</uriPathSegment>
+       <targetMode __type="string">selectedTarget</targetMode>
+       <title __type="string">Vereine</title>
+       <target __type="string">node://ef2bd94c-3f4f-ebf3-f9a6-9c79780fee5a</target>
+      </properties>
+     </variant>
+    </node>
+    <node identifier="f27d3328-604a-7cd7-a0e2-f9de3bb0d74b" nodeName="node-551d17d1c1f91">
+     <variant sortingIndex="375" workspace="live" nodeType="TYPO3.Neos:Shortcut" version="5" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <properties>
+       <uriPathSegment __type="string">Weinbau</uriPathSegment>
+       <targetMode __type="string">selectedTarget</targetMode>
+       <title __type="string">Weinbau</title>
+       <target __type="string">node://cc57d8ad-9b56-6f84-93db-4ee44fcbbf7e</target>
+      </properties>
+     </variant>
+    </node>
+    <node identifier="6ef87eb3-8723-4349-68c2-b7294cd9f744" nodeName="node-551d17ed7d23e">
+     <variant sortingIndex="388" workspace="live" nodeType="TYPO3.Neos:Shortcut" version="5" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <properties>
+       <uriPathSegment __type="string">Gastlichkeit</uriPathSegment>
+       <targetMode __type="string">selectedTarget</targetMode>
+       <title __type="string">Gastlichkeit</title>
+       <target __type="string">node://c04523a8-901e-4268-b042-b1917554077d</target>
+      </properties>
+     </variant>
+    </node>
+    <node identifier="3a65cad1-81da-1cbb-a0a9-5462c0bd6f52" nodeName="node-551d18054cdbb">
+     <variant sortingIndex="394" workspace="live" nodeType="TYPO3.Neos:Shortcut" version="5" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <properties>
+       <uriPathSegment __type="string">Gewerbe</uriPathSegment>
+       <targetMode __type="string">selectedTarget</targetMode>
+       <title __type="string">Gewerbe</title>
+       <target __type="string">node://053789d0-d313-8cdf-1e6c-601ad235c3c3</target>
+      </properties>
+     </variant>
+    </node>
+    <node identifier="d36e7308-f9a0-a0d6-9f1c-e55b24ad1a8e" nodeName="node-551d1824e89f6">
+     <variant sortingIndex="425" workspace="live" nodeType="TYPO3.Neos:Shortcut" version="5" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <properties>
+       <uriPathSegment __type="string">Neustadt</uriPathSegment>
+       <targetMode __type="string">selectedTarget</targetMode>
+       <title __type="string">Neustadt</title>
+       <target __type="string">http://www.neustadt.eu/</target>
+      </properties>
+     </variant>
+    </node>
+    <node identifier="afb8f18a-ee86-076d-c511-35d5c39a4ba1" nodeName="node-551d18407a344">
+     <variant sortingIndex="438" workspace="live" nodeType="TYPO3.Neos:Shortcut" version="5" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <properties>
+       <uriPathSegment __type="string">Kontakt</uriPathSegment>
+       <targetMode __type="string">selectedTarget</targetMode>
+       <title __type="string">Kontakt</title>
+       <target __type="string">mailto:redaktion@duttweiler.de</target>
+      </properties>
+     </variant>
+    </node>
+    <node identifier="4905f115-a8d8-cc0c-cd61-7638b30ef661" nodeName="rightColumn">
+     <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <properties/>
+     </variant>
+     <node identifier="33895f4d-1311-2745-4f06-381e5247a813" nodeName="node-551d1548bd4e8">
+      <variant sortingIndex="50" workspace="live" nodeType="GSL.DuttweilerDe.Content:FrontpageInfoBox" version="8" removed="" hidden="1" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties>
+        <headline __type="string">Das Wetter in Duttweiler</headline>
+        <isImportant __type="boolean"></isImportant>
+       </properties>
+      </variant>
+      <node identifier="a572a743-b35e-a7ad-4801-9dcdc8079ab3" nodeName="content">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+       <node identifier="4f42f025-e54d-b0d7-f3b2-fdea3e194c2c" nodeName="node-551d156e97249">
+        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Html" version="4" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <source __type="string">&lt;table&gt;&lt;tr&gt;
+  &lt;td&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;http://217.5.174.45/cgi-bin/wetterhp.js.pl?c=9&amp;lid=97&amp;css=2&amp;ppid=63&amp;d=2&quot;&gt; &lt;/script&gt;&lt;noscript&gt;Aktivieren Sie Javascript, um an dieser Stelle die aktuellen Wetterdaten sehen zu k&amp;ouml;nnen.&lt;/noscript&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;http://217.5.174.45/cgi-bin/wetterhp.js.pl?c=9&amp;lid=153&amp;css=2&amp;ppid=63&amp;d=2&quot;&gt; &lt;/script&gt;&lt;noscript&gt;Aktivieren Sie Javascript, um an dieser Stelle die aktuellen Wetterdaten sehen zu k&amp;ouml;nnen.&lt;/noscript&gt;&lt;/td&gt;
+  &lt;/tr&gt;&lt;/table&gt;</source>
+         </properties>
+        </variant>
+       </node>
+      </node>
+     </node>
+     <node identifier="f8ffe6c6-e71e-e2d4-aaa0-bc7bd57ec9a2" nodeName="node-551d156596a84">
+      <variant sortingIndex="25" workspace="live" nodeType="GSL.DuttweilerDe.Content:FrontpageInfoBox" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties>
+        <headline __type="string">Sperrung L540</headline>
+        <isImportant __type="boolean">1</isImportant>
+       </properties>
+      </variant>
+      <node identifier="83cdd826-2fbb-db86-8a4f-44edc58c7493" nodeName="content">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+     </node>
+     <node identifier="6b7de5ef-5b78-997e-12d5-9d87543569dc" nodeName="node-551d866cd2e38">
+      <variant sortingIndex="38" workspace="live" nodeType="GSL.DuttweilerDe.Content:FrontpageInfoBox" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties>
+        <headline __type="string">Veranstaltungstipp</headline>
+        <isImportant __type="boolean"></isImportant>
+       </properties>
+      </variant>
+      <node identifier="ef0a7df2-bc71-83dc-43ab-009eeaaecade" nodeName="content">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+      </node>
+     </node>
+     <node identifier="ef435432-19d8-14a6-c653-09c58444c916" nodeName="node-551d86addf4d9">
+      <variant sortingIndex="44" workspace="live" nodeType="GSL.DuttweilerDe.Content:FrontpageInfoBox" version="9" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties>
+        <headline __type="string">VfL - Fußball&lt;br/&gt;</headline>
+        <isImportant __type="boolean"></isImportant>
+       </properties>
+      </variant>
+      <node identifier="18496da5-72d7-148e-b881-0fae9fc32dc6" nodeName="content">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+       <node identifier="71c88ebf-8c7a-c28e-2dd5-26ea32621124" nodeName="node-551d86d30bc50">
+        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" version="12" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <text __type="string">&lt;p&gt;&lt;strong&gt;Nächstes Spiel&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;-- Spieltermin --&lt;br/&gt;&lt;/p&gt;</text>
+         </properties>
+        </variant>
+       </node>
+      </node>
+     </node>
+     <node identifier="d85d0e21-d963-4e8b-54cd-26fb609a9956" nodeName="node-551d872a80033">
+      <variant sortingIndex="47" workspace="live" nodeType="GSL.DuttweilerDe.Content:FrontpageInfoBox" version="6" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties>
+        <headline __type="string">VfL - Tischtennis&lt;br/&gt;</headline>
+        <isImportant __type="boolean"></isImportant>
+       </properties>
+      </variant>
+      <node identifier="1d494e44-b721-c0a6-c198-cc843c065051" nodeName="content">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+       <node identifier="e509afae-ebff-d2d9-ea00-bd4ac1d8554d" nodeName="node-551d873e32eef">
+        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" version="12" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <text __type="string">&lt;p&gt;&lt;strong&gt;Nächste Spiele&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Herren 1&lt;br/&gt;Herren 2&lt;br/&gt;Herren 3&lt;br/&gt;&lt;br/&gt;Schüler&lt;br/&gt;Bambini&lt;br/&gt;&lt;/p&gt;</text>
+         </properties>
+        </variant>
+       </node>
+      </node>
+     </node>
+     <node identifier="df880798-75fa-fc8d-bbbd-fd7991a039c7" nodeName="node-551d87b264060">
+      <variant sortingIndex="100" workspace="live" nodeType="GSL.DuttweilerDe.Content:FrontpageInfoBox" version="7" removed="" hidden="1" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <properties>
+        <headline __type="string">Fahrplan</headline>
+        <isImportant __type="boolean"></isImportant>
+       </properties>
+      </variant>
+      <node identifier="1358435d-c1e3-cb16-d192-c7d2f50b018d" nodeName="content">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <properties/>
+       </variant>
+       <node identifier="6dac6af5-a7d2-a1ac-7ad4-cc1cb6d27fff" nodeName="node-551d88e5ca94d">
+        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:TextWithImage" version="8" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <text __type="string">&lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://efa9.vrn.de/vrn/XSLT_TRIP_REQUEST2?language=de&amp;amp;sessionID=0&amp;amp;place_destination=Neustadt%20%28Weinstra%DFe%29&amp;amp;name_destination=Hauptbahnhof&amp;amp;type_destination=stop&amp;amp;place_origin=Duttweiler&amp;amp;name_origin=Kirche&amp;amp;type_origin=stop&quot;&gt;Aktuelle Verbindungen von Duttweiler (Kirche) nach Neustadt (HBf)&lt;/a&gt;&lt;/p&gt;</text>
+          <caption __type="string"></caption>
+          <alignment __type="string">right</alignment>
+          <hasCaption __type="boolean"></hasCaption>
+          <link __type="string">http://efa9.vrn.de/vrn/XSLT_TRIP_REQUEST2?language=de&amp;sessionID=0&amp;place_destination=Neustadt%20(Weinstra%DFe)&amp;name_destination=Hauptbahnhof&amp;type_destination=stop&amp;place_origin=Duttweiler&amp;name_origin=Kirche&amp;type_origin=stop</link>
+          <title __type="string">Fahrplanauskunft</title>
+          <alternativeText __type="string">Logo VRN</alternativeText>
+          <image __type="object" __classname="TYPO3\Media\Domain\Model\ImageVariant" __encoding="json">{&quot;originalImage&quot;:{&quot;title&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;fahrplanauskunft_132.jpg&quot;,&quot;hash&quot;:&quot;b09ab4b5fe520bca2e8ba0cf93fedc42d7c99910&quot;,&quot;__identity&quot;:&quot;2ff65fe8-6c96-489a-f421-77d57f0200ef&quot;},&quot;__identity&quot;:&quot;12d4fab8-9eb7-9a15-4af5-156522674d59&quot;},&quot;processingInstructions&quot;:[{&quot;command&quot;:&quot;crop&quot;,&quot;options&quot;:{&quot;start&quot;:{&quot;x&quot;:0,&quot;y&quot;:0},&quot;size&quot;:{&quot;width&quot;:161,&quot;height&quot;:132}}},{&quot;command&quot;:&quot;resize&quot;,&quot;options&quot;:{&quot;size&quot;:{&quot;width&quot;:161,&quot;height&quot;:132}}}]}</image>
+         </properties>
+        </variant>
+       </node>
+       <node identifier="90c05842-fb83-d4cc-9d5f-cfc7041b57f1" nodeName="node-551d8a62ac469">
+        <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" version="14" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <text __type="string">&lt;p&gt;weitere Fahrpläne&lt;br/&gt;&lt;/p&gt;</text>
+         </properties>
+        </variant>
+       </node>
+       <node identifier="84134755-b6ed-0dcf-78a7-6f654430874c" nodeName="node-551d8a73da2ed">
+        <variant sortingIndex="150" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Html" version="5" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <properties>
+          <source __type="string">&lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;</source>
+         </properties>
+        </variant>
+       </node>
+      </node>
      </node>
     </node>
    </node>
