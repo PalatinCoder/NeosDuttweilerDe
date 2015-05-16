@@ -996,7 +996,7 @@ geschrieben steht.&lt;br/&gt;&lt;/p&gt;</text>
       </properties>
      </variant>
     </node>
-    <node identifier="4905f115-a8d8-cc0c-cd61-7638b30ef661" nodeName="rightColumn">
+    <node identifier="4905f115-a8d8-cc0c-cd61-7638b30ef661" nodeName="rightcolumn">
      <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
       <dimensions/>
       <accessRoles __type="array"/>

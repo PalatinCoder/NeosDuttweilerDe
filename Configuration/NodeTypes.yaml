@@ -17,7 +17,7 @@
           label: 'Chronik'
           position: 30
   childNodes:
-    rightColumn:
+    rightcolumn:
       type: 'TYPO3.Neos:ContentCollection'
       constraints:
         nodeTypes:
