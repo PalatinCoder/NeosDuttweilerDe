@@ -58,15 +58,15 @@
         related:
           label: 'Links'
           position: 50
-  properties:
-    relatedPages:
-      type: 'references'
-      ui:
-        label: 'Verwandte Seiten'
-        inspector:
-          group: 'related'
-          #editorOptions:
-            #nodeTypes: ['TYPO3.Neos.NodeTypes:Page']
+#  properties:
+#    relatedPages:
+#      type: 'references'
+#      ui:
+#        label: 'Verwandte Seiten'
+#        inspector:
+#          group: 'related'
+#          #editorOptions:
+#            #nodeTypes: ['TYPO3.Neos.NodeTypes:Page']
         
 'GSL.DuttweilerDe.Pages:Default':
   superTypes: ['TYPO3.Neos.NodeTypes:Page']
@@ -83,6 +83,9 @@
         presse:
           label: 'Pressespiegel'
           position: 40
+        related:
+          label: 'Links'
+          position: 50
   childNodes:
     pressespiegel:
       type: 'TYPO3.Neos:ContentCollection'
@@ -141,6 +144,15 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'presse'
+    relatedPages:
+      type: 'reference'
+      ui:
+        label: 'Verwandte Seite'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'related'
+#          editorOptions:
+#            nodeTypes: ['TYPO3.Neos.NodeTypes:Page']
 
 'GSL.DuttweilerDe.Pages:ChronikRoot':
   superTypes: ['GSL.DuttweilerDe.Pages:IndexPage']
@@ -292,3 +304,19 @@
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
+
+'GSL.DuttweilerDe.Content:RelatedPagesBacklinkList':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Linksammlung von Chronik Meldungen'
+    group: 'general'
+    icon: 'icon-list'
+  constraints:
+    nodeTypes:
+      'GSL.DuttweilerDe.Content:RelatedPagesBacklink': TRUE
+      '*': FALSE
+'GSL.DuttweilerDe.Content:RelatedPagesBacklink':
+  superTypes: ['GSL.DuttweilerDe.Content:PressespiegelItem']
+  ui:
+    label: 'Backlink'
+    group: 'hidden'

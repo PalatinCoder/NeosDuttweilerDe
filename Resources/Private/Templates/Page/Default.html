@@ -43,17 +43,15 @@
                     <ul>
                         <li><a href="javascript:history.back();">&laquo;</a></li>
                         {parts.parentPage -> f:format.raw()}
-                        <!-- show related pages on indexPage instead of child pages -->
+                        <!-- only show child pages on non index pages -->
                         <f:if condition="{isIndexPage}">
-                            <f:then>
-                                <!-- but only show if any -->
-                                <f:if condition="{menuCollection}">
-                                    {parts.relatedPages -> f:format.raw()}
-                                </f:if>
-                            </f:then>
                             <f:else>
                                 {parts.subpages -> f:format.raw()}
                             </f:else>
+                        </f:if>
+                        <!-- show related pages (if any) -->
+                        <f:if condition="{menuCollection}">
+                            {parts.relatedPages -> f:format.raw()}
                         </f:if>
                     </ul>
                 </nav>   
