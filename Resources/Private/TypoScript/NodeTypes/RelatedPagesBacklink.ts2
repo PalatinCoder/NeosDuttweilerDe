@@ -1,0 +1,8 @@
+prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/RelatedPagesBacklink.html'
+
+    title = ${q(node).property('title')}
+    subheading = ${q(node).property('subheadline')}
+    itemLink = ${q(node).property('_path')}
+    relatedPage = ${q(node).property('relatedPages')}
+}
