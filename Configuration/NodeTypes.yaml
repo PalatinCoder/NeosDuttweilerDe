@@ -58,15 +58,16 @@
         related:
           label: 'Links'
           position: 50
-#  properties:
-#    relatedPages:
-#      type: 'references'
-#      ui:
-#        label: 'Verwandte Seiten'
-#        inspector:
-#          group: 'related'
-#          #editorOptions:
-#            #nodeTypes: ['TYPO3.Neos.NodeTypes:Page']
+  properties:
+    relatedPages:
+      type: 'references'
+      ui:
+        label: 'Verwandte Seiten'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'related'
+          #editorOptions:
+            #nodeTypes: ['TYPO3.Neos.NodeTypes:Page']
         
 'GSL.DuttweilerDe.Pages:Default':
   superTypes: ['TYPO3.Neos.NodeTypes:Page']
@@ -144,15 +145,6 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'presse'
-    relatedPages:
-      type: 'reference'
-      ui:
-        label: 'Verwandte Seite'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'related'
-#          editorOptions:
-#            nodeTypes: ['TYPO3.Neos.NodeTypes:Page']
 
 'GSL.DuttweilerDe.Pages:ChronikRoot':
   superTypes: ['GSL.DuttweilerDe.Pages:IndexPage']
@@ -177,6 +169,21 @@
   ui:
     label: 'Chronik - Meldung'
     group: 'chronik'
+    inspector:
+      groups:
+        related:
+          label: 'Kategorie/Übergeordnete Seite'
+          position: 50
+  properties:
+    relatedPages:
+      type: 'references'
+      ui:
+        label: 'Übergeordnete Seite'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'related'
+#          editorOptions:
+#            nodeTypes: ['TYPO3.Neos.NodeTypes:Page']
 
 # Content NodeTypes
 
