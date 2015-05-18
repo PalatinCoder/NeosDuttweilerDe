@@ -3,7 +3,7 @@
     <div class="ArticlePressespiegelItemIcon"></div>
     <div class="ArticlePressespiegelItemInner">
         <span class="ArticlePressespiegelItemTitle">{title}</span>
-        <span class="ArticlePressespiegelItemDate">{publication}, <f:format.date date="{date}" format="d. F Y" /></span>
+        <span class="ArticlePressespiegelItemDate">{publication}, {date -> f:format.date(localeFormatType: 'date', forceLocale: 'de_DE')}</span>
     </div>
     <f:if condition="{itemLink} != ''">
         <div class="ArticlePressespiegelItemLink"><neos:link.node node="{itemLink}" /></div>
