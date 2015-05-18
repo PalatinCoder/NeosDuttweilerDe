@@ -1,7 +1,9 @@
 prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklinkList) {
     templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/FrontpageNewsList.html'
-    
-    newsCollection = ${q(site).find('/sites/duttweilerde/node-551c040d4ec10/node-55201964ec3fd').children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').filter("[relatedPage]").get()}
+
+    // path down there is /sites/duttweilerde/a-bis-z/chronik
+
+    newsCollection = ${q(site).find('/sites/duttweilerde/node-551c040d4ec10/node-55201964ec3fd').children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').filterByReference('relatedPages', documentNode).get()}
 
     newsItem = GSL.DuttweilerDe.Content:RelatedPagesBacklink
 }

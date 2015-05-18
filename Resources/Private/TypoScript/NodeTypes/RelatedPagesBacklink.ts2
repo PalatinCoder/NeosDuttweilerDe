@@ -4,5 +4,4 @@ prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) < prototype(TYPO3.Neos:
     title = ${q(node).property('title')}
     subheading = ${q(node).property('subheadline')}
     itemLink = ${q(node).property('_path')}
-    relatedPage = ${q(node).property('relatedPages')}
 }
