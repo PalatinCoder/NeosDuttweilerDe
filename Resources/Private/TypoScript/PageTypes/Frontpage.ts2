@@ -13,12 +13,12 @@ frontPage = Page {
 		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
 		sectionName = 'body'
         
-        hasBanner = ${q(node).property('hasBanner')}
+        	hasBanner = ${q(node).property('hasBanner')}
 
 		parts {
 			menu = Menu {
-                renderHiddenInIndex = true
-            }
+                		renderHiddenInIndex = true
+            		}
 		}
 
 		content {
@@ -27,23 +27,23 @@ frontPage = Page {
 			}            
                        
 			main = TYPO3.TypoScript:Array {
-                /**
-                 * to be done... 
-                */
-                
-                /*10 = PrimaryContent {
-                    nodePath = 'main'
-                }*/
-                
-                
-                20 = GSL.DuttweilerDe.Content:FrontpageNewsList {
-                    newsItem = GSL.DuttweilerDe.Content:FrontpageNewsItem
-                }
-            }
-            
-            banner = PrimaryContent {
-                nodePath = 'banner'
-            }
+				/**
+				 * TBD
+				*/
+				
+				/*10 = PrimaryContent {
+				    nodePath = 'main'
+				}*/
+				
+				
+				20 = GSL.DuttweilerDe.Content:FrontpageNewsList {
+				    newsItem = GSL.DuttweilerDe.Content:FrontpageNewsItem
+				}
+			}
+			    
+			banner = PrimaryContent {
+				nodePath = 'banner'
+			}
 		}
 
 		javascripts.site = TYPO3.TypoScript:Template {

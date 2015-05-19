@@ -34,15 +34,15 @@
         inspector:
           group: 'general'
 # would be nicer, but doesn't wanna work...
-#    chronikRootNode:
-#      type: 'reference'
-#      ui:
-#        label: 'Chronik Wurzelseite'
-#        reloadIfChanged: TRUE
-#        inspector:
-#          group: 'chronik'
-#          editorOptions:
-#            nodeTypes: ['GSL.DuttweilerDe.Pages:ChronikRoot']
+    chronikRootNode:
+      type: 'reference'
+      ui:
+        label: 'Chronik Wurzelseite'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'chronik'
+          editorOptions:
+            nodeTypes: ['GSL.DuttweilerDe.Pages:ChronikRoot']
   constraints:
     nodeTypes:
       'GSL.DuttweilerDe.Pages:Default': TRUE

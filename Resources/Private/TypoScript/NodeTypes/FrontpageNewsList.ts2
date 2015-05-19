@@ -1,5 +1,6 @@
 prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
-    templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/FrontpageNewsList.html'
-    
-    newsCollection = ${q(site).find('/sites/duttweilerde/node-551c040d4ec10/node-55201964ec3fd').children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).get()}
+	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/FrontpageNewsList.html'
+
+	@override.chronikNode = ${q(documentNode).property('chronikRootNode')}
+	newsCollection = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).get()}
 }
