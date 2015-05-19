@@ -1,0 +1,12 @@
+prototype(GSL.DuttweilerDe.Content:EventPromoter) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Event.html'
+
+	@override.rootNode = ${q(node).property('rootNode')}
+
+	title = ${q(rootNode).find('main').children('[promote = TRUE]').first().property('title')}
+	location = ${q(rootNode).find('main').children('[promote = TRUE]').first().property('location')}
+	host = ${q(rootNode).find('main').children('[promote = TRUE]').first().property('host')}
+	startDate = ${q(rootNode).find('main').children('[promote = TRUE]').first().property('startDate')}
+	endDate = ${q(rootNode).find('main').children('[promote = TRUE]').first().property('endDate')}
+
+}

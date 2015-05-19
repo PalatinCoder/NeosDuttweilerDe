@@ -383,3 +383,21 @@
         label: 'Auf Startseite zeigen?'
         inspector:
           group: 'frontpage'
+
+'GSL.DuttweilerDe.Content:EventPromoter':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Veranstaltungstipp'
+    group: 'frontpage'
+    inspector:
+      groups:
+        general:
+          label: 'Allgemein'
+  properties:
+    rootNode:
+      type: 'reference'
+      ui:
+        label: 'Wurzelseite'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
