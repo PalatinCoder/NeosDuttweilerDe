@@ -4,9 +4,12 @@ TYPO3:
   Neos:
     nodeTypes:
       groups:
+        duttweiler-general:
+          label: 'Duttweiler - Allgemein'
+          position: start
         frontpage:
           label: 'Duttweiler - Startseite'
-          position: 50
+          position: start
         chronik:
           label: 'Duttweiler - Chronik'
-          position: start 10
+          position: start

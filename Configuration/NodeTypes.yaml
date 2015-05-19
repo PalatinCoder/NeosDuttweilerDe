@@ -33,7 +33,6 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'general'
-# would be nicer, but doesn't wanna work...
     chronikRootNode:
       type: 'reference'
       ui:
@@ -191,7 +190,7 @@
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Pressespiegel - Eintrag'
-    group: 'general'
+    group: 'duttweiler-general'
     inspector:
       groups:
         pressespiegel:
@@ -316,7 +315,7 @@
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Linksammlung von Chronik Meldungen'
-    group: 'general'
+    group: 'chronik'
     icon: 'icon-list'
   constraints:
     nodeTypes:
@@ -327,3 +326,60 @@
   ui:
     label: 'Backlink'
     group: 'hidden'
+
+'GSL.DuttweilerDe.Content:Event':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Veranstaltung'
+    group: 'duttweiler-general'
+    inspector:
+      groups:
+        general:
+          label: 'Allgemein'
+        datetime:
+          label: 'Datum/Uhrzeit'
+        frontpage:
+          label: 'Startseite/Veranstaltungstipp'
+  properties:
+    title:
+      type: 'string'
+      ui:
+        label: 'Name der Veranstaltung'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+    location:
+      type: 'string'
+      ui:
+        label: 'Ort'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+    host:
+      type: 'string'
+      ui:
+        label: 'Veranstalter'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+    startDate:
+      type: 'date'
+      ui:
+        label: 'Beginn'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'datetime'
+    endDate:
+      type: 'date'
+      ui:
+        label: 'Ende'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'datetime'
+    promote:
+      type: 'boolean'
+      defaultValue: FALSE
+      ui:
+        label: 'Auf Startseite zeigen?'
+        inspector:
+          group: 'frontpage'
