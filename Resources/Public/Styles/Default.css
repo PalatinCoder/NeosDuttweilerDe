@@ -24,15 +24,21 @@ a:hover {
 }
 
 #Wrapper {
-    width: 800px;
+    /*width: 800px;*/
     margin: 0 auto;
     border: 2px solid #363;
+}
+@media screen and (min-width: 820px) {
+#Wrapper {
+    width: 800px;
+}
 }
 
 #PageHeading {
     border-top: 1px solid #363;
     height: 200px;
     background-image: url("../Images/b-logo05.jpg");
+    background-position: right;
     position: relative;
 }
 
@@ -134,8 +140,12 @@ a:hover {
     background-color: #eee;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
-    width: 720px;
     display: inline-block;
+}
+@media screen and (min-width: 820px) {
+.ArticlePressespiegelItemInner {
+    width: 720px;
+}
 }
 
 .ArticlePressespiegelItemTitle {
@@ -145,6 +155,12 @@ a:hover {
     font-size: 8pt;
     float: right;
 }
+@media screen and  (max-width: 819px) {
+.ArticlePressespiegelItemDate {
+    margin-left: 20px;
+}
+}
+
 .ArticlePressespiegelItemLink {
     margin-left: 25px;
 }
