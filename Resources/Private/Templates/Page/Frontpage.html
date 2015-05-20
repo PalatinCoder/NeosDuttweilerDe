@@ -11,13 +11,14 @@
 	</f:section>
 
 	<f:section name="headScripts">
-
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	</f:section>
     </head>
     <body>
 	<f:section name="body">
         <div id="Wrapper">
-            <div id="PageHeading">            
+            <div id="PageHeading">
+		<div id="menuButton"><img src="{f:uri.resource(path: 'Images/menu_icon.svg', package: 'GSL.DuttweilerDe')}" height="30" width="30" alt="Menu" /></div>       
                 <nav id="IndexPageTopMenu">
 			{parts.menu -> f:format.raw()}
                 </nav>
@@ -39,6 +40,7 @@
         </div>
 	</f:section>
 	<f:section name="bodyScripts">
-
+		<script type="text/javascript" src="{f:uri.resource(path: 'Scripts/FrontpageResponsive.js', package: 'GSL.DuttweilerDe')}"></script>
+		<script type="text/javascript">checkWindowSize();</script>
 	</f:section>
     </body>
