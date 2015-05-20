@@ -1,5 +1,9 @@
 page = Page {
 	head {
+		meta = TYPO3.TypoScript:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
+			sectionName = 'meta'
+		}
 		stylesheets.site = TYPO3.TypoScript:Template {
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
 			sectionName ='stylesheets'
@@ -8,6 +12,7 @@ page = Page {
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
 			sectionName = 'headScripts'
 		}
+		titleTag = ${'<title>' + q(node).property('title') + ' - Duttweiler/Pfalz</title>'}
 	}
 	body {
 		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
