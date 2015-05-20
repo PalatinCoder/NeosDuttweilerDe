@@ -11,13 +11,14 @@
 	</f:section>
 
 	<f:section name="headScripts">
-
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	</f:section>
     </head>
     <body>
 	<f:section name="body">
         <div id="Wrapper">
-            <div id="PageHeading">            
+            <div id="PageHeading">
+		<div id="menuButton"><img src="{f:uri.resource(path: 'Images/menu_icon.svg', package: 'GSL.DuttweilerDe')}" height="30" width="30" alt="Menu" /></div>       
                 <nav id="IndexPageTopMenu">
 			{parts.menu -> f:format.raw()}
                 </nav>
@@ -39,6 +40,27 @@
         </div>
 	</f:section>
 	<f:section name="bodyScripts">
+		<script type="text/javascript">
+			resizeHeader();
+			$('#IndexPageTopMenu').hide();
 
+			$(document).click(function() {
+				$('#IndexPageTopMenu').hide('slide');
+			});
+			$('#menuButton').click(function(event) {
+				$('#IndexPageTopMenu').show('slide');
+				event.stopPropagation();
+			});
+
+			function resizeHeader() {
+			    $('#PageHeading').height(0.25*$('#PageHeading').width());
+			};
+
+			var resizeTimer;
+			$(window).resize(function() {
+			    clearTimeout(resizeTimer);
+			    resizeTimer = setTimeout(resizeHeader, 100);
+			});
+		</script>
 	</f:section>
     </body>
