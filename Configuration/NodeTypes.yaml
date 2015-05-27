@@ -314,7 +314,7 @@
 'GSL.DuttweilerDe.Content:RelatedPagesBacklinkList':
   superTypes: ['TYPO3.Neos:Content']
   ui:
-    label: 'Linksammlung von Chronik Meldungen'
+    label: 'Referenzenliste'
     group: 'chronik'
     icon: 'icon-list'
   constraints:
@@ -326,6 +326,11 @@
   ui:
     label: 'Backlink'
     group: 'hidden'
+
+'GSL.DuttweilerDe.Content:Menu':
+  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  ui:
+    group: 'duttweiler-general'
 
 'GSL.DuttweilerDe.Content:Event':
   superTypes: ['TYPO3.Neos:Content']

@@ -1,0 +1,9 @@
+prototype(GSL.DuttweilerDe.Content:Menu) {
+    templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
+
+    // path down there is /sites/duttweilerde/a-bis-z/chronik
+
+    listCollection = ${q(documentNode).children('[instanceof GSL.DuttweilerDe.Pages:Default]').get()}
+
+    listItem = GSL.DuttweilerDe.Content:RelatedPagesBacklink
+}
