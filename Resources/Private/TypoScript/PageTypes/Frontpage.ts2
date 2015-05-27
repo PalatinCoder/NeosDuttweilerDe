@@ -36,9 +36,9 @@ frontPage = Page {
 				 * TBD
 				*/
 				
-				/*10 = PrimaryContent {
+				10 = PrimaryContent {
 				    nodePath = 'main'
-				}*/
+				}
 				
 				
 				20 = GSL.DuttweilerDe.Content:FrontpageNewsList {

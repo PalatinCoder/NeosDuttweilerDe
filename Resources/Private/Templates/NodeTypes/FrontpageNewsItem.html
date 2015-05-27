@@ -8,8 +8,13 @@
         <f:if condition="{image}">
             <img class="typo3-neos-alignment-right" height="150" src="{media:uri.image(image: image)}" alt="{imageAlternativeText}" />
         </f:if>
-        {text -> f:format.raw()}
+	<f:if condition="{isStandalone}">
+	 <f:then> {neos:contentElement.editable(property: 'text')} </f:then>
+         <f:else> {text -> f:format.raw()} </f:else>
+	</f:if>
         <div class="clearfix"></div>
     </div>
-    <neos:link.node node="{node}">weiterlesen...</neos:link.node>
+    <f:if condition="{isStandalone}">
+     <f:else>    <neos:link.node node="{node}">weiterlesen...</neos:link.node>    </f:else>
+    </f:if>
 </article>

@@ -244,7 +244,7 @@
           label: 'News'
           position: 2
   properties:
-    headline:
+    title:
       type: 'string'
       defaultValue: 'Überschrift'
       ui:
@@ -273,11 +273,15 @@
         inspector:
           group: 'news'
           
-#'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone':
-#  superTypes: ['GSL.DuttweilerDe.Content:FrontpageNewsItem']
-#  ui:
-#    label: 'Newsmeldung ohne Chronik'
-#    group: 'frontpage'
+'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone':
+  superTypes: ['GSL.DuttweilerDe.Content:FrontpageNewsItem']
+  ui:
+    label: 'Newsmeldung ohne Chronik'
+    group: 'frontpage'
+  properties:
+    text:
+      ui:
+        inlineEditable: TRUE
 
 'GSL.DuttweilerDe.Content:FrontpageInfoBox':
   superTypes: ['TYPO3.Neos:Content']

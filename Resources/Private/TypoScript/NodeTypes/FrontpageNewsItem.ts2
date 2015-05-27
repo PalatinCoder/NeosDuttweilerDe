@@ -7,4 +7,12 @@ prototype(GSL.DuttweilerDe.Content:FrontpageNewsItem) < prototype(TYPO3.Neos:Con
     text = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').first().children().first().property('text')}
     image = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').first().children().first().property('image')}
     imageAlternativeText = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').first().children().first().property('alternativeText')}
+
+	isStandalone = false
+}
+
+prototype(GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone) < prototype(GSL.DuttweilerDe.Content:FrontpageNewsItem) {
+	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/FrontpageNewsItem.html'
+	isStandalone = true
+	text = ${q(node).property('text')}
 }
