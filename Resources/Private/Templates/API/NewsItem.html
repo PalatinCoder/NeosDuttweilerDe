@@ -1,0 +1,13 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+{
+	"headline": "{headline}",
+	"subheadline": "{subheadline}",
+	"date": "{date -> f:format.date(localeFormatType: 'date', forceLocale: 'de_DE')}",
+	"text": "{text -> f:format.htmlspecialchars() -> f:format.nl2br()}",
+	<f:if condition="{image}">
+	"imageUrl": "{media:uri.image(image: image)}",
+	"imageAlternativeText": "{imageAlternativeText}",
+	</f:if>
+	"url": "{neos:uri.node(node: node, format: 'html')}"
+}

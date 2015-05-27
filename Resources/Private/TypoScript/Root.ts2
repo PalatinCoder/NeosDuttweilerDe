@@ -4,8 +4,21 @@
 
 include: NodeTypes/*
 include: PageTypes/*
+include: API/*
 
 root.frontPage {
 	condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:Frontpage]')}
 	renderPath = '/frontPage'
+}
+
+json = TYPO3.TypoScript:Case {
+	news {
+		condition = ${q(node).is('[instanceof GSL.DuttweilerDe.API:News]')}
+		type = 'GSL.DuttweilerDe.API:NewsList'
+	}
+	/** TBD */
+	/** events {
+		condition = ${q(node).is('[instanceof GSL.DuttweilerDe.API:Events]')}
+		type = 'GSL.DuttweilerDe.Content:EventsList.JSON'
+	} */
 }

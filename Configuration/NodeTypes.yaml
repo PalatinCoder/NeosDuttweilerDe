@@ -1,8 +1,14 @@
+##########################################
 # 
 # GSL.DuttweilerDe NodeTypes
 #
+##########################################
 
+##########################################
+#
 # Page Types
+#
+##########################################
 
 'GSL.DuttweilerDe.Pages:Frontpage':
   superTypes: ['TYPO3.Neos.NodeTypes:Page']
@@ -46,6 +52,7 @@
     nodeTypes:
       'GSL.DuttweilerDe.Pages:Default': TRUE
       'TYPO3.Neos:Shortcut': TRUE
+      'GSL.DuttweilerDe.API:API': TRUE
       '*': FALSE
       
 'GSL.DuttweilerDe.Pages:IndexPage':
@@ -184,7 +191,11 @@
 #          editorOptions:
 #            nodeTypes: ['TYPO3.Neos.NodeTypes:Page']
 
+########################################
+#
 # Content NodeTypes
+#
+########################################
 
 'GSL.DuttweilerDe.Content:PressespiegelItem':
   superTypes: ['TYPO3.Neos:Content']
@@ -392,3 +403,36 @@
         label: 'Auf Startseite zeigen?'
         inspector:
           group: 'frontpage'
+
+
+#############################################
+#
+# API
+#
+#############################################
+'GSL.DuttweilerDe.API:API':
+  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  ui:
+    label: 'API Root'
+    group: 'api'
+
+'GSL.DuttweilerDe.API:News':
+  superTypes: ['GSL.DuttweilerDe.API:API']
+  ui:
+    label: 'Latest News'
+    group: 'api'
+    inspector:
+      groups:
+        chronik:
+          label: 'Chronik'
+          position: 30
+  properties:
+    chronikRootNode:
+      type: 'reference'
+      ui:
+        label: 'Chronik Wurzelseite'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'chronik'
+          editorOptions:
+            nodeTypes: ['GSL.DuttweilerDe.Pages:ChronikRoot']

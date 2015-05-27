@@ -13,3 +13,6 @@ TYPO3:
         chronik:
           label: 'Duttweiler - Chronik'
           position: start
+        api:
+          label: 'Duttweiler - API'
+          position: end
