@@ -1,6 +1,6 @@
 prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
-	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/FrontpageNewsList.html'
+	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
 
 	@override.chronikNode = ${q(documentNode).property('chronikRootNode')}
-	newsCollection = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).get()}
+	listCollection = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).get()}
 }

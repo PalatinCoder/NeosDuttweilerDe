@@ -42,7 +42,7 @@ frontPage = Page {
 				
 				
 				20 = GSL.DuttweilerDe.Content:FrontpageNewsList {
-				    newsItem = GSL.DuttweilerDe.Content:FrontpageNewsItem
+				    listItem = GSL.DuttweilerDe.Content:FrontpageNewsItem
 				}
 			}
 			    
