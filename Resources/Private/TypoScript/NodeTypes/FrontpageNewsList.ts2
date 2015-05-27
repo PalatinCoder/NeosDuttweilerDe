@@ -3,4 +3,6 @@ prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
 
 	@override.chronikNode = ${q(documentNode).property('chronikRootNode')}
 	listCollection = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).get()}
+
+	listItem = GSL.DuttweilerDe.Content:FrontpageNewsItem
 }

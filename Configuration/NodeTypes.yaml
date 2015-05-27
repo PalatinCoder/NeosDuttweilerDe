@@ -231,7 +231,7 @@
   ui:
     label: 'News Liste'
     icon: 'icon-list'
-    group: 'hidden'
+    group: 'frontpage'
 
 'GSL.DuttweilerDe.Content:FrontpageNewsItem':
   superTypes: ['TYPO3.Neos:Content']

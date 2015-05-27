@@ -31,19 +31,8 @@ frontPage = Page {
 				nodePath = 'rightColumn'
 			}            
                        
-			main = TYPO3.TypoScript:Array {
-				/**
-				 * TBD
-				*/
-				
-				10 = PrimaryContent {
-				    nodePath = 'main'
-				}
-				
-				
-				20 = GSL.DuttweilerDe.Content:FrontpageNewsList {
-				    listItem = GSL.DuttweilerDe.Content:FrontpageNewsItem
-				}
+			main = PrimaryContent {
+				nodePath = 'main'
 			}
 			    
 			banner = PrimaryContent {
