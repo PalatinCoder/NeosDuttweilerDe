@@ -7,6 +7,6 @@
 	<f:if condition="{promote}">
 	"promote": "{promote}"
 	</f:if>
-	"startDate": "{startDate -> f:format.date(forceLocale: 'de_DE')}",
-	"endDate": "{endDate -> f:format.date(forceLocale: 'de_DE')}"
+	"startDate": "{startDate -> f:format.date(format: 'd.m.y H:i')}",
+	"endDate": "{endDate -> f:format.date(format: 'd.m.y H:i')}"
 }
