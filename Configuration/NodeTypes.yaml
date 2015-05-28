@@ -293,6 +293,14 @@
     text:
       ui:
         inlineEditable: TRUE
+        aloha:
+          'link':
+            'a': TRUE
+          'list':
+            'ul': TRUE
+            'ol': TRUE
+          'table':
+            'table': TRUE
 
 'GSL.DuttweilerDe.Content:FrontpageInfoBox':
   superTypes: ['TYPO3.Neos:Content']
