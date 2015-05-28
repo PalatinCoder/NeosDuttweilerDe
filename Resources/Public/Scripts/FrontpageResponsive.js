@@ -8,6 +8,9 @@ function checkWindowSize() {
 	if ($(window).width() <= 820) {
 		makeSiteResponsive();
 	}
+	if ($(window).width() >= 821) {
+		restoreDefault();
+	}
 }
 
 function makeSiteResponsive() {
@@ -21,4 +24,9 @@ function makeSiteResponsive() {
 		$('#IndexPageTopMenu').show('slide');
 		event.stopPropagation();
 	});
+}
+function restoreDefault() {
+	$(document).off('click');
+	$('#IndexPageTopMenu').show();
+	$('#PageHeading').height('200px');
 }
