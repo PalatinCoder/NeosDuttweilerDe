@@ -9,4 +9,11 @@ prototype(GSL.DuttweilerDe.API:EventsList) < prototype(TYPO3.TypoScript:Http.Mes
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/API/EventsItem.html'
 		}
 	}
+
+	@cache {
+		mode = 'uncached'
+		context {
+			1 = 'node'
+		}
+	}
 }

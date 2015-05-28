@@ -8,4 +8,11 @@ prototype(GSL.DuttweilerDe.API:NewsList) < prototype(TYPO3.TypoScript:Http.Messa
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/API/NewsItem.html'
 		}
 	}
+
+	@cache {
+		mode = 'uncached'
+		context {
+			1 = 'documentNode'
+		}
+	}
 }
