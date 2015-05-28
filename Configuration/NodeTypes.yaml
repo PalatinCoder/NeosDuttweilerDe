@@ -390,6 +390,8 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'datetime'
+          editorOptions:
+            format: 'd. F y H:i'
     endDate:
       type: 'date'
       ui:
@@ -397,6 +399,8 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'datetime'
+          editorOptions:
+            format: 'd. F y H:i'
     promote:
       type: 'boolean'
       defaultValue: FALSE
