@@ -16,9 +16,8 @@ json = TYPO3.TypoScript:Case {
 		condition = ${q(node).is('[instanceof GSL.DuttweilerDe.API:News]')}
 		type = 'GSL.DuttweilerDe.API:NewsList'
 	}
-	/** TBD */
-	/** events {
+	events {
 		condition = ${q(node).is('[instanceof GSL.DuttweilerDe.API:Events]')}
-		type = 'GSL.DuttweilerDe.Content:EventsList.JSON'
-	} */
+		type = 'GSL.DuttweilerDe.API:EventsList'
+	}
 }

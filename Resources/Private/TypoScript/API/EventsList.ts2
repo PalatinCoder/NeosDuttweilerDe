@@ -1,0 +1,12 @@
+prototype(GSL.DuttweilerDe.API:EventsList) < prototype(TYPO3.TypoScript:Http.Message) {
+	httpResponseHead {
+		headers.Content-Type = 'application/json;charset=utf-8'
+	}
+	content = GSL.DuttweilerDe.Content:EventPromoter {
+		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/API/GenericList.html'
+		listCollection = ${q(eventsNode).children().children('[instanceof GSL.DuttweilerDe.Content:Event]').get()}
+		listItem = GSL.DuttweilerDe.Content:Event {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/API/EventsItem.html'
+		}
+	}
+}

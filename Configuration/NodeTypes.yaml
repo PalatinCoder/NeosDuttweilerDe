@@ -456,3 +456,23 @@
           group: 'chronik'
           editorOptions:
             nodeTypes: ['GSL.DuttweilerDe.Pages:ChronikRoot']
+
+'GSL.DuttweilerDe.API:Events':
+  superTypes: ['GSL.DuttweilerDe.API:API']
+  ui:
+    label: 'Events'
+    group: 'api'
+    inspector: 
+      groups:
+        events:
+          label: 'Events'
+          position: 30
+  properties:
+    eventsRootNode:
+      type: 'reference'
+      ui:
+        label: 'Events RootNode'
+        inspector:
+          group: 'events'
+          editorOptions:
+            nodeTypes: ['GSL.DuttweilerDe.Pages:Default']

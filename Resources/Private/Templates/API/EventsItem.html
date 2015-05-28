@@ -1,0 +1,12 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+{
+	"title": "{title}",
+	"host": "{host}",
+	"location": "{location}",
+	<f:if condition="{promote}">
+	"promote": "{promote}"
+	</f:if>
+	"startDate": "{startDate -> f:format.date(forceLocale: 'de_DE')}",
+	"endDate": "{endDate -> f:format.date(forceLocale: 'de_DE')}"
+}
