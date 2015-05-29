@@ -435,6 +435,16 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'general'
+    limit:
+      type: string
+      defaultValue: '1'
+      ui:
+        label: 'Limit'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+      validation:
+        'TYPO3.Neos/Validation/IntegerValidator':
 
 
 #############################################

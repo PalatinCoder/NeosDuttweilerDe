@@ -2,14 +2,17 @@ prototype(GSL.DuttweilerDe.Content:EventPromoter) < prototype(TYPO3.Neos:Content
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
 
 	@override.eventsNode = ${q(node).property('eventsRootNode')}
-	listCollection = ${q(eventsNode).children().children('[instanceof GSL.DuttweilerDe.Content:Event]').filter('[promote = true]').filterDateInFuture('endDate', Date.now()).get()}
+	listCollection = ${q(eventsNode).children().children('[instanceof GSL.DuttweilerDe.Content:Event]').filter('[promote = true]').filterDateInFuture('startDate', Date.now()).get()}
 	listItem = GSL.DuttweilerDe.Content:Event
+
+	limit  = ${q(node).property('limit')}
 
 	@cache {
 		mode = 'cached'
 		
 		entryTags {
 			1 = ${'NodeType_GSL.DuttweilerDe.Content:Event'}
+			2 = ${'NodeType_GSL.DuttweilerDe.Content:EventPromoter'}
 		}
 	}
 }

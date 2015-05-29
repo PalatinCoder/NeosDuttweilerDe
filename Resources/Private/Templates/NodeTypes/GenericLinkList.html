@@ -1,4 +1,13 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
-<f:for each="{listCollection}" as="item">
-    <ts:render path="listItem" context="{node: item}" />
+<f:for each="{listCollection}" as="item" iteration="iterator">
+	<f:if condition="{limit} == 0">
+		<f:then>
+			<ts:render path="listItem" context="{node: item}" />
+		</f:then>
+		<f:else>
+			<f:if condition="{iterator.cycle} <= {limit}">
+				<ts:render path="listItem" context="{node: item}" />
+			</f:if>
+		</f:else>
+	</f:if>
 </f:for>
