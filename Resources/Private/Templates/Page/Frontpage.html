@@ -29,6 +29,12 @@
                 </div>
             </f:if>
             <div id="PageBody">
+		<div id="NewsColumnResponsiveHeading">
+			News
+			<span class="NewsColumnToggle" id="NewsColumnCollapse">einklappen</span>
+			<span class="NewsColumnToggle" id="NewsColumnExpand">ausklappen</span>
+			<div class="clearfix"></div>
+		</div>
                 <div id="NewsColumn">
 			{content.main -> f:format.raw()}
                 </div>

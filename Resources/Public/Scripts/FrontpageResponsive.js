@@ -24,6 +24,13 @@ function makeSiteResponsive() {
 		$('#IndexPageTopMenu').show('slide');
 		event.stopPropagation();
 	});
+
+	$('#NewsColumnExpand').hide();
+	$('#NewsColumnResponsiveHeading').click(function() {
+		$('#NewsColumn').slideToggle();
+		$('#NewsColumnCollapse').toggle();
+		$('#NewsColumnExpand').toggle();
+	});
 }
 function restoreDefault() {
 	$(document).off('click');

@@ -16,6 +16,7 @@ body {
 
 .typo3-neos-alignment-right { float: right; margin-left: 2em; margin-bottom: 1em; }
 .typo3-neos-alignment-left { float: left; margin-right: 2em; margin-bottom: 1em; }
+.typo3-neos-alignment-center { margin: 0 auto; }
 
 a {
     color: #363;
@@ -89,7 +90,6 @@ a:hover {
 	    top: 0;
 	    left: 0;
 	    display: inline-block;
-	    font-size: xx-large;
 	    background-color: #363;
 	}
 	#IndexPageTopMenu {
@@ -204,4 +204,24 @@ a {
 }
 a:hover {
     text-decoration: underline;
+}
+
+#NewsColumnResponsiveHeading {
+    display: none;
+}
+
+@media screen and (max-width: 819px) {
+#NewsColumnResponsiveHeading {
+    display: block;
+    background-color: #363;
+    padding: 4px;
+    color: #fff;
+    font-weight: bold;
+}
+}
+
+.NewsColumnToggle {
+    font-weight: normal;
+    float: right;
+    font-size: 8pt;
 }
