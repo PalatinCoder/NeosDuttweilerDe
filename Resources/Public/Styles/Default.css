@@ -1,162 +1,42 @@
-body {
-    font-family: verdana, geneva, arial;
-    font-size: 10pt;
-    margin-top: 5px;
-    background-color: #fff;
-    background-image: url("../Images/back_gn.gif");
-    background-repeat: repeat-x;
-    line-height: 14pt;
-}
+body { font-family: verdana, geneva, arial; font-size: 10pt; margin-top: 5px; background-color: #fff; background-image: url("../Images/back_gn.gif"); background-repeat: repeat-x; line-height: 14pt; }
 
+.clearfix { clear: both; width: 100%; }
 
+a { color: #363; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-.clearfix {
-    clear: both;
-    width: 100%;
-}
-
-a {
-    color: #363;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-#Wrapper {
-    /*width: 800px;*/
-    margin: 0 auto;
-    border: 2px solid #363;
-}
+#Wrapper { margin: 0 auto; border: 2px solid #363; }
 @media screen and (min-width: 820px) {
-#Wrapper {
-    width: 800px;
-}
+#Wrapper { width: 800px; }
 }
 
-#PageHeading {
-    border-top: 1px solid #363;
-    height: 200px;
-    background-image: url("../Images/b-logo05.jpg");
-    background-position: right;
-    position: relative;
-}
+#PageHeading { border-top: 1px solid #363; height: 200px; background-image: url("../Images/b-logo05.jpg"); background-position: right; position: relative; }
 
-#RelatedPagesTopMenu, #RelatedPagesMenu {
-    background-color: white;
-    display: inline-block;
-    height: 20px;
-}
+#RelatedPagesTopMenu, #RelatedPagesMenu { background-color: white; display: inline-block; height: 20px; }
+#RelatedPagesMenu { background-color: #F0F0F0; font-size: 8pt; position: absolute; left: 0; bottom: 0; }
+#RelatedPagesTopMenu ul, #RelatedPagesMenu ul { list-style-type: none; margin: 0; padding: 0; }
+#RelatedPagesTopMenu li, #RelatedPagesMenu li { padding: 0px 5px; text-align: center; border-right: 1px solid black; display: inline; }
 
-#RelatedPagesMenu {
-    background-color: #F0F0F0;
-    font-size: 8pt;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
-#RelatedPagesTopMenu ul, #RelatedPagesMenu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+#PageHeadingContent { height: 100px; margin-top: 59px; color: #363; padding-left: 20px; }
+#PageArticleDate { font-size: 14pt; line-height: 20pt; }
+#PageArticleHeading { margin-top: 5px; font-size: 20pt; font-weight: bold; }
+#PageHeadingCustomImage { margin-right: 25px; float: right; }
+#PageHeadingImprintLink { display: inline-block; background-color: #eee; font-size: 8pt; position: absolute; right: 0; bottom: 0; padding: 0 2px; height: 20px; }
 
-#RelatedPagesTopMenu li, #RelatedPagesMenu li {
-    padding: 0px 5px;
-    text-align: center;
-    border-right: 1px solid black;
-    display: inline;
-}
+#PageBody { background-color: white; }
+#PageBody article { padding: 20px; }
+#PageBody article header { color: #363; width: 100%; border-bottom: 1px solid black; font-size: 14pt; padding-bottom: 5px; margin: 5px 0 10px 0; }
 
-#PageHeadingContent {
-    height: 100px;
-    margin-top: 59px;
-    color: #363;
-    padding-left: 20px;
-}
-#PageArticleDate {
-    font-size: 14pt;
-    line-height: 20pt;
-}
-#PageArticleHeading {
-    margin-top: 5px;
-    font-size: 20pt;
-    font-weight: bold;
-}
-#PageHeadingCustomImage {
-    margin-right: 25px;
-    float: right;
-}
-#PageHeadingImprintLink {
-    display: inline-block;
-    background-color: #eee;
-    font-size: 8pt;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 0 2px;
-    height: 20px;
-}
-#PageBody {
-    background-color: white;
-}
-#PageBody article {
-    padding: 20px;
-}
-#PageBody article header {
-    color: #363;
-    width: 100%;
-    border-bottom: 1px solid black;
-    font-size: 14pt;
-    padding-bottom: 5px;
-    margin: 5px 0 10px 0;
-}
+#ArticlePressespiegel { margin-top: 30px; }
+#ArticlePressespiegelHeading { background-color: #363; color: #fff; font-weight: bold; font-size: 10pt; margin-bottom: 10px; }
 
-#ArticlePressespiegel {
-    margin-top: 30px;
-}
-
-#ArticlePressespiegelHeading {
-    background-color: #363;
-    color: #fff;
-    font-weight: bold;
-    font-size: 10pt;
-    margin-bottom: 10px;
-}
-
-.ArticlePressespiegelItemIcon {
-    width: 10px;
-    height: 10px;
-    background-color: #363;
-    display: inline-block;
-    margin: 0 5px;
-}
-.ArticlePressespiegelItem {
-    margin: 5px 0;
-    color: black;
-}
-
-.ArticlePressespiegelItemInner {    
-    background-color: #eee;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-    display: inline-block;
-}
-.ArticlePressespiegelItemInner {
-    width: 90%; /* fallback */
-    width: calc(100% - 40px);
-}
-
-.ArticlePressespiegelItemTitle {
-    font-weight: bold;
-}
-.ArticlePressespiegelItemDate {
-    font-size: 8pt;
-    float: right;
-}
-.ArticlePressespiegelItemLink {
-    margin-left: 25px;
-}
+.ArticlePressespiegelItemIcon { width: 10px; height: 10px; background-color: #363; display: inline-block; margin: 0 5px; }
+.ArticlePressespiegelItem { margin: 5px 0; color: black; }
+.ArticlePressespiegelItemInner { background-color: #eee; border-bottom: 1px solid black; border-right: 1px solid black; display: inline-block; }
+.ArticlePressespiegelItemInner { width: 90%; /* fallback */ width: calc(100% - 40px); }
+.ArticlePressespiegelItemTitle { font-weight: bold; }
+.ArticlePressespiegelItemDate { font-size: 8pt; float: right; }
+.ArticlePressespiegelItemLink { margin-left: 25px; }
 
 
 .typo3-neos-alignment-right { float: right; margin-left: 2em; margin-bottom: 1em; }
