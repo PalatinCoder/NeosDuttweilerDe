@@ -3,7 +3,9 @@ prototype(GSL.DuttweilerDe.Content:EventPromoter) < prototype(TYPO3.Neos:Content
 
 	@override.eventsNode = ${q(node).property('eventsRootNode')}
 	listCollection = ${q(eventsNode).children().children('[instanceof GSL.DuttweilerDe.Content:Event]').filter('[promote = true]').filterDateInFuture('startDate', Date.now()).get()}
-	listItem = GSL.DuttweilerDe.Content:Event
+	listItem = GSL.DuttweilerDe.Content:Event {
+		isInPromoter = true
+	}
 
 	limit  = ${q(node).property('limit')}
 
