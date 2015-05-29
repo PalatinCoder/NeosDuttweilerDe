@@ -1,6 +1,6 @@
 <div class="EventListItem">
 	<div class="EventListItemTitle">{title}</div>
-	<div class="EventListItemLocation">{location}</div>
-	<div class="EventListItemHost">{host}</div>
-	<div class="EventListItemDate">{startDate -> f:format.date(forceLocale: 'de_DE')} - {endDate -> f:format.date(forceLocale: 'de_DE')}</div>
+	<f:if condition="{location}"> <div class="EventListItemLocation"><span class="fa fa-fw fa-map-marker"></span>{location}</div></f:if>
+	<f:if condition="{host}"> <div class="EventListItemHost"><span class="fa fa-fw fa-users"></span>{host}</div></f:if>
+	<f:if condition="{startDate}"> <div class="EventListItemDate"><span class="fa fa-fw fa-calendar"></span>{startDate -> f:format.date(format: 'd.m.y H:i')}<f:if condition="{endDate}"> - {endDate -> f:format.date(format: 'd.m.y H:i')}</f:if></f:if></div>
 </div>

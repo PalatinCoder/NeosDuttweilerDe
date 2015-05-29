@@ -41,3 +41,8 @@ a:hover { text-decoration: underline; }
 
 .typo3-neos-alignment-right { float: right; margin-left: 2em; margin-bottom: 1em; }
 .typo3-neos-alignment-left { float: left; margin-right: 2em; margin-bottom: 1em; }
+.typo3-neos-alignment-center { margin: 0 auto !important; width: -moz-fit-content; width: -webkit-fit-content; width: fit-content; }
+
+.EventListItem { margin: 10px 0; }
+.EventListItemTitle { font-weight: bold; font-size: 11pt; }
+.fa { padding-right: 5px; }
