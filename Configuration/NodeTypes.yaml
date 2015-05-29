@@ -498,3 +498,17 @@
           group: 'events'
           editorOptions:
             nodeTypes: ['GSL.DuttweilerDe.Pages:Default']
+
+
+###################################################
+#
+# Overrides
+#
+###################################################
+
+'TYPO3.Neos.NodeTypes:TextMixin':
+  properties:
+    text:
+      ui:
+        aloha:
+          autoparagraph: FALSE
