@@ -1,0 +1,22 @@
+body { font-family: verdana, geneva, arial; font-size: 9pt; margin-top: 5px; background-color: #fff; background-image: url("../Images/back_gn.gif"); background-repeat: repeat-x; line-height: 14pt; }
+
+.clearfix { clear: both; width: 100%; }
+
+a { color: #363; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+#Wrapper { margin: 0 auto; border: 2px solid #363; }
+@media screen and (min-width: 820px) {
+#Wrapper { width: 800px; }
+}
+
+#PageBody { background-color: white; }
+
+.fa { padding-right: 5px; }
+
+.typo3-neos-alignment-right { float: right; margin-left: 2em; margin-bottom: 1em; }
+.typo3-neos-alignment-left { float: left; margin-right: 2em; margin-bottom: 1em; }
+.typo3-neos-alignment-center { margin: 0 auto !important; width: -moz-fit-content; width: -webkit-fit-content; width: fit-content; }
+
+.typo3-neos-nodetypes-twocolumn div { margin: 0; float: left; }
+.columns-50-50 div.column { width: 50%; }

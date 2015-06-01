@@ -1,15 +1,3 @@
-body { font-family: verdana, geneva, arial; font-size: 10pt; margin-top: 5px; background-color: #fff; background-image: url("../Images/back_gn.gif"); background-repeat: repeat-x; line-height: 14pt; }
-
-.clearfix { clear: both; width: 100%; }
-
-a { color: #363; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-#Wrapper { margin: 0 auto; border: 2px solid #363; }
-@media screen and (min-width: 820px) {
-#Wrapper { width: 800px; }
-}
-
 #PageHeading { border-top: 1px solid #363; height: 200px; background-image: url("../Images/b-logo05.jpg"); background-position: right; position: relative; }
 
 #RelatedPagesTopMenu, #RelatedPagesMenu { background-color: white; display: inline-block; height: 20px; }
@@ -23,7 +11,6 @@ a:hover { text-decoration: underline; }
 #PageHeadingCustomImage { margin-right: 25px; float: right; }
 #PageHeadingImprintLink { display: inline-block; background-color: #eee; font-size: 8pt; position: absolute; right: 0; bottom: 0; padding: 0 2px; height: 20px; }
 
-#PageBody { background-color: white; }
 #PageBody article { padding: 20px; }
 #PageBody article header { color: #363; width: 100%; border-bottom: 1px solid black; font-size: 14pt; padding-bottom: 5px; margin: 5px 0 10px 0; }
 
@@ -37,15 +24,6 @@ a:hover { text-decoration: underline; }
 .ArticlePressespiegelItemTitle { font-weight: bold; }
 .ArticlePressespiegelItemDate { font-size: 8pt; float: right; }
 .ArticlePressespiegelItemLink { margin-left: 25px; }
-
-
-.typo3-neos-alignment-right { float: right; margin-left: 2em; margin-bottom: 1em; }
-.typo3-neos-alignment-left { float: left; margin-right: 2em; margin-bottom: 1em; }
-.typo3-neos-alignment-center { margin: 0 auto !important; width: -moz-fit-content; width: -webkit-fit-content; width: fit-content; }
-
-.typo3-neos-nodetypes-twocolumn div.column { width: 50%; margin: 0; float: left; }
-
-.fa { padding-right: 5px; }
 
 .EventListItem { margin: 10px 0; }
 .EventListItemTitle { font-weight: bold; font-size: 11pt; }
