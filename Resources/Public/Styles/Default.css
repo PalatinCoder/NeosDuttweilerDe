@@ -43,6 +43,10 @@ a:hover { text-decoration: underline; }
 .typo3-neos-alignment-left { float: left; margin-right: 2em; margin-bottom: 1em; }
 .typo3-neos-alignment-center { margin: 0 auto !important; width: -moz-fit-content; width: -webkit-fit-content; width: fit-content; }
 
+.fa { padding-right: 5px; }
+
 .EventListItem { margin: 10px 0; }
 .EventListItemTitle { font-weight: bold; font-size: 11pt; }
-.fa { padding-right: 5px; }
+.EventListItemDateContainer { width: 80px; height: 80px; text-align: center; float: left; margin-right: 20px; }
+.EventListItemDayName { background-color: #363; color: #fff; height: 20px; border: 1px solid #363; border-radius: 10px 10px 0 0; }
+.EventListItemDayNumber { font-size: 50px; line-height: 50px; height: 60px; border: 1px solid #000; border-radius: 0 0 10px 10px; }

@@ -5,16 +5,25 @@
 
 <f:section name="EventItemStandalone">
 	<div class="EventListItem">
-		<div class="EventListItemTitle">{title}</div>
-		rendering TBD
+		<div class="EventListItemDateContainer">
+			<div class="EventListItemDayName">{startDate -> f:format.date(cldrFormat: 'EEEE', forceLocale: true)}</div>
+			<div class="EventListItemDayNumber">{startDate -> f:format.date(format: 'd')}</div>
+		</div>
+		<div class="EventListItemTextContainer">
+			<div class="EventListItemTitle">{title}</div>
+			<div class="EventListItemDate"><span class="fa fa-fw fa-clock-o"></span>{startDate -> f:format.date(forceLocale: true, localeFormatType: 'time', localeFormatLength: 'short')}</div>
+			<f:if condition="{host}"> <div class="EventListItemHost"><span class="fa fa-fw fa-users"></span>{host}</div></f:if>
+			<f:if condition="{location}"> <div class="EventListItemLocation"><span class="fa fa-fw fa-map-marker"></span>{location}</div></f:if>
+		</div>
+		<div class="clearfix"></div>
 	</div>
 </f:section>
 
 <f:section name="EventItemInPromoter">
 	<div class="EventListItem">
 		<div class="EventListItemTitle">{title}</div>
-		<f:if condition="{location}"> <div class="EventListItemLocation"><span class="fa fa-fw fa-map-marker"></span>{location}</div></f:if>
 		<f:if condition="{host}"> <div class="EventListItemHost"><span class="fa fa-fw fa-users"></span>{host}</div></f:if>
-		<f:if condition="{startDate}"> <div class="EventListItemDate"><span class="fa fa-fw fa-calendar"></span>{startDate -> f:format.date(format: 'd.m.Y H:i')}<f:if condition="{endDate}"> - {endDate -> f:format.date(format: 'd.m.Y H:i')}</f:if></f:if></div>
+		<f:if condition="{location}"> <div class="EventListItemLocation"><span class="fa fa-fw fa-map-marker"></span>{location}</div></f:if>
+		<f:if condition="{startDate}"> <div class="EventListItemDate"><span class="fa fa-fw fa-calendar"></span>{startDate -> f:format.date(format: 'd.m.Y H:i')}<f:if condition="{endDate}"> - {endDate -> f:format.date(format: 'd.m.Y H:i')}</f:if></div></f:if>
 	</div>
 </f:section>
