@@ -2,5 +2,5 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 <div class="RightColumnInfoBox">
 	<div class="InfoBoxHeading <f:if condition="{isImportant}"> InfoBoxImportant </f:if>">{neos:contentElement.editable(property: 'title')}</div>
-	<div class="InfoBoxBody"><ts:render path="contentRenderer" context="{node: content}" /></div>
+	<div class="InfoBoxBody"><ts:render path="contentRenderer" context="{node: content}" /><div class="clearfix"></div></div>
 </div>
