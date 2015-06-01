@@ -5,6 +5,6 @@ prototype(GSL.DuttweilerDe.Content:FrontpageInfoBox) < prototype(TYPO3.Neos:Cont
 
 	isImportant = ${q(node).property('isImportant')}
 
-	headline = ${q(node).property('headline')}
+	title = ${q(node).property('title')}
 	content = ${q(node).children('content').get(0)}
 }

@@ -313,7 +313,7 @@
           label: 'Allgemein'
           position: 2
   properties:
-    headline:
+    title:
       type: 'string'
       defaultValue: 'Überschrift'
       ui:
