@@ -1,15 +1,23 @@
 jQuery('.typo3-neos-nodetypes-image a.lightbox, .typo3-neos-nodetypes-textwithimage a.lightbox').attr('rel', 'gallery').fancybox({
 	helpers: {
-		overlay: {
-			css: {
-				'background': 'rgba(58, 42, 45, 0.95)'
-			}
-		},
 		title: {
 			type: 'inside'
 		}
-	},
-	beforeLoad: function() {
-		this.title = $(this.element).attr('title');
+	}
+});
+jQuery(".fancybox-various").fancybox({
+	maxWidth	: 800,
+	maxHeight	: 600,
+	fitToView	: false,
+	width		: '70%',
+	height		: '70%',
+	autoSize	: false,
+	closeClick	: false,
+	openEffect	: 'none',
+	closeEffect	: 'none',
+	helpers		: {
+		title	: {
+			type	: 'inside'
+		}
 	}
 });
