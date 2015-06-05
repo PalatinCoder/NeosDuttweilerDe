@@ -1,4 +1,4 @@
-jQuery('.typo3-neos-nodetypes-image a.lightbox, .typo3-neos-nodetypes-textwithimage a.lightbox').fancybox({
+jQuery('.typo3-neos-nodetypes-image a.lightbox, .typo3-neos-nodetypes-textwithimage a.lightbox').attr('rel', 'gallery').fancybox({
 	helpers: {
 		overlay: {
 			css: {
