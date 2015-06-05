@@ -16,6 +16,7 @@ TYPO3:
         api:
           label: 'Duttweiler - API'
           position: end
+
   Flow:
     i18n:
       defaultLocale: de
