@@ -8,6 +8,7 @@
 		<meta name="author" content="Gerhard Syring-Lingenfelder (www.g-sl.de); Jan Syring-Lingenfelder (www.jan-sl.de)" />
 	</f:section>
 	<f:section name="stylesheets">
+		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/jquery.fancybox.css', package: 'GSL.DuttweilerDe')}" />
         	<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/normalize.css', package: 'GSL.DuttweilerDe')}" />
         	<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Default.css', package: 'GSL.DuttweilerDe')}" />
 		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Common.css', package: 'GSL.DuttweilerDe')}" />
@@ -19,7 +20,8 @@
         <title>Duttweiler/Pfalz</title>
 
 	<f:section name="headScripts">
-        
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="{f:uri.resource(path: 'Scripts/jquery.fancybox.pack.js', package: 'GSL.DuttweilerDe')}"></script>        
 	</f:section>
     </head>
     <body>
@@ -84,6 +86,8 @@
         </div>
 	</f:section>
 	<f:section name="bodyScripts">
-
+		<script type="text/javascript">
+			jQuery('.typo3-neos-nodetypes-image a.lightbox, .typo3-neos-nodetypes-textwithimage a.lightbox').fancybox();
+		</script>
 	</f:section>
     </body>

@@ -11,6 +11,9 @@ root.frontPage {
 	renderPath = '/frontPage'
 }
 
+prototype(TYPO3.Neos.NodeTypes:Image).partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
+prototype(TYPO3.Neos.NodeTypes:TextWithImage).partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
+
 json = TYPO3.TypoScript:Case {
 	news {
 		condition = ${q(node).is('[instanceof GSL.DuttweilerDe.API:News]')}
