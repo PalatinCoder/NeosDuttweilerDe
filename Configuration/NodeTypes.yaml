@@ -248,7 +248,7 @@
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'News Meldung'
-    group: 'frontpage'
+    group: 'hidden'
     inspector:
       groups:
         news:
