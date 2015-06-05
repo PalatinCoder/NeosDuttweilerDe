@@ -6,7 +6,7 @@
 
 'GSL.DuttweilerDe.Pages:Frontpage':
   superTypes:
-    - 'TYPO3.Neos.NodeTypes:Page'
+    - 'TYPO3.Neos:Page'
   ui:
     label: Startseite
     inspector:
@@ -70,7 +70,7 @@
           group: related
 'GSL.DuttweilerDe.Pages:Default':
   superTypes:
-    - 'TYPO3.Neos.NodeTypes:Page'
+    - 'TYPO3.Neos:Page'
   ui:
     label: Standardinhalt
     inspector:
@@ -436,7 +436,7 @@
         TYPO3.Neos/Validation/IntegerValidator: null
 'GSL.DuttweilerDe.API:API':
   superTypes:
-    - 'TYPO3.Neos.NodeTypes:Page'
+    - 'TYPO3.Neos:Page'
   ui:
     label: 'API Root'
     group: api
