@@ -10,14 +10,14 @@
 				<f:else>
 					<f:if condition="{image.originalImage}">
 						<f:then>
-							 {f:if(condition: '{enableFancybox}', then: '<a href="{f:uri.resource(resource: image.originalImage.resource)}" title="{title}" class="lightbox">')}
+							 <f:if condition="{enableFancybox]"><a href="{f:uri.resource(resource: image.originalImage.resource)}" title="{title}" class="fancybox" {f:if(condition: '{fancyboxGroup}', then: 'rel="{fancyboxGroup}"')}></f:if>
 								<media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" />
-							{f:if(condition: '{enableFancybox}', then: '</a>')}
+							<f:if condition="{enableFancybox]"></a></f:if>
 						</f:then>
 						<f:else>
-							{f:if(condition: '{enableFancybox}', then: '<a href="{f:uri.resource(resource: image.resource)}" title="{title}" class="lightbox">')}
+							<f:if condition="{enableFancybox]"><a href="{f:uri.resource(resource: image.resource)}" title="{title}" class="fancybox" {f:if(condition: '{fancyboxGroup}', then: 'rel="{fancyboxGroup}"')}></f:if>
 								<media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" />
-							{f:if(condition: '{enableFancybox}', then: '</a>')}
+							<f:if condition="{enableFancybox]"></a></f:if>
 						</f:else>
 					</f:if>
 				</f:else>

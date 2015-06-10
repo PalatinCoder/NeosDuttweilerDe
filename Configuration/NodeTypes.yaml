@@ -523,3 +523,11 @@
         inspector:
           group: 'image'
           position: 500
+    fancyboxGroup:
+      type: 'string'
+      defaultValue: ''
+      ui:
+        label: 'Fancybox Gallery'
+        inspector:
+          group: 'image'
+          position: 500

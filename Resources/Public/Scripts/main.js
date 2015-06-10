@@ -1,4 +1,4 @@
-jQuery('.typo3-neos-nodetypes-image a.lightbox, .typo3-neos-nodetypes-textwithimage a.lightbox').attr('rel', 'gallery').fancybox({
+jQuery('.typo3-neos-nodetypes-image a.fancybox, .typo3-neos-nodetypes-textwithimage a.fancybox').fancybox({
 	helpers: {
 		title: {
 			type: 'inside'
