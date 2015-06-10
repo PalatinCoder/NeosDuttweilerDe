@@ -6,7 +6,6 @@ prototype(GSL.DuttweilerDe.API:NewsList) < prototype(TYPO3.TypoScript:Http.Messa
 		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/API/GenericList.html'
 		listItem = GSL.DuttweilerDe.Content:FrontpageNewsItem {
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/API/NewsItem.html'
-			uid = ${q(node).property('_name')}
 		}
 	}
 
