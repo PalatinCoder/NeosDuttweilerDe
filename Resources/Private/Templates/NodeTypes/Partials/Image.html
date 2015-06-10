@@ -5,20 +5,19 @@
 		<f:then>
 			<f:if condition="{link}">
 				<f:then>
-					<a href="{link}"><media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping
-}" allowUpScaling="{allowUpScaling}" /></a>
+					<a href="{link}"><media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" /></a>
 				</f:then>
 				<f:else>
 					<f:if condition="{image.originalImage}">
 						<f:then>
-							<a href="{f:uri.resource(resource: image.originalImage.resource)}" title="{title}" class="lightbox">
+							 {f:if(condition: '{enableFancybox}', then: '<a href="{f:uri.resource(resource: image.originalImage.resource)}" title="{title}" class="lightbox">')}
 								<media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" />
-							</a>
+							{f:if(condition: '{enableFancybox}', then: '</a>')}
 						</f:then>
 						<f:else>
-							<a href="{f:uri.resource(resource: image.resource)}" title="{title}" class="lightbox">
+							{f:if(condition: '{enableFancybox}', then: '<a href="{f:uri.resource(resource: image.resource)}" title="{title}" class="lightbox">')}
 								<media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" />
-							</a>
+							{f:if(condition: '{enableFancybox}', then: '</a>')}
 						</f:else>
 					</f:if>
 				</f:else>

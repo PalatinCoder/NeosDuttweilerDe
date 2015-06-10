@@ -512,3 +512,14 @@
       ui:
         aloha:
           autoparagraph: FALSE
+
+'TYPO3.Neos.NodeTypes:ContentImageMixin':
+  properties:
+    enableFancybox:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Fancybox aktivieren'
+        inspector:
+          group: 'image'
+          position: 500
