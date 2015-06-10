@@ -21,28 +21,35 @@ class NotificationService {
 	/**
 	 * Check if the published node is a News and send GCM request
 	 *
-	 * @param NodeInterface $node
+	 * @param RequestInterface $request
+	 * @param ResponseInterface $response
+	 * @param ControllerInterface $controller
 	 * @return void
 	 */
 	
-	public function notifyNodePublished(NodeInterface $node) {	
-		
+	public function notifyNodePublished(RequestInteface $request, ResponseInterface $response, ControllerInterface $controller) {
+		if (!$response instanceof Response || !$controller instanceof NodeController) {
+			return;
+		}
+		$arguments = $controller->getControllerContext()->getArguments();
+		if (!$arguments->hasArgument('node')) {
+			return;
+		}
+		$node = $arguments->getArgument('node')->getValue();
+		if (!$node instanceof NodeInterface) {
+			return;
+		}
+		if ($node->getContext()->getWorkspaceName() !== 'live') {
+			return;
+		}
+
+		// unstable from here 
+
 		if (!$node->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem')) {
 			return;
 		}
-		
-		$url = "http://localhost/not-existing-url" + $node->getName();
 
-		$ch = curl_init($url);	
-		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_REFERER, "News: " + $node->getName());
-		curl_setopt($ch, CURLOPT_HEADER, 0);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+		var_dump ($node);
 		
-		curl_exec($ch);
-
-		curl_close($ch);
-	}
+		// check if node is new or changed
 }
-?>
