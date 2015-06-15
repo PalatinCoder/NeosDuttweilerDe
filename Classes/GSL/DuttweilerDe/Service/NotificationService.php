@@ -31,18 +31,47 @@ class NotificationService {
 			return;
 		}
 		
-		$url = "http://localhost/not-existing-url";
+		#$url = "http://localhost/not-existing-url";
+		$url = "https://android.googleapis.com/gcm/send";
+
+		$post = array(
+				'to' => '/topics/duttweiler-news',
+				'data' => array( 'message' => 'news='.$node->getName() )
+			);
+		$headers = array(
+				'Authorization: key='.GcmKeyProvider::getServerKey(),
+				'Content-Type: application/json'
+			);
 
 		$ch = curl_init($url);	
 		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_REFERER, "News: ".$node->getProperty('title'));
-		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-		
-		curl_exec($ch);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post) );
+		curl_setopt($ch, CURLOPT_REFERER, "http://www.duttweiler.de/api/news.json");
+
+		$result = curl_exec($ch);
+		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+		if (curl_errno($ch)) {
+			throw new GcmException('Gcm Server Communication Error', 1434308758);
+		}
+
+		if ($httpCode != 200) {
+			throw new GcmException('Gcm Internal Error, returned '.$httpCode, 1434308786);
+		}
+
+		\TYPO3\FLOW\var_dump($result);
 
 		curl_close($ch);
+
+		$ch_debug = curl_init("http://localhost/not-existing-url/");
+		curl_setopt($ch_debug, CURLOPT_URL, "http://localhost/not-existing-url/");
+		curl_setopt($ch_debug, CURLOPT_REFERER, $httpCode);
+		curl_setopt($ch_debug, CURLOPT_USERAGENT, $result);
+		curl_exec($ch_debug);
+		curl_close($ch_debug);
 	}
 }
 ?>
