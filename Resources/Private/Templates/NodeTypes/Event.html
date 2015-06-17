@@ -1,6 +1,7 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
 <f:if condition="{isInPromoter}">
-	<f:then> <f:render section="EventItemInPromoter" arguments="{title: title, location: location, host: host, startDate: startDate, endDate: endDate}" /> </f:then>
-	<f:else> <f:render section="EventItemStandalone" arguments="{title: title, location: location, host: host, startDate: startDate, endDate: endDate}" /> </f:else>
+	<f:then> <f:render section="EventItemInPromoter" arguments="{title: title, location: location, host: host, startDate: startDate, endDate: endDate, link: link}" /> </f:then>
+	<f:else> <f:render section="EventItemStandalone" arguments="{title: title, location: location, host: host, startDate: startDate, endDate: endDate, link: link}" /> </f:else>
 </f:if>
 
 <f:section name="EventItemStandalone">
@@ -10,7 +11,12 @@
 			<div class="EventListItemDayNumber">{startDate -> f:format.date(format: 'd')}</div>
 		</div>
 		<div class="EventListItemTextContainer">
-			<div class="EventListItemTitle">{title}</div>
+			<div class="EventListItemTitle">
+				<f:if condition="{link}">
+					<f:then><neos:link.node node="{link}">{title}</neos:link.node></f:then>
+					<f:else>{title}</f:else>
+				</f:if>
+			</div>
 			<div class="EventListItemDate"><span class="fa fa-fw fa-clock-o"></span>{startDate -> f:format.date(forceLocale: true, localeFormatType: 'time', localeFormatLength: 'short')}</div>
 			<f:if condition="{host}"> <div class="EventListItemHost"><span class="fa fa-fw fa-users"></span>{host}</div></f:if>
 			<f:if condition="{location}"> <div class="EventListItemLocation"><span class="fa fa-fw fa-map-marker"></span>{location}</div></f:if>
@@ -21,7 +27,12 @@
 
 <f:section name="EventItemInPromoter">
 	<div class="EventListItem">
-		<div class="EventListItemTitle">{title}</div>
+		<div class="EventListItemTitle">
+			<f:if condition="{link}">
+				<f:then><neos:link.node node="{link}">{title}</neos:link.node></f:then>
+				<f:else>{title}</f:else>
+			</f:if>
+		</div>
 		<f:if condition="{host}"> <div class="EventListItemHost"><span class="fa fa-fw fa-users"></span>{host}</div></f:if>
 		<f:if condition="{location}"> <div class="EventListItemLocation"><span class="fa fa-fw fa-map-marker"></span>{location}</div></f:if>
 		<f:if condition="{startDate}"> <div class="EventListItemDate"><span class="fa fa-fw fa-calendar"></span>{startDate -> f:format.date(format: 'd.m.Y H:i')}<f:if condition="{endDate}"> - {endDate -> f:format.date(format: 'd.m.Y H:i')}</f:if></div></f:if>

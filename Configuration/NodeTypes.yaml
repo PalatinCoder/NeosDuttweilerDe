@@ -416,6 +416,12 @@
         label: 'Auf Startseite zeigen?'
         inspector:
           group: 'frontpage'
+    link:
+      type: 'reference'
+      ui:
+        label: 'Detailseite'
+        inspector:
+          group: 'general'
 
 'GSL.DuttweilerDe.Content:EventPromoter':
   superTypes: ['TYPO3.Neos:Content']
