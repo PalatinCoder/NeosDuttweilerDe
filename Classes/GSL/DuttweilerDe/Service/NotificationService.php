@@ -36,6 +36,7 @@ class NotificationService {
 
 		$post = array(
 				'to' => '/topics/duttweiler-news',
+				'delay_while_idle' => true,
 				'data' => array( 'message' => 'news='.$node->getName() )
 			);
 		$headers = array(
@@ -59,7 +60,7 @@ class NotificationService {
 		}
 
 		if ($httpCode != 200) {
-			throw new GcmException('Gcm Internal Error, returned '.$httpCode, 1434308786);
+			throw new GcmException('Gcm Internal Error, returned '.$httpCode.', result is '.$result, 1434308786);
 		}
 
 		\TYPO3\FLOW\var_dump($result);
