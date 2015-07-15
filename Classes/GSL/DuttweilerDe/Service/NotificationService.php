@@ -37,7 +37,7 @@ class NotificationService {
 		$post = array(
 				'to' => '/topics/duttweiler-news',
 				'delay_while_idle' => true,
-				'data' => array( 'message' => 'news='.$node->getName() )
+				'data' => array( 'message' => $node->getProperty('title').'='.$node->getName() )
 			);
 		$headers = array(
 				'Authorization: key='.GcmKeyProvider::getServerKey(),
