@@ -1,4 +1,4 @@
-#PageHeading { background-image: url("../Images/b-logo-xxx.jpg"); background-size: contain; background-repeat: no-repeat; background-position: bottom; border-top: 1px solid #363; height: 200px; }
+#PageHeading { background-image: url("../Images/b-logo-xxx.jpg"); background-size: contain; background-repeat: no-repeat; background-position: bottom; border-top: 1px solid #363; height: 200px; position: relative; }
 
 /* desktop, large enough tablets */
 @media screen and (min-width: 820px) {
@@ -12,7 +12,7 @@
 
 /* smaller screens */
 @media screen and (max-width: 819px) {
-	#menuButton { position: absolute; top: 0; left: 0; display: inline-block; background-color: #363; }
+	#menuButton { position: absolute; bottom: 0; left: 0; display: inline-block; background-color: #363; }
 	#IndexPageTopMenu { position: absolute; top: 0; left: 0; background-color: #363; font-size: 10pt; color: #fff; width: -webkit-fit-content; width: -moz-fit-content; width: fit-content; }
 	#IndexPageTopMenu a { color: #fff; text-decoration: none; }
 	#IndexPageTopMenu a:hover { color: #363; background-color: #fff; }
