@@ -10,3 +10,17 @@
     node:
       handler: TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface
   appendExceedingArguments: true
+
+-
+  name: 'TYPO3 Neos :: Frontend :: RSS API'
+  uriPattern: '{node}.rss'
+  defaults:
+    '@package': TYPO3.Neos
+    '@controller': Frontend\Node
+    '@action': show
+    '@format': rss
+  routeParts:
+    node:
+      handler: TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface
+  appendExceedingArguments: true
+

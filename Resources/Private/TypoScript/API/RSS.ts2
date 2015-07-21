@@ -1,0 +1,12 @@
+prototype(GSL.DuttweilerDe.API:RSS) < prototype(GSL.DuttweilerDe.API:NewsList) {
+	httpResponseHead {
+		headers.Content-Type = 'text/xml'
+	}
+	content = GSL.DuttweilerDe.Content:FrontpageNewsList {
+		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/API/RssList.html'
+		listItem = GSL.DuttweilerDe.Content:FrontpageNewsItem {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/API/RssItem.html'
+			uid = ${q(node).property('_name')}
+		}
+	}
+}

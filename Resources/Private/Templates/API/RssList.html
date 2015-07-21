@@ -1,0 +1,17 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="http://www.duttweiler.de/api/news.rss" rel="self" type="application/rss+xml" />
+    <title>Duttweiler.de Nachrichten</title>
+    <link>http://www.duttweiler.de</link>
+    <description>Nachrichten aus Duttweiler</description>
+    <language>de-de</language>
+    <copyright>Gerhard Syring-Lingenfelder (www.g-sl.de)</copyright>
+    <pubDate>Tue, 21 Jul 2015 09:30:00 +0200</pubDate>
+
+<f:for each="{listCollection}" as="item" iteration="iterator">
+    <ts:render path="listItem" context="{node: item}" />
+</f:for>
+
+  </channel>
+</rss>

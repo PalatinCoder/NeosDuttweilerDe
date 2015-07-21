@@ -24,3 +24,4 @@ json = TYPO3.TypoScript:Case {
 		type = 'GSL.DuttweilerDe.API:EventsList'
 	}
 }
+rss = GSL.DuttweilerDe.API:RSS
