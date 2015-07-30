@@ -3,7 +3,8 @@
     "type": "typo3-flow-site",
     "description": "Neos Site Package for duttweiler.de (c) www.jan-sl.de",
     "require": {
-        "typo3/neos-base-distribution": "1.2.*"
+        "typo3/neos": "*",
+        "typo3/neos-nodetypes": "*"
     },
     "autoload": {
         "psr-0": {
