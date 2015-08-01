@@ -18,6 +18,9 @@ a:hover { text-decoration: underline; }
 .typo3-neos-alignment-left { float: left; margin-right: 2em; margin-bottom: 1em; }
 .typo3-neos-alignment-center { margin: 0 auto !important; width: -moz-fit-content; width: -webkit-fit-content; width: fit-content; }
 
+div.typo3-neos-nodetypes-image figure.typo3-neos-alignment-left { margin-right: 10px; }
+div.typo3-neos-nodetypes-image figure.typo3-neos-alignment-right { margin-left: 10px; }
+
 .typo3-neos-nodetypes-twocolumn > div, .typo3-neos-nodetypes-threecolumn > div, .typo3-neos-nodetypes-fourcolumn > div { margin: 0; float: left; }
 .columns-50-50 > div.column { width: 50%; }
 .columns-25-75 > div.column:nth-child(1) { width: 25%; }
