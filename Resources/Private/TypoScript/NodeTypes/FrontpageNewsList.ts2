@@ -1,7 +1,7 @@
 prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
 
-	@override.chronikNode = ${q(documentNode).property('chronikRootNode')}
+	@context.chronikNode = ${q(documentNode).property('chronikRootNode')}
 	listCollection = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).get()}
 
 	listItem = GSL.DuttweilerDe.Content:FrontpageNewsItem
