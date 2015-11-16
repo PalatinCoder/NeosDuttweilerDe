@@ -22,7 +22,7 @@ frontPage = Page {
 
 		parts {
 			menu = Menu {
-                		renderHiddenInIndex = true
+                		#renderHiddenInIndex = true
             		}
 		}
 

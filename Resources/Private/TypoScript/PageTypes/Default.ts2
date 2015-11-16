@@ -45,6 +45,9 @@ page = Page {
                 itemCollection = ${q(documentNode).property('relatedPages')}
             }
             parentPage = Menu {
+                # hide a-bis-z
+                @if.1 = ${q(documentNode).parent().get() != q(documentNode).find('#bb5879ad-b374-f384-874f-b705076e2c73').get()}
+
                 templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/TypoScriptObjects/DefaultPageMenu.html'
                 itemCollection = ${q(documentNode).parent().get()}
             }
