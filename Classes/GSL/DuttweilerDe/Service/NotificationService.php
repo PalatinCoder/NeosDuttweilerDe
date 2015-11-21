@@ -34,10 +34,15 @@ class NotificationService {
 		#$url = "http://localhost/not-existing-url";
 		$url = "https://android.googleapis.com/gcm/send";
 
+		$nodeData = array(	'title' => $node->getProperty('title'),
+					'subheadline' => $node->getProperty('subheadline'),
+					'nodeName' => $node->getName() 
+				);
+
 		$post = array(
 				'to' => '/topics/duttweiler-news',
 				'delay_while_idle' => true,
-				'data' => array( 'message' => $node->getProperty('title').'='.$node->getName() )
+				'data' => $nodeData
 			);
 		$headers = array(
 				'Authorization: key='.GcmKeyProvider::getServerKey(),
@@ -67,12 +72,12 @@ class NotificationService {
 
 		curl_close($ch);
 
-		$ch_debug = curl_init("http://localhost/not-existing-url/");
+		/*$ch_debug = curl_init("http://localhost/not-existing-url/");
 		curl_setopt($ch_debug, CURLOPT_URL, "http://localhost/not-existing-url/");
 		curl_setopt($ch_debug, CURLOPT_REFERER, $httpCode);
 		curl_setopt($ch_debug, CURLOPT_USERAGENT, $result);
 		curl_exec($ch_debug);
-		curl_close($ch_debug);
+		curl_close($ch_debug);*/
 	}
 }
 ?>
