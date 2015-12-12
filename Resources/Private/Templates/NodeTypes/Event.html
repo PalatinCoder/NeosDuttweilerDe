@@ -1,7 +1,15 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
 <f:if condition="{isInPromoter}">
-	<f:then> <f:render section="EventItemInPromoter" arguments="{title: title, location: location, host: host, startDate: startDate, endDate: endDate, link: link}" /> </f:then>
-	<f:else> <f:render section="EventItemStandalone" arguments="{title: title, location: location, host: host, startDate: startDate, endDate: endDate, link: link}" /> </f:else>
+	<f:then> 
+		<f:if condition="{banner}">
+			<f:then> <f:render section="EventItemInPromoterBanner" arguments="{banner: banner, title: title, link: link}" /> </f:then>
+			<f:else> <f:render section="EventItemInPromoter" arguments="{title: title, location: location, host: host, startDate: startDate, endDate: endDate, link: link}" /> </f:else>
+		</f:if>
+	</f:then>
+	<f:else>
+		<f:render section="EventItemStandalone" arguments="{title: title, location: location, host: host, startDate: startDate, endDate: endDate, link: link}" />
+	</f:else>
 </f:if>
 
 <f:section name="EventItemStandalone">
@@ -36,5 +44,14 @@
 		<f:if condition="{host}"> <div class="EventListItemHost"><span class="fa fa-fw fa-users"></span>{host}</div></f:if>
 		<f:if condition="{location}"> <div class="EventListItemLocation"><span class="fa fa-fw fa-map-marker"></span>{location}</div></f:if>
 		<f:if condition="{startDate}"> <div class="EventListItemDate"><span class="fa fa-fw fa-calendar"></span>{startDate -> f:format.date(format: 'd.m.Y H:i')}<f:if condition="{endDate}"> - {endDate -> f:format.date(format: 'd.m.Y H:i')}</f:if></div></f:if>
+	</div>
+</f:section>
+
+<f:section name="EventItemInPromoterBanner">
+	<div class="EventListItem">
+		<f:if condition="{link}">
+			<f:then><neos:link.node node="{link}"><img src="{media:uri.image(image: banner)}" alt="{title}" /></neos:link.node></f:then>
+			<f:else><img src="{media:uri.image(image: banner)}" alt="{title}" /></f:else>
+		</f:if>
 	</div>
 </f:section>

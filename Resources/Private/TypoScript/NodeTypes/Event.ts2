@@ -7,4 +7,5 @@ prototype(GSL.DuttweilerDe.Content:Event) < prototype(TYPO3.Neos:Content) {
 	startDate = ${q(node).property('startDate')}
 	endDate = ${q(node).property('endDate')}
 	link = ${q(node).property('link')}
+	banner = ${q(node).property('banner')}
 }
