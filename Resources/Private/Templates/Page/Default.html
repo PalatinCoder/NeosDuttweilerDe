@@ -45,10 +45,10 @@
                     <div id="PageArticleHeading">
                         <header>{header}</header>
                     </div>
-                    <f:if condition="{headerImage}">
-                        <img id="PageHeadingCustomImage" src="{media:uri.image(image: headerImage)}" alt="{headerImageAlternativeText}" />
-                    </f:if>
                 </div>
+                <f:if condition="{headerImage}">
+                    <img id="PageHeadingCustomImage" src="{media:uri.image(image: headerImage)}" alt="{headerImageAlternativeText}" />
+                </f:if>
                 <div class="clearfix"></div>
                 <nav id="RelatedPagesMenu">
                     <ul>
