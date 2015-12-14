@@ -28,6 +28,7 @@ div.neos-contentcollection table tr:nth-child(even) { background-color: #eee; }
 div.neos-contentcollection table th { background-color: #363; color: white; }
 
 .typo3-neos-nodetypes-twocolumn > div, .typo3-neos-nodetypes-threecolumn > div, .typo3-neos-nodetypes-fourcolumn > div { margin: 0; float: left; }
+.typo3-neos-nodetypes-twocolumn, .typo3-neos-nodetypes-threecolumn, .typo3-neos-nodetypes-fourcolumn { clear: both; }
 .columns-50-50 > div.column { width: 50%; }
 .columns-25-75 > div.column:nth-child(1) { width: 25%; }
 .columns-25-75 > div.column:nth-child(2) { width: 75%; }
