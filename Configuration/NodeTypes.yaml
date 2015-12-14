@@ -508,6 +508,7 @@
       defaultValue: true
       ui:
         label: 'Fancybox aktivieren'
+        reloadIfChanged: true
         inspector:
           group: image
           position: 500

@@ -5,30 +5,19 @@
 		<f:then>
 			<f:if condition="{link}">
 				<f:then>
-					<a href="{link}"><media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" /></a>
+					<a href="{link}"><media:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" /></a>
 				</f:then>
 				<f:else>
-					<f:if condition="{image.originalImage}">
-						<f:then>
-							 <f:if condition="{enableFancybox]"><a href="{f:uri.resource(resource: image.originalImage.resource)}" title="{title}" class="fancybox" {f:if(condition: '{fancyboxGroup}', then: 'rel="{fancyboxGroup}"')}></f:if>
-								<media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" />
-							<f:if condition="{enableFancybox]"></a></f:if>
-						</f:then>
-						<f:else>
-							<f:if condition="{enableFancybox]"><a href="{f:uri.resource(resource: image.resource)}" title="{title}" class="fancybox" {f:if(condition: '{fancyboxGroup}', then: 'rel="{fancyboxGroup}"')}></f:if>
-								<media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" allowCropping="{allowCropping}" allowUpScaling="{allowUpScaling}" />
-							<f:if condition="{enableFancybox]"></a></f:if>
-						</f:else>
-					</f:if>
+					<f:if condition="{enableFancybox}"><a href="{f:uri.resource(resource: image.resource)}" title="{title}" class="fancybox" {f:if(condition: '{fancyboxGroup}', then: 'rel="{fancyboxGroup}"')}></f:if>
+					<media:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+					<f:if condition="{enableFancybox}"></a></f:if>
 				</f:else>
 			</f:if>
 		</f:then>
 		<f:else>
-			<f:security.ifAccess privilegeTarget="TYPO3_Neos_Backend_GeneralAccess">
-				<f:if condition="{node.context.workspace.name} != 'live'">
-					<img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="neos-handle" />
-				</f:if>
-			</f:security.ifAccess>
+			<f:if condition="{neos:rendering.inEditMode()}">
+				<img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="neos-handle" />
+			</f:if>
 		</f:else>
 	</f:if>
 	<f:if condition="{hasCaption}">
