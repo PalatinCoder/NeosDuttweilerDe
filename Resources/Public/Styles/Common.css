@@ -78,3 +78,5 @@ nav.typo3-neos-nodetypes-menu ul { list-style-type: none; padding-left: 10px; }
 nav.typo3-neos-nodetypes-menu ul li { float: left; padding-left: 10px; }
 nav.typo3-neos-nodetypes-menu ul li:nth-last-of-type(5n+1) { clear: left; }
 nav.typo3-neos-nodetypes-menu ul li:only-of-type { float: none; padding-left: 0px; clear: left; }
+
+img { border: 0; max-width: 100%; height: auto; display: inline-block; vertical-align: middle; }
