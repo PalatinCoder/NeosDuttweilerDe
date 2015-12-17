@@ -73,3 +73,8 @@ div.typo3-neos-nodetypes-textwithimage table th
 .columns-25-25-50 > div.column:nth-child(2) { width: 25%; }
 .columns-25-25-50 > div.column:nth-child(3) { width: 50%; }
 .columns-25-25-25-25 > div.column { width: 25%; }
+
+nav.typo3-neos-nodetypes-menu ul { list-style-type: none; padding-left: 10px; }
+nav.typo3-neos-nodetypes-menu ul li { float: left; padding-left: 10px; }
+nav.typo3-neos-nodetypes-menu ul li:nth-last-of-type(5n+1) { clear: left; }
+nav.typo3-neos-nodetypes-menu ul li:only-of-type { float: none; padding-left: 0px; clear: left; }
