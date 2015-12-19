@@ -23,7 +23,8 @@ page = Page {
         
         headerImage = ${q(node).property('headerImage')}
         headerImageAlternativeText = ${q(node).property('headerImageAlternativeText')}
-        
+
+        isChronikItem = ${q(documentNode).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
         date = ${q(node).property('date')}
         
         hasPressespiegel = ${q(node).property('hasPressespiegel')}

@@ -103,19 +103,23 @@
   properties:
     subheadline:
       type: string
-      defaultValue: Unterüberschrift
+      defaultValue: ''
       ui:
         inspector:
-          group: general
+          group: document
         label: Unterüberschrift
         reloadIfChanged: true
-    date:
-      type: DateTime
+        inlineEditable: TRUE
+#    date:
+#      type: DateTime
+#      ui:
+#        label: Datum
+#        reloadIfChanged: true
+#        inspector:
+#          group: general
+    title:
       ui:
-        label: Datum
-        reloadIfChanged: true
-        inspector:
-          group: general
+        inlineEditable: TRUE
     headerImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
@@ -184,6 +188,13 @@
         reloadIfChanged: true
         inspector:
           group: related
+    date:
+      type: DateTime
+      ui:
+        label: Datum
+        reloadIfChanged: true
+        inspector:
+          group: general
 'GSL.DuttweilerDe.Content:PressespiegelItem':
   superTypes:
     'TYPO3.Neos:Content': true
