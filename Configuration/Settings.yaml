@@ -17,6 +17,21 @@ TYPO3:
           label: 'Duttweiler - API'
           position: end
 
+    userInterface:
+      navigateComponent:
+        nodeTree:
+          loadingDepth: 2
+
   Flow:
     i18n:
       defaultLocale: de
+
+    error:
+      exceptionHandler:
+        renderingGroups:
+          'notFoundExceptions':
+            matchingStatusCodes: [ 404 ]
+            options:
+              templatePathAndFilename: 'resource://GSL.DuttweilerDe/Private/Templates/Page/Error.html'
+              layoutRootPath: 'resource://TYPO3.Neos/Private/Layouts/'
+              format: 'html'
