@@ -531,3 +531,23 @@
         inspector:
           group: image
           position: 500
+    displayWidth:
+      type: integer
+      ui:
+        label: 'Breite'
+        reloadIfChanged: true
+        inspector:
+          group: image
+          position: 200
+      validation:
+        'TYPO3.Neos/Validation/ImageSizeValidator':
+    displayHeight:
+      type: integer
+      ui:
+        label: 'Höhe'
+        reloadIfChanged: true
+        inspector:
+          group: image
+          position: 200
+      validation:
+        'TYPO3.Neos/Validation/ImageSizeValidator':
