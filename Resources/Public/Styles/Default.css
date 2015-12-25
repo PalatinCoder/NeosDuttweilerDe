@@ -11,7 +11,7 @@
 #PageHeadingCustomImage { margin-right: 25px; margin-top: 65px; float: right; }
 #PageHeadingImprintLink { display: inline-block; background-color: #eee; font-size: 8pt; position: absolute; right: 0; bottom: 0; padding: 0 2px; height: 20px; }
 
-#PageBody article { padding: 20px; }
+#PageBody article { padding: 20px; font-size: 10pt; }
 #PageBody article header { color: #363; width: 100%; border-bottom: 1px solid black; font-size: 14pt; padding-bottom: 5px; margin: 5px 0 10px 0; }
 
 #ArticlePressespiegel { margin-top: 30px; }
@@ -30,3 +30,6 @@
 .EventListItemDateContainer { width: 80px; height: 80px; text-align: center; float: left; margin-right: 20px; }
 .EventListItemDayName { background-color: #363; color: #fff; height: 20px; border: 1px solid #363; border-radius: 10px 10px 0 0; }
 .EventListItemDayNumber { font-size: 50px; line-height: 50px; height: 60px; border: 1px solid #000; border-radius: 0 0 10px 10px; }
+
+nav.typo3-neos-nodetypes-menu li { list-style-type: none; position: relative; min-height: 20px; }
+nav.typo3-neos-nodetypes-menu li::before { content: ''; position: absolute; width: 10px; height: 10px; background-color: #363; margin: 5px 0 0 -20px; }
