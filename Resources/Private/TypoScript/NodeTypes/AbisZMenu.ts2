@@ -1,0 +1,5 @@
+prototype(GSL.DuttweilerDe.Content:AbisZMenu) < prototype(TYPO3.Neos.NodeTypes:Menu) {
+	@class = 'GSL\\DuttweilerDe\\TypoScript\\AbisZMenuImplementation'
+	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/AbisZMenu.html'
+	partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes'
+}
