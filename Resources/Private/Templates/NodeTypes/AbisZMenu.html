@@ -11,7 +11,7 @@
 		<f:then>
 			<f:for each="{items}" as="item">
 			  <f:if condition="{item.isHeading}">
-			    <f:then> <f:render partial="Headline" arguments="{title: item.label}" /> </f:then>
+			    <f:then> <f:render partial="AbisZHeadline" arguments="{title: item.label}" /> </f:then>
 			    <f:else>	
 				<li{ts:render(path:'{item.state}.attributes', context: {item: item}) -> f:format.raw()}>
 				<neos:link.node node="{item.node}">{item.label}</neos:link.node>
