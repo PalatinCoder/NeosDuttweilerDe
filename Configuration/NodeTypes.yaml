@@ -354,6 +354,12 @@
     'TYPO3.Neos.NodeTypes:Menu': true
   ui:
     group: duttweiler-general
+'GSL.DuttweilerDe.Content:AbisZMenu':
+  superTypes:
+    'TYPO3.Neos.NodeTypes:Menu': true
+  ui:
+    group: duttweiler-general
+    label: 'A bis Z Menu'
 'GSL.DuttweilerDe.Content:Event':
   superTypes:
     'TYPO3.Neos:Content': true
