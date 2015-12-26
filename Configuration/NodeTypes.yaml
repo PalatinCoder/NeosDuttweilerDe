@@ -360,6 +360,7 @@
   ui:
     group: duttweiler-general
     label: 'A bis Z Menu'
+  properties: ~
 'GSL.DuttweilerDe.Content:Event':
   superTypes:
     'TYPO3.Neos:Content': true
