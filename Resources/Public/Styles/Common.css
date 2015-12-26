@@ -75,3 +75,5 @@ div.typo3-neos-nodetypes-textwithimage table th
 .columns-25-25-25-25 > div.column { width: 25%; }
 
 img { border: 0; max-width: 100%; height: auto; display: inline-block; vertical-align: middle; }
+
+.back-to-top { background: #363; color: white; position: fixed; bottom: 20px; right: 20px; padding: 1em; }
