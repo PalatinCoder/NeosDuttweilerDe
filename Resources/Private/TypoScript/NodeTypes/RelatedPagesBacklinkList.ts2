@@ -3,7 +3,7 @@ prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklinkList) {
 
     // path down there is /sites/duttweilerde/a-bis-z/chronik
 
-    listCollection = ${q(site).find('/sites/duttweilerde/node-551c040d4ec10/node-55201964ec3fd').children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').filterByReference('relatedPages', documentNode).get()}
+    listCollection = ${q(site).find('#529a59e2-1849-2782-471c-7635f47167de').children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').filterByReference('relatedPages', documentNode).get()}
 
     listItem = GSL.DuttweilerDe.Content:RelatedPagesBacklink
 }
