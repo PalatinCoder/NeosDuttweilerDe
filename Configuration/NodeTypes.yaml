@@ -179,7 +179,7 @@
       groups:
         related:
           label: 'Kategorie/Übergeordnete Seite'
-          position: 50
+          position: 30
   properties:
     relatedPages:
       type: references
