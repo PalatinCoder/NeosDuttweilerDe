@@ -6,7 +6,7 @@
 	<div class="NewsItemSubheading">{subheadline}</div>
 	<div class="NewsItemBody">
         <f:if condition="{image}">
-            <img class="typo3-neos-alignment-right" style="height: 150px" src="{media:uri.image(image: image)}" alt="{imageAlternativeText}" />
+            <img class="typo3-neos-alignment-right" height="150" src="{media:uri.image(image: image)}" alt="{imageAlternativeText}" />
         </f:if>
 	<f:if condition="{isStandalone}">
 	 <f:then> {neos:contentElement.editable(property: 'text')} </f:then>
