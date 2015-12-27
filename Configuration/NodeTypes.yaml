@@ -558,3 +558,49 @@
           position: 200
       validation:
         'TYPO3.Neos/Validation/ImageSizeValidator':
+'GSL.DuttweilerDe:MultipleImages':
+  superTypes:
+    'TYPO3.Neos.NodeTypes:AssetList': TRUE
+  ui:
+    label: 'Mehrere Bilder (Galerie)'
+    icon: icon-picture
+    inspector:
+      groups:
+        image:
+          label: 'Bilder'
+  properties:
+    assets:
+#      type: array<TYPO3\Media\Domain\Model\ImageInterface>
+      ui:
+        label: 'Bilder'
+        inspector:
+          group: image
+          label: 'Bilder'
+    fancyboxGroup:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Fancybox Gallery'
+        inspector:
+          group: image
+          position: 500
+    displayWidth:
+      type: integer
+      ui:
+        label: 'Breite'
+        reloadIfChanged: true
+        inspector:
+          group: image
+          position: 200
+      validation:
+        'TYPO3.Neos/Validation/ImageSizeValidator': TRUE
+    displayHeight:
+      type: integer
+      ui:
+        label: 'Höhe'
+        reloadIfChanged: true
+        inspector:
+          group: image
+          position: 200
+      validation:
+        'TYPO3.Neos/Validation/ImageSizeValidator': TRUE

@@ -1,0 +1,20 @@
+<f:if condition="{assets}">
+	<f:then>
+		<div{attributes -> f:format.raw()}>
+			<f:for each="{assets}" as="asset">
+				<f:render partial="Image" arguments="{image: asset, enableFancybox: 'true', fancyboxGroup: fancyboxGroup, title: asset.caption, maximumWidth: maxWidth, maximumHeight: maxHeight}" />
+			</f:for>
+			<div class="clearfix"></div>
+		</div>
+	</f:then>
+	<f:else>
+		<f:security.ifAccess privilegeTarget="TYPO3.Neos:Backend.GeneralAccess">
+			<f:if condition="{node.context.workspace.name} != 'live'">
+				<ul{attributes -> f:format.raw()}>
+					<li>Empty asset list</li>
+				</ul>
+			</f:if>
+		</f:security.ifAccess>
+	</f:else>
+</f:if>
+<f:comment><f:render partial="Image" arguments="{image: asset, enableFancybox: 'true', fancyboxGroup: fancyboxGroup, title: asset.resource.filename, width: maxWidth, height: maxHeight}" /></f:comment>
