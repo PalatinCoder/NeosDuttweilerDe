@@ -2,7 +2,7 @@
 	<f:then>
 		<div{attributes -> f:format.raw()}>
 			<f:for each="{assets}" as="asset">
-				<f:render partial="Image" arguments="{image: asset, enableFancybox: 'true', fancyboxGroup: fancyboxGroup, title: asset.caption, maximumWidth: maxWidth, maximumHeight: maxHeight}" />
+				<f:render partial="Image" arguments="{image: asset, enableFancybox: 'true', fancyboxGroup: fancyboxGroup, title: asset.caption, alternativeText: asset.title, maximumWidth: maxWidth, maximumHeight: maxHeight}" />
 			</f:for>
 			<div class="clearfix"></div>
 		</div>
