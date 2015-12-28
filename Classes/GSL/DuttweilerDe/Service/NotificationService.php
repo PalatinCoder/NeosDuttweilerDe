@@ -55,6 +55,7 @@ class NotificationService {
 	 * Check if the published node is a News and send GCM request
 	 *
 	 * @param NodeInterface $node
+	 * @param Workspace $targetWorkspace
 	 * @return void
 	 */
 	public function notifyNodePublished(NodeInterface $node, Workspace $targetWorkspace) {	
