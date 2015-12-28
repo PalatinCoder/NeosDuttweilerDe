@@ -1,4 +1,4 @@
-#PageHeading { border-top: 1px solid #363; height: 200px; background-image: url("../Images/b-logo05.jpg"); background-position: right; position: relative; }
+#PageHeading { border-top: 1px solid #363; height: 200px; background-position: right; position: relative; }
 
 #RelatedPagesTopMenu { background-color: white; display: inline-block; height: 20px; }
 #RelatedPagesMenu { background-color: #F0F0F0; font-size: 8pt; position: absolute; left: 0; bottom: 0; display: inline-block; height: 20px; }
