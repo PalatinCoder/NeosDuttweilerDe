@@ -6,6 +6,7 @@ use TYPO3\Flow\Mvc\Controller\ControllerInterface;
 use TYPO3\Flow\Mvc\RequestInterface;
 use TYPO3\Flow\Mvc\ResponseInterface;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use TYPO3\TYPO3CR\Domain\Model\Workspace;
 use TYPO3\Flow\Http\Response;
 use TYPO3\Neos\Controller\Frontend\NodeController;
 use TYPO3\Flow\Log\SystemLoggerInterface;
@@ -24,12 +25,17 @@ class NotificationService {
 	 * @param NodeInterface $node
 	 * @return void
 	 */
-	
-	public function notifyNodePublished(NodeInterface $node) {	
-		
-		if (!$node->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem')) {
-			return;
-		}
+	public function notifyNodePublished(NodeInterface $node, Workspace $targetWorkspace) {	
+		if (!(
+			// gcm is enabled
+			($node->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem')) &&
+			($targetWorkspace->getName() == 'live') //&&
+			// check if node is in scope of the api; that is node itself is under the first ten and node's parent is first child
+			//($node->getParent()->getIndex() == 0) &&
+			//($node->getIndex() < 10)
+			)
+		) 
+		{ return; }
 		
 		#$url = "http://localhost/not-existing-url";
 		$url = "https://android.googleapis.com/gcm/send";
@@ -64,18 +70,16 @@ class NotificationService {
 			throw new GcmException('Gcm Server Communication Error', 1434308758);
 		}
 
-		if ($httpCode != 200) {
+		if ($httpCode != 200 && $httpCode != 404) {
 			throw new GcmException('Gcm Internal Error, returned '.$httpCode.', result is '.$result, 1434308786);
 		}
-
-		\TYPO3\FLOW\var_dump($result);
 
 		curl_close($ch);
 
 		/*$ch_debug = curl_init("http://localhost/not-existing-url/");
 		curl_setopt($ch_debug, CURLOPT_URL, "http://localhost/not-existing-url/");
 		curl_setopt($ch_debug, CURLOPT_REFERER, $httpCode);
-		curl_setopt($ch_debug, CURLOPT_USERAGENT, $result);
+		curl_setopt($ch_debug, CURLOPT_USERAGENT, 'target:'.$targetWorkspace->getName().' index:'.$node->getIndex().' parentIndex:'.$node->getParent()->getIndex());
 		curl_exec($ch_debug);
 		curl_close($ch_debug);*/
 	}
