@@ -1,0 +1,10 @@
+roles:
+  TYPO3.Neos:AbstractEditor:
+    privileges:
+      -
+        privilegeTarget: 'TYPO3.Neos:Backend.Module.Media.ManageAssetCollections'
+        permission: GRANT
+      -
+        privilegeTarget: 'TYPO3.Media:ManageAssetCollections'
+        permission: GRANT
+      
