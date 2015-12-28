@@ -17,6 +17,9 @@
         chronik:
           label: Chronik
           position: 30
+        header-bg:
+          label: 'Header Hintergrundbilder'
+          position: 40
   childNodes:
     rightcolumn:
       type: 'TYPO3.Neos:ContentCollection'
@@ -44,6 +47,19 @@
           editorOptions:
             nodeTypes:
               - 'GSL.DuttweilerDe.Pages:ChronikRoot'
+    headerImage:
+      type: TYPO3\Media\Domain\Model\Asset
+      ui:
+        label: 'Startseite'
+        reloadIfChanged: TRUE
+        inspector:
+          group: header-bg
+    childHeaderImage:
+      type: TYPO3\Media\Domain\Model\Asset
+      ui:
+        label: 'normale Seiten'
+        inspector:
+          group: header-bg
   constraints:
     nodeTypes:
       'GSL.DuttweilerDe.Pages:Default': true
