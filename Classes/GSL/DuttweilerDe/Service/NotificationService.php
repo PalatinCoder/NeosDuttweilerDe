@@ -20,6 +20,38 @@ use TYPO3\Flow\Log\SystemLoggerInterface;
 class NotificationService {
 
 	/**
+	 * @Flow\InjectConfiguration(path="notificationService.enabled")
+	 * @var boolean
+	 */
+	protected $enabled;
+
+	/**
+	 * @Flow\InjectConfiguration(path="notificationService.debugOutput")
+	 * @var boolean
+	 */
+	protected $debugOutput;
+
+	/**
+	 * Sets the state of the service
+	 *
+	 * @param boolean $enabled
+	 * @return void
+	 */
+	public function setEnabled($enabled) {
+		$this->enabled = $enabled;
+	}
+
+	/**
+	 * Enables/Disabled debug output (via curl)
+	 *
+	 * @param boolean $enabled
+	 * @return void
+	 */
+	public function setDebugOutput($enabled) {
+		$this->debugOutput = $enabled;
+	}
+
+	/**
 	 * Check if the published node is a News and send GCM request
 	 *
 	 * @param NodeInterface $node
@@ -27,7 +59,7 @@ class NotificationService {
 	 */
 	public function notifyNodePublished(NodeInterface $node, Workspace $targetWorkspace) {	
 		if (!(
-			// gcm is enabled
+			($this->enabled) &&
 			($node->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem')) &&
 			($targetWorkspace->getName() == 'live') //&&
 			// check if node is in scope of the api; that is node itself is under the first ten and node's parent is first child
@@ -37,10 +69,13 @@ class NotificationService {
 		) 
 		{ return; }
 		
-		#$url = "http://localhost/not-existing-url";
 		$url = "https://android.googleapis.com/gcm/send";
+		if ($this->debugOutput) {
+			$url = "http://localhost/not-existing-url";
+		}
 
-		$nodeData = array(	'title' => $node->getProperty('title'),
+		$nodeData = array(
+					'title' => $node->getProperty('title'),
 					'subheadline' => $node->getProperty('subheadline'),
 					'nodeName' => $node->getName() 
 				);
@@ -76,12 +111,14 @@ class NotificationService {
 
 		curl_close($ch);
 
-		/*$ch_debug = curl_init("http://localhost/not-existing-url/");
-		curl_setopt($ch_debug, CURLOPT_URL, "http://localhost/not-existing-url/");
-		curl_setopt($ch_debug, CURLOPT_REFERER, $httpCode);
-		curl_setopt($ch_debug, CURLOPT_USERAGENT, 'target:'.$targetWorkspace->getName().' index:'.$node->getIndex().' parentIndex:'.$node->getParent()->getIndex());
-		curl_exec($ch_debug);
-		curl_close($ch_debug);*/
+		if ($this->debugOutput) {
+			$ch_debug = curl_init("http://localhost/not-existing-url/");
+			curl_setopt($ch_debug, CURLOPT_URL, "http://localhost/not-existing-url/");
+			curl_setopt($ch_debug, CURLOPT_REFERER, $httpCode);
+			curl_setopt($ch_debug, CURLOPT_USERAGENT, $result);
+			curl_exec($ch_debug);
+			curl_close($ch_debug);
+		}
 	}
 }
 ?>
