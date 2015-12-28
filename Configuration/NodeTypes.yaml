@@ -48,14 +48,14 @@
             nodeTypes:
               - 'GSL.DuttweilerDe.Pages:ChronikRoot'
     headerImage:
-      type: TYPO3\Media\Domain\Model\Asset
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Startseite'
         reloadIfChanged: TRUE
         inspector:
           group: header-bg
     childHeaderImage:
-      type: TYPO3\Media\Domain\Model\Asset
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'normale Seiten'
         inspector:
