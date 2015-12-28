@@ -106,7 +106,7 @@ class NotificationService {
 			throw new GcmException('Gcm Server Communication Error', 1434308758);
 		}
 
-		if ($httpCode != 200 && $httpCode != 404) {
+		if ($httpCode != 200 && (!$this->debugOutput || $httpCode != 404)) {
 			throw new GcmException('Gcm Internal Error, returned '.$httpCode.', result is '.$result, 1434308786);
 		}
 
