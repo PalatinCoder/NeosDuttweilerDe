@@ -23,6 +23,7 @@ page = Page {
         
         headerImage = ${q(node).property('headerImage')}
         headerImageAlternativeText = ${q(node).property('headerImageAlternativeText')}
+	headerBackgroundImage = ${q(documentNode).find('#403b8bed-1f13-1ca8-93b0-6ea819639191').property('childHeaderImage')}
 
         isChronikItem = ${q(documentNode).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
         date = ${q(node).property('date')}
