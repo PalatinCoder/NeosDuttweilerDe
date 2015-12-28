@@ -14,6 +14,6 @@ class Package extends BasePackage {
 	 */
 	public function boot(Bootstrap $bootstrap) {
 		$dispatcher = $bootstrap->getSignalSlotDispatcher();
-		$dispatcher->connect('TYPO3\Neos\Service\PublishingService', 'nodePublished', 'GSL\DuttweilerDe\Service\NotificationService', 'notifyNodePublished');
+		$dispatcher->connect('TYPO3\TYPO3CR\Domain\Model\Workspace', 'afterNodePublishing', 'GSL\DuttweilerDe\Service\NotificationService', 'notifyNodePublished');
 	}
 }
