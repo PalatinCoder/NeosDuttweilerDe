@@ -62,7 +62,9 @@ class NotificationService {
 		if (!(
 			($this->enabled) &&
 			($node->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem')) &&
-			($targetWorkspace->getName() == 'live') //&&
+			($targetWorkspace->getName() == 'live') &&
+			(!$node->isHidden()) &&
+			($node->getHiddenBeforeDateTime() < new \TYPO3\Flow\Utility\Now)
 			// check if node is in scope of the api; that is node itself is under the first ten and node's parent is first child
 			//($node->getParent()->getIndex() == 0) &&
 			//($node->getIndex() < 10)
@@ -114,9 +116,9 @@ class NotificationService {
 
 		if ($this->debugOutput) {
 			$ch_debug = curl_init("http://localhost/not-existing-url/");
-			curl_setopt($ch_debug, CURLOPT_URL, "http://localhost/not-existing-url/");
+			curl_setopt($ch_debug, CURLOPT_URL, "http://localhost/not-existing-url/".$node->getProperty('title'));
 			curl_setopt($ch_debug, CURLOPT_REFERER, $httpCode);
-			curl_setopt($ch_debug, CURLOPT_USERAGENT, $result);
+			curl_setopt($ch_debug, CURLOPT_USERAGENT, $node->getProperty('title').$node->getProperty('subheadline'));
 			curl_exec($ch_debug);
 			curl_close($ch_debug);
 		}
