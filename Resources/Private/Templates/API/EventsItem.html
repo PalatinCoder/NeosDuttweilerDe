@@ -4,9 +4,8 @@
 	"title": "{title}",
 	"host": "{host}",
 	"location": "{location}",
-	<f:if condition="{promote}">
-	"promote": "{promote}",
-	</f:if>
+	<f:if condition="{promote}">"promote": "{promote}",</f:if>
+	<f:if condition="{link}">"link": "{neos:uri.node(node: link, format: html)}",</f:if>
 	"startDate": "{startDate -> f:format.date(format: 'd.m.y H:i')}",
 	"endDate": "{endDate -> f:format.date(format: 'd.m.y H:i')}"
 }
