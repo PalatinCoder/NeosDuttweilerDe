@@ -11,9 +11,10 @@ prototype(GSL.DuttweilerDe.API:EventsList) < prototype(TYPO3.TypoScript:Http.Mes
 	}
 
 	@cache {
-		mode = 'uncached'
-		context {
-			1 = 'node'
+		mode = 'cached'
+
+		entryTags {
+			1 = ${'NodeType_GSL.DuttweilerDe.Content:Event'}
 		}
 	}
 }

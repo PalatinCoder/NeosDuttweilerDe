@@ -11,9 +11,10 @@ prototype(GSL.DuttweilerDe.API:NewsList) < prototype(TYPO3.TypoScript:Http.Messa
 	}
 
 	@cache {
-		mode = 'uncached'
-		context {
-			1 = 'documentNode'
+		mode = 'cached'
+
+		entryTags {
+			1 = ${'NodeType_GSL.DuttweilerDe.Pages:ChronikItem'}
 		}
 	}
 }
