@@ -25,7 +25,11 @@
 					<f:else>{title}</f:else>
 				</f:if>
 			</div>
-			<div class="EventListItemDate"><span class="fa fa-fw fa-clock-o"></span>{startDate -> f:format.date(forceLocale: true, localeFormatType: 'time', localeFormatLength: 'short')}</div>
+			<div class="EventListItemDate">
+				<span class="fa fa-fw fa-clock-o"></span>
+				{startDate -> f:format.date(format: 'd.m.Y H:i')}
+				<f:if condition="{endDate}"> - {endDate -> f:format.date(format: 'd.m.Y H:i')}</f:if>
+			</div>
 			<f:if condition="{host}"> <div class="EventListItemHost"><span class="fa fa-fw fa-users"></span>{host}</div></f:if>
 			<f:if condition="{location}"> <div class="EventListItemLocation"><span class="fa fa-fw fa-map-marker"></span>{location}</div></f:if>
 		</div>
