@@ -1,0 +1,16 @@
+up:
+  comments: 'Add layout property to TYPO3.Neos.NodeTypes:Headline'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:Headline'
+      transformations:
+        -
+          type: 'AddNewProperty'
+          settings:
+            newPropertyName: 'layout'
+            value: 'underline'
+down: []
