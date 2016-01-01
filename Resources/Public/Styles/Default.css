@@ -12,10 +12,11 @@
 #PageHeadingImprintLink { display: inline-block; background-color: #eee; font-size: 8pt; position: absolute; right: 0; bottom: 0; padding: 0 2px; height: 20px; }
 
 #PageBody article { padding: 20px; font-size: 10pt; }
-#PageBody article header { color: #363; width: 100%; border-bottom: 1px solid black; font-size: 14pt; padding-bottom: 5px; margin: 5px 0 10px 0; }
+#PageBody article header.underline { color: #363; width: 100%; border-bottom: 1px solid black; font-size: 14pt; padding-bottom: 5px; margin: 5px 0 10px 0; }
+#PageBody article header.boxed { color: white; width: 100%; background-color: #363; padding: 0; font-size: 12pt; font-weight: bold; }
 
 #ArticlePressespiegel { margin-top: 30px; }
-#ArticlePressespiegelHeading { background-color: #363; color: #fff; font-weight: bold; font-size: 10pt; margin-bottom: 10px; }
+#ArticlePressespiegelHeading { background-color: #363; color: #fff; font-weight: bold; font-size: 12pt; margin-bottom: 10px; }
 
 .ArticlePressespiegelItemIcon { width: 10px; height: 10px; background-color: #363; display: inline-block; margin: 0 5px; }
 .ArticlePressespiegelItem { margin: 5px 0; color: black; }
