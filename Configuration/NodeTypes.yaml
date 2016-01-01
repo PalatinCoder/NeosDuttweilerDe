@@ -620,3 +620,25 @@
           position: 200
       validation:
         'TYPO3.Neos/Validation/ImageSizeValidator': TRUE
+'TYPO3.Neos.NodeTypes:Headline':
+  ui:
+    inspector:
+      groups:
+        style:
+          label: 'Stil'
+          tab: default
+  properties:
+    layout:
+      type: string
+      ui:
+        label: 'Typ'
+        reloadIfChanged: TRUE
+        inspector:
+          group: style
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              underline:
+                label: 'Unterstrichen'
+              boxed:
+                label: 'Kasten'
