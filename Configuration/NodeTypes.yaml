@@ -632,6 +632,7 @@
       type: string
       ui:
         label: 'Typ'
+        defaultValue: 'underline'
         reloadIfChanged: TRUE
         inspector:
           group: style
