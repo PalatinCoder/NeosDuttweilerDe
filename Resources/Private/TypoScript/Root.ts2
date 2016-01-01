@@ -17,6 +17,7 @@ prototype(TYPO3.Neos.NodeTypes:Image) {
 	maximumHeight = ${q(node).property('displayHeight')}
 }
 prototype(TYPO3.Neos.NodeTypes:TextWithImage).partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
+prototype(TYPO3.Neos.NodeTypes:Headline).attributes.class = ${q(node).property('layout')}
 
 json = TYPO3.TypoScript:Case {
 	news {
