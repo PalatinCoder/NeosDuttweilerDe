@@ -77,7 +77,7 @@
             <div id="PageBody">
                 <article>
                     <f:if condition="{isChronikItem}"> <f:if condition="{subheader} != ''">
-                        <header>{neos:contentElement.editable(property: 'subheader')}</header>
+                        <header class="underline">{neos:contentElement.editable(property: 'subheader')}</header>
                     </f:if> </f:if>
                     
                     {content.main -> f:format.raw()}
