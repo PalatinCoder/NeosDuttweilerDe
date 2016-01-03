@@ -1,13 +1,18 @@
 #PageHeading { border-top: 1px solid #363; height: 200px; background-image: url("../Images/b-logo05.jpg"); background-position: right; position: relative; }
 
 #RelatedPagesTopMenu { background-color: white; display: inline-block; height: 20px; }
-#RelatedPagesMenu { background-color: #F0F0F0; font-size: 8pt; position: absolute; left: 0; bottom: 0; display: inline-block; height: 20px; }
+#RelatedPagesMenu { background-color: #F0F0F0; font-size: 8pt; position: absolute; left: 0; bottom: 0; display: inline-block; min-height: 20px; }
 #RelatedPagesTopMenu ul, #RelatedPagesMenu ul { list-style-type: none; margin: 0; padding: 0; }
 #RelatedPagesTopMenu li, #RelatedPagesMenu li { padding: 0px 5px; text-align: center; border-right: 1px solid black; display: inline; }
 
+@media screen and (max-width: 819px) { 
+#PageHeading { height: 240px; } 
+#RelatedPagesMenu, #RelatedPagesTopMenu { width: 100%; }
+}
+
 #PageHeadingContent { height: 100px; position: absolute; top: 59px; color: #363; padding-left: 20px; float: left; }
 #PageArticleDate { font-size: 14pt; line-height: 20pt; }
-#PageArticleHeading { margin-top: 5px; font-size: 20pt; font-weight: bold; }
+#PageArticleHeading { margin-top: 5px; font-size: 20pt; line-height: 20pt; font-weight: bold; }
 #PageHeadingCustomImage { margin-right: 25px; margin-top: 65px; float: right; }
 #PageHeadingImprintLink { display: inline-block; background-color: #eee; font-size: 8pt; position: absolute; right: 0; bottom: 0; padding: 0 2px; height: 20px; }
 
