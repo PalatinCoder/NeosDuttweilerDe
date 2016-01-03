@@ -52,48 +52,30 @@ class FilterDateInFuture extends AbstractOperation {
 	 * {@inheritdoc}
 	 *
 	 * @param FlowQuery $flowQuery the FlowQuery object
-	 * @param array $arguments the arguments for this operation.
-	 * First argument is property to filter by, must be of date type.
-	 * Second argument is date to check by, must be of date type.
+	 * @param array $arguments The names of properties to filter by.
 	 * @return mixed
 	 */
 	public function evaluate(FlowQuery $flowQuery, array $arguments) {
 		if (!isset($arguments[0]) || empty($arguments[0])) {
-			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('FilterDateInFuture() needs date property name by which nodes should be filtered', 1332492263);
-		} else if (!isset($arguments[1]) || empty($arguments[1])) {
-			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('FilterDateInFuture() needs reference date to filter by', 1332493263);
+			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('FilterDateInFuture() needs at least one date property name by which nodes should be filtered', 1332492263);
 		} else {
 			$nodes = $flowQuery->getContext();
-			$filterByPropertyPath = $arguments[0];
-			$now = $arguments[1];
+			$now = new \TYPO3\Flow\Utility\Now;
+			$filteredNodes = array();
 
-			$filteredNodes = $this->getFilterDateInFuture($nodes, $now, $filterByPropertyPath);
-
+			/** @var Node $node */
+			foreach ($nodes as $node) {
+				/** @var mixed $property */
+				foreach ($arguments as $property) {
+					$date = $node->getProperty($property);
+					if ($date > $now) {
+						$filteredNodes[] = $node;
+						break;
+					}
+				}
+			}
 			$flowQuery->setContext($filteredNodes);
 		}
-	}
-
-	/**
-	 * @param array  $nodes
-	 * @param Node   $object
-	 * @param string $filterByPropertyPath
-	 *
-	 * @return array
-	 */
-	private function getFilterDateInFuture($nodes, $now, $filterByPropertyPath) {
-		$filteredNodes = array();
-		/** @var Node $node */
-		foreach ($nodes as $node) {
-			$date = $node->getProperty($filterByPropertyPath);
-
-			$interval = $now->diff($date);
-
-			if ($interval->invert == 0) {
-				$filteredNodes[] = $node;
-			}
-		}
-
-		return $filteredNodes;
 	}
 }
 
