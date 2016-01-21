@@ -23,30 +23,30 @@ div.typo3-neos-nodetypes-image figure.typo3-neos-alignment-right { margin: 1em 5
 
 /* Table styling */
 
-div.typo3-neos-nodetypes-text table,
-div.typo3-neos-nodetypes-textwithimage table
+div.neos-contentcollection table,
+div.neos-contentcollection table
 { border-collapse: collapse; }
 
-div.typo3-neos-nodetypes-text table,
-div.typo3-neos-nodetypes-textwithimage table,
-div.typo3-neos-nodetypes-text table th,
-div.typo3-neos-nodetypes-textwithimage table th,
-div.typo3-neos-nodetypes-textwithimage table td,
-div.typo3-neos-nodetypes-text table td
+div.neos-contentcollection table,
+div.neos-contentcollection table,
+div.neos-contentcollection table th,
+div.neos-contentcollection table th,
+div.neos-contentcollection table td,
+div.neos-contentcollection table td
 { border: 1px solid black; }
 
-div.typo3-neos-nodetypes-text table th,
-div.typo3-neos-nodetypes-textwithimage table th,
-div.typo3-neos-nodetypes-text table td,
-div.typo3-neos-nodetypes-textwithimage table td
+div.neos-contentcollection table th,
+div.neos-contentcollection table th,
+div.neos-contentcollection table td,
+div.neos-contentcollection table td
 { padding: 0 10px; text-align: left; }
 
-div.typo3-neos-nodetypes-text table tr:nth-child(even),
-div.typo3-neos-nodetypes-textwithimage table tr:nth-child(even)
+div.neos-contentcollection table tr:nth-child(even),
+div.neos-contentcollection table tr:nth-child(even)
 { background-color: #eee; }
 
-div.typo3-neos-nodetypes-text table th,
-div.typo3-neos-nodetypes-textwithimage table th 
+div.neos-contentcollection table th,
+div.neos-contentcollection table th 
 { background-color: #363; color: white; }
 
 /* end table styling */
