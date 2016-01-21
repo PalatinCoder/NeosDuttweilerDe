@@ -11,6 +11,8 @@ prototype(GSL.DuttweilerDe.Content:EventPromoter) < prototype(TYPO3.Neos:Content
 
 	@cache {
 		mode = 'cached'
+
+		maximumLifetime = '86400'
 		
 		entryTags {
 			1 = ${'NodeType_GSL.DuttweilerDe.Content:Event'}
