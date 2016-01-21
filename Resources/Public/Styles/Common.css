@@ -18,8 +18,8 @@ a:hover { text-decoration: underline; }
 .typo3-neos-alignment-left { float: left; margin-right: 2em; margin-bottom: 1em; }
 .typo3-neos-alignment-center { margin: 0 auto !important; width: -moz-fit-content; width: -webkit-fit-content; width: fit-content; }
 
-div.typo3-neos-nodetypes-image figure.typo3-neos-alignment-left { margin-right: 10px; }
-div.typo3-neos-nodetypes-image figure.typo3-neos-alignment-right { margin-left: 10px; }
+div.typo3-neos-nodetypes-image figure.typo3-neos-alignment-left { margin: 1em 5px; }
+div.typo3-neos-nodetypes-image figure.typo3-neos-alignment-right { margin: 1em 5px; }
 
 /* Table styling */
 
