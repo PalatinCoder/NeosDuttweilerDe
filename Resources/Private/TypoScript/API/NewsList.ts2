@@ -15,6 +15,7 @@ prototype(GSL.DuttweilerDe.API:NewsList) < prototype(TYPO3.TypoScript:Http.Messa
 
 		entryTags {
 			1 = ${'NodeType_GSL.DuttweilerDe.Pages:ChronikItem'}
+			2 = ${'DescendantOf_' + chronikNode.identifier}
 		}
 	}
 }
