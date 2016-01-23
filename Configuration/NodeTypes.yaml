@@ -361,10 +361,45 @@
       '*': false
 'GSL.DuttweilerDe.Content:RelatedPagesBacklink':
   superTypes:
-    'GSL.DuttweilerDe.Content:PressespiegelItem': true
+   'TYPO3.Neos:Content': true
   ui:
-    label: Backlink
-    group: hidden
+    label: Listenelement
+    group: chronik
+    inspector:
+      groups:
+        general:
+          label: Allgemein
+          position: 2
+  properties:
+    title:
+      type: string
+      ui:
+        label: 'Titel'
+        reloadIfChanged: true
+        inspector:
+          group: general
+    subheadline:
+      type: string
+      ui:
+        label: 'Untertitel'
+        reloadIfChanged: true
+        inspector:
+          group: general
+    date:
+      type: DateTime
+      ui:
+        label: 'Datum'
+        reloadIfChanged: true
+        inspector:
+          group: general
+    link:
+      type: string
+      ui:
+        label: 'Link'
+        reloadIfChanged: true
+        inspector:
+          group: general
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
 'GSL.DuttweilerDe.Content:Menu':
   superTypes:
     'TYPO3.Neos.NodeTypes:Menu': true

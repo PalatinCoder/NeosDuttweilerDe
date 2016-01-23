@@ -5,7 +5,14 @@
         <span class="ArticlePressespiegelItemTitle">{title}</span>
         <span class="ArticlePressespiegelItemDate">{date -> f:format.date(localeFormatType: 'date', forceLocale: 'de_DE', localeFormatLength: 'long')}</span>
     </div>
-    <f:if condition="{itemLink} != ''">
-        <div class="ArticlePressespiegelItemLink"><neos:link.node node="{itemLink}">{subheading}</neos:link.node></div>
+    <div class="ArticlePressespiegelItemLink">
+    <f:if condition="{chronikLink}">
+        <f:then> <neos:link.node node="{itemLink}">{subheading}</neos:link.node> </f:then>
+        <f:else>
+            <f:if condition="{link}">
+                <f:then> <f:link.external uri="{link}">{subheading}</f:link.external> </f:then>
+                <f:else>{subheading}</f:else>
+            </f:if>
+        </f:else>
     </f:if>
 </div>
