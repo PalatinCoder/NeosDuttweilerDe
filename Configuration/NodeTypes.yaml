@@ -29,6 +29,12 @@
           '*': false
     banner:
       type: 'TYPO3.Neos:ContentCollection'
+    standaloneNews:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
+          '*': false
   properties:
     hasBanner:
       type: boolean

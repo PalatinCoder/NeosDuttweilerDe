@@ -1,3 +1,4 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
 <!DOCTYPE html>
 <html>
     <head>
@@ -52,6 +53,11 @@
 		</div>
                 <div id="NewsColumn">
 			{content.main -> f:format.raw()}
+                    <f:if condition="{neos:rendering.inEditMode()}">
+                        <h1 style="background-color: #363; color: white">Standalone News</h1>
+                        (werden hier gesammelt, im Frontend automatisch oben einsortiert)
+                        {content.standalonenews -> f:format.raw()}
+                    </f:if>
                 </div>
                 <div id="RightColumn">
 			{content.rightColumn -> f:format.raw()}

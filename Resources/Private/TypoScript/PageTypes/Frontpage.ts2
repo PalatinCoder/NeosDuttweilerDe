@@ -39,6 +39,9 @@ frontPage = Page {
 			banner = PrimaryContent {
 				nodePath = 'banner'
 			}
+            standalonenews = PrimaryContent {
+                nodePath = 'standalonenews'
+            }
 		}
 
 		javascripts.site = TYPO3.TypoScript:Template {
