@@ -257,6 +257,19 @@
         reloadIfChanged: true
         inspector:
           group: pressespiegel
+'GSL.DuttweilerDe:FrontpageTTResults':
+  superTypes:
+    'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
+  ui:
+    label: 'Ergebnisse - TT'
+    group: 'frontpage'
+  properties:
+    title:
+      defaultValue: 'Tischtennis-Ergebnisse'
+    date:
+      defaultValue: now
+    text:
+      defaultValue: '<table><tr><td>Heim</td><td>-</td><td>Gast</td><td>0:0</td></tr><tr><td colspan="4"><a href="http://www.vfl-duttweiler.de/vfl-tt.htm">weiter zu VfL Tischtennis</a></td></tr></table>'
 'GSL.DuttweilerDe.Content:FrontpageNewsList':
   superTypes:
     'TYPO3.Neos:Content': true

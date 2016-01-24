@@ -1,0 +1,13 @@
+﻿{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+<article class="FrontpageNewsItem">
+    <header>{headline}</header>
+    <div class="NewsItemDate">{date -> f:format.date(localeFormatType: 'date', forceLocale: 'de_DE', localeFormatLength: 'long')}</div>
+    <div class="NewsItemBody NewsItemTTResult">
+        <f:if condition="{isStandalone}">
+            <f:then> {neos:contentElement.editable(property: 'text')} </f:then>
+            <f:else> {text -> f:format.raw()} </f:else>
+        </f:if>
+        <div class="clearfix"></div>
+    </div>
+</article>

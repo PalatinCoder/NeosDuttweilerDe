@@ -16,3 +16,5 @@ prototype(GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone) < prototype(GSL.
 	isStandalone = true
 	text = ${q(node).property('text')}
 }
+
+prototype(GSL.DuttweilerDe:FrontpageTTResults) < prototype(GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone)
