@@ -3,10 +3,20 @@ prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
 
 	@context.chronikNode = ${q(documentNode).property('chronikRootNode')}
     @context.standaloneItems = ${q(documentNode).children('standalonenews').children().get()}
+   
+    listCollection = TYPO3.TypoScript:Case {
+        a {
+            condition = ${Security.getAccount() != NULL}
+            renderPath = 'listCollectionA'
+            listCollectionA = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).orderByDate().get()}
+        }
+        default {
+            condition = ${true}
+            renderPath = 'listCollectionB'
+            listCollectionB = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').add(standaloneItems).slice(0,10).add(standaloneItems).orderByDate().get()}
+        }
+    }
     
-
-    listCollection = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').add(standaloneItems).slice(0,10).add(standaloneItems).orderByDate().get()}
-
 	listItem = TYPO3.TypoScript:Case {
         chronikItem {
             condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
