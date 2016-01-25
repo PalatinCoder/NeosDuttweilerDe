@@ -55,3 +55,13 @@ article.FrontpageNewsItem header { color: #363; font-weight: bold; font-size: 11
 .NewsItemTTResult table tr:last-child { border-top: 1px solid white !important; text-align: center; font-weight: bold; font-size: 8pt; }
 .NewsItemTTResult table tr:last-child td a { color: white; }
 .NewsItemTTResult .aloha-table-wrapper table { color: black; }
+
+.NewsItemFubaResult table, .NewsItemFubaResult table tr, .NewsItemFubaResult table tr td { border: none !important; padding: 0; }
+.NewsItemFubaResult table { background-image:url(http://www.vfl-duttweiler.de/tore/torback.gif); width: 350px; height: 155px;}
+.NewsItemFubaResult table tr { background: none !important; }
+.NewsItemFubaResult table tr:first-child { height: 120px; overflow: hidden; }
+.NewsItemFubaResult table tr:first-child td:first-child { padding: 10px 0 0 10px; }
+.NewsItemFubaResult table tr:first-child td:last-child { padding: 10px 10px 0 0; width: 100px; }
+.NewsItemFubaResult table tr td:not(:last-child) { text-align: center; vertical-align: middle; }
+.NewsItemFubaResult table tr td hr { margin: 0; }
+.NewsItemFubaResult table tr:last-child td { vertical-align: top; }

@@ -18,3 +18,8 @@ prototype(GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone) < prototype(GSL.
 }
 
 prototype(GSL.DuttweilerDe:FrontpageTTResults) < prototype(GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone)
+
+prototype(GSL.DuttweilerDe:FrontpageFubaResults) < prototype(GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone) {
+    scoreHome = ${String.split(q(node).property('score'), ':')[0]}
+    scoreAway = ${String.split(q(node).property('score'), ':')[1]}
+}

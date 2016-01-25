@@ -257,6 +257,70 @@
         reloadIfChanged: true
         inspector:
           group: pressespiegel
+'GSL.DuttweilerDe:FrontpageFubaResults':
+  superTypes:
+    'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
+  ui:
+    label: 'Ergenisse - Fußball'
+    group: 'frontpage'
+  properties:
+    title:
+      defaultValue: 'B-Klasse Rhein-Mittelhaardt West'
+    text: ~
+    date:
+      defaultValue: now
+    logo:
+      type: 'string'
+      defaultValue: 'http://www.vfl-duttweiler.de/logos/lo_XXXX.gif'
+      ui:
+        label: 'Gegner Logo (URL)'
+        reloadIfChanged: true
+        inspector:
+          group: news
+    homeAway:
+      type: string
+      defaultValue: 'home'
+      ui:
+        label: 'Heim/Auswärts'
+        reloadIfChanged: true
+        inspector:
+          group: news   
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              home:
+                label: 'Heim'
+              away:
+                label: 'Auswärts'
+    score:
+      type: string
+      defaultValue: '0:0'
+      ui:
+        label: 'Ergebnis'
+        reloadIfChanged: true
+        inspector:
+          group: news
+      validation:
+        'TYPO3.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '^[0-9]{1,2}:[0-9]{1,2}$'
+    scorers:
+      type: string
+      ui:
+        label: 'Torschützen'
+        reloadIfChanged: true
+        inspector:
+          group: news
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editorOptions:
+            rows: 4         
+    link:
+      type: 'string'
+      defaultValue: 'http://www.vfl-duttweiler.de/vYYMMDD.html'
+      ui:
+        label: 'Link'
+        reloadIfChanged: true
+        inspector:
+          group: news
 'GSL.DuttweilerDe:FrontpageTTResults':
   superTypes:
     'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true

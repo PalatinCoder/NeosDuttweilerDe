@@ -1,0 +1,37 @@
+﻿{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+<article class="FrontpageNewsItem">
+    <header>{headline}</header>
+    <div class="NewsItemDate">{date -> f:format.date(localeFormatType: 'date', forceLocale: 'de_DE', localeFormatLength: 'long')}</div>
+    <div class="NewsItemBody NewsItemFubaResult">
+        <table>
+            <tr>
+                <td>
+                    <f:if condition="{homeAway} == 'home'"> <f:then> <f:render section="vflLogo" /></f:then> <f:else><f:render section="opponentLogo" arguments="{url: logo}" /> </f:else></f:if>
+                </td>
+                <td><img src="http://www.vfl-duttweiler.de/tore/torzu.gif" height="30" width="20" alt=":" /></td>
+                <td>
+                    <f:if condition="{homeAway} == 'away'"> <f:then> <f:render section="vflLogo" /></f:then> <f:else><f:render section="opponentLogo" arguments="{url: logo}" /> </f:else></f:if>
+                </td>
+                <td>
+                    <b>Tore:</b><br>
+                    {scorers -> f:format.nl2br()}<hr>
+                    <f:if condition="{link}"><f:link.external uri="{link}" target="_blank">weiterlesen...</f:link.external></f:if>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="http://www.vfl-duttweiler.de/tore/tor{scoreHome}.gif" height="30" width="23" alt="{scoreHome}" /></td>
+                <td><img src="http://www.vfl-duttweiler.de/tore/torzu.gif" height="30" width="20" alt=":" /></td>
+                <td><img src="http://www.vfl-duttweiler.de/tore/tor{scoreAway}.gif" height="30" width="23" alt="{scoreAway}" /></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</article>
+
+<f:section name="vflLogo">
+    <img src="http://www.vfl-duttweiler.de/logos/lo_vfl6.gif" height="100" width="100" />
+</f:section>
+<f:section name="opponentLogo">
+    <img src="{url}" height="100" width="100" />
+</f:section>
