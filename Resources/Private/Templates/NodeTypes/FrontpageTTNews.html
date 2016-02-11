@@ -1,0 +1,12 @@
+﻿{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+<article class="FrontpageNewsItem">
+    <header>{title}</header>
+    <div class="NewsItemDate">{date -> f:format.date(localeFormatType: 'date', forceLocale: 'de_DE', localeFormatLength: 'long')}</div>
+    <div class="NewsItemSubheading">{subheadline}</div>
+    <div class="NewsItemBody NewsItemTTResult">
+        <img class="typo3-neos-alignment-right" src="{f:uri.resource(path: 'Images/BannerTT-News.jpg', package: 'GSL.DuttweilerDe')}" alt="TT-News" height="150">
+        <a href="{link}" target="_blank">weiterlesen...</a>
+        <div class="clearfix"></div>
+    </div>
+</article>

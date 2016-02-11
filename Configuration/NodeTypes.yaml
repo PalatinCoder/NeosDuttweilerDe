@@ -334,6 +334,23 @@
       defaultValue: now
     text:
       defaultValue: '<table><tr><td>Heim</td><td>-</td><td>Gast</td><td>0:0</td></tr><tr><td colspan="4"><a href="http://www.vfl-duttweiler.de/vfl-tt.htm">weiter zu VfL Tischtennis</a></td></tr></table>'
+'GSL.DuttweilerDe:FrontpageTTNews':
+  superTypes:
+    'GSL.DuttweilerDe:FrontpageTTResults': true
+  ui:
+    label: 'TT-News'
+  properties:
+    title:
+      defaultValue: 'TT-News'
+    subheadline:
+      defaultValue: 'Aktuelles aus der TT-Abteilung - Ausgabe XX'
+    link:
+      type: 'string'
+      defaultValue: 'http://www.vfl-duttweiler.de/ttnews/t16xxxxn.pdf'
+      ui:
+        label: 'Link'
+        inspector:
+          group: news
 'GSL.DuttweilerDe.Content:FrontpageNewsList':
   superTypes:
     'TYPO3.Neos:Content': true

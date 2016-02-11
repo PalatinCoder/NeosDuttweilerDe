@@ -22,6 +22,10 @@ prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
             condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
             type = 'GSL.DuttweilerDe.Content:FrontpageNewsItem'
         }
+        standaloneTTResults {
+            condition = ${q(node).is('[instanceof GSL.DuttweilerDe:FrontpageTTNews]')}
+            type = 'GSL.DuttweilerDe:FrontpageTTNews'
+        }
         standaloneTT {
             condition = ${q(node).is('[instanceof GSL.DuttweilerDe:FrontpageTTResults]')}
             type = 'GSL.DuttweilerDe:FrontpageTTResults'
