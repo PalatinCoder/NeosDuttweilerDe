@@ -10,8 +10,8 @@
         <f:then> <neos:link.node node="{itemLink}">{subheading}</neos:link.node> </f:then>
         <f:else>
             <f:if condition="{link}">
-                <f:then> <f:link.external uri="{link}">{subheading}</f:link.external> </f:then>
-                <f:else>{subheading}</f:else>
+                <f:then> <f:link.external uri="{link}">{subheading -> f:format.nl2br()}</f:link.external> </f:then>
+                <f:else>{neos:contentElement.editable(property: 'subheadline')}</f:else>
             </f:if>
         </f:else>
     </f:if>
