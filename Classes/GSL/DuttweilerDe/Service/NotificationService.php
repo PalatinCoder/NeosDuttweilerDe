@@ -60,14 +60,15 @@ class NotificationService {
 	 */
 	public function notifyNodePublished(NodeInterface $node, Workspace $targetWorkspace) {	
 		if (!(
-			($this->enabled) &&
-			($node->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem')) &&
-			($targetWorkspace->getName() == 'live') &&
-			(!$node->isHidden()) &&
-			($node->getHiddenBeforeDateTime() < new \TYPO3\Flow\Utility\Now)
-			// check if node is in scope of the api; that is node itself is under the first ten and node's parent is first child
-			//($node->getParent()->getIndex() == 0) &&
-			//($node->getIndex() < 10)
+			($this->enabled)
+			&& ($node->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem'))
+			&& ($targetWorkspace->getName() == 'live')
+			&& (!$node->isHidden()) && ($node->getHiddenBeforeDateTime() < new \TYPO3\Flow\Utility\Now)
+		    // check if node is in scope of the api
+		    // Current ChronikBranch is the first child?
+			&& ($node->getParent()->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikBranch', 1, 0)[0] == $node->getParent())
+            // node is among the first ten?
+			&& ($node->getIndex() < $node->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikItem', 1, 10)[0]->getIndex())
 			)
 		) 
 		{ return; }
