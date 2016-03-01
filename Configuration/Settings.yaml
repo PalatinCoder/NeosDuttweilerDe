@@ -22,6 +22,21 @@ TYPO3:
         nodeTree:
           loadingDepth: 2
 
+    modules:
+      duttweilerapp:
+        label: 'DuttweilerApp'
+        controller: '\GSL\DuttweilerDe\Controller\Module\DuttweilerAppController'
+        description: 'Verschiedene Funktionen der DuttweilerApp'
+        icon: 'icon-android'
+        privilegeTarget: 'TYPO3.Neos:Backend.GeneralAccess'
+        submodules:
+          digital-shoutout:
+            label: 'Digitale Ortsrufanlage'
+            controller: '\GSL\DuttweilerDe\Controller\Module\DigitalShoutoutController'
+            description: 'Mit diesem Modul können "Digitale Durchsagen" an die DuttweilerApp gesendet werden.'
+            icon: 'icon-bullhorn'
+            privilegeTarget: 'TYPO3.Neos:Backend.GeneralAccess'
+
   Flow:
     i18n:
       defaultLocale: de
