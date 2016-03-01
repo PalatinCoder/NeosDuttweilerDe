@@ -51,6 +51,9 @@ class DigitalShoutoutController extends AbstractModuleController {
      * @return void
      */
     public function sendAction($heading, $message) {
+		$gcmHelper = new GcmHelper;
+		$gcmHelper->sendGcmMessage(array('heading' = > $heading, 'message' = > $message), 'duttweiler-shoutout');
+
 		$this->addFlashMessage('Die Nachricht "%s" mit dem Inhalt "%s" wurde gesendet.', 'Durchsage gesendet', Message::SEVERITY_OK, array(htmlspecialchars($heading), htmlspecialchars($message)), 1456841323);
 		$this->redirect('index');
     }
