@@ -1,0 +1,35 @@
+﻿{namespace neos=TYPO3\Neos\ViewHelpers}
+<f:layout name="BackendModule" />
+
+<f:section name="subtitle">
+    <div class="neos-module-container">
+        <h2>Eine "Digitale Durchsage" machen</h2>
+    </div>
+</f:section>
+
+<f:section name="content">
+    <f:form action="send">
+        <div class="neos-row-fluid neos-module-container">
+            <fieldset class="neos-span5">
+                <legend>Nachricht</legend>
+                <div class="neos-control-group">
+                    <label class="neos-control-label" for="heading">Überschrift</label>
+                    <div class="neos-controls neos-controls-row">
+                        <f:form.textfield name="heading" id="heading" class="neos-span12" />
+                    </div>
+                </div>
+                <div class="neos-control-group">
+                    <label class="neos-control-label" for="text">Text</label>
+                    <div class="neos-controls neos-controls-row">
+                        <f:form.textarea name="message" id="message" class="neos-span12" rows="10" />
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="neos-footer">
+            <neos:link.module path="duttweilerapp" class="neos-button">{neos:backend.translate(id: 'cancel', value: 'Cancel')}</neos:link.module>
+            <f:form.submit value="Durchsagen!" class="neos-button neos-button-primary" />
+        </div>
+    </f:form>
+    <f:form action="index" id="postHelper" method="post"></f:form>
+</f:section>
