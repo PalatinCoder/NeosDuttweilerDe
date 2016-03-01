@@ -35,6 +35,9 @@ TYPO3:
             controller: '\GSL\DuttweilerDe\Controller\Module\DuttweilerApp\DigitalShoutoutController'
             description: 'Mit diesem Modul können "Digitale Durchsagen" an die DuttweilerApp gesendet werden.'
             icon: 'icon-bullhorn'
+            actions:
+              index:
+                label: 'Durchsage machen!'
             privilegeTarget: 'GSL.DuttweilerDe:Backend.App.Shoutout'
 
   Flow:
