@@ -7,4 +7,17 @@ roles:
       -
         privilegeTarget: 'TYPO3.Media:ManageAssetCollections'
         permission: GRANT
+      -
+        privilegeTarget: 'GSL.DuttweilerDe:Backend.App'
+        permission: GRANT
+      -
+        privilegeTarget: 'GSL.DuttweilerDe:Backend.App.Shoutout'
+        permission: GRANT
+
+privilegeTargets:
+  '\TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'GSL.DuttweilerDe:Backend.App':
+      matcher: 'method(GSL\DuttweilerDe\Controller\Module\DuttweilerAppController->indexAction())'
+    'GSL.DuttweilerDe:Backend.App.Shoutout':
+      matcher: 'method(GSL\DuttweilerDe\Controller\Module\DuttweilerApp\DigitalShoutoutController->indexAction())'
       

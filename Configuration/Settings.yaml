@@ -25,17 +25,17 @@ TYPO3:
     modules:
       duttweilerapp:
         label: 'DuttweilerApp'
-        controller: '\GSL\DuttweilerDe\Controller\Module\DuttweilerAppController'
+        controller: '\TYPO3\Neos\Controller\Module\ManagementController'
         description: 'Verschiedene Funktionen der DuttweilerApp'
         icon: 'icon-android'
-        privilegeTarget: 'TYPO3.Neos:Backend.GeneralAccess'
+        privilegeTarget: 'GSL.DuttweilerDe:Backend.App'
         submodules:
           digital-shoutout:
             label: 'Digitale Ortsrufanlage'
-            controller: '\GSL\DuttweilerDe\Controller\Module\DigitalShoutoutController'
+            controller: '\GSL\DuttweilerDe\Controller\Module\DuttweilerApp\DigitalShoutoutController'
             description: 'Mit diesem Modul können "Digitale Durchsagen" an die DuttweilerApp gesendet werden.'
             icon: 'icon-bullhorn'
-            privilegeTarget: 'TYPO3.Neos:Backend.GeneralAccess'
+            privilegeTarget: 'GSL.DuttweilerDe:Backend.App.Shoutout'
 
   Flow:
     i18n:
