@@ -10,6 +10,7 @@ namespace GSL\DuttweilerDe\Controller\Module\DuttweilerApp;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Error\Message;
 use TYPO3\Neos\Controller\Module\AbstractModuleController;
+use \GSL\DuttweilerDe\Service\GcmHelper;
 
 /**
  * The DigitalShoutout Controller
@@ -47,7 +48,12 @@ class DigitalShoutoutController extends AbstractModuleController {
      *
      * @param string $heading The Heading
      * @param string $message The Message
-     * @Flow\Validate(argumentName="heading", type="\TYPO3\Flow\Validation\Validator\NotEmptyValidator")
+	 *
+	 * @Flow\Validate(argumentName="$heading", type="\TYPO3\Flow\Validation\Validator\TextValidator")
+	 * @Flow\Validate(argumentName="$heading", type="\TYPO3\Flow\Validation\Validator\NotEmptyValidator")
+	 * @Flow\Validate(argumentName="$heading", type="\TYPO3\Flow\Validation\Validator\StringLengthValidator", options={ "minimum"=1, "maximum"=40 })
+	 * @Flow\Validate(argumentName="$message", type="\TYPO3\Flow\Validation\Validator\TextValidator")
+	 * @Flow\Validate(argumentName="$message", type="\TYPO3\Flow\Validation\Validator\StringLengthValidator", options={ "minimum"=1, "maximum"=300 })
      * @return void
      */
     public function sendAction($heading, $message) {

@@ -11,16 +11,18 @@
     <f:form action="send">
         <div class="neos-row-fluid neos-module-container">
             <fieldset class="neos-span5">
-                <div class="neos-control-group">
+                <div class="neos-control-group{f:validation.ifHasErrors(for: 'heading', then: ' neos-error')}">
                     <label class="neos-control-label" for="heading">Überschrift</label>
                     <div class="neos-controls neos-controls-row">
-                        <f:form.textfield name="heading" id="heading" class="neos-span12" />
+                        <f:form.textfield name="heading" id="heading" class="neos-span12" required="true" placeholder="Meldung" />
+                        <f:render partial="Module/Shared/FieldValidationResults" arguments="{fieldname: 'heading'}" />
                     </div>
                 </div>
-                <div class="neos-control-group">
+                <div class="neos-control-group{f:validation.ifHasErrors(for: 'message', then: ' neos-error')}">
                     <label class="neos-control-label" for="text">Text</label>
                     <div class="neos-controls neos-controls-row">
-                        <f:form.textarea name="message" id="message" class="neos-span12" rows="10" />
+                        <f:form.textarea name="message" id="message" class="neos-span12" rows="3" placeholder="Ergänzender Text..."/>
+                        <f:render partial="Module/Shared/FieldValidationResults" arguments="{fieldname: 'message'}" />
                     </div>
                 </div>
             </fieldset>
