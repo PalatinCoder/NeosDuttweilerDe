@@ -26,7 +26,7 @@
                             <td>{notification.date -> f:format.date()}</td>
                             <td>{notification.issueDate -> f:format.date()}</td>
                             <td class="neos-action">
-                                <f:link.action action="send" arguments="{notificationId: notification.id}" class="neos-button neos-button-success neos-pull-right"><i class="icon-ok icon-white"></i></f:link.action>
+                                <f:link.action action="send" arguments="{notificationId: notification.id}" class="neos-button neos-button-success neos-pull-right"><i class="icon-ok icon-white"></i></f:link.action><br />
                                 <f:link.action action="discard" arguments="{notificationId: notification.id}" class="neos-button neos-button-danger neos-pull-right"><i class="icon-trash icon-white"></i></f:link.action>
                             </td>
                         </tr>
@@ -46,7 +46,7 @@
             <div class="neos-modal">
                 <div class="neos-modal-header">
                     <button type="button" class="neos-close neos-button" data-dismiss="modal"></button>
-                    <div class="neos-header">Benachrichtigungen verwerfen</div>
+                    <div class="neos-header">Wirklich alle Benachrichtigungen verwerfen?</div>
                 </div>
                 <div class="neos-modal-footer">
                     <a href="#" class="neos-button" data-dismiss="modal">{neos:backend.translate(id: 'cancel', source: 'Modules', package: 'TYPO3.Neos')}</a>
