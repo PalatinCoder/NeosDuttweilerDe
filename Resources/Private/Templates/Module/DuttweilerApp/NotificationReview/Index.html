@@ -23,8 +23,8 @@
                     <f:for each="{pendingNotifications}" as="notification">
                         <tr>
                             <td><h3>{notification.heading}</h3>{notification.subheading}</td>
-                            <td>{notification.date -> f:format.date()}</td>
-                            <td>{notification.issueDate -> f:format.date()}</td>
+                            <td>{notification.date -> f:format.date(forceLocale: 'de_DE')}</td>
+                            <td>{notification.issueDate -> f:format.date(forceLocale: 'de_DE')}</td>
                             <td class="neos-action">
                                 <f:link.action action="send" arguments="{notificationId: notification.id}" class="neos-button neos-button-success neos-pull-right"><i class="icon-ok icon-white"></i></f:link.action><br />
                                 <f:link.action action="discard" arguments="{notificationId: notification.id}" class="neos-button neos-button-danger neos-pull-right"><i class="icon-trash icon-white"></i></f:link.action>
