@@ -32,6 +32,7 @@
         </table>
     </div>
     <div class="neos-footer">
+        <neos:link.module path="duttweilerapp" class="neos-button">{neos:backend.translate(id: 'cancel', value: 'Cancel')}</neos:link.module>
         <f:link.action action="sendAll" class="neos-button neos-button-primary neos-pull-right">Alle senden</f:link.action>
         <button class="neos-button neos-button-danger neos-pull-right" title="Alle verwerfen" data-toggle="modal" href="#modal-discard-all">Alle verwerfen</button>
         <div class="neos-hide" id="modal-discard-all">
