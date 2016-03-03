@@ -11,6 +11,8 @@ use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Error\Message;
 use TYPO3\Neos\Controller\Module\AbstractModuleController;
 use \GSL\DuttweilerDe\Service\GcmHelper;
+use GSL\DuttweilerDe\Domain\Repository\PushNotificationRepository;
+use GSL\DuttweilerDe\Domain\Model\PushNotification;
 
 /**
  * The NotificationManagement Controller
@@ -18,6 +20,13 @@ use \GSL\DuttweilerDe\Service\GcmHelper;
  * @Flow\Scope("singleton")
  */
 class NotificationReviewController extends AbstractModuleController {
+
+	/**
+	 *
+	 * @Flow\Inject
+	 * @var PushNotificationRepository
+	 */
+	protected $pushNotificationRepository;
 
 	/**
 	 * @return void
@@ -41,6 +50,19 @@ class NotificationReviewController extends AbstractModuleController {
 	 * @return void
 	 */
 	public function indexAction() {
+
+		$pendingNotifications = [];
+
+		foreach ($this->pushNotificationRepository->findAll() as $notification) {
+			$pendingNotifications[] = [
+				'heading' => $notification->getHeadline(),
+				'subheading' => $notification->getSubheadline(),
+				'issueDate' => $notification->getIssueDate(),
+				'id' => $notification->getId()
+			];
+		}
+
+		$this->view->assign('pendingNotifications', $pendingNotifications);
 	}
 
 	/**
