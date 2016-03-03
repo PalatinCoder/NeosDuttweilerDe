@@ -39,6 +39,15 @@ TYPO3:
               index:
                 label: 'Durchsage machen!'
             privilegeTarget: 'GSL.DuttweilerDe:Backend.App.Shoutout'
+          notification-review:
+            label: 'Push Benachrichtigungen'
+            controller: '\GSL\DuttweilerDe\Controller\Module\DuttweilerApp\NotificationReviewController'
+            description: 'Hier werden alle anfallenden Push Benachrichtigungen gesammelt und können freigegeben werden.'
+            icon: 'icon-cloud-download'
+            actions:
+              index:
+                label: 'Benachrichtigungen prüfen!'
+            privilegeTarget: 'GSL.DuttweilerDe:Backend.App.ReviewNotifications'
 
   Flow:
     i18n:
