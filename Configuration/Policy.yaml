@@ -13,11 +13,16 @@ roles:
       -
         privilegeTarget: 'GSL.DuttweilerDe:Backend.App.Shoutout'
         permission: GRANT
+      -
+        privilegeTarget: 'GSL.DuttweilerDe:Backend.App.ReviewNotifications'
+        permission: GRANT
 
 privilegeTargets:
   '\TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
     'GSL.DuttweilerDe:Backend.App':
-      matcher: 'method(GSL\DuttweilerDe\Controller\Module\DuttweilerAppController->indexAction())'
+      matcher: 'method(TYPO3\Neos\Controller\Module\ManagementController->indexAction())'
     'GSL.DuttweilerDe:Backend.App.Shoutout':
       matcher: 'method(GSL\DuttweilerDe\Controller\Module\DuttweilerApp\DigitalShoutoutController->(index|send)Action())'
+    'GSL.DuttweilerDe:Backend.App.ReviewNotifications':
+      matcher: 'method(GSL\DuttweilerDe\Controller\Module\DuttweilerApp\NotificationReviewController->(index|send|sendAll|discard|discardAll)Action())'
       
