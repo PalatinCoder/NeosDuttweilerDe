@@ -1,0 +1,51 @@
+﻿{namespace neos=TYPO3\Neos\ViewHelpers}
+<f:layout name="BackendModule" />
+
+<f:section name="subtitle">
+    <div class="neos-module-container">
+        <legend>Push Benachrichtigungen prüfen und freigeben</legend>
+    </div>
+</f:section>
+
+<f:section name="content">
+    <div class="neos-row-fluid">
+        <table class="neos-table">
+            <thead>
+                <tr>
+                    <th>Meldung</th>
+                    <th>Datum</th>
+                    <th>Generiert am</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <f:for each="{pendingNotifications}" as="notification">
+                <tr>
+                    <td><h3>{notification.heading}</h3>{notification.subheading}</td>
+                    <td>{notification.date -> f:format.date()}</td>
+                    <td>{notification.issueDate -> f:format.date()}</td>
+                    <td class="neos-action">
+                        <f:link.action action="send" arguments="{notificationId: notification.id}" class="neos-button neos-button-success neos-pull-right"><i class="icon-ok icon-white"></i></f:link.action>
+                        <f:link.action action="discard" arguments="{notificationId: notification.id}" class="neos-button neos-button-danger neos-pull-right"><i class="icon-trash icon-white"></i></f:link.action>
+                    </td>
+                </tr>
+            </f:for>
+        </table>
+    </div>
+    <div class="neos-footer">
+        <f:link.action action="sendAll" class="neos-button neos-button-primary neos-pull-right">Alle senden</f:link.action>
+        <button class="neos-button neos-button-danger neos-pull-right" title="Alle verwerfen" data-toggle="modal" href="#modal-discard-all">Alle verwerfen</button>
+        <div class="neos-hide" id="modal-discard-all">
+            <div class="neos-modal">
+                <div class="neos-modal-header">
+                    <button type="button" class="neos-close neos-button" data-dismiss="modal"></button>
+                    <div class="neos-header">Benachrichtigungen verwerfen</div>
+                </div>
+                <div class="neos-modal-footer">
+                    <a href="#" class="neos-button" data-dismiss="modal">{neos:backend.translate(id: 'cancel', source: 'Modules', package: 'TYPO3.Neos')}</a>
+                    <f:link.action action="discardAll" class="neos-button neos-button-danger"><i class="icon-trash icon-white"></i> Alle verwerfen</f:link.action>
+                </div>
+            </div>
+            <div class="neos-modal-backdrop neos-in"></div>
+        </div>
+    </div>
+</f:section>
