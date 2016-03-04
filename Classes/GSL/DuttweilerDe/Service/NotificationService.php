@@ -2,14 +2,10 @@
 namespace GSL\DuttweilerDe\Service;
 
 use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Mvc\Controller\ControllerInterface;
-use TYPO3\Flow\Mvc\RequestInterface;
-use TYPO3\Flow\Mvc\ResponseInterface;
+use TYPO3\Flow\Error\Notice;
+use TYPO3\Flow\Mvc\FlashMessageContainer;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use TYPO3\TYPO3CR\Domain\Model\Workspace;
-use TYPO3\Flow\Http\Response;
-use TYPO3\Neos\Controller\Frontend\NodeController;
-use TYPO3\Flow\Log\SystemLoggerInterface;
 use GSL\DuttweilerDe\Domain\Repository\PushNotificationRepository;
 use GSL\DuttweilerDe\Domain\Model\PushNotification;
 
@@ -18,7 +14,6 @@ use GSL\DuttweilerDe\Domain\Model\PushNotification;
  *
  * @Flow\Scope("singleton")
  */
-
 class NotificationService {
 
 	/**
@@ -53,6 +48,12 @@ class NotificationService {
 	protected $pushNotificationRepository;
 
 	/**
+	 * @Flow\Inject
+	 * @var FlashMessageContainer
+	 */
+	protected $flashMessageContainer;
+
+	/**
 	 * Check if the published node is a News and send GCM request
 	 *
 	 * @param NodeInterface $node
@@ -77,6 +78,8 @@ class NotificationService {
 		/** @var PushNotification $notification */
 		$notification = new PushNotification($node->getProperty('title'), $node->getProperty('subheadline'), $node->getName());
 		$this->pushNotificationRepository->add($notification);
+
+		$this->flashMessageContainer->addMessage(new Notice('Push Notification generiert', null, [], 'Push Notification'));
 	}
 }
 ?>
