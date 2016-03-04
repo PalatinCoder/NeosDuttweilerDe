@@ -91,7 +91,7 @@ class NotificationReviewController extends AbstractModuleController {
 		/** @var PushNotification $notification */
 		$notification = $this->pushNotificationRepository->findOneById($notificationId);
 		$this->pushNotificationRepository->remove($notification);
-		$this->addFlashMessage('Benachrichtigung "%" verworfen', 'Benachrichtigung verworfen', Message::SEVERITY_OK, array($notification->getHeadline()));
+		$this->addFlashMessage('Benachrichtigung "%s" verworfen', 'Benachrichtigung verworfen', Message::SEVERITY_OK, array($notification->getHeadline()));
 		$this->redirect('index');
 	}
 
