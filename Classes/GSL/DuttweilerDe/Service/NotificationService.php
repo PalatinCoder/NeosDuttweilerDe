@@ -10,6 +10,8 @@ use TYPO3\TYPO3CR\Domain\Model\Workspace;
 use TYPO3\Flow\Http\Response;
 use TYPO3\Neos\Controller\Frontend\NodeController;
 use TYPO3\Flow\Log\SystemLoggerInterface;
+use GSL\DuttweilerDe\Domain\Repository\PushNotificationRepository;
+use GSL\DuttweilerDe\Domain\Model\PushNotification;
 
 /**
  * Service for sending notification via GCM when new nodes are published
@@ -36,6 +38,21 @@ class NotificationService {
 	}
 
 	/**
+	 * Returns the state of the service
+	 *
+	 * @return boolean
+	 */
+	public function getEnabled() {
+		return $this->enabled;
+	}
+
+	/**
+	 * @Flow\Inject
+	 * @var PushNotificationRepository
+	 */
+	protected $pushNotificationRepository;
+
+	/**
 	 * Check if the published node is a News and send GCM request
 	 *
 	 * @param NodeInterface $node
@@ -57,16 +74,9 @@ class NotificationService {
 		) 
 		{ return; }
 
-		/** @var GcmHelper gcmHelper */
-		$gcmHelper = new GcmHelper;
-
-		$nodeData = array(
-					'title' => $node->getProperty('title'),
-					'subheadline' => $node->getProperty('subheadline'),
-					'nodeName' => $node->getName() 
-				);
-
-		$gcmHelper->sendGcmMessage($nodeData, 'duttweiler-news');
+		/** @var PushNotification $notification */
+		$notification = new PushNotification($node->getProperty('title'), $node->getProperty('subheadline'), $node->getName());
+		$this->pushNotificationRepository->add($notification);
 	}
 }
 ?>
