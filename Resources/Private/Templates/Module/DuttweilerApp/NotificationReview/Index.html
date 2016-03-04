@@ -24,8 +24,8 @@
                             <td><h3>{notification.heading}</h3>{notification.subheading}</td>
                             <td>{notification.issueDate -> f:format.date(forceLocale: 'de_DE')}</td>
                             <td class="neos-action">
-                                <f:link.action action="send" arguments="{notificationId: notification.id}" class="neos-button neos-button-success neos-pull-right"><i class="icon-ok icon-white"></i></f:link.action><br />
-                                <f:link.action action="discard" arguments="{notificationId: notification.id}" class="neos-button neos-button-danger neos-pull-right"><i class="icon-trash icon-white"></i></f:link.action>
+                                <button form="postHelper" formaction="{f:uri.action(action: 'send', arguments: {notificationId: notification.id})}" type="submit" class="neos-button neos-button-success neos-pull-right"><i class="icon-ok icon-white"></i></button>
+                                <button form="postHelper" formaction="{f:uri.action(action: 'discard', arguments: {notificationId: notification.id})}" type="submit" class="neos-button neos-button-danger neos-pull-right"><i class="icon-trash icon-white"></i></button>
                             </td>
                         </tr>
                     </f:for>
@@ -38,7 +38,7 @@
     </div>
     <div class="neos-footer">
         <neos:link.module path="duttweilerapp" class="neos-button">{neos:backend.translate(id: 'cancel', value: 'Cancel')}</neos:link.module>
-        <f:link.action action="sendAll" class="neos-button neos-button-primary neos-pull-right">Alle senden</f:link.action>
+        <button form="postHelper" formaction="{f:uri.action(action: 'sendAll')}" type="submit" class="neos-button neos-button-primary neos-pull-right" title="Alle senden">Alle senden</button>
         <button class="neos-button neos-button-danger neos-pull-right" title="Alle verwerfen" data-toggle="modal" href="#modal-discard-all">Alle verwerfen</button>
         <div class="neos-hide" id="modal-discard-all">
             <div class="neos-modal">
@@ -48,10 +48,11 @@
                 </div>
                 <div class="neos-modal-footer">
                     <a href="#" class="neos-button" data-dismiss="modal">{neos:backend.translate(id: 'cancel', source: 'Modules', package: 'TYPO3.Neos')}</a>
-                    <f:link.action action="discardAll" class="neos-button neos-button-danger"><i class="icon-trash icon-white"></i> Alle verwerfen</f:link.action>
+                    <button form="postHelper" formaction="{f:uri.action(action: 'discardAll')}" type="submit"class="neos-button neos-button-danger" title="Alle verwerfen"><i class="icon-trash icon-white"></i> Alle verwerfen</button>
                 </div>
             </div>
             <div class="neos-modal-backdrop neos-in"></div>
         </div>
     </div>
+    <f:form action="index" id="postHelper" method="post"></f:form>
 </f:section>
