@@ -53,6 +53,7 @@ class NotificationReviewController extends AbstractModuleController {
 
 		$pendingNotifications = [];
 
+		/** @var PushNotification $notification */
 		foreach ($this->pushNotificationRepository->findAll() as $notification) {
 			$pendingNotifications[] = [
 				'heading' => $notification->getHeadline(),
@@ -72,7 +73,11 @@ class NotificationReviewController extends AbstractModuleController {
 	 * @return void
 	 */
 	public function sendAction($notificationId) {
-		$this->addFlashMessage('Dummy: send %d', 'Dummy Impelementation', Message::SEVERITY_OK, array($notificationId));
+		/** @var PushNotification $notification */
+		$notification = $this->pushNotificationRepository->findOneById($notificationId);
+		$this->makeGcmRequest($notification);
+		$this->pushNotificationRepository->remove($notification);
+		$this->addFlashMessage('Benachrichtigung "%s" gesendet', 'Benachrichtigung gesendet', Message::SEVERITY_OK, array($notification->getHeadline()));
 		$this->redirect('index');
 	}
 
@@ -83,7 +88,10 @@ class NotificationReviewController extends AbstractModuleController {
 	 * @return void
 	 */
 	public function discardAction($notificationId) {
-		$this->addFlashMessage('Dummy: discard %d', 'Dummy Impelementation', Message::SEVERITY_OK, array($notificationId));
+		/** @var PushNotification $notification */
+		$notification = $this->pushNotificationRepository->findOneById($notificationId);
+		$this->pushNotificationRepository->remove($notification);
+		$this->addFlashMessage('Benachrichtigung "%" verworfen', 'Benachrichtigung verworfen', Message::SEVERITY_OK, array($notification->getHeadline()));
 		$this->redirect('index');
 	}
 
@@ -93,7 +101,12 @@ class NotificationReviewController extends AbstractModuleController {
 	 * @return void
 	 */
 	public function sendAllAction() {
-		$this->addFlashMessage('Dummy: sendAll', 'Dummy Impelementation');
+		/** @var PushNotification $notification */
+		foreach($this->pushNotificationRepository->findAll() as $notification) {
+			$this->makeGcmRequest($notification);
+		}
+		$this->pushNotificationRepository->removeAll();
+		$this->addFlashMessage('Alle Benachrichtigungen gesendet');
 		$this->redirect('index');
 	}
 
@@ -103,8 +116,26 @@ class NotificationReviewController extends AbstractModuleController {
 	 * @return void
 	 */
 	public function discardAllAction() {
-		$this->addFlashMessage('Dummy: discardAll', 'Dummy Impelementation');
+		$this->pushNotificationRepository->removeAll();
+		$this->addFlashMessage('Alle Benachrichtigungen verworfen');
 		$this->redirect('index');
+	}
+
+	/**
+	 * Send a given notification to the app via GCM
+	 *
+	 * @param PushNotification $notification
+	 * @return void
+	 */
+	protected function makeGcmRequest(PushNotification $notification) {
+
+		/** @var GcmHelper $gcmHelper */
+		$gcmHelper = new GcmHelper;
+		$gcmHelper->sendGcmMessage(array(
+			'title' => $notification->getHeadline(),
+			'subheadline' => $notification->getSubheadline(),
+			'nodeName' => $notification->getNodeName()
+			), 'duttweiler-news');
 	}
 }
 ?>
