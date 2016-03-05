@@ -2,6 +2,7 @@
 namespace GSL\DuttweilerDe\Service;
 
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Eel\FlowQuery\FlowQuery;
 use TYPO3\Flow\Error\Notice;
 use TYPO3\Flow\Mvc\FlashMessageContainer;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
@@ -60,26 +61,36 @@ class NotificationService {
 	 * @param Workspace $targetWorkspace
 	 * @return void
 	 */
-	public function notifyNodePublished(NodeInterface $node, Workspace $targetWorkspace) {	
+	public function notifyNodePublished(NodeInterface $node, Workspace $targetWorkspace) {
+
 		if (!(
 			($this->enabled)
-			&& ($node->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem'))
 			&& ($targetWorkspace->getName() == 'live')
-			&& (!$node->isHidden()) && ($node->getHiddenBeforeDateTime() < new \TYPO3\Flow\Utility\Now)
+			&& (!$node->getNodeType()->isOfType('TYPO3.Neos:ContentCollection'))
+			)
+		) { return; }
+
+		$q = new FlowQuery([$node]);
+		/** @var NodeInterface $documentNode */
+		$documentNode = $q->closest('[instanceof TYPO3.Neos:Document]')->get(0);
+
+		if (!(
+			($documentNode->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem'))
+			&& (!$documentNode->isHidden()) && ($documentNode->getHiddenBeforeDateTime() < new \TYPO3\Flow\Utility\Now)
 		    // check if node is in scope of the api
 		    // Current ChronikBranch is the first child?
-			&& ($node->getParent()->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikBranch', 1, 0)[0] == $node->getParent())
+			&& ($documentNode->getParent()->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikBranch', 1, 0)[0] == $documentNode->getParent())
             // node is among the first ten?
-			&& ($node->getIndex() < $node->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikItem', 1, 10)[0]->getIndex())
+			&& ($documentNode->getIndex() < $documentNode->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikItem', 1, 10)[0]->getIndex())
 			)
 		) 
 		{ return; }
 
 		/** @var PushNotification $notification */
-		$notification = new PushNotification($node->getProperty('title'), $node->getProperty('subheadline'), $node->getName());
+		$notification = new PushNotification($documentNode->getProperty('title'), $documentNode->getProperty('subheadline'), $documentNode->getName());
 		$this->pushNotificationRepository->add($notification);
 
-		$this->flashMessageContainer->addMessage(new Notice('Push Notification generiert', null, [], 'Push Notification'));
+		$this->flashMessageContainer->addMessage(new Notice('Push Notification "%s" generiert', null, array($documentNode->getProperty('title')), 'Push Notification'));
 	}
 }
 ?>
