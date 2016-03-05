@@ -75,13 +75,16 @@ class NotificationService {
 		$documentNode = $q->closest('[instanceof TYPO3.Neos:Document]')->get(0);
 
 		if (!(
-			($documentNode->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem'))
+			($documentNode !== null)
+			&& ($documentNode->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem'))
 			&& (!$documentNode->isHidden()) && ($documentNode->getHiddenBeforeDateTime() < new \TYPO3\Flow\Utility\Now)
 		    // check if node is in scope of the api
 		    // Current ChronikBranch is the first child?
 			&& ($documentNode->getParent()->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikBranch', 1, 0)[0] == $documentNode->getParent())
             // node is among the first ten?
 			&& ($documentNode->getIndex() < $documentNode->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikItem', 1, 10)[0]->getIndex())
+			// we don't have a noficiation for this document already
+			&& (!$this->pushNotificationRepository->findOneByNodeName($documentNode->getName()))
 			)
 		) 
 		{ return; }
