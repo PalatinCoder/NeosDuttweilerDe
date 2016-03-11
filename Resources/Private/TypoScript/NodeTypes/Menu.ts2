@@ -1,9 +1,5 @@
 prototype(GSL.DuttweilerDe.Content:Menu) < prototype(TYPO3.Neos.NodeTypes:Menu) {
     templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
-
-    // path down there is /sites/duttweilerde/a-bis-z/chronik
-
-    listCollection = ${q(documentNode).children('[instanceof GSL.DuttweilerDe.Pages:Default]').orderByDate().get()}
-
+    listCollection = ${q(documentNode).children('[instanceof TYPO3.Neos:Document]').orderByDate().get()}
     listItem = GSL.DuttweilerDe.Content:RelatedPagesBacklink
 }
