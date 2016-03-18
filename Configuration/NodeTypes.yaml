@@ -783,3 +783,27 @@
                 label: 'Unterstrichen'
               boxed:
                 label: 'Kasten'
+'TYPO3.Neos.NodeTypes:Page':
+  properties:
+    layout:
+      ui:
+        inspector:
+          group: layout
+          editorOptions:
+            values:
+              'default':
+                label: 'Duttweiler.de Standard'
+              'frontpage':
+                label: 'Duttweiler.de Startseite'
+              'weinbau':
+                label: 'duttweiler-wein.de'
+    subpageLayout:
+      ui:
+        inspector:
+          group: layout
+          editorOptions:
+            values:
+              'default':
+                label: Duttweiler.de Standard'
+              'weinbau':
+                label: 'duttweiler-wein.de'
