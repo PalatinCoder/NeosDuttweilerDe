@@ -6,10 +6,7 @@ include: NodeTypes/*
 include: PageTypes/*
 include: API/*
 
-root.frontPage {
-	condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:Frontpage]')}
-	renderPath = '/frontPage'
-}
+default < page
 
 prototype(TYPO3.Neos.NodeTypes:Image) {
 	partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
