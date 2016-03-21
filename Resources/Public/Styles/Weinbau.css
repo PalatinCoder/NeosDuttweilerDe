@@ -1,0 +1,98 @@
+﻿body {
+    background: #c60;
+}
+a {
+    color: #c60;
+}
+@media screen and (min-width: 900px) {
+    .back-to-top {
+        background-color: white;
+        color: #c60;
+        border: 1px solid #c60;
+    }
+}
+@media screen and (max-width: 899px) {
+    .back-to-top {
+        background-color: #c60;
+        color: white;
+        border: 1px solid white;
+    }
+}
+#PageHeading a {
+    text-decoration: none;
+    font-weight: bold;
+}
+#PageHeading a:hover {
+    text-decoration: underline;
+}
+#Wrapper {
+    width: 800px;
+    background-color: white;
+    margin: 10px auto;
+    border: none;
+}
+#PageHeading {
+    background-image: url(../Images/dw-logo1.jpg);
+    height: 200px;
+    position: relative;
+}
+#PageHeading, #PageHeading a {
+    color: #c60;
+}
+#PageHeading ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#PageHeading ul li {
+    display: inline-block;
+    border-right: 1px solid black;
+    padding: 0 5px;
+}
+#PageTitle {
+    font-size: 21pt;
+    font-weight: bold;
+    margin: 100px 0 0 20px;
+}
+nav#PageMenu {
+    background-color: #f0f0f0;
+    position: absolute;
+    bottom: 0;
+    font-size: 8pt;
+}
+
+/*div.neos-contentcollection {
+    border-top: 2px solid #c60;
+    margin-top: 2px;
+    padding-top: 2px;
+}*/
+
+nav.typo3-neos-nodetypes-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav.typo3-neos-nodetypes-menu li {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-bottom: 1px solid #c60;
+}
+
+div.typo3-neos-nodetypes-headline {
+    border-top: 2px solid #c60;
+    border-bottom: 1px solid #c60;
+    background-color: #f0f0f0;
+    margin: 10px;
+    color: #c60;
+}
+div.typo3-neos-nodetypes-headline h1 {
+    font-weight: normal;
+    margin: 5px;
+}
+.ArticlePressespiegelItemIcon { width: 10px; height: 10px; background-color: #c60; display: inline-block; margin: 0 5px; }
+.ArticlePressespiegelItem { margin: 5px 0; color: black; }
+.ArticlePressespiegelItemInner { background-color: #eee; border-bottom: 1px solid black; border-right: 1px solid black; display: inline-block; }
+.ArticlePressespiegelItemInner { width: 90%; /* fallback */ width: calc(100% - 40px); }
+.ArticlePressespiegelItemTitle { font-weight: bold; }
+.ArticlePressespiegelItemDate { font-size: 8pt; float: right; }
+.ArticlePressespiegelItemLink { margin-left: 25px; }

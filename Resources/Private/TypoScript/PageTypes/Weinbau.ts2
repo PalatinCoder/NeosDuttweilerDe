@@ -1,0 +1,45 @@
+weinbau = Page {
+	head {
+		meta = TYPO3.TypoScript:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
+			sectionName = 'meta'
+		}
+		stylesheets.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
+			sectionName ='stylesheets'
+		}
+		javascripts.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
+			sectionName = 'headScripts'
+		}
+		titleTag = ${'<title>' + (String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')) + ' - Duttweiler Wein - Duttweiler/Pfalz</title>'}
+	}
+	body {
+		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
+		sectionName = 'body'
+
+        title = ${String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')}
+        parts {
+            sectionMenu = TYPO3.TypoScript:Template {
+                templatePath = 'resource://GSL.DuttweilerWein/Private/Templates/NodeTypes/SectionMenu.html'
+                items = ${q(documentNode).children('[instanceof TYPO3.Neos:ContentCollection]').children('[instanceof TYPO3.Neos.NodeTypes:Headline]')}
+            }
+        }
+        content {
+            main = PrimaryContent {
+                nodePath = 'main'
+            }
+        }
+
+		javascripts.site = TYPO3.TypoScript:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
+			sectionName = 'bodyScripts'
+		}        
+	}
+    prototype(TYPO3.Neos.NodeTypes:Headline) {
+        attributes.id = ${String.pregReplace(node.properties.title, '#</?h[1-5]>#', '')}
+    }
+    prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) {
+        templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/RelatedPagesBacklink.html'
+    }
+}
