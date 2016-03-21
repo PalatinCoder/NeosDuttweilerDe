@@ -804,6 +804,6 @@
           editorOptions:
             values:
               'default':
-                label: Duttweiler.de Standard'
+                label: 'Duttweiler.de Standard'
               'weinbau':
                 label: 'duttweiler-wein.de'
