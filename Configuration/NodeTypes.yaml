@@ -783,3 +783,13 @@
                 label: 'Unterstrichen'
               boxed:
                 label: 'Kasten'
+'TYPO3.Neos:Shortcut':
+  properties:
+    date:
+      type: DateTime
+      ui:
+        label: Datum
+        reloadIfChanged: false
+        inspector:
+          group: document
+          position: 'end 900'

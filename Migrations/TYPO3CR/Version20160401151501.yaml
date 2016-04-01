@@ -1,0 +1,16 @@
+up:
+  comments: 'Add date property to TYPO3.Neos:Shortcut'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos:Shortcut'
+      transformations:
+        -
+          type: 'AddNewProperty'
+          settings:
+            newPropertyName: 'date'
+            value: ''
+down: []
