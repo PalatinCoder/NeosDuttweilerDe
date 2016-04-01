@@ -2,10 +2,28 @@ prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) < prototype(TYPO3.Neos:
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/RelatedPagesBacklink.html'
 
     title = ${q(node).property('title')}
-    subheading = ${q(node).property('subheadline')}
     date = ${q(node).property('date')}
+    subheading = TYPO3.TypoScript:Case {
+        shortcut {
+            condition = ${q(node).is('[instanceof TYPO3.Neos:Shortcut]')}
+            renderer = ${'weiterlesen...'}
+        }
+        default {
+            renderer = ${q(node).property('subheadline')}
+            condition = ${true}
+        }
+    }
 
     chronikLink = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
     itemLink = ${q(node).property('_path')}
-    link = ${q(node).property('link')}
+    link = TYPO3.TypoScript:Case {
+        shortcut {
+            renderer = ${q(node).property('target')}
+            condition = ${q(node).is('[instanceof TYPO3.Neos:Shortcut]')}
+        }
+        internal {
+            renderer = ${q(node).property('link')}
+            condition = ${true}
+        }
+    }
 }
