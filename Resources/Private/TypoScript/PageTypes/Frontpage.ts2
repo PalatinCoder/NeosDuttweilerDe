@@ -12,7 +12,7 @@ frontPage = Page {
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
 			sectionName = 'headScripts'
 		}
-		titleTag = ${'<title>' + q(node).property('title') + ' - Duttweiler/Pfalz</title>'}
+        titleTag = ${'<title>' + (String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')) + ' - Duttweiler Wein - Duttweiler/Pfalz</title>'}
 	}
 	body {
 		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'

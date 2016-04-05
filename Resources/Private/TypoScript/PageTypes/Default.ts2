@@ -12,14 +12,14 @@ page = Page {
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
 			sectionName = 'headScripts'
 		}
-		titleTag = ${'<title>' + q(node).property('title') + ' - Duttweiler/Pfalz</title>'}
+        titleTag = ${'<title>' + (String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')) + ' - Duttweiler/Pfalz</title>'}
 	}
 	body {
 		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
 		sectionName = 'body'
         
         subheader = ${q(node).property('subheadline')}
-        header = ${q(node).property('title')}
+        header = ${String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')}
         
         headerImage = ${q(node).property('headerImage')}
         headerImageAlternativeText = ${q(node).property('headerImageAlternativeText')}
