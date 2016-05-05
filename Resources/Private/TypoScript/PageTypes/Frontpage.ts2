@@ -24,6 +24,7 @@ frontPage = Page {
 		parts {
 			menu = Menu {
                 		#renderHiddenInIndex = true
+                        maximumLevels = 1
             		}
 		}
 
