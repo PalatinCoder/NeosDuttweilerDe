@@ -6,21 +6,27 @@ TYPO3:
       groups:
         duttweiler-general:
           label: 'Duttweiler - Allgemein'
-          position: start
+          collapsed: FALSE
+          position: 50
         frontpage:
           label: 'Duttweiler - Startseite'
-          position: start
+          collapsed: FALSE
+          position: 51
         chronik:
           label: 'Duttweiler - Chronik'
-          position: start
+          collapsed: FALSE
+          position: 52
         api:
           label: 'Duttweiler - API'
+          collapsed: TRUE
           position: end
 
     userInterface:
       navigateComponent:
         nodeTree:
           loadingDepth: 2
+      backendLoginForm:
+        backgroundImage: 'resource://GSL.DuttweilerDe/Public/Images/LoginWallpaper.jpg'
 
     modules:
       duttweilerapp:
