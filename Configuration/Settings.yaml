@@ -6,13 +6,16 @@ TYPO3:
       groups:
         duttweiler-general:
           label: 'Duttweiler - Allgemein'
-          position: start
+          position: 51
+          collapsed: FALSE
         frontpage:
           label: 'Duttweiler - Startseite'
-          position: start
+          position: 52
+          collapsed: FALSE
         chronik:
           label: 'Duttweiler - Chronik'
-          position: start
+          position: 53
+          collapsed: FALSE
         api:
           label: 'Duttweiler - API'
           position: end

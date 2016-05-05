@@ -1,6 +1,7 @@
 prototype(GSL.DuttweilerDe.Content:Event) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Event.html'
 	
+    isInPromoter = false
 	title = ${q(node).property('title')}
 	location = ${q(node).property('location')}
 	host = ${q(node).property('host')}
