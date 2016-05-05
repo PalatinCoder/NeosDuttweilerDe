@@ -68,10 +68,10 @@
           group: header-bg
   constraints:
     nodeTypes:
+      '*': false
       'GSL.DuttweilerDe.Pages:Default': true
       'TYPO3.Neos:Shortcut': true
       'GSL.DuttweilerDe.API:API': true
-      '*': false
 'GSL.DuttweilerDe.Pages:IndexPage':
   superTypes:
     'GSL.DuttweilerDe.Pages:Default': true
@@ -363,7 +363,7 @@
     'TYPO3.Neos:Content': true
   ui:
     label: 'News Meldung'
-    group: hidden
+    group: frontpage
     inspector:
       groups:
         news:
@@ -464,7 +464,7 @@
    'TYPO3.Neos:Content': true
   ui:
     label: Listenelement
-    group: chronik
+    group: duttweiler-general
     inspector:
       groups:
         general:
@@ -596,7 +596,7 @@
     'TYPO3.Neos:Content': true
   ui:
     label: Veranstaltungstipp
-    group: frontpage
+    group: duttweiler-general
     icon: icon-calendar
     inspector:
       groups:
@@ -793,3 +793,17 @@
         inspector:
           group: document
           position: 'end 900'
+'TYPO3.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'GSL.DuttweilerDe.Content:FrontpageInfoBox': FALSE
+      'GSL.DuttweilerDe.Content:FrontpageNewsItem': FALSE
+      'GSL.DuttweilerDe.Content:FrontpageNewsList': FALSE
+      'GSL.DuttweilerDe.Content:PressespiegelItem': FALSE
+'TYPO3.Neos:Document':
+  constraints:
+    nodeTypes:
+      'TYPO3.Neos.NodeTypes:Page': FALSE
+      'GSL.DuttweilerDe.Pages:ChronikRoot': FALSE
+      'GSL.DuttweilerDe.Pages:ChronikBranch': FALSE
+      'GSL.DuttweilerDe.Pages:ChronikItem': FALSE
