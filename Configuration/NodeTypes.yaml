@@ -357,13 +357,13 @@
   ui:
     label: 'News Liste'
     icon: icon-list
-    group: frontpage
+    group: ~
 'GSL.DuttweilerDe.Content:FrontpageNewsItem':
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
     label: 'News Meldung'
-    group: frontpage
+    group: ~
     inspector:
       groups:
         news:
@@ -798,7 +798,6 @@
     nodeTypes:
       'GSL.DuttweilerDe.Content:FrontpageInfoBox': FALSE
       'GSL.DuttweilerDe.Content:FrontpageNewsItem': FALSE
-      'GSL.DuttweilerDe.Content:FrontpageNewsList': FALSE
       'GSL.DuttweilerDe.Content:PressespiegelItem': FALSE
 'TYPO3.Neos:Document':
   constraints:
