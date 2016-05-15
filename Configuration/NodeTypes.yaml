@@ -125,23 +125,18 @@
   properties:
     subheadline:
       type: string
-      defaultValue: ''
       ui:
         inspector:
           group: document
         label: Unterüberschrift
-        reloadIfChanged: true
+        reloadIfChanged: TRUE
         inlineEditable: TRUE
-#    date:
-#      type: DateTime
-#      ui:
-#        label: Datum
-#        reloadIfChanged: true
-#        inspector:
-#          group: general
-    title:
-      ui:
-        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Unterüberschrift'
+          autoparagraph: FALSE
+          format:
+            removeFormat: TRUE
+            '*': FALSE
     headerImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
@@ -214,11 +209,23 @@
             startingPoint: '/'
     date:
       type: DateTime
+      defaultValue: now
       ui:
         label: Datum
         reloadIfChanged: true
         inspector:
           group: general
+    dateAdditionalText:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: '(...)'
+          autoparagraph: FALSE
+          format:
+            removeFormat: TRUE
+            '*': FALSE
+
 'GSL.DuttweilerDe.Content:PressespiegelItem':
   superTypes:
     'TYPO3.Neos:Content': true

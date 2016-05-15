@@ -18,7 +18,7 @@ page = Page {
 		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
 		sectionName = 'body'
         
-        subheader = ${q(node).property('subheadline')}
+        subheadline = ${q(node).property('subheadline')}
         header = ${String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')}
         
         headerImage = ${q(node).property('headerImage')}
@@ -27,6 +27,7 @@ page = Page {
 
         isChronikItem = ${q(documentNode).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
         date = ${q(node).property('date')}
+        dateAdditionalText = ${q(node).property('dateAdditionalText')}
         
         hasPressespiegel = ${q(node).property('hasPressespiegel')}
         pressespiegelTitle = ${q(node).property('pressespiegelTitle')}
