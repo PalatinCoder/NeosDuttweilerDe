@@ -92,9 +92,10 @@
           group: related
 'GSL.DuttweilerDe.Pages:Default':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Page': true
+    'TYPO3.Neos:Document': true
   ui:
     label: Standardinhalt
+    icon: icon-file
     inspector:
       groups:
         general:
