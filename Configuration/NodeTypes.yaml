@@ -190,6 +190,7 @@
 'GSL.DuttweilerDe.Pages:ChronikItem':
   superTypes:
     'GSL.DuttweilerDe.Pages:Default': true
+  label: ${Date.format(q(node).property('date'), 'd.m. / ') + q(node).property('title')}
   ui:
     label: 'Chronik - Meldung'
     group: chronik
