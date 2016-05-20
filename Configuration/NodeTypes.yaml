@@ -111,6 +111,8 @@
           label: Links
           position: 50
   childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
     pressespiegel:
       type: 'TYPO3.Neos:ContentCollection'
       constraints:
