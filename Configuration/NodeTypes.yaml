@@ -450,14 +450,25 @@
         reloadIfChanged: true
         inspector:
           group: general
-    isImportant:
-      type: boolean
-      defaultValue: false
+    style:
+      type: string
+      defaultValue: default
       ui:
-        label: Eilmeldung
-        reloadIfChanged: true
+        label: 'Stil'
+        reloadIfChanged: TRUE
         inspector:
           group: general
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            placeholder: Stil auswählen
+            values:
+              default:
+                label: Standard
+              important:
+                label: Eilmeldung
+              blue:
+                label: Schwimmbad-Blau
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'

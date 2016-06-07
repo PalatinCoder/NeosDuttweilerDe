@@ -5,6 +5,21 @@ prototype(GSL.DuttweilerDe.Content:FrontpageInfoBox) < prototype(TYPO3.Neos:Cont
 
 	isImportant = ${q(node).property('isImportant')}
 
+    bgColor = TYPO3.TypoScript:Case {
+        important {
+            condition = ${q(node).property('style') == 'important'}
+            renderer = ${"#F00"}
+        }
+        blue {
+            condition = ${q(node).property('style') == 'blue'}
+            renderer = ${"#0093FF"}
+        }
+        default {
+            condition = ${true}
+            renderer = ${"#363"}
+        }
+    }
+
 	title = ${q(node).property('title')}
 	content = ${q(node).children('content').get(0)}
 }
