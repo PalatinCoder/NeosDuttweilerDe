@@ -802,6 +802,8 @@
           group: style
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
+            allowEmpty: TRUE
+            placeholder: 'Stil auswählen'
             values:
               underline:
                 label: 'Unterstrichen'
