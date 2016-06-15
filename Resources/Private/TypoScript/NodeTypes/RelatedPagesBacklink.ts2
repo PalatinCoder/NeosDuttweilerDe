@@ -14,16 +14,47 @@ prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) < prototype(TYPO3.Neos:
         }
     }
 
-    chronikLink = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
-    itemLink = ${q(node).property('_path')}
     link = TYPO3.TypoScript:Case {
+        chronik {
+            renderer = ${q(node).property('_path')}
+            condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
+        }
         shortcut {
-            renderer = ${q(node).property('target')}
+            renderer = TYPO3.TypoScript:Case {
+                node {
+                    condition = ${String.startsWith(q(node).property('target'), 'node://')}
+                    renderer = ${Neos.Link.resolveNodeUri(q(node).property('target'), q(node).get(0), this)}
+                }
+                default {
+                    condition = ${true}
+                    renderer = ${q(node).property('target')}
+                }
+            }
             condition = ${q(node).is('[instanceof TYPO3.Neos:Shortcut]')}
         }
         internal {
-            renderer = ${q(node).property('link')}
+            renderer =  TYPO3.TypoScript:Case {
+                node {
+                    condition = ${String.startsWith(q(node).property('link'), 'node://')}
+                    renderer = ${Neos.Link.resolveNodeUri(q(node).property('link'), q(node).get(0), this)}
+                }
+                default {
+                    condition = ${true}
+                    renderer = ${q(node).property('link')}
+                }
+            }
             condition = ${true}
+        }
+    }
+
+    linkType = TYPO3.TypoScript:Case {
+        node {
+            condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
+            renderer = ${"node"}
+        }
+        uri {
+            condition = ${true}
+            renderer = ${"uri"}
         }
     }
 }
