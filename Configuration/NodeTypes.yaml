@@ -364,6 +364,14 @@
         label: 'Link'
         inspector:
           group: news
+'GSL.DuttweilerDe:FrontpageTTNews2':
+  superTypes:
+    'GSL.DuttweilerDe:FrontpageTTNews': true
+  ui:
+    label: 'Duttweiler NachrichTTen'
+  properties:
+    title:
+      defaultValue: 'Duttweiler NachrichTTen'
 'GSL.DuttweilerDe.Content:FrontpageNewsList':
   superTypes:
     'TYPO3.Neos:Content': true
