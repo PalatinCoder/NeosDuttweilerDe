@@ -279,7 +279,7 @@
   properties:
     title:
       defaultValue: 'B-Klasse Rhein-Mittelhaardt West'
-    text: ~
+    text: []
     date:
       defaultValue: now
     logo:
@@ -378,13 +378,13 @@
   ui:
     label: 'News Liste'
     icon: icon-list
-    group: ~
+    group: 'hidden'
 'GSL.DuttweilerDe.Content:FrontpageNewsItem':
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
     label: 'News Meldung'
-    group: ~
+    group: 'hidden'
     inspector:
       groups:
         news:
@@ -548,7 +548,7 @@
   ui:
     group: duttweiler-general
     label: 'A bis Z Menu'
-  properties: ~
+  properties: []
 'GSL.DuttweilerDe.Content:Event':
   superTypes:
     'TYPO3.Neos:Content': true
@@ -763,7 +763,6 @@
         label: 'Bilder'
         inspector:
           group: image
-          label: 'Bilder'
     fancyboxGroup:
       type: string
       defaultValue: ''
@@ -802,9 +801,9 @@
   properties:
     layout:
       type: string
+      defaultValue: 'underline'
       ui:
         label: 'Typ'
-        defaultValue: 'underline'
         reloadIfChanged: TRUE
         inspector:
           group: style
@@ -831,7 +830,7 @@
         reloadIfChanged: false
         inspector:
           group: document
-          position: 'end 900'
+          position: 900
 'TYPO3.Neos:ContentCollection':
   constraints:
     nodeTypes:
