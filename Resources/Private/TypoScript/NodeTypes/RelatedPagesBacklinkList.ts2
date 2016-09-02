@@ -10,6 +10,11 @@ prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklinkList) {
     @cache {
     	mode = 'cached'
 
+        entryIdentifier {
+                node = ${node}
+                editPreviewMode = ${node.context.currentRenderingMode.name}
+        }
+
     	entryTags {
     		1 = ${'NodeType_GSL.DuttweilerDe.Pages:ChronikItem'}
     	}
