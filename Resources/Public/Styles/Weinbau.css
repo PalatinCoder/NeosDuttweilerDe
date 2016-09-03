@@ -26,13 +26,14 @@ a {
     text-decoration: underline;
 }
 #Wrapper {
-    width: 800px;
+    /*width: 800px;*/
     background-color: white;
     margin: 10px auto;
     border: none;
 }
 #PageHeading {
     background-image: url(../Images/dw-logo1.jpg);
+    background-position: right top;
     height: 200px;
     position: relative;
 }
@@ -61,6 +62,10 @@ nav#PageMenu {
     font-size: 8pt;
 }
 
+#PageBody {
+    padding: 0 20px 10px;
+}
+
 /*div.neos-contentcollection {
     border-top: 2px solid #c60;
     margin-top: 2px;
@@ -68,10 +73,13 @@ nav#PageMenu {
 }*/
 
 nav.typo3-neos-nodetypes-menu ul {
+    border-top: 2px solid #c60;
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 2px 0;
 }
+div.column:first-child nav.typo3-neos-nodetypes-menu ul { margin-left: -20px; }
+div.column:last-child nav.typo3-neos-nodetypes-menu ul { margin-right: -20px; }
 nav.typo3-neos-nodetypes-menu li {
     background-color: #f0f0f0;
     padding: 5px 10px;
@@ -82,13 +90,14 @@ div.typo3-neos-nodetypes-headline {
     border-top: 2px solid #c60;
     border-bottom: 1px solid #c60;
     background-color: #f0f0f0;
-    margin: 10px;
+    margin: 10px 0;
     color: #c60;
 }
 div.typo3-neos-nodetypes-headline h1 {
     font-weight: normal;
     margin: 5px;
 }
+
 .ArticlePressespiegelItemIcon { width: 10px; height: 10px; background-color: #c60; display: inline-block; margin: 0 5px; }
 .ArticlePressespiegelItem { margin: 5px 0; color: black; }
 .ArticlePressespiegelItemInner { background-color: #eee; border-bottom: 1px solid black; border-right: 1px solid black; display: inline-block; }
@@ -96,3 +105,6 @@ div.typo3-neos-nodetypes-headline h1 {
 .ArticlePressespiegelItemTitle { font-weight: bold; }
 .ArticlePressespiegelItemDate { font-size: 8pt; float: right; }
 .ArticlePressespiegelItemLink { margin-left: 25px; }
+
+div.typo3-neos-nodetypes-text li, div.typo3-neos-nodetypes-textwithimage li { list-style-type: none; position: relative; min-height: 20px; }
+div.typo3-neos-nodetypes-text li::before, div.typo3-neos-nodetypes-textwithimage li::before { content: ''; position: absolute; width: 10px; height: 10px; background-color: #c60; margin: 5px 0 0 -20px; }

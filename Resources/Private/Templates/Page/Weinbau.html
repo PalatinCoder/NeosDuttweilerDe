@@ -18,10 +18,6 @@
         <link rel="shortcut icon" type="image/x-icon" href="{f:uri.resource(path: 'Images/wappen.ico', package: 'GSL.DuttweilerDe')}" />
 		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 	</f:section>
-
-        <meta charset="utf-8" />
-        <title>Weinbau - Duttweiler/Pfalz</title>
-
 	<f:section name="headScripts">
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="{f:uri.resource(path: 'Scripts/fancybox/jquery.fancybox.pack.js', package: 'GSL.DuttweilerDe')}"></script>  
@@ -42,7 +38,9 @@
                 </div>
                 <nav id="PageMenu">
                     <ul>
-                        <li><a href="javascript:history.back();">&laquo;</a></li>{parts.sectionMenu -> f:format.raw()}
+                        <li><a href="javascript:history.back();">&laquo;</a></li>
+                        {parts.sectionMenu -> f:format.raw()}
+                        {f:if(condition: '{isIndexPage}', else: '{parts.subpages -> f:format.raw()}')}
                     </ul>
                 </nav>   
             </div>            
