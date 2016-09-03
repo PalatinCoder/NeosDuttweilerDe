@@ -92,7 +92,7 @@
           group: related
 'GSL.DuttweilerDe.Pages:Default':
   superTypes:
-    'TYPO3.Neos:Document': true
+    'TYPO3.Neos.NodeTypes:Page': true
   ui:
     label: Standardinhalt
     icon: icon-file
@@ -177,8 +177,8 @@
     group: chronik
   constraints:
     nodeTypes:
-      'GSL.DuttweilerDe.Pages:ChronikBranch': true
       '*': false
+      'GSL.DuttweilerDe.Pages:ChronikBranch': true
 'GSL.DuttweilerDe.Pages:ChronikBranch':
   superTypes:
     'GSL.DuttweilerDe.Pages:IndexPage': true
@@ -187,8 +187,8 @@
     group: chronik
   constraints:
     nodeTypes:
-      'GSL.DuttweilerDe.Pages:ChronikItem': true
       '*': false
+      'GSL.DuttweilerDe.Pages:ChronikItem': true
 'GSL.DuttweilerDe.Pages:ChronikItem':
   superTypes:
     'GSL.DuttweilerDe.Pages:Default': true
@@ -227,8 +227,8 @@
           placeholder: '(...)'
           autoparagraph: FALSE
           format:
-            removeFormat: TRUE
             '*': FALSE
+            removeFormat: TRUE
 
 'GSL.DuttweilerDe.Content:PressespiegelItem':
   superTypes:
@@ -860,6 +860,7 @@
   constraints:
     nodeTypes:
       'TYPO3.Neos.NodeTypes:Page': FALSE
-      'GSL.DuttweilerDe.Pages:ChronikRoot': FALSE
+      'GSL.DuttweilerDe.Pages:Default': TRUE
+      'GSL.DuttweilerDe.Pages:ChronikRoot': TRUE
       'GSL.DuttweilerDe.Pages:ChronikBranch': FALSE
       'GSL.DuttweilerDe.Pages:ChronikItem': FALSE
