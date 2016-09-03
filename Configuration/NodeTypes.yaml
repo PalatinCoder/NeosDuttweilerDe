@@ -818,11 +818,6 @@
                 label: 'Kasten'
 'TYPO3.Neos:Shortcut':
   properties:
-    target:
-      ui:
-        inspector:
-          editorOptions:
-            startingPoint: '/'
     date:
       type: DateTime
       ui:
