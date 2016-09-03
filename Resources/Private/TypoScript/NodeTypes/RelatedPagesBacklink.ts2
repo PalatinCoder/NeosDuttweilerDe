@@ -2,10 +2,59 @@ prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) < prototype(TYPO3.Neos:
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/RelatedPagesBacklink.html'
 
     title = ${q(node).property('title')}
-    subheading = ${q(node).property('subheadline')}
     date = ${q(node).property('date')}
+    subheading = TYPO3.TypoScript:Case {
+        shortcut {
+            condition = ${q(node).is('[instanceof TYPO3.Neos:Shortcut]')}
+            renderer = ${'weiterlesen...'}
+        }
+        default {
+            renderer = ${q(node).property('subheadline')}
+            condition = ${true}
+        }
+    }
 
-    chronikLink = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
-    itemLink = ${q(node).property('_path')}
-    link = ${q(node).property('link')}
+    link = TYPO3.TypoScript:Case {
+        chronik {
+            renderer = ${q(node).property('_path')}
+            condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
+        }
+        shortcut {
+            renderer = TYPO3.TypoScript:Case {
+                node {
+                    condition = ${String.startsWith(q(node).property('target'), 'node://')}
+                    renderer = ${Neos.Link.resolveNodeUri(q(node).property('target'), q(node).get(0), this.tsRuntime.controllerContext)}
+                }
+                default {
+                    condition = ${true}
+                    renderer = ${q(node).property('target')}
+                }
+            }
+            condition = ${q(node).is('[instanceof TYPO3.Neos:Shortcut]')}
+        }
+        internal {
+            renderer =  TYPO3.TypoScript:Case {
+                node {
+                    condition = ${String.startsWith(q(node).property('link'), 'node://')}
+                    renderer = ${Neos.Link.resolveNodeUri(q(node).property('link'), q(node).get(0), this.tsRuntime.controllerContext)}
+                }
+                default {
+                    condition = ${true}
+                    renderer = ${q(node).property('link')}
+                }
+            }
+            condition = ${true}
+        }
+    }
+
+    linkType = TYPO3.TypoScript:Case {
+        node {
+            condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
+            renderer = ${"node"}
+        }
+        uri {
+            condition = ${true}
+            renderer = ${"uri"}
+        }
+    }
 }

@@ -68,10 +68,10 @@
           group: header-bg
   constraints:
     nodeTypes:
+      '*': false
       'GSL.DuttweilerDe.Pages:Default': true
       'TYPO3.Neos:Shortcut': true
       'GSL.DuttweilerDe.API:API': true
-      '*': false
 'GSL.DuttweilerDe.Pages:IndexPage':
   superTypes:
     'GSL.DuttweilerDe.Pages:Default': true
@@ -92,9 +92,10 @@
           group: related
 'GSL.DuttweilerDe.Pages:Default':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Page': true
+    'TYPO3.Neos:Document': true
   ui:
     label: Standardinhalt
+    icon: icon-file
     inspector:
       groups:
         general:
@@ -110,6 +111,8 @@
           label: Links
           position: 50
   childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
     pressespiegel:
       type: 'TYPO3.Neos:ContentCollection'
       constraints:
@@ -125,23 +128,18 @@
   properties:
     subheadline:
       type: string
-      defaultValue: ''
       ui:
         inspector:
           group: document
         label: Unterüberschrift
-        reloadIfChanged: true
+        reloadIfChanged: TRUE
         inlineEditable: TRUE
-#    date:
-#      type: DateTime
-#      ui:
-#        label: Datum
-#        reloadIfChanged: true
-#        inspector:
-#          group: general
-    title:
-      ui:
-        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Unterüberschrift'
+          autoparagraph: FALSE
+          format:
+            removeFormat: TRUE
+            '*': FALSE
     headerImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
@@ -194,6 +192,7 @@
 'GSL.DuttweilerDe.Pages:ChronikItem':
   superTypes:
     'GSL.DuttweilerDe.Pages:Default': true
+  label: ${Date.format(q(node).property('date'), 'd.m. / ') + q(node).property('title')}
   ui:
     label: 'Chronik - Meldung'
     group: chronik
@@ -210,13 +209,27 @@
         reloadIfChanged: true
         inspector:
           group: related
+          editorOptions:
+            startingPoint: '/'
     date:
       type: DateTime
+      defaultValue: now
       ui:
         label: Datum
         reloadIfChanged: true
         inspector:
           group: general
+    dateAdditionalText:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: '(...)'
+          autoparagraph: FALSE
+          format:
+            removeFormat: TRUE
+            '*': FALSE
+
 'GSL.DuttweilerDe.Content:PressespiegelItem':
   superTypes:
     'TYPO3.Neos:Content': true
@@ -266,7 +279,7 @@
   properties:
     title:
       defaultValue: 'B-Klasse Rhein-Mittelhaardt West'
-    text: ~
+    text: []
     date:
       defaultValue: now
     logo:
@@ -351,19 +364,27 @@
         label: 'Link'
         inspector:
           group: news
+'GSL.DuttweilerDe:FrontpageTTNews2':
+  superTypes:
+    'GSL.DuttweilerDe:FrontpageTTNews': true
+  ui:
+    label: 'Duttweiler NachrichTTen'
+  properties:
+    title:
+      defaultValue: 'Duttweiler NachrichTTen'
 'GSL.DuttweilerDe.Content:FrontpageNewsList':
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
     label: 'News Liste'
     icon: icon-list
-    group: frontpage
+    group: 'hidden'
 'GSL.DuttweilerDe.Content:FrontpageNewsItem':
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
     label: 'News Meldung'
-    group: hidden
+    group: 'hidden'
     inspector:
       groups:
         news:
@@ -437,14 +458,25 @@
         reloadIfChanged: true
         inspector:
           group: general
-    isImportant:
-      type: boolean
-      defaultValue: false
+    style:
+      type: string
+      defaultValue: default
       ui:
-        label: Eilmeldung
-        reloadIfChanged: true
+        label: 'Stil'
+        reloadIfChanged: TRUE
         inspector:
           group: general
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: TRUE
+            placeholder: Stil auswählen
+            values:
+              default:
+                label: Standard
+              important:
+                label: Eilmeldung
+              blue:
+                label: Schwimmbad-Blau
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -464,7 +496,7 @@
    'TYPO3.Neos:Content': true
   ui:
     label: Listenelement
-    group: chronik
+    group: duttweiler-general
     inspector:
       groups:
         general:
@@ -516,7 +548,7 @@
   ui:
     group: duttweiler-general
     label: 'A bis Z Menu'
-  properties: ~
+  properties: []
 'GSL.DuttweilerDe.Content:Event':
   superTypes:
     'TYPO3.Neos:Content': true
@@ -596,7 +628,7 @@
     'TYPO3.Neos:Content': true
   ui:
     label: Veranstaltungstipp
-    group: frontpage
+    group: duttweiler-general
     icon: icon-calendar
     inspector:
       groups:
@@ -731,7 +763,6 @@
         label: 'Bilder'
         inspector:
           group: image
-          label: 'Bilder'
     fancyboxGroup:
       type: string
       defaultValue: ''
@@ -770,14 +801,16 @@
   properties:
     layout:
       type: string
+      defaultValue: 'underline'
       ui:
         label: 'Typ'
-        defaultValue: 'underline'
         reloadIfChanged: TRUE
         inspector:
           group: style
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
+            allowEmpty: TRUE
+            placeholder: 'Stil auswählen'
             values:
               underline:
                 label: 'Unterstrichen'
@@ -807,3 +840,26 @@
                 label: 'Duttweiler.de Standard'
               'weinbau':
                 label: 'duttweiler-wein.de'
+'TYPO3.Neos:Shortcut':
+  properties:
+    date:
+      type: DateTime
+      ui:
+        label: Datum
+        reloadIfChanged: false
+        inspector:
+          group: document
+          position: 900
+'TYPO3.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'GSL.DuttweilerDe.Content:FrontpageInfoBox': FALSE
+      'GSL.DuttweilerDe.Content:FrontpageNewsItem': FALSE
+      'GSL.DuttweilerDe.Content:PressespiegelItem': FALSE
+'TYPO3.Neos:Document':
+  constraints:
+    nodeTypes:
+      'TYPO3.Neos.NodeTypes:Page': FALSE
+      'GSL.DuttweilerDe.Pages:ChronikRoot': FALSE
+      'GSL.DuttweilerDe.Pages:ChronikBranch': FALSE
+      'GSL.DuttweilerDe.Pages:ChronikItem': FALSE

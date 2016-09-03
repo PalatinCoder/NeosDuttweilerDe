@@ -1,0 +1,16 @@
+﻿up:
+  comments: 'Add dateAdditionalText property to GSL.DuttweilerDe.Pages:ChronikItem'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'GSL.DuttweilerDe.Pages:ChronikItem'
+      transformations:
+        -
+          type: 'AddNewProperty'
+          settings:
+            newPropertyName: 'dateAdditionalText'
+            value: ''
+down: []
