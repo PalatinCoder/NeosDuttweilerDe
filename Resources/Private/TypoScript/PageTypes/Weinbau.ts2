@@ -1,25 +1,24 @@
 weinbau = Page {
 	head {
 		meta = TYPO3.TypoScript:Template {
-			templatePath = 'resource://GSL.DuttweilerWein/Private/Templates/Page/Default.html'
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
 			sectionName = 'meta'
 		}
 		stylesheets.site = TYPO3.TypoScript:Template {
-			templatePath = 'resource://GSL.DuttweilerWein/Private/Templates/Page/Default.html'
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
 			sectionName ='stylesheets'
 		}
 		javascripts.site = TYPO3.TypoScript:Template {
-			templatePath = 'resource://GSL.DuttweilerWein/Private/Templates/Page/Default.html'
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
 			sectionName = 'headScripts'
 		}
 		titleTag = ${'<title>' + (String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')) + ' - Duttweiler Wein - Duttweiler/Pfalz</title>'}
 	}
 	body {
-		templatePath = 'resource://GSL.DuttweilerWein/Private/Templates/Page/Default.html'
+		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
 		sectionName = 'body'
 
         title = ${String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')}
-
         parts {
             sectionMenu = TYPO3.TypoScript:Template {
                 templatePath = 'resource://GSL.DuttweilerWein/Private/Templates/NodeTypes/SectionMenu.html'
@@ -33,7 +32,7 @@ weinbau = Page {
         }
 
 		javascripts.site = TYPO3.TypoScript:Template {
-			templatePath = 'resource://GSL.DuttweilerWein/Private/Templates/Page/Default.html'
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
 			sectionName = 'bodyScripts'
 		}        
 	}
