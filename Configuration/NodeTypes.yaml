@@ -484,13 +484,18 @@
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: Referenzenliste
+    label: Referenzenliste (Aktuelle Seite)
     group: chronik
     icon: icon-list
   constraints:
     nodeTypes:
       'GSL.DuttweilerDe.Content:RelatedPagesBacklink': true
       '*': false
+'GSL.DuttweilerDe.Content:RelatedPagesBacklinkAggregate':
+  superTypes:
+    'GSL.DuttweilerDe.Content:RelatedPagesBacklinkList': true
+  ui:
+    label: Referenzenliste (zzgl. Unterseiten)
 'GSL.DuttweilerDe.Content:RelatedPagesBacklink':
   superTypes:
    'TYPO3.Neos:Content': true
