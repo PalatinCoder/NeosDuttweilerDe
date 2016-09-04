@@ -1,0 +1,135 @@
+﻿body {
+    background: #c60;
+}
+a {
+    color: #c60;
+}
+@media screen and (min-width: 900px) {
+    .back-to-top {
+        background-color: white;
+        color: #c60;
+        border: 1px solid #c60;
+    }
+}
+@media screen and (max-width: 899px) {
+    .back-to-top {
+        background-color: #c60;
+        color: white;
+        border: 1px solid white;
+    }
+}
+#PageHeading a {
+    text-decoration: none;
+    font-weight: bold;
+}
+#PageHeading a:hover {
+    text-decoration: underline;
+}
+#Wrapper {
+    /*width: 800px;*/
+    background-color: white;
+    margin: 10px auto;
+    border: none;
+}
+#PageHeading {
+    background-image: url(../Images/dw-logo1.jpg);
+    background-position: right top;
+    height: 200px;
+    position: relative;
+}
+#PageHeading, #PageHeading a {
+    color: #c60;
+}
+#PageHeading ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#PageHeading ul li {
+    display: inline-block;
+    border-right: 1px solid black;
+    padding: 0 5px;
+}
+#PageSubtitle {
+    font-size: 14pt;
+    font-weight: normal;
+    line-height: 20px;
+    margin: 80px 0 0 20px;
+}
+#PageTitle {
+    font-size: 20pt;
+    font-weight: bold;
+    margin: 10px 0 0 20px;
+}
+nav#PageMenu {
+    background-color: #f0f0f0;
+    position: absolute;
+    bottom: 0;
+    font-size: 8pt;
+}
+
+#PageBody {
+    padding: 0 20px 10px;
+}
+
+/*div.neos-contentcollection {
+    border-top: 2px solid #c60;
+    margin-top: 2px;
+    padding-top: 2px;
+}*/
+
+nav.typo3-neos-nodetypes-menu ul {
+    border-top: 2px solid #c60;
+    list-style-type: none;
+    padding: 0;
+    margin: 2px 0;
+}
+div.column:first-child nav.typo3-neos-nodetypes-menu ul { margin-left: -20px; }
+div.column:last-child nav.typo3-neos-nodetypes-menu ul { margin-right: -20px; }
+nav.typo3-neos-nodetypes-menu li {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-bottom: 1px solid #c60;
+}
+
+div.typo3-neos-nodetypes-headline.boxed {
+    border-top: 2px solid #c60;
+    border-bottom: 1px solid #c60;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    color: #c60;
+}
+div.typo3-neos-nodetypes-headline.underline {
+    border-bottom: 1px solid #c60;
+    margin: 10px 0;
+    color: #c60;
+}
+div.typo3-neos-nodetypes-headline h1, h2, h3, h4, h5 {
+    font-weight: normal;
+    margin: 5px;
+}
+
+div.neos-contentcollection table th,
+div.neos-contentcollection table th 
+{ background-color: #c60; color: white; }
+
+div.neos-contentcollection div.dw82 {font-size: 1.2em; color:#cc6600; padding-bottom:5px; border-bottom: 1px solid #cc6600; text-align:left; padding-left:10px;padding-top:5px; background-color:#f0f0f0;}
+div.neos-contentcollection table.dw_praem { width: 100%; border: 0; }
+div.neos-contentcollection table.dw_praem td, table.dw_praem th, table.dw_praem tr { border: 0; }
+div.neos-contentcollection table.dw_praem td.dw83 {font-size: 0.8em; color:#cc6600; padding-bottom:3px; border-bottom: 1px solid #cc6600; text-align:left; padding-left:10px;padding-top:5px; background-color:#f0f0f0;}
+div.neos-contentcollection table.dw_praem td.dw84 {font-size: 0.8em; padding-bottom:4px; border-bottom: 1px solid #cc6600; text-align:center; padding-left:10px;padding-top:4px; background-color:#ffffff;}
+div.neos-contentcollection table.dw_praem td.dw85 {font-size: 0.8em; padding-bottom:4px; border-bottom: 1px solid #cc6600; text-align:left; padding-left:10px;padding-top:4px; background-color:#ffffff;}
+div.neos-contentcollection table.dw_praem td.dw86 {font-size: 0.8em; padding-bottom:4px; text-align:left; padding-left:10px;padding-top:4px; background-color:#ffffff; border-bottom: 1px solid #cc6600}
+div.neos-contentcollection table.dw_praem td.dw87 {font-size: 0.8em; padding-bottom:4px; border-bottom: 1px solid #cc6600; text-align:right; padding-left:10px;padding-top:4px; background-color:#f0f0f0; font-weight: bold}
+
+
+.ArticlePressespiegelItemIcon { width: 10px; height: 10px; background-color: #c60; display: inline-block; margin: 0 5px; }
+.ArticlePressespiegelItem { margin: 5px 0; color: black; }
+.ArticlePressespiegelItemInner { background-color: #eee; border-bottom: 1px solid black; border-right: 1px solid black; display: inline-block; }
+.ArticlePressespiegelItemInner { width: 90%; /* fallback */ width: calc(100% - 40px); }
+.ArticlePressespiegelItemTitle { font-weight: bold; }
+.ArticlePressespiegelItemDate { font-size: 8pt; float: right; }
+.ArticlePressespiegelItemLink { margin-left: 25px; }
+
+div.typo3-neos-nodetypes-text li, div.typo3-neos-nodetypes-textwithimage li { list-style-type: none; position: relative; min-height: 20px; }
+div.typo3-neos-nodetypes-text li::before, div.typo3-neos-nodetypes-textwithimage li::before { content: ''; position: absolute; width: 10px; height: 10px; background-color: #c60; margin: 5px 0 0 -20px; }

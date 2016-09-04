@@ -20,3 +20,8 @@ prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklinkList) {
     	}
     }
 }
+
+prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklinkAggregate) < prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklinkList) {
+    templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
+    listCollection = ${q(site).find('#529a59e2-1849-2782-471c-7635f47167de').children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').filterByReference('relatedPages', q(documentNode).children().get()).slice(0,10).get()}
+}

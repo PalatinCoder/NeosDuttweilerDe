@@ -92,7 +92,7 @@
           group: related
 'GSL.DuttweilerDe.Pages:Default':
   superTypes:
-    'TYPO3.Neos:Document': true
+    'TYPO3.Neos.NodeTypes:Page': true
   ui:
     label: Standardinhalt
     icon: icon-file
@@ -177,8 +177,8 @@
     group: chronik
   constraints:
     nodeTypes:
-      'GSL.DuttweilerDe.Pages:ChronikBranch': true
       '*': false
+      'GSL.DuttweilerDe.Pages:ChronikBranch': true
 'GSL.DuttweilerDe.Pages:ChronikBranch':
   superTypes:
     'GSL.DuttweilerDe.Pages:IndexPage': true
@@ -187,8 +187,8 @@
     group: chronik
   constraints:
     nodeTypes:
-      'GSL.DuttweilerDe.Pages:ChronikItem': true
       '*': false
+      'GSL.DuttweilerDe.Pages:ChronikItem': true
 'GSL.DuttweilerDe.Pages:ChronikItem':
   superTypes:
     'GSL.DuttweilerDe.Pages:Default': true
@@ -227,8 +227,8 @@
           placeholder: '(...)'
           autoparagraph: FALSE
           format:
-            removeFormat: TRUE
             '*': FALSE
+            removeFormat: TRUE
 
 'GSL.DuttweilerDe.Content:PressespiegelItem':
   superTypes:
@@ -484,13 +484,18 @@
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: Referenzenliste
+    label: Referenzenliste (Aktuelle Seite)
     group: chronik
     icon: icon-list
   constraints:
     nodeTypes:
       'GSL.DuttweilerDe.Content:RelatedPagesBacklink': true
       '*': false
+'GSL.DuttweilerDe.Content:RelatedPagesBacklinkAggregate':
+  superTypes:
+    'GSL.DuttweilerDe.Content:RelatedPagesBacklinkList': true
+  ui:
+    label: Referenzenliste (nur Unterseiten)
 'GSL.DuttweilerDe.Content:RelatedPagesBacklink':
   superTypes:
    'TYPO3.Neos:Content': true
@@ -816,6 +821,30 @@
                 label: 'Unterstrichen'
               boxed:
                 label: 'Kasten'
+'TYPO3.Neos.NodeTypes:Page':
+  properties:
+    layout:
+      ui:
+        inspector:
+          group: layout
+          editorOptions:
+            values:
+              'default':
+                label: 'Duttweiler.de Standard'
+              'frontpage':
+                label: 'Duttweiler.de Startseite'
+              'weinbau':
+                label: 'Duttweiler Wein'
+    subpageLayout:
+      ui:
+        inspector:
+          group: layout
+          editorOptions:
+            values:
+              'default':
+                label: 'Duttweiler.de Standard'
+              'weinbau':
+                label: 'Duttweiler Wein'
 'TYPO3.Neos:Shortcut':
   properties:
     date:
@@ -836,6 +865,7 @@
   constraints:
     nodeTypes:
       'TYPO3.Neos.NodeTypes:Page': FALSE
-      'GSL.DuttweilerDe.Pages:ChronikRoot': FALSE
+      'GSL.DuttweilerDe.Pages:Default': TRUE
+      'GSL.DuttweilerDe.Pages:ChronikRoot': TRUE
       'GSL.DuttweilerDe.Pages:ChronikBranch': FALSE
       'GSL.DuttweilerDe.Pages:ChronikItem': FALSE
