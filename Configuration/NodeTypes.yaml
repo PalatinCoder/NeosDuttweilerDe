@@ -495,7 +495,7 @@
   superTypes:
     'GSL.DuttweilerDe.Content:RelatedPagesBacklinkList': true
   ui:
-    label: Referenzenliste (zzgl. Unterseiten)
+    label: Referenzenliste (nur Unterseiten)
 'GSL.DuttweilerDe.Content:RelatedPagesBacklink':
   superTypes:
    'TYPO3.Neos:Content': true
