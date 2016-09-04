@@ -86,17 +86,36 @@ nav.typo3-neos-nodetypes-menu li {
     border-bottom: 1px solid #c60;
 }
 
-div.typo3-neos-nodetypes-headline {
+div.typo3-neos-nodetypes-headline.boxed {
     border-top: 2px solid #c60;
     border-bottom: 1px solid #c60;
     background-color: #f0f0f0;
     margin: 10px 0;
     color: #c60;
 }
-div.typo3-neos-nodetypes-headline h1 {
+div.typo3-neos-nodetypes-headline.underline {
+    border-bottom: 1px solid #c60;
+    margin: 10px 0;
+    color: #c60;
+}
+div.typo3-neos-nodetypes-headline h1, h2, h3, h4, h5 {
     font-weight: normal;
     margin: 5px;
 }
+
+div.neos-contentcollection table th,
+div.neos-contentcollection table th 
+{ background-color: #c60; color: white; }
+
+div.neos-contentcollection div.dw82 {font-size: 1.2em; color:#cc6600; padding-bottom:5px; border-bottom: 1px solid #cc6600; text-align:left; padding-left:10px;padding-top:5px; background-color:#f0f0f0;}
+div.neos-contentcollection table.dw_praem { width: 100%; border: 0; }
+div.neos-contentcollection table.dw_praem td, table.dw_praem th, table.dw_praem tr { border: 0; }
+div.neos-contentcollection table.dw_praem td.dw83 {font-size: 0.8em; color:#cc6600; padding-bottom:3px; border-bottom: 1px solid #cc6600; text-align:left; padding-left:10px;padding-top:5px; background-color:#f0f0f0;}
+div.neos-contentcollection table.dw_praem td.dw84 {font-size: 0.8em; padding-bottom:4px; border-bottom: 1px solid #cc6600; text-align:center; padding-left:10px;padding-top:4px; background-color:#ffffff;}
+div.neos-contentcollection table.dw_praem td.dw85 {font-size: 0.8em; padding-bottom:4px; border-bottom: 1px solid #cc6600; text-align:left; padding-left:10px;padding-top:4px; background-color:#ffffff;}
+div.neos-contentcollection table.dw_praem td.dw86 {font-size: 0.8em; padding-bottom:4px; text-align:left; padding-left:10px;padding-top:4px; background-color:#ffffff; border-bottom: 1px solid #cc6600}
+div.neos-contentcollection table.dw_praem td.dw87 {font-size: 0.8em; padding-bottom:4px; border-bottom: 1px solid #cc6600; text-align:right; padding-left:10px;padding-top:4px; background-color:#f0f0f0; font-weight: bold}
+
 
 .ArticlePressespiegelItemIcon { width: 10px; height: 10px; background-color: #c60; display: inline-block; margin: 0 5px; }
 .ArticlePressespiegelItem { margin: 5px 0; color: black; }
