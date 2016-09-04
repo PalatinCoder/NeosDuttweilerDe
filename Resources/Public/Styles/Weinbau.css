@@ -50,10 +50,16 @@ a {
     border-right: 1px solid black;
     padding: 0 5px;
 }
+#PageSubtitle {
+    font-size: 14pt;
+    font-weight: normal;
+    line-height: 20px;
+    margin: 80px 0 0 20px;
+}
 #PageTitle {
-    font-size: 21pt;
+    font-size: 20pt;
     font-weight: bold;
-    margin: 100px 0 0 20px;
+    margin: 10px 0 0 20px;
 }
 nav#PageMenu {
     background-color: #f0f0f0;
