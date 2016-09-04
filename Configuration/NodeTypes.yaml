@@ -337,6 +337,7 @@
 'GSL.DuttweilerDe:FrontpageTTResults':
   superTypes:
     'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
+    'TYPO3.Neos.NodeTypes:Html': TRUE
   ui:
     label: 'Ergebnisse - TT'
     group: 'frontpage'
@@ -345,11 +346,9 @@
       defaultValue: 'Tischtennis-Ergebnisse'
     date:
       defaultValue: now
-    text:
-      defaultValue: '<table><tr><td>Heim</td><td>-</td><td>Gast</td><td>0:0</td></tr><tr><td colspan="4"><a href="http://www.vfl-duttweiler.de/vfl-tt.htm">weiter zu VfL Tischtennis</a></td></tr></table>'
 'GSL.DuttweilerDe:FrontpageTTNews':
   superTypes:
-    'GSL.DuttweilerDe:FrontpageTTResults': true
+    'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
   ui:
     label: 'TT-News'
   properties:
@@ -425,6 +424,7 @@
   ui:
     label: 'Newsmeldung ohne Chronik'
     group: frontpage
+    position: 100
   properties:
     text:
       ui:
