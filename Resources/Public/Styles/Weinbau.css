@@ -50,16 +50,18 @@ a {
     border-right: 1px solid black;
     padding: 0 5px;
 }
+#PageHeadingContent { height: 100px; position: absolute; top: 59px; padding-left: 20px; float: left; }
+#PageHeadingCustomImage { margin-right: 25px; margin-top: 65px; float: right; }
 #PageSubtitle {
     font-size: 14pt;
     font-weight: normal;
     line-height: 20px;
-    margin: 80px 0 0 20px;
+    margin-top: 40px;
 }
 #PageTitle {
     font-size: 20pt;
     font-weight: bold;
-    margin: 10px 0 0 20px;
+    margin-top: 10px;
 }
 nav#PageMenu {
     background-color: #f0f0f0;

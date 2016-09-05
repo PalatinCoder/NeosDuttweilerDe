@@ -21,6 +21,9 @@ weinbau = Page {
         title = ${String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')}
         subtitle = ${q(node).property('subheadline')}
 
+        headerImage = ${q(node).property('headerImage')}
+        headerImageAlternativeText = ${q(node).property('headerImageAlternativeText')}
+
         isIndexPage = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:IndexPage]')}
 
         parts {

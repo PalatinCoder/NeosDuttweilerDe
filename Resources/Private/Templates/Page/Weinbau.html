@@ -32,9 +32,14 @@
                         <li><neos:link.node node="~/">Duttweiler</neos:link.node></li>
                         <li><neos:link.node node="~/node-551d17d1c1f91">Duttweiler Wein</neos:link.node></li>
                     </ul>
-                </nav> 
-                <div id="PageSubtitle">{subtitle}</div>
-                <div id="PageTitle">{title}</div>
+                </nav>
+                <div id="PageHeadingContent">
+                    <div id="PageSubtitle">{subtitle}</div>
+                    <div id="PageTitle">{title}</div>
+                </div>
+                <f:if condition="{headerImage}">
+                    <img id="PageHeadingCustomImage" src="{media:uri.image(image: headerImage)}" alt="{headerImageAlternativeText}" />
+                </f:if> 
                 <nav id="PageMenu">
                     <ul>
                         <li><a href="javascript:history.back();">&laquo;</a></li>
