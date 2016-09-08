@@ -24,7 +24,7 @@ prototype(TYPO3.Neos.NodeTypes:Headline).attributes.class = TYPO3.TypoScript:Cas
         renderer = ${'underline'}
     }
 }
-/* format must be evaluated before page layout */
+
 root.format.@position = 'end 9995'
 json = TYPO3.TypoScript:Case {
 	news {
