@@ -835,6 +835,8 @@
                 label: 'Duttweiler.de Startseite'
               'weinbau':
                 label: 'Duttweiler Wein'
+              'weinprinzessin':
+                label: 'Weinprinzessin'
     subpageLayout:
       ui:
         inspector:
@@ -845,6 +847,8 @@
                 label: 'Duttweiler.de Standard'
               'weinbau':
                 label: 'Duttweiler Wein'
+              'weinprinzessin':
+                label: 'Weinprinzessin'
 'TYPO3.Neos:Shortcut':
   properties:
     date:
