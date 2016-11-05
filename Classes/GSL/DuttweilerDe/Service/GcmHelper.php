@@ -59,6 +59,7 @@ class GcmHelper {
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));
+    curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V6);
 
 		$result = curl_exec($ch);
 		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
