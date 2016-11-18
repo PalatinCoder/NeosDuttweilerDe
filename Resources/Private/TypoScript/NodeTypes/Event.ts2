@@ -9,4 +9,17 @@ prototype(GSL.DuttweilerDe.Content:Event) < prototype(TYPO3.Neos:Content) {
 	endDate = ${q(node).property('endDate')}
 	link = ${q(node).property('link')}
 	banner = ${q(node).property('banner')}
+  
+  @cache {
+    mode = 'cached'
+    entryIdentifier {
+      node = ${node}
+      editPreviewMode = ${node.context.currentRenderingMode.name}
+      promoter = ${isInPromoter}
+    }
+    entryTags {
+      1 = ${'Node_' + node.identifier}
+      2 = ${'DescendantOf_' + documentNode.identifier}
+    }
+  }
 }
