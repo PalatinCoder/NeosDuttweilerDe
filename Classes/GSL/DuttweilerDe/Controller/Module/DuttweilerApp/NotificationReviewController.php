@@ -8,7 +8,7 @@ namespace GSL\DuttweilerDe\Controller\Module\DuttweilerApp;
  */
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Error\Message;
+use Neos\Error\Messages\Message;
 use TYPO3\Neos\Controller\Module\AbstractModuleController;
 use \GSL\DuttweilerDe\Service\GcmHelper;
 use GSL\DuttweilerDe\Domain\Repository\PushNotificationRepository;
