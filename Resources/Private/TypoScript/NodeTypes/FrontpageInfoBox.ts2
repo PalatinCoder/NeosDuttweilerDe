@@ -5,7 +5,7 @@ prototype(GSL.DuttweilerDe.Content:FrontpageInfoBox) < prototype(TYPO3.Neos:Cont
 
 	isImportant = ${q(node).property('isImportant')}
 
-    bgColor = TYPO3.TypoScript:Case {
+    bgColor = Neos.Fusion:Case {
         important {
             condition = ${q(node).property('style') == 'important'}
             renderer = ${"#F00"}

@@ -1,14 +1,14 @@
 weinbau = Page {
 	head {
-		meta = TYPO3.TypoScript:Template {
+		meta = Neos.Fusion:Template {
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
 			sectionName = 'meta'
 		}
-		stylesheets.site = TYPO3.TypoScript:Template {
+		stylesheets.site = Neos.Fusion:Template {
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
 			sectionName = 'stylesheets'
 		}
-		javascripts.site = TYPO3.TypoScript:Template {
+		javascripts.site = Neos.Fusion:Template {
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
 			sectionName = 'headScripts'
 		}
@@ -27,7 +27,7 @@ weinbau = Page {
         isIndexPage = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:IndexPage]')}
 
         parts {
-            sectionMenu = TYPO3.TypoScript:Template {
+            sectionMenu = Neos.Fusion:Template {
                 templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/SectionMenu.html'
                 items = ${q(documentNode).children('[instanceof TYPO3.Neos:ContentCollection]').children('[instanceof TYPO3.Neos.NodeTypes:Headline]')}
             }
@@ -47,7 +47,7 @@ weinbau = Page {
             }
         }
 
-		javascripts.site = TYPO3.TypoScript:Template {
+		javascripts.site = Neos.Fusion:Template {
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
 			sectionName = 'bodyScripts'
 		}        

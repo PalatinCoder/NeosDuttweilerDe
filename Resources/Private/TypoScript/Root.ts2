@@ -14,7 +14,7 @@ prototype(TYPO3.Neos.NodeTypes:Image) {
 	maximumHeight = ${q(node).property('displayHeight')}
 }
 prototype(TYPO3.Neos.NodeTypes:TextWithImage).partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
-prototype(TYPO3.Neos.NodeTypes:Headline).attributes.class = TYPO3.TypoScript:Case {
+prototype(TYPO3.Neos.NodeTypes:Headline).attributes.class = Neos.Fusion:Case {
     boxed {
         condition = ${q(node).property('layout') == 'boxed'}
         renderer = ${'boxed'}
@@ -26,7 +26,7 @@ prototype(TYPO3.Neos.NodeTypes:Headline).attributes.class = TYPO3.TypoScript:Cas
 }
 
 root.format.@position = 'end 9995'
-json = TYPO3.TypoScript:Case {
+json = Neos.Fusion:Case {
 	news {
 		condition = ${q(node).is('[instanceof GSL.DuttweilerDe.API:News]')}
 		type = 'GSL.DuttweilerDe.API:NewsList'

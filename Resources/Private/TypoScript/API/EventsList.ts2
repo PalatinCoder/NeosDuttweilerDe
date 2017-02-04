@@ -1,4 +1,4 @@
-prototype(GSL.DuttweilerDe.API:EventsList) < prototype(TYPO3.TypoScript:Http.Message) {
+prototype(GSL.DuttweilerDe.API:EventsList) < prototype(Neos.Fusion:Http.Message) {
 	httpResponseHead {
 		headers.Content-Type = 'application/json;charset=utf-8'
 	}

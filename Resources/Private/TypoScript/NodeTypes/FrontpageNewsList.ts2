@@ -4,7 +4,7 @@ prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
 	@context.chronikNode = ${q(documentNode).property('chronikRootNode')}
     @context.standaloneItems = ${q(documentNode).children('standalonenews').children().get()}
    
-    listCollection = TYPO3.TypoScript:Case {
+    listCollection = Neos.Fusion:Case {
         a {
             condition = ${Security.getAccount() != NULL}
             renderPath = 'listCollectionA'
@@ -17,7 +17,7 @@ prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
         }
     }
     
-	listItem = TYPO3.TypoScript:Case {
+	listItem = Neos.Fusion:Case {
         chronikItem {
             condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
             type = 'GSL.DuttweilerDe.Content:FrontpageNewsItem'
