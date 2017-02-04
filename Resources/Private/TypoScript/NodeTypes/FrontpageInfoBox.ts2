@@ -1,5 +1,5 @@
-prototype(GSL.DuttweilerDe.Content:FrontpageInfoBox) < prototype(TYPO3.Neos:Content) {
-	contentRenderer = TYPO3.Neos:ContentCollection
+prototype(GSL.DuttweilerDe.Content:FrontpageInfoBox) < prototype(Neos.Neos:Content) {
+	contentRenderer = Neos.Neos:ContentCollection
 
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/FrontpageInfoBox.html'
 

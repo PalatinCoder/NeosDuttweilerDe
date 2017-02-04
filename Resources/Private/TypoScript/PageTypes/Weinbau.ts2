@@ -29,7 +29,7 @@ weinbau = Page {
         parts {
             sectionMenu = Neos.Fusion:Template {
                 templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/SectionMenu.html'
-                items = ${q(documentNode).children('[instanceof TYPO3.Neos:ContentCollection]').children('[instanceof Neos.NodeTypes:Headline]')}
+                items = ${q(documentNode).children('[instanceof Neos.Neos:ContentCollection]').children('[instanceof Neos.NodeTypes:Headline]')}
             }
             subpages = Menu {
                 templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/TypoScriptObjects/DefaultPageMenu.html'

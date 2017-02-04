@@ -1,11 +1,11 @@
-prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) < prototype(TYPO3.Neos:Content) {
+prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) < prototype(Neos.Neos:Content) {
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/RelatedPagesBacklink.html'
 
     title = ${q(node).property('title')}
     date = ${q(node).property('date')}
     subheading = Neos.Fusion:Case {
         shortcut {
-            condition = ${q(node).is('[instanceof TYPO3.Neos:Shortcut]')}
+            condition = ${q(node).is('[instanceof Neos.Neos:Shortcut]')}
             renderer = ${'weiterlesen...'}
         }
         default {
@@ -30,7 +30,7 @@ prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) < prototype(TYPO3.Neos:
                     renderer = ${q(node).property('target')}
                 }
             }
-            condition = ${q(node).is('[instanceof TYPO3.Neos:Shortcut]')}
+            condition = ${q(node).is('[instanceof Neos.Neos:Shortcut]')}
         }
         internal {
             renderer =  Neos.Fusion:Case {

@@ -1,4 +1,4 @@
-prototype(GSL.DuttweilerDe.Content:EventPromoter) < prototype(TYPO3.Neos:Content) {
+prototype(GSL.DuttweilerDe.Content:EventPromoter) < prototype(Neos.Neos:Content) {
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
 
 	@context.eventsNode = ${q(node).property('eventsRootNode')}

@@ -1,4 +1,4 @@
-prototype(GSL.DuttweilerDe.Content:Event) < prototype(TYPO3.Neos:Content) {
+prototype(GSL.DuttweilerDe.Content:Event) < prototype(Neos.Neos:Content) {
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Event.html'
 	
     isInPromoter = false
