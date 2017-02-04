@@ -5,8 +5,8 @@ use Neos\Flow\Annotations as Flow;
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Error\Messages\Notice;
 use Neos\Flow\Mvc\FlashMessageContainer;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
-use TYPO3\TYPO3CR\Domain\Model\Workspace;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Neos\ContentRepository\Domain\Model\Workspace;
 use GSL\DuttweilerDe\Domain\Repository\PushNotificationRepository;
 use GSL\DuttweilerDe\Domain\Model\PushNotification;
 
