@@ -1,5 +1,5 @@
 {namespace neos=Neos\Neos\ViewHelpers}
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
 <div class="RightColumnInfoBox">
 	<div class="InfoBoxHeading" {f:if(condition: '{bgColor}', then: 'style="background-color: {bgColor}"')}>{neos:contentElement.editable(property: 'title')}</div>
 	<div class="InfoBoxBody"><ts:render path="contentRenderer" context="{node: content}" /><div class="clearfix"></div></div>
