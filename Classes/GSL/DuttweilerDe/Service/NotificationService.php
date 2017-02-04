@@ -2,7 +2,7 @@
 namespace GSL\DuttweilerDe\Service;
 
 use Neos\Flow\Annotations as Flow;
-use TYPO3\Eel\FlowQuery\FlowQuery;
+use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Error\Messages\Notice;
 use Neos\Flow\Mvc\FlashMessageContainer;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;

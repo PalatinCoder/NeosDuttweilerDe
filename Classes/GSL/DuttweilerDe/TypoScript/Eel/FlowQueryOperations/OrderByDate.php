@@ -11,8 +11,8 @@ namespace GSL\DuttweilerDe\TypoScript\Eel\FlowQueryOperations;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
+use Neos\Eel\FlowQuery\FlowQuery;
+use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Model\Node;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
@@ -57,9 +57,9 @@ class OrderByDate extends AbstractOperation {
 	 */
 	public function evaluate(FlowQuery $flowQuery, array $arguments) {
 		/*if (!isset($arguments[0]) || empty($arguments[0])) {
-			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('OrderByDate needs the name of the date property', 1453581087);
+			throw new \Neos\Eel\FlowQuery\FlowQueryException('OrderByDate needs the name of the date property', 1453581087);
 		} elseif (isset($arguments[1])) {
-			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('OrderByDate has only one argument', 1453581122);
+			throw new \Neos\Eel\FlowQuery\FlowQueryException('OrderByDate has only one argument', 1453581122);
 		} else {*/
 			$nodes = $flowQuery->getContext();
 			/** 
