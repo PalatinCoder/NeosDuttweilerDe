@@ -7,8 +7,8 @@ namespace GSL\DuttweilerDe\Controller\Module\DuttweilerApp;
  * @author Jan Syring-Lingenfelder
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Error\Message;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Error\Message;
 use TYPO3\Neos\Controller\Module\AbstractModuleController;
 use \GSL\DuttweilerDe\Service\GcmHelper;
 
@@ -29,7 +29,7 @@ class DigitalShoutoutController extends AbstractModuleController {
 	/**
 	 * @return void
 	 */
-	protected function initializeView(\TYPO3\Flow\Mvc\View\ViewInterface $view) {
+	protected function initializeView(\Neos\Flow\Mvc\View\ViewInterface $view) {
 		parent::initializeView($view);
 		$view->setLayoutPathAndFilename('../Packages/Application/TYPO3.Neos/Resources/Private/Layouts/BackendModule.html');
 		$view->setPartialRootPath('../Packages/Application/TYPO3.Neos/Resources/Private/Partials');
@@ -49,11 +49,11 @@ class DigitalShoutoutController extends AbstractModuleController {
      * @param string $heading The Heading
      * @param string $message The Message
 	 *
-	 * @Flow\Validate(argumentName="$heading", type="\TYPO3\Flow\Validation\Validator\TextValidator")
-	 * @Flow\Validate(argumentName="$heading", type="\TYPO3\Flow\Validation\Validator\NotEmptyValidator")
-	 * @Flow\Validate(argumentName="$heading", type="\TYPO3\Flow\Validation\Validator\StringLengthValidator", options={ "minimum"=1, "maximum"=40 })
-	 * @Flow\Validate(argumentName="$message", type="\TYPO3\Flow\Validation\Validator\TextValidator")
-	 * @Flow\Validate(argumentName="$message", type="\TYPO3\Flow\Validation\Validator\StringLengthValidator", options={ "minimum"=1, "maximum"=300 })
+	 * @Flow\Validate(argumentName="$heading", type="\Neos\Flow\Validation\Validator\TextValidator")
+	 * @Flow\Validate(argumentName="$heading", type="\Neos\Flow\Validation\Validator\NotEmptyValidator")
+	 * @Flow\Validate(argumentName="$heading", type="\Neos\Flow\Validation\Validator\StringLengthValidator", options={ "minimum"=1, "maximum"=40 })
+	 * @Flow\Validate(argumentName="$message", type="\Neos\Flow\Validation\Validator\TextValidator")
+	 * @Flow\Validate(argumentName="$message", type="\Neos\Flow\Validation\Validator\StringLengthValidator", options={ "minimum"=1, "maximum"=300 })
      * @return void
      */
     public function sendAction($heading, $message) {

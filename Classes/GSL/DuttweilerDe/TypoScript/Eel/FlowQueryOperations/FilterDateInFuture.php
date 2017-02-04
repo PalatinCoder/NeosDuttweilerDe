@@ -13,7 +13,7 @@ namespace GSL\DuttweilerDe\TypoScript\Eel\FlowQueryOperations;
 
 use TYPO3\Eel\FlowQuery\FlowQuery;
 use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Model\Node;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 
@@ -60,7 +60,7 @@ class FilterDateInFuture extends AbstractOperation {
 			throw new \TYPO3\Eel\FlowQuery\FlowQueryException('FilterDateInFuture() needs at least one date property name by which nodes should be filtered', 1332492263);
 		} else {
 			$nodes = $flowQuery->getContext();
-			$now = new \TYPO3\Flow\Utility\Now;
+			$now = new \Neos\Flow\Utility\Now;
 			$filteredNodes = array();
 
 			/** @var Node $node */

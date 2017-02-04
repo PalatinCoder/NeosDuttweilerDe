@@ -20,7 +20,7 @@ roles:
         permission: GRANT
 
 privilegeTargets:
-  '\TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+  '\Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
     'GSL.DuttweilerDe:Backend.App':
       matcher: 'method(TYPO3\Neos\Controller\Module\ManagementController->indexAction())'
     'GSL.DuttweilerDe:Backend.App.Shoutout':

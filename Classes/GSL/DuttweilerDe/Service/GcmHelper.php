@@ -1,7 +1,7 @@
 <?php
 namespace GSL\DuttweilerDe\Service;
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * Google Cloud Messaging helper class

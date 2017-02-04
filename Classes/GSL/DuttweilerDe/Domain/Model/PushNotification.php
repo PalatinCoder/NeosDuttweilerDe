@@ -5,7 +5,7 @@ namespace GSL\DuttweilerDe\Domain\Model;
  * This file is part of the GSL.DuttweilerDe package.
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -62,7 +62,7 @@ class PushNotification
 		$this->headline = $headline;
 		$this->subheadline = $subheadline;
 		$this->nodeName = $nodeName;
-		$this->issueDate = new \TYPO3\Flow\Utility\Now;
+		$this->issueDate = new \Neos\Flow\Utility\Now;
 	}
 
 	/**

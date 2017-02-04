@@ -1,7 +1,7 @@
 <?php
 namespace GSL\DuttweilerDe\Service;
 
-class GcmException extends \TYPO3\Flow\Exception {
+class GcmException extends \Neos\Flow\Exception {
 	protected $statusCode = 500;
 }
 ?>

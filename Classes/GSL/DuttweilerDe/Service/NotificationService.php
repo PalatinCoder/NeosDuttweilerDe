@@ -1,10 +1,10 @@
 <?php
 namespace GSL\DuttweilerDe\Service;
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Flow\Error\Notice;
-use TYPO3\Flow\Mvc\FlashMessageContainer;
+use Neos\Flow\Error\Notice;
+use Neos\Flow\Mvc\FlashMessageContainer;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use TYPO3\TYPO3CR\Domain\Model\Workspace;
 use GSL\DuttweilerDe\Domain\Repository\PushNotificationRepository;
@@ -77,7 +77,7 @@ class NotificationService {
 		if (!(
 			($documentNode !== null)
 			&& ($documentNode->getNodeType()->isOfType('GSL.DuttweilerDe.Pages:ChronikItem'))
-			&& (!$documentNode->isHidden()) && ($documentNode->getHiddenBeforeDateTime() < new \TYPO3\Flow\Utility\Now)
+			&& (!$documentNode->isHidden()) && ($documentNode->getHiddenBeforeDateTime() < new \Neos\Flow\Utility\Now)
 		    // check if node is in scope of the api
 		    // Current ChronikBranch is the first child?
 			&& ($documentNode->getParent()->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikBranch', 1, 0)[0] == $documentNode->getParent())
