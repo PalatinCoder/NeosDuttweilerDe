@@ -5,7 +5,7 @@ roles:
         privilegeTarget: 'TYPO3.Neos:Backend.Module.Media.ManageAssetCollections'
         permission: GRANT
       -
-        privilegeTarget: 'TYPO3.Media:ManageAssetCollections'
+        privilegeTarget: 'Neos.Media:ManageAssetCollections'
         permission: GRANT
       -
         privilegeTarget: 'GSL.DuttweilerDe:Backend.App'

@@ -54,14 +54,14 @@
             nodeTypes:
               - 'GSL.DuttweilerDe.Pages:ChronikRoot'
     headerImage:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: 'Startseite'
         reloadIfChanged: TRUE
         inspector:
           group: header-bg
     childHeaderImage:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: 'normale Seiten'
         inspector:
@@ -141,7 +141,7 @@
             removeFormat: TRUE
             '*': FALSE
     headerImage:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: Kopfzeilenbild
         reloadIfChanged: true
@@ -623,7 +623,7 @@
         inspector:
           group: general
     banner:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: 'Banner'
         inspector:
@@ -763,7 +763,7 @@
           label: 'Bilder'
   properties:
     assets:
-#      type: array<TYPO3\Media\Domain\Model\ImageInterface>
+#      type: array<Neos\Media\Domain\Model\ImageInterface>
       ui:
         label: 'Bilder'
         inspector:
