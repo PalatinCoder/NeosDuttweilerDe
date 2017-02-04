@@ -8,13 +8,13 @@ include: API/*
 
 default < page
 
-prototype(TYPO3.Neos.NodeTypes:Image) {
+prototype(Neos.NodeTypes:Image) {
 	partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
 	maximumWidth = ${q(node).property('displayWidth')}
 	maximumHeight = ${q(node).property('displayHeight')}
 }
-prototype(TYPO3.Neos.NodeTypes:TextWithImage).partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
-prototype(TYPO3.Neos.NodeTypes:Headline).attributes.class = Neos.Fusion:Case {
+prototype(Neos.NodeTypes:TextWithImage).partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
+prototype(Neos.NodeTypes:Headline).attributes.class = Neos.Fusion:Case {
     boxed {
         condition = ${q(node).property('layout') == 'boxed'}
         renderer = ${'boxed'}

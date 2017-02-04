@@ -35,7 +35,7 @@ page = Page {
         isIndexPage = ${q(documentNode).is('[instanceof GSL.DuttweilerDe.Pages:IndexPage]')}
         menuCollection = ${q(documentNode).property('relatedPages')}
 
-	prototype(TYPO3.Neos.NodeTypes:Headline).templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Headline.html'
+	prototype(Neos.NodeTypes:Headline).templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Headline.html'
         
         parts {
             subpages = Menu {

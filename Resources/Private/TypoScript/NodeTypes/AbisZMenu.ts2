@@ -1,4 +1,4 @@
-prototype(GSL.DuttweilerDe.Content:AbisZMenu) < prototype(TYPO3.Neos.NodeTypes:Menu) {
+prototype(GSL.DuttweilerDe.Content:AbisZMenu) < prototype(Neos.NodeTypes:Menu) {
 	entryLevel = 0
 	maximumLevels = 2
 	selection = NULL

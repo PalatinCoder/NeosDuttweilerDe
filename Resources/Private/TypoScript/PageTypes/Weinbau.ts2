@@ -29,7 +29,7 @@ weinbau = Page {
         parts {
             sectionMenu = Neos.Fusion:Template {
                 templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/SectionMenu.html'
-                items = ${q(documentNode).children('[instanceof TYPO3.Neos:ContentCollection]').children('[instanceof TYPO3.Neos.NodeTypes:Headline]')}
+                items = ${q(documentNode).children('[instanceof TYPO3.Neos:ContentCollection]').children('[instanceof Neos.NodeTypes:Headline]')}
             }
             subpages = Menu {
                 templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/TypoScriptObjects/DefaultPageMenu.html'
@@ -52,7 +52,7 @@ weinbau = Page {
 			sectionName = 'bodyScripts'
 		}        
 	}
-    prototype(TYPO3.Neos.NodeTypes:Headline) {
+    prototype(Neos.NodeTypes:Headline) {
         attributes.id = ${String.pregReplace(node.properties.title, '#</?h[1-5]>#', '')}
     }
     prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) {
