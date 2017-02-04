@@ -66,13 +66,13 @@ class NotificationService {
 		if (!(
 			($this->enabled)
 			&& ($targetWorkspace->getName() == 'live')
-			&& (!$node->getNodeType()->isOfType('TYPO3.Neos:ContentCollection'))
+			&& (!$node->getNodeType()->isOfType('Neos.Neos:ContentCollection'))
 			)
 		) { return; }
 
 		$q = new FlowQuery([$node]);
 		/** @var NodeInterface $documentNode */
-		$documentNode = $q->closest('[instanceof TYPO3.Neos:Document]')->get(0);
+		$documentNode = $q->closest('[instanceof Neos.Neos:Document]')->get(0);
 
 		if (!(
 			($documentNode !== null)

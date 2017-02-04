@@ -1,6 +1,19 @@
 # Content NodeTypes Groups
 
-TYPO3:
+Neos:
+  Flow:
+    i18n:
+      defaultLocale: de
+    error:
+      exceptionHandler:
+        renderingGroups:
+          notFoundExceptions:
+            matchingStatusCodes:
+              - 404
+            options:
+              templatePathAndFilename: 'resource://GSL.DuttweilerDe/Private/Templates/Page/Error.html'
+              layoutRootPath: 'resource://Neos.Neos/Private/Layouts/'
+              format: html
   Neos:
     nodeTypes:
       groups:
@@ -28,7 +41,7 @@ TYPO3:
     modules:
       duttweilerapp:
         label: DuttweilerApp
-        controller: \TYPO3\Neos\Controller\Module\ManagementController
+        controller: \Neos\Neos\Controller\Module\ManagementController
         description: 'Verschiedene Funktionen der DuttweilerApp'
         icon: icon-android
         privilegeTarget: 'GSL.DuttweilerDe:Backend.App'
@@ -51,17 +64,3 @@ TYPO3:
               index:
                 label: 'Benachrichtigungen prüfen!'
             privilegeTarget: 'GSL.DuttweilerDe:Backend.App.ReviewNotifications'
-Neos:
-  Flow:
-    i18n:
-      defaultLocale: de
-    error:
-      exceptionHandler:
-        renderingGroups:
-          notFoundExceptions:
-            matchingStatusCodes:
-              - 404
-            options:
-              templatePathAndFilename: 'resource://GSL.DuttweilerDe/Private/Templates/Page/Error.html'
-              layoutRootPath: 'resource://TYPO3.Neos/Private/Layouts/'
-              format: html

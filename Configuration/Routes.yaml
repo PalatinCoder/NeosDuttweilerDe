@@ -2,25 +2,25 @@
   name: 'TYPO3 Neos :: Frontend :: JSON API'
   uriPattern: '{node}.json'
   defaults:
-    '@package': TYPO3.Neos
+    '@package': Neos.Neos
     '@controller': Frontend\Node
     '@action': show
     '@format': json
   routeParts:
     node:
-      handler: TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface
+      handler: Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface
   appendExceedingArguments: true
 
 -
   name: 'TYPO3 Neos :: Frontend :: RSS API'
   uriPattern: '{node}.rss'
   defaults:
-    '@package': TYPO3.Neos
+    '@package': Neos.Neos
     '@controller': Frontend\Node
     '@action': show
     '@format': rss
   routeParts:
     node:
-      handler: TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface
+      handler: Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface
   appendExceedingArguments: true
 

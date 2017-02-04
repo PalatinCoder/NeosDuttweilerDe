@@ -22,15 +22,15 @@
           position: 40
   childNodes:
     rightcolumn:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           'GSL.DuttweilerDe.Content:FrontpageInfoBox': true
           '*': false
     banner:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
     standaloneNews:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
@@ -70,7 +70,7 @@
     nodeTypes:
       '*': false
       'GSL.DuttweilerDe.Pages:Default': true
-      'TYPO3.Neos:Shortcut': true
+      'Neos.Neos:Shortcut': true
       'GSL.DuttweilerDe.API:API': true
 'GSL.DuttweilerDe.Pages:IndexPage':
   superTypes:
@@ -112,9 +112,9 @@
           position: 50
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
     pressespiegel:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           'GSL.DuttweilerDe.Content:PressespiegelItem': true
@@ -122,7 +122,7 @@
   constraints:
     nodeTypes:
       'GSL.DuttweilerDe.Pages:Default': true
-      'TYPO3.Neos:Shortcut': true
+      'Neos.Neos:Shortcut': true
       'GSL.DuttweilerDe.Pages:IndexPage': true
       '*': false
   properties:
@@ -232,7 +232,7 @@
 
 'GSL.DuttweilerDe.Content:PressespiegelItem':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: 'Pressespiegel - Eintrag'
     group: duttweiler-general
@@ -298,7 +298,7 @@
         reloadIfChanged: true
         inspector:
           group: news   
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
               home:
@@ -314,7 +314,7 @@
         inspector:
           group: news
       validation:
-        'TYPO3.Neos/Validation/RegularExpressionValidator':
+        'Neos.Neos/Validation/RegularExpressionValidator':
           regularExpression: '^[0-9]{1,2}:[0-9]{1,2}$'
     scorers:
       type: string
@@ -323,7 +323,7 @@
         reloadIfChanged: true
         inspector:
           group: news
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
           editorOptions:
             rows: 4         
     link:
@@ -373,14 +373,14 @@
       defaultValue: 'Duttweiler NachrichTTen'
 'GSL.DuttweilerDe.Content:FrontpageNewsList':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: 'News Liste'
     icon: icon-list
     group: 'hidden'
 'GSL.DuttweilerDe.Content:FrontpageNewsItem':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: 'News Meldung'
     group: 'hidden'
@@ -439,7 +439,7 @@
             table: true
 'GSL.DuttweilerDe.Content:FrontpageInfoBox':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: Infobox
     group: frontpage
@@ -466,7 +466,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: general
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             allowEmpty: TRUE
             placeholder: Stil auswählen
@@ -479,10 +479,10 @@
                 label: Schwimmbad-Blau
   childNodes:
     content:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
 'GSL.DuttweilerDe.Content:RelatedPagesBacklinkList':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: Referenzenliste (Aktuelle Seite)
     group: chronik
@@ -498,7 +498,7 @@
     label: Referenzenliste (nur Unterseiten)
 'GSL.DuttweilerDe.Content:RelatedPagesBacklink':
   superTypes:
-   'TYPO3.Neos:Content': true
+   'Neos.Neos:Content': true
   ui:
     label: Listenelement
     group: duttweiler-general
@@ -526,7 +526,7 @@
             'a': true
         inspector:
           group: general
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
     date:
       type: DateTime
       ui:
@@ -541,7 +541,7 @@
         reloadIfChanged: true
         inspector:
           group: general
-          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
 'GSL.DuttweilerDe.Content:Menu':
   superTypes:
     'Neos.NodeTypes:Menu': true
@@ -556,7 +556,7 @@
   properties: []
 'GSL.DuttweilerDe.Content:Event':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: Veranstaltung
     group: duttweiler-general
@@ -630,7 +630,7 @@
           group: frontpage
 'GSL.DuttweilerDe.Content:EventPromoter':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: Veranstaltungstipp
     group: duttweiler-general
@@ -656,7 +656,7 @@
         inspector:
           group: general
       validation:
-        TYPO3.Neos/Validation/IntegerValidator: null
+        Neos.Neos/Validation/IntegerValidator: null
 'GSL.DuttweilerDe.API:API':
   superTypes:
     'Neos.NodeTypes:Page': true
@@ -740,7 +740,7 @@
           group: image
           position: 200
       validation:
-        'TYPO3.Neos/Validation/ImageSizeValidator':
+        'Neos.Neos/Validation/ImageSizeValidator':
     displayHeight:
       type: integer
       ui:
@@ -750,7 +750,7 @@
           group: image
           position: 200
       validation:
-        'TYPO3.Neos/Validation/ImageSizeValidator':
+        'Neos.Neos/Validation/ImageSizeValidator':
 'GSL.DuttweilerDe:MultipleImages':
   superTypes:
     'Neos.NodeTypes:AssetList': TRUE
@@ -785,7 +785,7 @@
           group: image
           position: 200
       validation:
-        'TYPO3.Neos/Validation/ImageSizeValidator': TRUE
+        'Neos.Neos/Validation/ImageSizeValidator': TRUE
     displayHeight:
       type: integer
       ui:
@@ -795,7 +795,7 @@
           group: image
           position: 200
       validation:
-        'TYPO3.Neos/Validation/ImageSizeValidator': TRUE
+        'Neos.Neos/Validation/ImageSizeValidator': TRUE
 'Neos.NodeTypes:Headline':
   ui:
     inspector:
@@ -812,7 +812,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: style
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             allowEmpty: TRUE
             placeholder: 'Stil auswählen'
@@ -849,7 +849,7 @@
                 label: 'Duttweiler Wein'
               'weinprinzessin':
                 label: 'Weinprinzessin'
-'TYPO3.Neos:Shortcut':
+'Neos.Neos:Shortcut':
   properties:
     date:
       type: DateTime
@@ -859,13 +859,13 @@
         inspector:
           group: document
           position: 900
-'TYPO3.Neos:ContentCollection':
+'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
       'GSL.DuttweilerDe.Content:FrontpageInfoBox': FALSE
       'GSL.DuttweilerDe.Content:FrontpageNewsItem': FALSE
       'GSL.DuttweilerDe.Content:PressespiegelItem': FALSE
-'TYPO3.Neos:Document':
+'Neos.Neos:Document':
   constraints:
     nodeTypes:
       'Neos.NodeTypes:Page': FALSE

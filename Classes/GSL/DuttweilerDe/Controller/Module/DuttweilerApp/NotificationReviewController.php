@@ -9,7 +9,7 @@ namespace GSL\DuttweilerDe\Controller\Module\DuttweilerApp;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Error\Messages\Message;
-use TYPO3\Neos\Controller\Module\AbstractModuleController;
+use Neos\Neos\Controller\Module\AbstractModuleController;
 use \GSL\DuttweilerDe\Service\GcmHelper;
 use GSL\DuttweilerDe\Domain\Repository\PushNotificationRepository;
 use GSL\DuttweilerDe\Domain\Model\PushNotification;
@@ -40,8 +40,8 @@ class NotificationReviewController extends AbstractModuleController {
 	 */
 	protected function initializeView(\Neos\Flow\Mvc\View\ViewInterface $view) {
 		parent::initializeView($view);
-		$view->setLayoutPathAndFilename('../Packages/Application/TYPO3.Neos/Resources/Private/Layouts/BackendModule.html');
-		$view->setPartialRootPath('../Packages/Application/TYPO3.Neos/Resources/Private/Partials');
+		$view->setLayoutPathAndFilename('../Packages/Application/Neos.Neos/Resources/Private/Layouts/BackendModule.html');
+		$view->setPartialRootPath('../Packages/Application/Neos.Neos/Resources/Private/Partials');
 	}
 
 	/**

@@ -1,4 +1,4 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 <nav{attributes -> f:format.raw()}>
 	<ul style="padding-left: 0;">
@@ -28,7 +28,7 @@
 			</f:for>
 		</f:then>
 		<f:else>
-			<f:security.ifAccess privilegeTarget="TYPO3.Neos:Backend.GeneralAccess">
+			<f:security.ifAccess privilegeTarget="Neos.Neos:Backend.GeneralAccess">
 				<f:if condition="{node.context.workspace.name} != 'live'">
 					<li>Empty menu</li>
 				</f:if>
