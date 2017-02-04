@@ -6,7 +6,7 @@
 
 'GSL.DuttweilerDe.Pages:Frontpage':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Page': true
+    'Neos.NodeTypes:Page': true
   ui:
     label: Startseite
     inspector:
@@ -92,7 +92,7 @@
           group: related
 'GSL.DuttweilerDe.Pages:Default':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Page': true
+    'Neos.NodeTypes:Page': true
   ui:
     label: Standardinhalt
     icon: icon-file
@@ -337,7 +337,7 @@
 'GSL.DuttweilerDe:FrontpageTTResults':
   superTypes:
     'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
-    'TYPO3.Neos.NodeTypes:Html': TRUE
+    'Neos.NodeTypes:Html': TRUE
   ui:
     label: 'Ergebnisse - TT'
     group: 'frontpage'
@@ -544,12 +544,12 @@
           editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
 'GSL.DuttweilerDe.Content:Menu':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Menu': true
+    'Neos.NodeTypes:Menu': true
   ui:
     group: duttweiler-general
 'GSL.DuttweilerDe.Content:AbisZMenu':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Menu': true
+    'Neos.NodeTypes:Menu': true
   ui:
     group: duttweiler-general
     label: 'A bis Z Menu'
@@ -659,7 +659,7 @@
         TYPO3.Neos/Validation/IntegerValidator: null
 'GSL.DuttweilerDe.API:API':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Page': true
+    'Neos.NodeTypes:Page': true
   ui:
     label: 'API Root'
     group: api
@@ -706,13 +706,13 @@
           editorOptions:
             nodeTypes:
               - 'GSL.DuttweilerDe.Pages:Default'
-'TYPO3.Neos.NodeTypes:TextMixin':
+'Neos.NodeTypes:TextMixin':
   properties:
     text:
       ui:
         aloha:
           autoparagraph: false
-'TYPO3.Neos.NodeTypes:ContentImageMixin':
+'Neos.NodeTypes:ContentImageMixin':
   properties:
     enableFancybox:
       type: boolean
@@ -753,7 +753,7 @@
         'TYPO3.Neos/Validation/ImageSizeValidator':
 'GSL.DuttweilerDe:MultipleImages':
   superTypes:
-    'TYPO3.Neos.NodeTypes:AssetList': TRUE
+    'Neos.NodeTypes:AssetList': TRUE
   ui:
     label: 'Mehrere Bilder (Galerie)'
     icon: icon-picture
@@ -796,7 +796,7 @@
           position: 200
       validation:
         'TYPO3.Neos/Validation/ImageSizeValidator': TRUE
-'TYPO3.Neos.NodeTypes:Headline':
+'Neos.NodeTypes:Headline':
   ui:
     inspector:
       groups:
@@ -821,7 +821,7 @@
                 label: 'Unterstrichen'
               boxed:
                 label: 'Kasten'
-'TYPO3.Neos.NodeTypes:Page':
+'Neos.NodeTypes:Page':
   properties:
     layout:
       ui:
@@ -868,7 +868,7 @@
 'TYPO3.Neos:Document':
   constraints:
     nodeTypes:
-      'TYPO3.Neos.NodeTypes:Page': FALSE
+      'Neos.NodeTypes:Page': FALSE
       'GSL.DuttweilerDe.Pages:Default': TRUE
       'GSL.DuttweilerDe.Pages:ChronikRoot': TRUE
       'GSL.DuttweilerDe.Pages:ChronikBranch': FALSE
