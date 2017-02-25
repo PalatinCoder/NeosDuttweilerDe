@@ -2,6 +2,10 @@
 
 Neos:
   Flow:
+    mvc:
+      routes:
+        'GSL.DuttweilerDe':
+          position: 'before Neos.Neos'
     i18n:
       defaultLocale: de
     error:
