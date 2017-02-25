@@ -2,6 +2,7 @@ prototype(GSL.DuttweilerDe.Content:AbisZMenu) < prototype(Neos.NodeTypes:Menu) {
 	entryLevel = 0
 	maximumLevels = 2
 	selection = NULL
+  startingPoint = ${documentNode}
 
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/AbisZMenu.html'
 	partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
