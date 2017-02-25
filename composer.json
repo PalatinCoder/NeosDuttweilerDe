@@ -7,8 +7,8 @@
         "typo3/neos-nodetypes": "*"
     },
     "autoload": {
-        "psr-0": {
-            "GSL\\DuttweilerDe": "Classes"
+        "psr-4": {
+            "GSL\\DuttweilerDe\\": "Classes"
         }
     },
     "extra": {
