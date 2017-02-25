@@ -1,11 +1,18 @@
 {
     "name": "gsl/duttweilerde",
-    "type": "typo3-flow-site",
+    "type": "neos-site",
     "description": "Neos Site Package for duttweiler.de (c) www.jan-sl.de",
     "require": {
-        "typo3/neos": "*",
-        "typo3/neos-nodetypes": "*"
+        "neos/neos": "~3.0.0"
     },
+    "authors": [
+      {
+        "name": "Jan Syring-Lingenfelder",
+        "email": "kontakt@jan-sl.de",
+        "homepage": "www.jan-sl.de",
+        "role": "AiO Developer"
+      }
+    ],
     "autoload": {
         "psr-4": {
             "GSL\\DuttweilerDe\\": "Classes"
