@@ -2,10 +2,7 @@ roles:
   Neos.Neos:AbstractEditor:
     privileges:
       -
-        privilegeTarget: 'Neos.Neos:Backend.Module.Media.ManageAssetCollections'
-        permission: GRANT
-      -
-        privilegeTarget: 'Neos.Media:ManageAssetCollections'
+        privilegeTarget: 'Neos.Media.Browser:ManageAssetCollections'
         permission: GRANT
       -
         privilegeTarget: 'GSL.DuttweilerDe:Backend.App'
