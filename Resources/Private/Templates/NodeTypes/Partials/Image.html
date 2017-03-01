@@ -5,11 +5,11 @@
 		<f:then>
 			<f:if condition="{link}">
 				<f:then>
-					<a href="{link}"><media:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" /></a>
+					<a href="{link}"><media:image image="{image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" /></a>
 				</f:then>
 				<f:else>
 					<f:if condition="{enableFancybox}"><a href="{f:uri.resource(resource: image.resource)}" title="{title}" class="fancybox" {f:if(condition: '{fancyboxGroup}', then: 'rel="{fancyboxGroup}"')}></f:if>
-					<media:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+					<media:image image="{image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
 					<f:if condition="{enableFancybox}"></a></f:if>
 				</f:else>
 			</f:if>
