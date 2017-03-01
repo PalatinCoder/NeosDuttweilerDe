@@ -39,19 +39,19 @@ page = Page {
         
         parts {
             subpages = Menu {
-                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/TypoScriptObjects/DefaultPageMenu.html'
+                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
                 entryLevel = 0
                 maximumLevels = 1
             }
             relatedPages = Menu {
-                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/TypoScriptObjects/DefaultPageMenu.html'
+                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
                 itemCollection = ${q(documentNode).property('relatedPages')}
             }
             parentPage = Menu {
                 # hide a-bis-z, or the single letters
                 @if.1 = ${q(documentNode).parent().parent().get() != q(documentNode).find('#bb5879ad-b374-f384-874f-b705076e2c73').get()}
 
-                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/TypoScriptObjects/DefaultPageMenu.html'
+                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
                 itemCollection = ${q(documentNode).parent().get()}
             }
         }

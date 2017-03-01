@@ -32,12 +32,12 @@ weinbau = Page {
                 items = ${q(documentNode).children('[instanceof Neos.Neos:ContentCollection]').children('[instanceof Neos.NodeTypes:Headline]')}
             }
             subpages = Menu {
-                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/TypoScriptObjects/DefaultPageMenu.html'
+                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
                 entryLevel = 0
                 maximumLevels = 1
             }            
             parentPage = Menu {
-                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/TypoScriptObjects/DefaultPageMenu.html'
+                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
                 itemCollection = ${q(documentNode).parent().get()}
             }
         }
