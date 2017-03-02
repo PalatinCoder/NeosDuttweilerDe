@@ -1,4 +1,8 @@
-#PageHeading { background-image: url("../Images/b-logo-xxx.jpg"); background-size: contain; background-repeat: no-repeat; background-position: bottom; border-top: 1px solid #363; height: 200px; position: relative; }
+#PageHeading { 
+  background: url("../Images/b-logo-xxx.jpg") no-repeat top; 
+  background-size: contain; 
+  border-top: 1px solid #363; 
+  position: relative; }
 
 /* desktop, large enough tablets */
 @media screen and (min-width: 820px) {
@@ -8,24 +12,25 @@
 	#IndexPageTopMenu a:hover { color: #363; background-color: #fff; }
 	#IndexPageTopMenu ul { list-style-type: none; margin: 0; padding: 0; }
 	#IndexPageTopMenu li { padding: 2px 5px; text-align: center; border-right: 1px solid white; display: inline; }
+  #NewsColumn, #RightColumn { width: 396px; float:left; padding: 2px; }
 }
 
 /* smaller screens */
 @media screen and (max-width: 819px) {
-	#menuButton { position: absolute; bottom: 0; left: 0; display: inline-block; background-color: #363; }
-	#IndexPageTopMenu { position: absolute; top: 0; left: 0; background-color: #363; font-size: 10pt; color: #fff; width: -webkit-fit-content; width: -moz-fit-content; width: fit-content; }
+  #PageHeading { padding-top: 25%; border-bottom: 1px solid white; }
+	#menuButton { background-color: #363; color: white; }
+	#IndexPageTopMenu { background-color: #363; font-size: 10pt; color: #fff; max-height: 0px; overflow: hidden; transition: max-height 0.35s ease-in-out; }
+  #IndexPageTopMenu.is-open { max-height: 300px; }
 	#IndexPageTopMenu a { color: #fff; text-decoration: none; }
 	#IndexPageTopMenu a:hover { color: #363; background-color: #fff; }
-	#IndexPageTopMenu ul { list-style-type: square; margin: 0; width: -webkit-fit-content; width: -moz-fit-content; width: fit-content; }
-	#IndexPageTopMenu li { padding: 2px 5px; text-align: center; width: -webkit-fit-content; width: -moz-fit-content; width: fit-content; }
+	#IndexPageTopMenu ul { list-style-type: square; }
+	#IndexPageTopMenu li { padding: 2px 5px; }
+  #NewsColumn { max-height: 5000px; overflow: hidden; transition: max-height 0.35s ease-in-out; }
+  #NewsColumn.is-closed { max-height: 0px; }
 }
 
 #FrontpageBanner { background-color: white; }
 #FrontpageBanner * { margin: 0; padding: 0; }
-
-@media screen and (min-width: 820px) {
-#NewsColumn, #RightColumn { width: 396px; float:left; padding: 2px; }
-}
 
 article.FrontpageNewsItem:nth-child(odd) { background-color: #eee; }
 article.FrontpageNewsItem { padding: 5px !important; }
@@ -44,6 +49,10 @@ article.FrontpageNewsItem header { color: #363; font-weight: bold; font-size: 11
 #NewsColumnResponsiveHeading { display: block; background-color: #363; padding: 4px; color: #fff; font-weight: bold; }
 }
 .NewsColumnToggle { font-weight: normal; float: right; font-size: 8pt; }
+#NewsColumnResponsiveHeading.is-closed #NewsColumnExpand { display: block; }
+#NewsColumnResponsiveHeading.is-closed #NewsColumnCollapse { display: none; }
+#NewsColumnResponsiveHeading #NewsColumnCollapse { display: block; }
+#NewsColumnResponsiveHeading #NewsColumnExpand { display: none; }
 
 .EventListItem { margin: 5px 0; }
 .EventListItemTitle { font-weight: bold; }

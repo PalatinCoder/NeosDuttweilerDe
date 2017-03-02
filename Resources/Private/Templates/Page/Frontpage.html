@@ -34,7 +34,7 @@
 	    <f:then> <div id="PageHeading" style="background-image:url('{f:uri.resource(resource: headerBackgroundImage.resource)}');" > </f:then>
 	    <f:else> <div id="PageHeading"> </f:else>
 	    </f:if>
-		<div id="menuButton"><img src="{f:uri.resource(path: 'Images/menu_icon.svg', package: 'GSL.DuttweilerDe')}" height="30" width="30" alt="Menu" /></div>
+		<div id="menuButton"><img src="{f:uri.resource(path: 'Images/menu_icon.svg', package: 'GSL.DuttweilerDe')}" height="30" width="30" alt="Menu" /> Menü</div>
                 <nav id="IndexPageTopMenu">
 			{parts.menu -> f:format.raw()}
                 </nav>
@@ -67,22 +67,9 @@
         </div>
 	</f:section>
 	<f:section name="bodyScripts">
-		<script type="text/javascript" src="{f:uri.resource(path: 'Scripts/FrontpageResponsive.js', package: 'GSL.DuttweilerDe')}"></script>
-		<script type="text/javascript">checkWindowSize();</script>
+		<script type="text/javascript" src="{f:uri.resource(path: 'Scripts/Frontpage.js', package: 'GSL.DuttweilerDe')}"></script>
     <script type="text/javascript" src="{f:uri.resource(path: 'Scripts/jquery.smartbanner/jquery.smartbanner.js', package: 'GSL.DuttweilerDe')}"></script>
 		<script type="text/javascript" src="{f:uri.resource(path: 'Scripts/main.js', package: 'GSL.DuttweilerDe')}"></script>
-    <script type="text/javascript">
-      $(function() {
-        $.smartbanner({
-          title: 'DuttweilerApp',
-          author: 'Jan Syring-Lingenfelder',
-          button: 'Installieren',
-	  inGooglePlay: 'bei Google Play',
-	  icon: 'http://static.duttweiler-net.de/wappen/wappen8.gif',
-          price: 'Kostenlos'
-        })
-      })
-    </script>
 	</f:section>
     </body>
 </html>
