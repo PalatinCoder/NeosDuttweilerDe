@@ -34,7 +34,7 @@
 	    <f:then> <div id="PageHeading" style="background-image:url('{f:uri.resource(resource: headerBackgroundImage.resource)}');" > </f:then>
 	    <f:else> <div id="PageHeading"> </f:else>
 	    </f:if>
-		<div id="menuButton"><img src="{f:uri.resource(path: 'Images/menu_icon.svg', package: 'GSL.DuttweilerDe')}" height="30" width="30" alt="Menu" /> Menü</div>
+		<div id="menuButton"><div class="ham"><span class="burger"></span></div> Menü</div>
                 <nav id="IndexPageTopMenu">
 			{parts.menu -> f:format.raw()}
                 </nav>

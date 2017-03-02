@@ -18,7 +18,14 @@
 /* smaller screens */
 @media screen and (max-width: 819px) {
   #PageHeading { padding-top: 25%; border-bottom: 1px solid white; }
-	#menuButton { background-color: #363; color: white; }
+	#menuButton { background-color: #363; color: white; display: flex }
+  #menuButton .ham { width: 20px; height: 20px; margin-right: 5px; display: flex; align-items: center; cursor: pointer; }
+  #menuButton .burger, #menuButton .burger::before, #menuButton .burger::after { content: ""; display: block; height: 2px; width: 100%; background: white; position: relative; transition: all 0.3s}
+  #menuButton .burger::before { top: 5px; }
+  #menuButton .burger::after { top: -7px; }
+  #menuButton.is-open .burger { background: transparent; }
+  #menuButton.is-open .burger::before { transform-origin: center; transform: rotate(-45deg); top: 0;}
+  #menuButton.is-open .burger::after { transform-origin: center; transform: rotate(45deg); top: -2px; }
 	#IndexPageTopMenu { background-color: #363; font-size: 10pt; color: #fff; max-height: 0px; overflow: hidden; transition: max-height 0.35s ease-in-out; }
   #IndexPageTopMenu.is-open { max-height: 300px; }
 	#IndexPageTopMenu a { color: #fff; text-decoration: none; }
