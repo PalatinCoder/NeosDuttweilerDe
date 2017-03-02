@@ -40,8 +40,8 @@ class NotificationReviewController extends AbstractModuleController {
 	 */
 	protected function initializeView(\Neos\Flow\Mvc\View\ViewInterface $view) {
 		parent::initializeView($view);
-		$view->setLayoutPathAndFilename('../Packages/Application/Neos.Neos/Resources/Private/Layouts/BackendModule.html');
-		$view->setPartialRootPath('../Packages/Application/Neos.Neos/Resources/Private/Partials');
+    $view->setOption('layoutPathAndFilename', '../Packages/Application/Neos.Neos/Resources/Private/Layouts/BackendModule.html');
+		$view->setOption('partialRootPaths', array('../Packages/Application/Neos.Neos/Resources/Private/Partials'));
 	}
 
 	/**
