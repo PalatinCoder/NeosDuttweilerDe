@@ -1,4 +1,4 @@
-jQuery('.typo3-neos-nodetypes-image a.fancybox, .typo3-neos-nodetypes-textwithimage a.fancybox, .gsl-duttweilerde-multipleimages a.fancybox').fancybox({
+jQuery('.neos-nodetypes-image a.fancybox, .neos-nodetypes-textwithimage a.fancybox, .gsl-duttweilerde-multipleimages a.fancybox').fancybox({
 	helpers: {
 		title: {
 			type: 'inside'

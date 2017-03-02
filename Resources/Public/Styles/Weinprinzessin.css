@@ -41,12 +41,12 @@ body { background: #c84; }
 .EventListItemDayName { background-color: #363; color: #fff; height: 20px; border: 1px solid #363; border-radius: 10px 10px 0 0; }
 .EventListItemDayNumber { font-size: 50px; line-height: 50px; height: 60px; border: 1px solid #000; border-radius: 0 0 10px 10px; }
 
-nav.typo3-neos-nodetypes-menu li,
+nav.neos-nodetypes-menu li,
 nav.gsl-duttweilerde-content-abiszmenu li { list-style-type: none; position: relative; min-height: 20px; }
-nav.typo3-neos-nodetypes-menu li::before,
+nav.neos-nodetypes-menu li::before,
 nav.gsl-duttweilerde-content-abiszmenu li::before { content: ''; position: absolute; width: 10px; height: 10px; background-color: #363; margin: 5px 0 0 -20px; }
 
-div.typo3-neos-nodetypes-image > figure {
+div.neos-nodetypes-image > figure {
   padding: 10px;
   border: 8px double #900;
   text-align: center;

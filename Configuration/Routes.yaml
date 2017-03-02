@@ -1,5 +1,5 @@
 -
-  name: 'TYPO3 Neos :: Frontend :: JSON API'
+  name: 'Neos :: Frontend :: JSON API'
   uriPattern: '{node}.json'
   defaults:
     '@package': Neos.Neos
@@ -12,7 +12,7 @@
   appendExceedingArguments: true
 
 -
-  name: 'TYPO3 Neos :: Frontend :: RSS API'
+  name: 'Neos :: Frontend :: RSS API'
   uriPattern: '{node}.rss'
   defaults:
     '@package': Neos.Neos
