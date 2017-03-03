@@ -1,118 +1,106 @@
 ﻿{namespace neos=Neos\Neos\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
-<!DOCTYPE html>
-<html>
-    <head>
-	<f:section name="meta">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-                <meta name="author" content="Gerhard Syring-Lingenfelder" />
-                <meta name="keywords" content="Duttweiler,Neustadt,Weinstraße,Pfalz,Wein,Sport,Tischtennis,TT,VFL,Fußball,Vereine,Veranstaltungen,Schwimmbad,Syring,Syring-Lingenfelder" />
-                <meta name="description" content="Herzlich Willkommen in Duttweiler, einem Ortsteil von Neustadt an der Weinstraße in der Pfalz" />
-            		<meta name="generator" content="neos - The open source Content Application Framework - www.neos.io | powered by Jan Syring-Lingenfelder - www.jan-sl.de" />
-	</f:section>
-	<f:section name="stylesheets">
-		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Scripts/fancybox/jquery.fancybox.css', package: 'GSL.DuttweilerDe')}" />
-        	<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/normalize.css', package: 'GSL.DuttweilerDe')}" />
-        	<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Default.css', package: 'GSL.DuttweilerDe')}" />
-		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Common.css', package: 'GSL.DuttweilerDe')}" />
-        	<link rel="shortcut icon" type="image/x-icon" href="{f:uri.resource(path: 'Images/wappen.ico', package: 'GSL.DuttweilerDe')}" />
-		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-	</f:section>
+<f:section name="meta">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Gerhard Syring-Lingenfelder" />
+  <meta name="keywords" content="Duttweiler,Neustadt,Weinstraße,Pfalz,Wein,Sport,Tischtennis,TT,VFL,Fußball,Vereine,Veranstaltungen,Schwimmbad,Syring,Syring-Lingenfelder" />
+  <meta name="description" content="Herzlich Willkommen in Duttweiler, einem Ortsteil von Neustadt an der Weinstraße in der Pfalz" />
+  <meta name="generator" content="neos - The open source Content Application Framework - www.neos.io | powered by Jan Syring-Lingenfelder - www.jan-sl.de" />
+</f:section>
 
-        <meta charset="utf-8" />
-        <title>Duttweiler/Pfalz</title>
+<f:section name="stylesheets">
+  <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Scripts/fancybox/jquery.fancybox.css', package: 'GSL.DuttweilerDe')}" />
+  <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/normalize.css', package: 'GSL.DuttweilerDe')}" />
+  <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Default.css', package: 'GSL.DuttweilerDe')}" />
+  <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Common.css', package: 'GSL.DuttweilerDe')}" />
+  <link rel="shortcut icon" type="image/x-icon" href="{f:uri.resource(path: 'Images/wappen.ico', package: 'GSL.DuttweilerDe')}" />
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+</f:section>
 
-	<f:section name="headScripts">
-		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script src="{f:uri.resource(path: 'Scripts/fancybox/jquery.fancybox.pack.js', package: 'GSL.DuttweilerDe')}"></script>  
-	</f:section>
-    </head>
-    <body>
-	<f:section name="body">
-        <div id="Wrapper">
-	    <f:if condition="{headerBackgroundImage}">
-	    <f:then> <div id="PageHeading" style="background-image:url('{f:uri.resource(resource: headerBackgroundImage.resource)}');" > </f:then>
-	    <f:else> <div id="PageHeading"> </f:else>
-	    </f:if>
-                <nav id="RelatedPagesTopMenu">
-                    <ul>
-                        <li><neos:link.node node="~/">Duttweiler</neos:link.node></li>
-                        <li><neos:link.node node="~/node-551c040d4ec10" /></li>
-                	<li><neos:link.node node="~/node-551c18d727cba" /></li>
-                        <div class="clearfix"></div>
-                    </ul>
-                </nav> 
-                <div id="PageHeadingContent">
-                    <div id="PageArticleDate">
-                        <f:if condition="{isChronikItem}">
-				            <f:then>
-                                {date -> f:format.date(localeFormatType: 'date', forceLocale: 'de_DE', localeFormatLength: 'long')}
-                                <neos:contentElement.wrap node="{node}"><span>{neos:contentElement.editable(property: 'dateAdditionalText', tag: 'span')}</span></neos:contentElement.wrap>
-                            </f:then>
-				            <f:else>
-                                <neos:contentElement.wrap node="{node}">
-                                    <header class="underline">{neos:contentElement.editable(property: 'subheadline')}</header>
-                                </neos:contentElement.wrap>
-                            </f:else>
-			            </f:if>
-                    </div> 
-                    <div id="PageArticleHeading">
-                        <header>{header}</header>
-                    </div>
-                </div>
-                <f:if condition="{headerImage}">
-                    <img id="PageHeadingCustomImage" src="{media:uri.image(image: headerImage)}" alt="{headerImageAlternativeText}" />
-                </f:if>
-                <div class="clearfix"></div>
-                <nav id="RelatedPagesMenu">
-                    <ul>
-                        <li><a href="javascript:history.back();">&laquo;</a></li>
-                        {parts.parentPage -> f:format.raw()}
-                        <!-- only show child pages on non index pages -->
-                        <f:if condition="{isIndexPage}">
-                            <f:else>
-                                {parts.subpages -> f:format.raw()}
-                            </f:else>
-                        </f:if>
-                        <!-- show related pages (if any) -->
-                        <f:if condition="{menuCollection}">
-                            {parts.relatedPages -> f:format.raw()}
-                        </f:if>
-                    </ul>
-                </nav>   
-            </div>            
-            <div id="PageBody">
-                <article>
-                    <f:if condition="{isChronikItem}">
-                        <f:if condition="{neos:rendering.inBackend()}">
-                            <f:then>
-                                <neos:contentElement.wrap node="{node}">
-                                    <header class="underline">{neos:contentElement.editable(property: 'subheadline')}</header>
-                                </neos:contentElement.wrap>
-                            </f:then>
-                            <f:else>
-                                <f:if condition="{subheadline} != ''">
-                                    <header class="underline">{subheadline -> f:format.stripTags()}</header>
-                                </f:if>
-                            </f:else>
-                        </f:if>
-                    </f:if>
-                    
-                    {content.main -> f:format.raw()}
-                    
-                    <div class="clearfix"></div>
-                    
-                    <f:if condition="{hasPressespiegel}">
-                        <div id="ArticlePressespiegel">
-                            <div id="ArticlePressespiegelHeading">{pressespiegelTitle}</div>
-                            {content.pressespiegel -> f:format.raw()}
-                        </div>
-                    </f:if>
-                </article>
-            </div>
+<f:section name="headScripts">
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="{f:uri.resource(path: 'Scripts/fancybox/jquery.fancybox.pack.js', package: 'GSL.DuttweilerDe')}"></script>  
+</f:section>
+
+
+
+<f:section name="body">
+
+  <div id="Wrapper">
+<f:if condition="{headerBackgroundImage}"><f:then>
+    <div id="PageHeading" style="background-image:url('{f:uri.resource(resource: headerBackgroundImage.resource)}');">
+</f:then><f:else>
+    <div id="PageHeading">
+</f:else></f:if>
+      <nav id="RelatedPagesTopMenu">
+        <ul>
+          <li><neos:link.node node="~/">Duttweiler</neos:link.node></li>
+          <li><neos:link.node node="~/node-551c040d4ec10" /></li>
+          <li><neos:link.node node="~/node-551c18d727cba" /></li>
+          <div class="clearfix"></div>
+        </ul>
+      </nav> 
+      <div id="PageHeadingContent">
+        <div id="PageArticleDate">
+<f:if condition="{isChronikItem}"><f:then>
+          {date -> f:format.date(localeFormatType: 'date', forceLocale: 'de_DE', localeFormatLength: 'long')}
+          <neos:contentElement.wrap node="{node}"><span>{neos:contentElement.editable(property: 'dateAdditionalText', tag: 'span')}</span></neos:contentElement.wrap>
+</f:then><f:else>
+          <neos:contentElement.wrap node="{node}"><header class="underline">{neos:contentElement.editable(property: 'subheadline')}</header></neos:contentElement.wrap>
+</f:else></f:if>
+        </div> 
+        <div id="PageArticleHeading">
+          <header>{header}</header>
         </div>
-	</f:section>
-	<f:section name="bodyScripts">
-		<script src="{f:uri.resource(path: 'Scripts/main.js', package: 'GSL.DuttweilerDe')}"></script>
-	</f:section>
-    </body>
+      </div>
+<f:if condition="{headerImage}">
+      <img id="PageHeadingCustomImage" src="{media:uri.image(image: headerImage)}" alt="{headerImageAlternativeText}" />
+</f:if>
+      <div class="clearfix"></div>
+      <nav id="RelatedPagesMenu">
+        <ul>
+          <li><a href="javascript:history.back();">&laquo;</a></li>
+          {parts.parentPage -> f:format.raw()}
+          <!-- only show child pages on non index pages -->
+<f:if condition="{isIndexPage}"><f:else>
+          {parts.subpages -> f:format.raw()}
+</f:else></f:if>
+          <!-- show related pages (if any) -->
+<f:if condition="{menuCollection}">
+          {parts.relatedPages -> f:format.raw()}
+</f:if>
+        </ul>
+      </nav>   
+    </div>            
+    <div id="PageBody">
+      <article>
+        
+<f:if condition="{isChronikItem}">
+  <f:if condition="{neos:rendering.inBackend()}"><f:then>
+        <neos:contentElement.wrap node="{node}"><header class="underline">{neos:contentElement.editable(property: 'subheadline')}</header></neos:contentElement.wrap>
+  </f:then><f:else>
+    <f:if condition="{subheadline} != ''">
+        <header class="underline">{subheadline -> f:format.stripTags()}</header>
+    </f:if>
+  </f:else></f:if>
+</f:if>
+
+        {content.main -> f:format.raw()}
+        <div class="clearfix"></div>
+
+<f:if condition="{hasPressespiegel}">
+        <div id="ArticlePressespiegel">
+          <div id="ArticlePressespiegelHeading">{pressespiegelTitle}</div>
+          {content.pressespiegel -> f:format.raw()}
+        </div>
+</f:if>
+
+      </article>
+    </div>
+  </div>
+
+</f:section>
+
+<f:section name="bodyScripts">
+  <script src="{f:uri.resource(path: 'Scripts/main.js', package: 'GSL.DuttweilerDe')}"></script>
+</f:section>
