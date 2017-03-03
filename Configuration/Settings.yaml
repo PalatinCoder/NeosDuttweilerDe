@@ -66,3 +66,6 @@ Neos:
               index:
                 label: 'Benachrichtigungen prüfen!'
             privilegeTarget: 'GSL.DuttweilerDe:Backend.App.ReviewNotifications'
+  Fusion:
+    defaultContext:
+      'JSL.Rendering': 'GSL\DuttweilerDe\Eel\Helper\RenderingHelper'
