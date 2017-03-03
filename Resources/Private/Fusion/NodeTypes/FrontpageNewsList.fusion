@@ -5,15 +5,13 @@ prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
 	@context.standaloneItems = ${q(documentNode).children('standalonenews').children().get()}
 
 	listCollection = Neos.Fusion:Case {
-		a {
-			condition = ${Security.getAccount() != NULL}
-			renderPath = 'listCollectionA'
-			listCollectionA = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).orderByDate().get()}
+		editMode {
+			condition = ${JSL.Rendering.inEditMode()}
+			renderer = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).orderByDate().get()}
 		}
-		default {
+		live {
 			condition = ${true}
-			renderPath = 'listCollectionB'
-			listCollectionB = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').add(standaloneItems).slice(0,10).add(standaloneItems).orderByDate().get()}
+			renderer = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).add(standaloneItems).orderByDate().get()}
 		}
 	}
 
