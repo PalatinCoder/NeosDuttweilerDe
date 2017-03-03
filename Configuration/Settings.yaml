@@ -1,69 +1,70 @@
 # Content NodeTypes Groups
 
-TYPO3:
+Neos:
+  Flow:
+    mvc:
+      routes:
+        'GSL.DuttweilerDe':
+          position: 'before Neos.Neos'
+    i18n:
+      defaultLocale: de
+    error:
+      exceptionHandler:
+        renderingGroups:
+          notFoundExceptions:
+            matchingStatusCodes:
+              - 404
+            options:
+              templatePathAndFilename: 'resource://GSL.DuttweilerDe/Private/Templates/Page/Error.html'
+              layoutRootPath: 'resource://Neos.Neos/Private/Layouts/'
+              format: html
   Neos:
     nodeTypes:
       groups:
         duttweiler-general:
           label: 'Duttweiler - Allgemein'
           position: 51
-          collapsed: FALSE
+          collapsed: false
         frontpage:
           label: 'Duttweiler - Startseite'
           position: 52
-          collapsed: FALSE
+          collapsed: false
         chronik:
           label: 'Duttweiler - Chronik'
           position: 53
-          collapsed: FALSE
+          collapsed: false
         api:
           label: 'Duttweiler - API'
           position: end
-
     userInterface:
       navigateComponent:
         nodeTree:
           loadingDepth: 2
       backendLoginForm:
         backgroundImage: 'resource://GSL.DuttweilerDe/Public/Images/LoginWallpaper.jpg'
-
     modules:
       duttweilerapp:
-        label: 'DuttweilerApp'
-        controller: '\TYPO3\Neos\Controller\Module\ManagementController'
+        label: DuttweilerApp
+        controller: \Neos\Neos\Controller\Module\ManagementController
         description: 'Verschiedene Funktionen der DuttweilerApp'
-        icon: 'icon-android'
+        icon: icon-android
         privilegeTarget: 'GSL.DuttweilerDe:Backend.App'
         submodules:
           digital-shoutout:
             label: 'Digitale Ortsrufanlage'
-            controller: '\GSL\DuttweilerDe\Controller\Module\DuttweilerApp\DigitalShoutoutController'
+            controller: \GSL\DuttweilerDe\Controller\Module\DuttweilerApp\DigitalShoutoutController
             description: 'Mit diesem Modul können "Digitale Durchsagen" an die DuttweilerApp gesendet werden.'
-            icon: 'icon-bullhorn'
+            icon: icon-bullhorn
             actions:
               index:
                 label: 'Durchsage machen!'
             privilegeTarget: 'GSL.DuttweilerDe:Backend.App.Shoutout'
           notification-review:
             label: 'Push Benachrichtigungen'
-            controller: '\GSL\DuttweilerDe\Controller\Module\DuttweilerApp\NotificationReviewController'
+            controller: \GSL\DuttweilerDe\Controller\Module\DuttweilerApp\NotificationReviewController
             description: 'Hier werden alle anfallenden Push Benachrichtigungen gesammelt und können freigegeben werden.'
-            icon: 'icon-cloud-download'
+            icon: icon-cloud-download
             actions:
               index:
                 label: 'Benachrichtigungen prüfen!'
             privilegeTarget: 'GSL.DuttweilerDe:Backend.App.ReviewNotifications'
-
-  Flow:
-    i18n:
-      defaultLocale: de
-
-    error:
-      exceptionHandler:
-        renderingGroups:
-          'notFoundExceptions':
-            matchingStatusCodes: [ 404 ]
-            options:
-              templatePathAndFilename: 'resource://GSL.DuttweilerDe/Private/Templates/Page/Error.html'
-              layoutRootPath: 'resource://TYPO3.Neos/Private/Layouts/'
-              format: 'html'

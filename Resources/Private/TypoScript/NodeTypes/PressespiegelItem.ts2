@@ -1,8 +1,0 @@
-prototype(GSL.DuttweilerDe.Content:PressespiegelItem) < prototype(TYPO3.Neos:Content) {
-	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/PressespiegelItem.html'
-
-	title = ${q(node).property('title')}
-    publication = ${q(node).property('publication')}
-    date = ${q(node).property('date')}
-    itemLink = ${q(node).property('itemLink')}
-}

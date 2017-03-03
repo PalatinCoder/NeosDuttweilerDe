@@ -1,0 +1,39 @@
+/**
+ * Root TypoScript template for the Duttweiler site
+ */
+
+include: NodeTypes/*
+include: PageTypes/*
+include: API/*
+
+default < page
+
+prototype(Neos.NodeTypes:Image) {
+	partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
+	maximumWidth = ${q(node).property('displayWidth')}
+	maximumHeight = ${q(node).property('displayHeight')}
+}
+prototype(Neos.NodeTypes:TextWithImage).partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
+prototype(Neos.NodeTypes:Headline).attributes.class = Neos.Fusion:Case {
+    boxed {
+        condition = ${q(node).property('layout') == 'boxed'}
+        renderer = ${'boxed'}
+    }
+    default {
+        condition = ${true}
+        renderer = ${'underline'}
+    }
+}
+
+root.format.@position = 'end 9995'
+json = Neos.Fusion:Case {
+	news {
+		condition = ${q(node).is('[instanceof GSL.DuttweilerDe.API:News]')}
+		type = 'GSL.DuttweilerDe.API:NewsList'
+	}
+	events {
+		condition = ${q(node).is('[instanceof GSL.DuttweilerDe.API:Events]')}
+		type = 'GSL.DuttweilerDe.API:EventsList'
+	}
+}
+rss = GSL.DuttweilerDe.API:RSS

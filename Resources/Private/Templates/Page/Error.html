@@ -1,4 +1,4 @@
-﻿{namespace neos=TYPO3\Neos\ViewHelpers}
+﻿{namespace neos=Neos\Neos\ViewHelpers}
 <f:layout name="Default" />
 
 <f:section name="head">
@@ -6,7 +6,7 @@
                 <meta name="author" content="Gerhard Syring-Lingenfelder" />
                 <meta name="keywords" content="Duttweiler,Neustadt,Weinstraße,Pfalz,Wein,Sport,Tischtennis,TT,VFL,Fußball,Vereine,Veranstaltungen,Schwimmbad,Syring,Syring-Lingenfelder" />
                 <meta name="description" content="Herzlich Willkommen in Duttweiler, einem Ortsteil von Neustadt an der Weinstraße in der Pfalz" />
-                <meta name="generator" content="neos - The next generation CMS - neos.io | powered by Jan Syring-Lingenfelder - www.jan-sl.de" />
+								<meta name="generator" content="neos - The open source Content Application Framework - www.neos.io | powered by Jan Syring-Lingenfelder - www.jan-sl.de" />
         	<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/normalize.css', package: 'GSL.DuttweilerDe')}" />
         	<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Default.css', package: 'GSL.DuttweilerDe')}" />
 		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Common.css', package: 'GSL.DuttweilerDe')}" />
@@ -54,8 +54,8 @@
 	<p class="technical-details">#{exception.code}: {exception.message}</p>
 	</f:if>
 	<f:if condition="{showSetupLink}">
-		<p><strong>{neos:backend.translate(id: 'error.exception.{renderingOptions.renderingGroup}.setupMessage', package: 'TYPO3.Neos')}</strong></p>
-		<p><a href="/setup" class="neos-button neos-button-primary">{neos:backend.translate(id: 'error.exception.goToSetup', package: 'TYPO3.Neos')}</a></p>
+		<p><strong>{neos:backend.translate(id: 'error.exception.{renderingOptions.renderingGroup}.setupMessage', package: 'Neos.Neos')}</strong></p>
+		<p><a href="/setup" class="neos-button neos-button-primary">{neos:backend.translate(id: 'error.exception.goToSetup', package: 'Neos.Neos')}</a></p>
 	</f:if>
 	</div>
 

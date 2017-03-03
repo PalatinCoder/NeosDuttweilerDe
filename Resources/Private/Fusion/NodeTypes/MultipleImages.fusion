@@ -1,0 +1,5 @@
+prototype(GSL.DuttweilerDe:MultipleImages) < prototype(Neos.NodeTypes:AssetList) {
+	fancyboxGroup = ${q(node).property('fancyboxGroup')}
+	maxHeight = ${q(node).property('displayHeight')}
+	maxWidth = ${q(node).property('displayWidth')}
+}

@@ -80,33 +80,33 @@ nav#PageMenu {
     padding-top: 2px;
 }*/
 
-nav.typo3-neos-nodetypes-menu ul {
+nav.neos-nodetypes-menu ul {
     border-top: 2px solid #c60;
     list-style-type: none;
     padding: 0;
     margin: 2px 0;
 }
-div.column:first-child nav.typo3-neos-nodetypes-menu ul { margin-left: -20px; }
-div.column:last-child nav.typo3-neos-nodetypes-menu ul { margin-right: -20px; }
-nav.typo3-neos-nodetypes-menu li {
+div.column:first-child nav.neos-nodetypes-menu ul { margin-left: -20px; }
+div.column:last-child nav.neos-nodetypes-menu ul { margin-right: -20px; }
+nav.neos-nodetypes-menu li {
     background-color: #f0f0f0;
     padding: 5px 10px;
     border-bottom: 1px solid #c60;
 }
 
-div.typo3-neos-nodetypes-headline.boxed {
+div.neos-nodetypes-headline.boxed {
     border-top: 2px solid #c60;
     border-bottom: 1px solid #c60;
     background-color: #f0f0f0;
     margin: 10px 0;
     color: #c60;
 }
-div.typo3-neos-nodetypes-headline.underline {
+div.neos-nodetypes-headline.underline {
     border-bottom: 1px solid #c60;
     margin: 10px 0;
     color: #c60;
 }
-div.typo3-neos-nodetypes-headline h1, h2, h3, h4, h5 {
+div.neos-nodetypes-headline h1, h2, h3, h4, h5 {
     font-weight: normal;
     margin: 5px;
 }
@@ -133,5 +133,5 @@ div.neos-contentcollection table.dw_praem td.dw87 {font-size: 0.8em; padding-bot
 .ArticlePressespiegelItemDate { font-size: 8pt; float: right; }
 .ArticlePressespiegelItemLink { margin-left: 25px; }
 
-div.typo3-neos-nodetypes-text li, div.typo3-neos-nodetypes-textwithimage li { list-style-type: none; position: relative; min-height: 20px; }
-div.typo3-neos-nodetypes-text li::before, div.typo3-neos-nodetypes-textwithimage li::before { content: ''; position: absolute; width: 10px; height: 10px; background-color: #c60; margin: 5px 0 0 -20px; }
+div.neos-nodetypes-text li, div.neos-nodetypes-textwithimage li { list-style-type: none; position: relative; min-height: 20px; }
+div.neos-nodetypes-text li::before, div.neos-nodetypes-textwithimage li::before { content: ''; position: absolute; width: 10px; height: 10px; background-color: #c60; margin: 5px 0 0 -20px; }

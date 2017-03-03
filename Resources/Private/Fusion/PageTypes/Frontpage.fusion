@@ -1,0 +1,55 @@
+frontpage = Page {
+	head {
+		meta = Neos.Fusion:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+			sectionName = 'meta'
+		}
+		stylesheets.site = Neos.Fusion:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+			sectionName ='stylesheets'
+		}
+		javascripts.site = Neos.Fusion:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+			sectionName = 'headScripts'
+		}
+        titleTag = ${'<title>' + (String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')) + ' - Duttweiler Wein - Duttweiler/Pfalz</title>'}
+	}
+	body {
+		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+		sectionName = 'body'
+        
+        	hasBanner = ${q(node).property('hasBanner')}
+		headerBackgroundImage = ${q(node).property('headerImage')}
+
+		parts {
+			menu = Menu {
+                		#renderHiddenInIndex = true
+                        maximumLevels = 1
+            		}
+		}
+
+		content {
+			rightColumn = PrimaryContent {
+				nodePath = 'rightColumn'
+			}            
+                       
+			main = PrimaryContent {
+				nodePath = 'main'
+			}
+			    
+			banner = PrimaryContent {
+				nodePath = 'banner'
+			}
+            standalonenews = PrimaryContent {
+                nodePath = 'standalonenews'
+            }
+		}
+
+		javascripts.site = Neos.Fusion:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+			sectionName = 'bodyScripts'
+		}
+	}
+}
+ 
+ 

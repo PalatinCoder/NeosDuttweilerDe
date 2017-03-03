@@ -1,0 +1,25 @@
+prototype(GSL.DuttweilerDe.Content:FrontpageNewsItem) < prototype(Neos.Neos:Content) {
+	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/FrontpageNewsItem.html'
+	
+	headline = ${q(node).property('title')}
+	subheadline = ${q(node).property('subheadline')}
+	date = ${q(node).property('date')}
+    text = ${q(node).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('text')}
+    image = ${q(node).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('image')}
+    imageAlternativeText = ${q(node).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('alternativeText')}
+
+	isStandalone = false
+}
+
+prototype(GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone) < prototype(GSL.DuttweilerDe.Content:FrontpageNewsItem) {
+	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/FrontpageNewsItem.html'
+	isStandalone = true
+	text = ${q(node).property('text')}
+}
+
+prototype(GSL.DuttweilerDe:FrontpageTTResults) < prototype(GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone)
+
+prototype(GSL.DuttweilerDe:FrontpageFubaResults) < prototype(GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone) {
+    scoreHome = ${String.split(q(node).property('score'), ':')[0]}
+    scoreAway = ${String.split(q(node).property('score'), ':')[1]}
+}

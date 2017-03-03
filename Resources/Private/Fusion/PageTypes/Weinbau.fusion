@@ -1,0 +1,61 @@
+weinbau = Page {
+	head {
+		meta = Neos.Fusion:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
+			sectionName = 'meta'
+		}
+		stylesheets.site = Neos.Fusion:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
+			sectionName = 'stylesheets'
+		}
+		javascripts.site = Neos.Fusion:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
+			sectionName = 'headScripts'
+		}
+		titleTag = ${'<title>' + (String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')) + ' - Duttweiler Wein - Duttweiler/Pfalz</title>'}
+	}
+	body {
+		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
+		sectionName = 'body'
+
+        title = ${String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')}
+        subtitle = ${q(node).property('subheadline')}
+
+        headerImage = ${q(node).property('headerImage')}
+        headerImageAlternativeText = ${q(node).property('headerImageAlternativeText')}
+
+        isIndexPage = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:IndexPage]')}
+
+        parts {
+            sectionMenu = Neos.Fusion:Template {
+                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/SectionMenu.html'
+                items = ${q(documentNode).children('[instanceof Neos.Neos:ContentCollection]').children('[instanceof Neos.NodeTypes:Headline]')}
+            }
+            subpages = Menu {
+                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
+                entryLevel = 0
+                maximumLevels = 1
+            }            
+            parentPage = Menu {
+                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
+                itemCollection = ${q(documentNode).parent().get()}
+            }
+        }
+        content {
+            main = PrimaryContent {
+                nodePath = 'main'
+            }
+        }
+
+		javascripts.site = Neos.Fusion:Template {
+			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
+			sectionName = 'bodyScripts'
+		}        
+	}
+    prototype(Neos.NodeTypes:Headline) {
+        attributes.id = ${String.pregReplace(node.properties.title, '#</?h[1-5]>#', '')}
+    }
+    prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) {
+        templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/RelatedPagesBacklink.html'
+    }
+}

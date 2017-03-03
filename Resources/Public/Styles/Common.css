@@ -18,8 +18,8 @@ a:hover { text-decoration: underline; }
 .typo3-neos-alignment-left { float: left; margin-right: 2em; margin-bottom: 1em; }
 .typo3-neos-alignment-center { margin: 0 auto !important; width: -moz-fit-content; width: -webkit-fit-content; width: fit-content; }
 
-div.typo3-neos-nodetypes-image figure.typo3-neos-alignment-left { margin: 1em 5px; }
-div.typo3-neos-nodetypes-image figure.typo3-neos-alignment-right { margin: 1em 5px; }
+div.neos-nodetypes-image figure.typo3-neos-alignment-left { margin: 1em 5px; }
+div.neos-nodetypes-image figure.typo3-neos-alignment-right { margin: 1em 5px; }
 
 /* Table styling */
 
@@ -51,8 +51,8 @@ div.neos-contentcollection table th
 
 /* end table styling */
 
-.typo3-neos-nodetypes-twocolumn > div, .typo3-neos-nodetypes-threecolumn > div, .typo3-neos-nodetypes-fourcolumn > div { margin: 0; float: left; }
-.typo3-neos-nodetypes-twocolumn:after, .typo3-neos-nodetypes-threecolumn:after, .typo3-neos-nodetypes-fourcolumn:after { content: ""; clear: both; display:table; }
+.neos-nodetypes-twocolumn > div, .neos-nodetypes-threecolumn > div, .neos-nodetypes-fourcolumn > div { margin: 0; float: left; }
+.neos-nodetypes-twocolumn:after, .neos-nodetypes-threecolumn:after, .neos-nodetypes-fourcolumn:after { content: ""; clear: both; display:table; }
 .columns-50-50 > div.column { width: 50%; }
 .columns-25-75 > div.column:nth-child(1) { width: 25%; }
 .columns-25-75 > div.column:nth-child(2) { width: 75%; }
@@ -81,14 +81,14 @@ img { border: 0; max-width: 100%; height: auto; display: inline-block; vertical-
 .back-to-top { background: #363; color: white; position: fixed; bottom: 20px; right: 20px; padding: 1em; }
 
 
-.typo3-neos-nodetypes-text ol.neos-list-decimal { list-style-type: decimal; }
-.typo3-neos-nodetypes-text ol.neos-list-decimal-leading-zero { list-style-type: decimal-leading-zero; }
-.typo3-neos-nodetypes-text ol.neos-list-lower-roman { list-style-type: lower-roman; }
-.typo3-neos-nodetypes-text ol.neos-list-upper-roman { list-style-type: upper-roman; }
-.typo3-neos-nodetypes-text ol.neos-list-lower-greek { list-style-type: lower-greek; }
-.typo3-neos-nodetypes-text ol.neos-list-lower-latin { list-style-type: lower-latin; }
-.typo3-neos-nodetypes-text ol.neos-list-upper-latin { list-style-type: upper-latin; }
+.neos-nodetypes-text ol.neos-list-decimal { list-style-type: decimal; }
+.neos-nodetypes-text ol.neos-list-decimal-leading-zero { list-style-type: decimal-leading-zero; }
+.neos-nodetypes-text ol.neos-list-lower-roman { list-style-type: lower-roman; }
+.neos-nodetypes-text ol.neos-list-upper-roman { list-style-type: upper-roman; }
+.neos-nodetypes-text ol.neos-list-lower-greek { list-style-type: lower-greek; }
+.neos-nodetypes-text ol.neos-list-lower-latin { list-style-type: lower-latin; }
+.neos-nodetypes-text ol.neos-list-upper-latin { list-style-type: upper-latin; }
 
-.typo3-neos-nodetypes-text ul.neos-list-disc { list-style-type: disc; }
-.typo3-neos-nodetypes-text ul.neos-list-circle { list-style-type: circle; }
-.typo3-neos-nodetypes-text ul.neos-list-square { list-style-type: square; }
+.neos-nodetypes-text ul.neos-list-disc { list-style-type: disc; }
+.neos-nodetypes-text ul.neos-list-circle { list-style-type: circle; }
+.neos-nodetypes-text ul.neos-list-square { list-style-type: square; }

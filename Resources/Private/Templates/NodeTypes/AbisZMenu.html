@@ -1,38 +1,38 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
 <nav{attributes -> f:format.raw()}>
-	<ul style="padding-left: 0;">
-		<f:render section="itemsList" arguments="{items: items}" />
-	</ul>
+<f:if condition="{items -> f:count()}">
+  <f:then>
+  	<ul style="padding-left: 0;">
+  		<f:render section="itemsList" arguments="{items: items}" />
+  	</ul>
+  </f:then>
+  <f:else>
+    <f:if condition="{neos:rendering.inEditMode()}">
+      <p>{f:translate(id: 'content.emptyMenu', package: 'Neos.NodeTypes', source: 'NodeTypes/Menu')}</p>
+    </f:if>
+  </f:else>
+</f:if>
 </nav>
 
 <f:section name="itemsList">
-	<f:if condition="{items -> f:count()}">
-		<f:then>
-			<f:for each="{items}" as="item">
-			  <f:if condition="{item.menuLevel} == 1">
-			    <f:then>
-				<f:render partial="AbisZHeadline" arguments="{title: item.label}" />
-				<f:if condition="{item.subItems}">
-					<ul>
-						<f:render section="itemsList" arguments="{items: item.subItems}" />
-					</ul>
-				</f:if>
-			    </f:then>
-			    <f:else>	
-				<li{ts:render(path:'{item.state}.attributes', context: {item: item}) -> f:format.raw()}>
-				<neos:link.node node="{item.node}">{item.label}</neos:link.node>
-				</li>
-			    </f:else>
-			  </f:if>
-			</f:for>
-		</f:then>
-		<f:else>
-			<f:security.ifAccess privilegeTarget="TYPO3.Neos:Backend.GeneralAccess">
-				<f:if condition="{node.context.workspace.name} != 'live'">
-					<li>Empty menu</li>
-				</f:if>
-			</f:security.ifAccess>
-		</f:else>
-	</f:if>
+<f:for each="{items}" as="item">
+  <f:if condition="{item.menuLevel} == 1">
+    <f:then>
+      <header class="underline">
+        <a name="{item.label}">{item.label}</a>
+      </header>
+    	<f:if condition="{item.subItems}">
+    		<ul>
+    			<f:render section="itemsList" arguments="{items: item.subItems}" />
+    		</ul>
+    	</f:if>
+    </f:then>
+    <f:else>	
+    	<li{fusion:render(path:'{item.state}.attributes', context: {item: item}) -> f:format.raw()}>
+    	 <neos:link.node node="{item.node}">{item.label}</neos:link.node>
+    	</li>
+    </f:else>
+  </f:if>
+</f:for>
 </f:section>
