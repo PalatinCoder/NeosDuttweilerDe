@@ -12,9 +12,9 @@ prototype(GSL.DuttweilerDe.Content:EventPromoter) < prototype(Neos.Neos:Content)
 	@cache {
 		mode = 'cached'
 
-        entryIdentifier {
-            node = ${node}
-        }
+    entryIdentifier {
+      node = ${node}
+    }
 
 		maximumLifetime = '86400'
 		

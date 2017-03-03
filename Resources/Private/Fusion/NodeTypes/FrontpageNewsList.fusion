@@ -2,47 +2,47 @@ prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
 
 	@context.chronikNode = ${q(documentNode).property('chronikRootNode')}
-    @context.standaloneItems = ${q(documentNode).children('standalonenews').children().get()}
-   
-    listCollection = Neos.Fusion:Case {
-        a {
-            condition = ${Security.getAccount() != NULL}
-            renderPath = 'listCollectionA'
-            listCollectionA = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).orderByDate().get()}
-        }
-        default {
-            condition = ${true}
-            renderPath = 'listCollectionB'
-            listCollectionB = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').add(standaloneItems).slice(0,10).add(standaloneItems).orderByDate().get()}
-        }
-    }
-    
+	@context.standaloneItems = ${q(documentNode).children('standalonenews').children().get()}
+
+	listCollection = Neos.Fusion:Case {
+		a {
+			condition = ${Security.getAccount() != NULL}
+			renderPath = 'listCollectionA'
+			listCollectionA = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).orderByDate().get()}
+		}
+		default {
+			condition = ${true}
+			renderPath = 'listCollectionB'
+			listCollectionB = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').add(standaloneItems).slice(0,10).add(standaloneItems).orderByDate().get()}
+		}
+	}
+
 	listItem = Neos.Fusion:Case {
-        chronikItem {
-            condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
-            type = 'GSL.DuttweilerDe.Content:FrontpageNewsItem'
-        }
-        standaloneTTNews2 {
-            condition = ${q(node).is('[instanceof GSL.DuttweilerDe:FrontpageTTNews2]')}
-            type = 'GSL.DuttweilerDe:FrontpageTTNews2'
-        }
-        standaloneTTNews {
-            condition = ${q(node).is('[instanceof GSL.DuttweilerDe:FrontpageTTNews]')}
-            type = 'GSL.DuttweilerDe:FrontpageTTNews'
-        }
-        standaloneTT {
-            condition = ${q(node).is('[instanceof GSL.DuttweilerDe:FrontpageTTResults]')}
-            type = 'GSL.DuttweilerDe:FrontpageTTResults'
-        }
-        standaloneFuba {
-            condition = ${q(node).is('[instanceof GSL.DuttweilerDe:FrontpageFubaResults]')}
-            type = 'GSL.DuttweilerDe:FrontpageFubaResults'
-        }
-        standalone {
-            condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone]')}
-            type = 'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone'
-        }
-    }
+		chronikItem {
+			condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
+			type = 'GSL.DuttweilerDe.Content:FrontpageNewsItem'
+		}
+		standaloneTTNews2 {
+			condition = ${q(node).is('[instanceof GSL.DuttweilerDe:FrontpageTTNews2]')}
+			type = 'GSL.DuttweilerDe:FrontpageTTNews2'
+		}
+		standaloneTTNews {
+			condition = ${q(node).is('[instanceof GSL.DuttweilerDe:FrontpageTTNews]')}
+			type = 'GSL.DuttweilerDe:FrontpageTTNews'
+		}
+		standaloneTT {
+			condition = ${q(node).is('[instanceof GSL.DuttweilerDe:FrontpageTTResults]')}
+			type = 'GSL.DuttweilerDe:FrontpageTTResults'
+		}
+		standaloneFuba {
+			condition = ${q(node).is('[instanceof GSL.DuttweilerDe:FrontpageFubaResults]')}
+			type = 'GSL.DuttweilerDe:FrontpageFubaResults'
+		}
+		standalone {
+			condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone]')}
+			type = 'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone'
+		}
+	}
 
 	@cache {
 		mode = 'cached'
@@ -50,7 +50,7 @@ prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
 		entryTags {
 			1 = ${'NodeType_GSL.DuttweilerDe.Pages:ChronikItem'}
 			2 = ${'DescendantOf_' + chronikNode.identifier}
-            3 = ${'NodeType_GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone'}
+			3 = ${'NodeType_GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone'}
 		}
 	}
 }

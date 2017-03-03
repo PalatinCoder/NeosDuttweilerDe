@@ -6,18 +6,18 @@ prototype(GSL.DuttweilerDe.Content:FrontpageInfoBox) < prototype(Neos.Neos:Conte
 	isImportant = ${q(node).property('isImportant')}
 
     bgColor = Neos.Fusion:Case {
-        important {
-            condition = ${q(node).property('style') == 'important'}
-            renderer = ${"#F00"}
-        }
-        blue {
-            condition = ${q(node).property('style') == 'blue'}
-            renderer = ${"#0093FF"}
-        }
-        default {
-            condition = ${true}
-            renderer = ${"#363"}
-        }
+      important {
+	      condition = ${q(node).property('style') == 'important'}
+	      renderer = ${"#F00"}
+      }
+      blue {
+        condition = ${q(node).property('style') == 'blue'}
+        renderer = ${"#0093FF"}
+      }
+      default {
+        condition = ${true}
+        renderer = ${"#363"}
+      }
     }
 
 	title = ${q(node).property('title')}

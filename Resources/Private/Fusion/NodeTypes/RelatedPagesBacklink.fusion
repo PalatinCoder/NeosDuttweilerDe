@@ -1,60 +1,60 @@
 prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) < prototype(Neos.Neos:Content) {
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/RelatedPagesBacklink.html'
 
-    title = ${q(node).property('title')}
-    date = ${q(node).property('date')}
-    subheading = Neos.Fusion:Case {
-        shortcut {
-            condition = ${q(node).is('[instanceof Neos.Neos:Shortcut]')}
-            renderer = ${'weiterlesen...'}
+  title = ${q(node).property('title')}
+  date = ${q(node).property('date')}
+  subheading = Neos.Fusion:Case {
+	  shortcut {
+	      condition = ${q(node).is('[instanceof Neos.Neos:Shortcut]')}
+	      renderer = ${'weiterlesen...'}
+	  }
+    default {
+        renderer = ${q(node).property('subheadline')}
+        condition = ${true}
+    }
+  }
+
+  link = Neos.Fusion:Case {
+	  chronik {
+	    renderer = ${q(node).property('_path')}
+	    condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
+	  }
+    shortcut {
+      renderer = Neos.Fusion:Case {
+        node {
+          condition = ${String.startsWith(q(node).property('target'), 'node://')}
+          renderer = ${Neos.Link.resolveNodeUri(q(node).property('target'), q(node).get(0), this.tsRuntime.controllerContext)}
         }
         default {
-            renderer = ${q(node).property('subheadline')}
-            condition = ${true}
+          condition = ${true}
+          renderer = ${q(node).property('target')}
         }
+      }
+      condition = ${q(node).is('[instanceof Neos.Neos:Shortcut]')}
     }
-
-    link = Neos.Fusion:Case {
-        chronik {
-            renderer = ${q(node).property('_path')}
-            condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
-        }
-        shortcut {
-            renderer = Neos.Fusion:Case {
-                node {
-                    condition = ${String.startsWith(q(node).property('target'), 'node://')}
-                    renderer = ${Neos.Link.resolveNodeUri(q(node).property('target'), q(node).get(0), this.tsRuntime.controllerContext)}
-                }
-                default {
-                    condition = ${true}
-                    renderer = ${q(node).property('target')}
-                }
-            }
-            condition = ${q(node).is('[instanceof Neos.Neos:Shortcut]')}
-        }
-        internal {
-            renderer =  Neos.Fusion:Case {
-                node {
-                    condition = ${String.startsWith(q(node).property('link'), 'node://')}
-                    renderer = ${Neos.Link.resolveNodeUri(q(node).property('link'), q(node).get(0), this.tsRuntime.controllerContext)}
-                }
-                default {
-                    condition = ${true}
-                    renderer = ${q(node).property('link')}
-                }
-            }
-            condition = ${true}
-        }
-    }
-
-    linkType = Neos.Fusion:Case {
+    internal {
+      renderer =  Neos.Fusion:Case {
         node {
-            condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
-            renderer = ${"node"}
+          condition = ${String.startsWith(q(node).property('link'), 'node://')}
+          renderer = ${Neos.Link.resolveNodeUri(q(node).property('link'), q(node).get(0), this.tsRuntime.controllerContext)}
         }
-        uri {
-            condition = ${true}
-            renderer = ${"uri"}
+        default {
+          condition = ${true}
+          renderer = ${q(node).property('link')}
         }
+      }
+      condition = ${true}
     }
+  }
+
+  linkType = Neos.Fusion:Case {
+    node {
+      condition = ${q(node).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
+      renderer = ${"node"}
+    }
+    uri {
+      condition = ${true}
+      renderer = ${"uri"}
+    }
+  }
 }

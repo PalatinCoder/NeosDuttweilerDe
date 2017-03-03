@@ -1,27 +1,27 @@
 prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklinkList) {
-    templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
+  templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
 
-    // path down there is /sites/duttweilerde/a-bis-z/chronik
+  // path down there is /sites/duttweilerde/a-bis-z/chronik
 
-    listCollection = ${q(site).find('#529a59e2-1849-2782-471c-7635f47167de').children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').filterByReference('relatedPages', documentNode).get()}
+  listCollection = ${q(site).find('#529a59e2-1849-2782-471c-7635f47167de').children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').filterByReference('relatedPages', documentNode).get()}
 
-    listItem = GSL.DuttweilerDe.Content:RelatedPagesBacklink
+  listItem = GSL.DuttweilerDe.Content:RelatedPagesBacklink
 
-    @cache {
-    	mode = 'cached'
+  @cache {
+  	mode = 'cached'
 
-        entryIdentifier {
-                node = ${node}
-                editPreviewMode = ${node.context.currentRenderingMode.name}
-        }
-
-    	entryTags {
-    		1 = ${'NodeType_GSL.DuttweilerDe.Pages:ChronikItem'}
-    	}
+    entryIdentifier {
+      node = ${node}
+      editPreviewMode = ${node.context.currentRenderingMode.name}
     }
+
+  	entryTags {
+  		1 = ${'NodeType_GSL.DuttweilerDe.Pages:ChronikItem'}
+  	}
+  }
 }
 
 prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklinkAggregate) < prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklinkList) {
-    templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
-    listCollection = ${q(site).find('#529a59e2-1849-2782-471c-7635f47167de').children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').filterByReference('relatedPages', q(documentNode).children().get()).slice(0,10).get()}
+  templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
+  listCollection = ${q(site).find('#529a59e2-1849-2782-471c-7635f47167de').children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').filterByReference('relatedPages', q(documentNode).children().get()).slice(0,10).get()}
 }
