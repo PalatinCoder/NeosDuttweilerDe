@@ -1,72 +1,72 @@
 page = Page {
-	head {
-		meta = Neos.Fusion:Template {
-			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
-			sectionName = 'meta'
-		}
-		stylesheets.site = Neos.Fusion:Template {
-			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
-			sectionName ='stylesheets'
-		}
-		javascripts.site = Neos.Fusion:Template {
-			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
-			sectionName = 'headScripts'
-		}
-        titleTag = ${'<title>' + (String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : String.stripTags(q(node).property('titleOverride'))) + ' - Duttweiler/Pfalz</title>'}
-	}
-	body {
-		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
-		sectionName = 'body'
-        
-        subheadline = ${q(node).property('subheadline')}
-        header = ${String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')}
-        
-        headerImage = ${q(node).property('headerImage')}
-        headerImageAlternativeText = ${q(node).property('headerImageAlternativeText')}
-	headerBackgroundImage = ${q(documentNode).find('#403b8bed-1f13-1ca8-93b0-6ea819639191').property('childHeaderImage')}
+  head {
+    meta = Neos.Fusion:Template {
+      templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
+      sectionName = 'meta'
+    }
+    stylesheets.site = Neos.Fusion:Template {
+      templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
+      sectionName ='stylesheets'
+    }
+    javascripts.site = Neos.Fusion:Template {
+      templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
+      sectionName = 'headScripts'
+    }
+    titleTag = ${'<title>' + (String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : String.stripTags(q(node).property('titleOverride'))) + ' - Duttweiler/Pfalz</title>'}
+  }
+  body {
+    templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
+    sectionName = 'body'
 
-        isChronikItem = ${q(documentNode).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
-        date = ${q(node).property('date')}
-        dateAdditionalText = ${q(node).property('dateAdditionalText')}
-        
-        hasPressespiegel = ${q(node).property('hasPressespiegel')}
-        pressespiegelTitle = ${q(node).property('pressespiegelTitle')}
-        
-        isIndexPage = ${q(documentNode).is('[instanceof GSL.DuttweilerDe.Pages:IndexPage]')}
-        menuCollection = ${q(documentNode).property('relatedPages')}
+    subheadline = ${q(node).property('subheadline')}
+    header = ${String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')}
 
-	prototype(Neos.NodeTypes:Headline).templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Headline.html'
-        
-        parts {
-            subpages = Menu {
-                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
-                entryLevel = 0
-                maximumLevels = 1
-            }
-            relatedPages = Menu {
-                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
-                itemCollection = ${q(documentNode).property('relatedPages')}
-            }
-            parentPage = Menu {
-                # hide a-bis-z, or the single letters
-                @if.1 = ${q(documentNode).parent().parent().get() != q(documentNode).find('#bb5879ad-b374-f384-874f-b705076e2c73').get()}
+    headerImage = ${q(node).property('headerImage')}
+    headerImageAlternativeText = ${q(node).property('headerImageAlternativeText')}
+    headerBackgroundImage = ${q(documentNode).find('#403b8bed-1f13-1ca8-93b0-6ea819639191').property('childHeaderImage')}
 
-                templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
-                itemCollection = ${q(documentNode).parent().get()}
-            }
-        }
-        content {
-            main = PrimaryContent {
-                nodePath = 'main'
-            }
-            pressespiegel = PrimaryContent {
-                nodePath = 'pressespiegel'
-            }
-        }
+    isChronikItem = ${q(documentNode).is('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]')}
+    date = ${q(node).property('date')}
+    dateAdditionalText = ${q(node).property('dateAdditionalText')}
 
-		javascripts.site = Neos.Fusion:Template {
-			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
-			sectionName = 'bodyScripts'
-		}        
-	}
+    hasPressespiegel = ${q(node).property('hasPressespiegel')}
+    pressespiegelTitle = ${q(node).property('pressespiegelTitle')}
+
+    isIndexPage = ${q(documentNode).is('[instanceof GSL.DuttweilerDe.Pages:IndexPage]')}
+    menuCollection = ${q(documentNode).property('relatedPages')}
+
+    prototype(Neos.NodeTypes:Headline).templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Headline.html'
+
+    parts {
+      subpages = Menu {
+        templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
+        entryLevel = 0
+        maximumLevels = 1
+      }
+      relatedPages = Menu {
+        templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
+        itemCollection = ${q(documentNode).property('relatedPages')}
+      }
+      parentPage = Menu {
+      # hide a-bis-z, or the single letters
+        @if.1 = ${q(documentNode).parent().parent().get() != q(documentNode).find('#bb5879ad-b374-f384-874f-b705076e2c73').get()}
+
+        templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
+        itemCollection = ${q(documentNode).parent().get()}
+      }
+    }
+    content {
+      main = PrimaryContent {
+        nodePath = 'main'
+      }
+      pressespiegel = PrimaryContent {
+        nodePath = 'pressespiegel'
+      }
+    }
+
+    javascripts.site = Neos.Fusion:Template {
+      templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
+      sectionName = 'bodyScripts'
+    }        
+  }
 }
