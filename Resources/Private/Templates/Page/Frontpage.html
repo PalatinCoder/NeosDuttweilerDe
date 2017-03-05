@@ -1,75 +1,74 @@
 {namespace neos=Neos\Neos\ViewHelpers}
-<!DOCTYPE html>
-<html>
-    <head>
-	<f:section name="meta">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-		<meta name="author" content="Gerhard Syring-Lingenfelder" />
-		<meta name="keywords" content="Duttweiler,Neustadt,Weinstraße,Pfalz,Wein,Sport,Tischtennis,TT,VFL,Fußball,Vereine,Veranstaltungen,Schwimmbad,Syring,Syring-Lingenfelder" />
-		<meta name="description" content="Herzlich Willkommen in Duttweiler, einem Ortsteil von Neustadt an der Weinstraße in der Pfalz" />
-		<meta name="generator" content="neos - The open source Content Application Framework - www.neos.io | powered by Jan Syring-Lingenfelder - www.jan-sl.de" />
-		<meta name="google-play-app" content="app-id=de.jan_sl.duttweiler.app" />
-	</f:section>
-	<f:section name="stylesheets">
-		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Scripts/fancybox/jquery.fancybox.css', package: 'GSL.DuttweilerDe')}" />
-        <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Scripts/jquery.smartbanner/jquery.smartbanner.css', package: 'GSL.DuttweilerDe')}" />
-        <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/normalize.css', package: 'GSL.DuttweilerDe')}" />
-        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Common.css', package: 'GSL.DuttweilerDe')}" />
-	    <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Frontpage.css', package: 'GSL.DuttweilerDe')}" />
-        <link rel="shortcut icon" type="image/x-icon" href="{f:uri.resource(path: 'Images/wappen.ico', package: 'GSL.DuttweilerDe')}" />
-		<link rel="apple-touch-icon" href="{f:uri.resource(path: 'Images/wappen.ico', package: 'GSL.DuttweilerDe')}" />
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="/api/news.rss" />
-	</f:section>
+<f:section name="meta">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="author" content="Gerhard Syring-Lingenfelder" />
+	<meta name="keywords" content="Duttweiler,Neustadt,Weinstraße,Pfalz,Wein,Sport,Tischtennis,TT,VFL,Fußball,Vereine,Veranstaltungen,Schwimmbad,Syring,Syring-Lingenfelder" />
+	<meta name="description" content="Herzlich Willkommen in Duttweiler, einem Ortsteil von Neustadt an der Weinstraße in der Pfalz" />
+	<meta name="generator" content="neos - The open source Content Application Framework - www.neos.io | powered by Jan Syring-Lingenfelder - www.jan-sl.de" />
+	<meta name="google-play-app" content="app-id=de.jan_sl.duttweiler.app" />
+</f:section>
 
-	<f:section name="headScripts">
-		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script src="{f:uri.resource(path: 'Scripts/fancybox/jquery.fancybox.pack.js', package: 'GSL.DuttweilerDe')}"></script>
-	</f:section>
-    </head>
-    <body>
-	<f:section name="body">
-        <div id="Wrapper">
-	    <f:if condition="{headerBackgroundImage}">
-	    <f:then> <div id="PageHeading" style="background-image:url('{f:uri.resource(resource: headerBackgroundImage.resource)}');" > </f:then>
-	    <f:else> <div id="PageHeading"> </f:else>
-	    </f:if>
-		<div id="menuButton"><div class="ham"><span class="burger"></span></div> Menü</div>
-                <nav id="IndexPageTopMenu">
-			{parts.menu -> f:format.raw()}
-                </nav>
-            </div>
-            <f:if condition="{hasBanner}">
-                <div id="FrontpageBanner">
-                    {content.banner -> f:format.raw()}
-                </div>
-            </f:if>
-            <div id="PageBody">
-		<div id="NewsColumnResponsiveHeading">
-			News
-			<span class="NewsColumnToggle" id="NewsColumnCollapse">einklappen</span>
-			<span class="NewsColumnToggle" id="NewsColumnExpand">ausklappen</span>
-			<div class="clearfix"></div>
-		</div>
-                <div id="NewsColumn">
-			{content.main -> f:format.raw()}
-                    <f:if condition="{neos:rendering.inEditMode()}">
-                        <h1 style="background-color: #363; color: white">Standalone News</h1>
-                        (werden hier gesammelt, im Frontend automatisch oben einsortiert)
-                        {content.standalonenews -> f:format.raw()}
-                    </f:if>
-                </div>
-                <div id="RightColumn">
-			{content.rightColumn -> f:format.raw()}
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-	</f:section>
-	<f:section name="bodyScripts">
+<f:section name="stylesheets">
+  <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Scripts/fancybox/jquery.fancybox.css', package: 'GSL.DuttweilerDe')}" />
+  <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Scripts/jquery.smartbanner/jquery.smartbanner.css', package: 'GSL.DuttweilerDe')}" />
+  <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/normalize.css', package: 'GSL.DuttweilerDe')}" />
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Common.css', package: 'GSL.DuttweilerDe')}" />
+  <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Styles/Frontpage.css', package: 'GSL.DuttweilerDe')}" />
+  <link rel="shortcut icon" type="image/x-icon" href="{f:uri.resource(path: 'Images/wappen.ico', package: 'GSL.DuttweilerDe')}" />
+  <link rel="apple-touch-icon" href="{f:uri.resource(path: 'Images/wappen.ico', package: 'GSL.DuttweilerDe')}" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/api/news.rss" />
+</f:section>
+
+<f:section name="headScripts">
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="{f:uri.resource(path: 'Scripts/fancybox/jquery.fancybox.pack.js', package: 'GSL.DuttweilerDe')}"></script>
+</f:section>
+
+<f:section name="body">
+
+  <div id="Wrapper">
+<f:if condition="{headerBackgroundImage}"><f:then>
+    <div id="PageHeading" style="background-image:url('{f:uri.resource(resource: headerBackgroundImage.resource)}');" >
+</f:then><f:else>
+    <div id="PageHeading">
+</f:else></f:if>
+      <div id="menuButton"><div class="ham"><span class="burger"></span></div> Menü</div>
+      <nav id="IndexPageTopMenu">
+        {parts.menu -> f:format.raw()}
+      </nav>
+    </div>
+<f:if condition="{hasBanner}">
+    <div id="FrontpageBanner">
+      {content.banner -> f:format.raw()}
+    </div>
+</f:if>
+    <div id="PageBody">
+      <div id="NewsColumnResponsiveHeading">
+        News
+        <span class="NewsColumnToggle" id="NewsColumnCollapse">einklappen</span>
+        <span class="NewsColumnToggle" id="NewsColumnExpand">ausklappen</span>
+        <div class="clearfix"></div>
+      </div>
+      <div id="NewsColumn">
+        {content.main -> f:format.raw()}
+<f:if condition="{neos:rendering.inEditMode()}">
+        <h1 style="background-color: #363; color: white">Standalone News</h1>
+        (werden hier gesammelt, im Frontend automatisch oben einsortiert)
+        {content.standalonenews -> f:format.raw()}
+</f:if>
+      </div>
+      <div id="RightColumn">
+        {content.rightColumn -> f:format.raw()}
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+        
+</f:section>
+
+<f:section name="bodyScripts">
 		<script type="text/javascript" src="{f:uri.resource(path: 'Scripts/Frontpage.js', package: 'GSL.DuttweilerDe')}"></script>
     <script type="text/javascript" src="{f:uri.resource(path: 'Scripts/jquery.smartbanner/jquery.smartbanner.js', package: 'GSL.DuttweilerDe')}"></script>
 		<script type="text/javascript" src="{f:uri.resource(path: 'Scripts/main.js', package: 'GSL.DuttweilerDe')}"></script>
-	</f:section>
-    </body>
-</html>
+</f:section>

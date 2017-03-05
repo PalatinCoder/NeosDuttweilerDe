@@ -1,55 +1,53 @@
 frontpage = Page {
-	head {
-		meta = Neos.Fusion:Template {
-			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
-			sectionName = 'meta'
-		}
-		stylesheets.site = Neos.Fusion:Template {
-			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
-			sectionName ='stylesheets'
-		}
-		javascripts.site = Neos.Fusion:Template {
-			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
-			sectionName = 'headScripts'
-		}
-        titleTag = ${'<title>' + (String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')) + ' - Duttweiler Wein - Duttweiler/Pfalz</title>'}
-	}
-	body {
-		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
-		sectionName = 'body'
-        
-        	hasBanner = ${q(node).property('hasBanner')}
-		headerBackgroundImage = ${q(node).property('headerImage')}
+  head {
+    meta = Neos.Fusion:Template {
+      templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+      sectionName = 'meta'
+    }
+    stylesheets.site = Neos.Fusion:Template {
+      templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+      sectionName ='stylesheets'
+    }
+    javascripts.site = Neos.Fusion:Template {
+      templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+      sectionName = 'headScripts'
+    }
+    titleTag = ${'<title>' + (String.isBlank(q(node).property('titleOverride')) ? q(node).property('title') : q(node).property('titleOverride')) + ' - Duttweiler Wein - Duttweiler/Pfalz</title>'}
+  }
+  body {
+    templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+    sectionName = 'body'
 
-		parts {
-			menu = Menu {
-                		#renderHiddenInIndex = true
-                        maximumLevels = 1
-            		}
-		}
+    hasBanner = ${q(node).property('hasBanner')}
+    headerBackgroundImage = ${q(node).property('headerImage')}
 
-		content {
-			rightColumn = PrimaryContent {
-				nodePath = 'rightColumn'
-			}            
-                       
-			main = PrimaryContent {
-				nodePath = 'main'
-			}
-			    
-			banner = PrimaryContent {
-				nodePath = 'banner'
-			}
-            standalonenews = PrimaryContent {
-                nodePath = 'standalonenews'
-            }
-		}
+    parts {
+      menu = Menu {
+      #renderHiddenInIndex = true
+        maximumLevels = 1
+      }
+    }
 
-		javascripts.site = Neos.Fusion:Template {
-			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
-			sectionName = 'bodyScripts'
-		}
-	}
+    content {
+      rightColumn = PrimaryContent {
+        nodePath = 'rightColumn'
+      }            
+
+      main = PrimaryContent {
+        nodePath = 'main'
+      }
+
+      banner = PrimaryContent {
+        nodePath = 'banner'
+      }
+      standalonenews = PrimaryContent {
+        nodePath = 'standalonenews'
+      }
+    }
+
+    javascripts.site = Neos.Fusion:Template {
+      templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
+      sectionName = 'bodyScripts'
+    }
+  }
 }
- 
- 
