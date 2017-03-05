@@ -1,4 +1,4 @@
-page = Page {
+default = Page {
   head {
     meta = Neos.Fusion:Template {
       templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'

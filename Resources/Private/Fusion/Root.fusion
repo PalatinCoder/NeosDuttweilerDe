@@ -6,7 +6,6 @@ include: NodeTypes/*
 include: PageTypes/*
 include: API/*
 
-default < page
 
 prototype(Neos.NodeTypes:Image) {
 	partialRootPath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Partials'
