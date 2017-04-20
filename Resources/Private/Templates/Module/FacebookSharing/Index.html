@@ -10,6 +10,15 @@
 </f:section>
 
 <f:section name="content">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<style> .fb-share-button span { vertical-align: middle !important; padding-right: 5px; } </style>
       <cr:paginate parentNode="{node}" as="paginatedItems" nodeTypeFilter="GSL.DuttweilerDe.Pages:ChronikItem">
         <table class="neos-table">
           <thead>
@@ -31,7 +40,7 @@
                 <td class="neos-action">
                   <div class="neos-pull-right">
                     <neos:link.node node="{item}" target="_blank" title="Live öffnen" class="neos-button"><i class="icon-external-link"></i></neos:link.node>
-                    <a class="neos-button jsl-share-button"><i class="icon-share-alt"></i></a>
+                    <div class="fb-share-button" data-href="{neos:uri.node(node: item, absolute: true)}" data-layout="button"></div>
                   </div>
                 </td>
               </tr>
