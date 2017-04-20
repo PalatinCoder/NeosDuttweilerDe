@@ -72,7 +72,7 @@ article.FrontpageNewsItem header { color: #363; font-weight: bold; font-size: 11
 .NewsItemTTResult .aloha-table-wrapper table { color: black; }
 
 .NewsItemFubaResult table, .NewsItemFubaResult table tr, .NewsItemFubaResult table tr td { border: none !important; padding: 0; }
-.NewsItemFubaResult table { background-image:url(http://www.vfl-duttweiler.de/tore/torback.gif); width: 350px; height: 155px;}
+.NewsItemFubaResult table { background-image:url(https://www.vfl-duttweiler.de/tore/torback.gif); width: 350px; height: 155px;}
 .NewsItemFubaResult table tr { background: none !important; }
 .NewsItemFubaResult table tr:first-child { height: 120px; overflow: hidden; }
 .NewsItemFubaResult table tr:first-child td:first-child { padding: 10px 0 0 10px; }

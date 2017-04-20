@@ -12,7 +12,7 @@ $(function() {
       author: 'Jan Syring-Lingenfelder',
       button: 'Installieren',
 inGooglePlay: 'bei Google Play',
-icon: 'http://static.duttweiler.de/wappen/wappen8.gif',
+icon: 'https://static.duttweiler.de/wappen/wappen8.gif',
       price: 'Kostenlos'
     });
 });

@@ -290,7 +290,7 @@
       defaultValue: now
     logo:
       type: 'string'
-      defaultValue: 'http://www.vfl-duttweiler.de/logos/lo_XXXX.gif'
+      defaultValue: 'https://www.vfl-duttweiler.de/logos/lo_XXXX.gif'
       ui:
         label: 'Gegner Logo (URL)'
         reloadIfChanged: true
@@ -334,7 +334,7 @@
             rows: 4         
     link:
       type: 'string'
-      defaultValue: 'http://www.vfl-duttweiler.de/vYYMMDD.html'
+      defaultValue: 'https://www.vfl-duttweiler.de/vYYMMDD.html'
       ui:
         label: 'Link'
         reloadIfChanged: true
@@ -364,7 +364,7 @@
       defaultValue: 'Aktuelles aus der TT-Abteilung - Ausgabe XX'
     link:
       type: 'string'
-      defaultValue: 'http://www.vfl-duttweiler.de/ttnews/t16xxxxn.pdf'
+      defaultValue: 'https://www.vfl-duttweiler.de/ttnews/t16xxxxn.pdf'
       ui:
         label: 'Link'
         inspector:
