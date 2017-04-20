@@ -15,6 +15,9 @@ roles:
       -
         privilegeTarget: 'GSL.DuttweilerDe:Backend.App.ReviewNotifications'
         permission: GRANT
+      -
+        privilegeTarget: 'GSL.DuttweilerDe:Backend.ShareOnFacebook'
+        permission: GRANT
 
 privilegeTargets:
   '\Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
@@ -24,4 +27,6 @@ privilegeTargets:
       matcher: 'method(GSL\DuttweilerDe\Controller\Module\DuttweilerApp\DigitalShoutoutController->(index|send)Action())'
     'GSL.DuttweilerDe:Backend.App.ReviewNotifications':
       matcher: 'method(GSL\DuttweilerDe\Controller\Module\DuttweilerApp\NotificationReviewController->(index|send|sendAll|discard|discardAll)Action())'
+    'GSL.DuttweilerDe:Backend.ShareOnFacebook':
+      matcher: 'method(GSL\DuttweilerDe\Controller\Module\FacebookSharingController->(index)Action())'
       

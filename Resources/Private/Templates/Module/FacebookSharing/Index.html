@@ -1,0 +1,42 @@
+﻿{namespace neos=Neos\Neos\ViewHelpers}
+{namespace cr=Neos\ContentRepository\ViewHelpers\Widget}
+<f:layout name="BackendModule" />
+
+<f:section name="subtitle">
+    <div class="neos-module-container">
+        <legend>Auf Facebook teilen</legend>
+        Achtung: Nur was in "live" veröffentlich ist, kann auch hier geteilt werden!
+    </div>
+</f:section>
+
+<f:section name="content">
+      <cr:paginate parentNode="{node}" as="paginatedItems" nodeTypeFilter="GSL.DuttweilerDe.Pages:ChronikItem">
+        <table class="neos-table">
+          <thead>
+            <tr>
+              <th>Titel</th>
+              <th>Beschreibung</th>
+              <th>og:title<br />og:description</th>
+              <th>Datum</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <f:for each="{paginatedItems}" as="item">
+              <tr>
+                <td>{item.properties.title}</td>
+                <td>{item.properties.metaDescription}</td>
+                <td>{item.properties.openGraphTitle}<br />{item.properties.openGraphDescription}</th>
+                <td>{item.properties.date -> f:format.date(format: 'd.m.Y')}</td>
+                <td class="neos-action">
+                  <div class="neos-pull-right">
+                    <neos:link.node node="{item}" target="_blank" title="Live öffnen" class="neos-button"><i class="icon-external-link"></i></neos:link.node>
+                    <a class="neos-button jsl-share-button"><i class="icon-share-alt"></i></a>
+                  </div>
+                </td>
+              </tr>
+            </f:for>
+          </tbody>
+        </table>
+      </cr:paginate>
+</f:section>

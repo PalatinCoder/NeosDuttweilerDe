@@ -66,6 +66,11 @@ Neos:
               index:
                 label: 'Benachrichtigungen prüfen!'
             privilegeTarget: 'GSL.DuttweilerDe:Backend.App.ReviewNotifications'
+      facebook-sharing:
+        label: 'Facebook Sharing'
+        controller: \GSL\DuttweilerDe\Controller\Module\FacebookSharingController
+        description: 'Mit diesem Modul können Chronik Meldungen auf Facebook geteilt werden'
+        icon: icon-facebook
   Fusion:
     defaultContext:
       'JSL.Rendering': 'GSL\DuttweilerDe\Eel\Helper\RenderingHelper'
