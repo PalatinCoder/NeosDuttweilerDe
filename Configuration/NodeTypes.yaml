@@ -666,6 +666,10 @@
 'GSL.DuttweilerDe.API:API':
   superTypes:
     'Neos.NodeTypes:Page': true
+  constraints:
+    nodeTypes:
+      'GSL.DuttweilerDe.API:News': true
+      'GSL.DuttweilerDe.API:Events': true
   ui:
     label: 'API Root'
     group: api
