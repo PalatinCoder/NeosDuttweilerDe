@@ -35,6 +35,13 @@ Neos:
           label: 'Duttweiler - API'
           position: end
     userInterface:
+      editPreviewModes:
+        mobile:
+          title: 'Mobile'
+          isEditingMode: FALSE
+          isPreviewMode: TRUE
+          width: 480
+          height: 640
       navigateComponent:
         nodeTree:
           loadingDepth: 2
