@@ -24,15 +24,22 @@ prototype(Neos.NodeTypes:Headline).attributes.class = Neos.Fusion:Case {
     }
 }
 
+# API
 root.format.@position = 'end 9995'
 json = Neos.Fusion:Case {
 	news {
-		condition = ${q(node).is('[instanceof GSL.DuttweilerDe.API:News]')}
+		condition = ${request.arguments.endpoint == 'news'}
 		type = 'GSL.DuttweilerDe.API:NewsList'
 	}
 	events {
-		condition = ${q(node).is('[instanceof GSL.DuttweilerDe.API:Events]')}
+		condition = ${request.arguments.endpoint == 'events'}
 		type = 'GSL.DuttweilerDe.API:EventsList'
 	}
 }
+
+# API endpoint parameter
+prototype(Neos.Fusion:GlobalCacheIdentifiers) {
+	endpoint = ${request.arguments.endpoint}
+}
+
 rss = GSL.DuttweilerDe.API:RSS
