@@ -14,12 +14,10 @@
         general:
           label: Allgemein
           position: 20
-        chronik:
-          label: Chronik
-          position: 30
         header-bg:
           label: 'Header Hintergrundbilder'
           position: 40
+          collapsed: TRUE
   childNodes:
     main:
       constraints:
@@ -47,16 +45,6 @@
         reloadIfChanged: true
         inspector:
           group: general
-    chronikRootNode:
-      type: reference
-      ui:
-        label: 'Chronik Wurzelseite'
-        reloadIfChanged: true
-        inspector:
-          group: chronik
-          editorOptions:
-            nodeTypes:
-              - 'GSL.DuttweilerDe.Pages:ChronikRoot'
     headerImage:
       type: Neos\Media\Domain\Model\ImageInterface
       ui:
@@ -684,17 +672,6 @@
         chronik:
           label: Chronik
           position: 30
-  properties:
-    chronikRootNode:
-      type: reference
-      ui:
-        label: 'Chronik Wurzelseite'
-        reloadIfChanged: true
-        inspector:
-          group: chronik
-          editorOptions:
-            nodeTypes:
-              - 'GSL.DuttweilerDe.Pages:ChronikRoot'
 'GSL.DuttweilerDe.API:Events':
   superTypes:
     'GSL.DuttweilerDe.API:API': true
@@ -773,7 +750,6 @@
           label: 'Bilder'
   properties:
     assets:
-#      type: array<Neos\Media\Domain\Model\ImageInterface>
       ui:
         label: 'Bilder'
         inspector:

@@ -1,8 +1,8 @@
 prototype(GSL.DuttweilerDe.Content:FrontpageNewsList) {
 	templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
 
-	@context.chronikNode = ${q(documentNode).property('chronikRootNode')}
-	@context.standaloneItems = ${q(documentNode).children('standalonenews').children().get()}
+	@context.chronikNode = ${q(site).find('#529a59e2-1849-2782-471c-7635f47167de').get()}
+	@context.standaloneItems = ${q(documentNode).find('/sites/duttweilerde').children('standalonenews').children().get()}
 
 	listCollection = Neos.Fusion:Case {
 		editMode {
