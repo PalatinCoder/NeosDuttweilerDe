@@ -651,48 +651,6 @@
           group: general
       validation:
         Neos.Neos/Validation/IntegerValidator: null
-'GSL.DuttweilerDe.API:API':
-  superTypes:
-    'Neos.NodeTypes:Page': true
-  constraints:
-    nodeTypes:
-      'GSL.DuttweilerDe.API:News': true
-      'GSL.DuttweilerDe.API:Events': true
-  ui:
-    label: 'API Root'
-    group: api
-'GSL.DuttweilerDe.API:News':
-  superTypes:
-    'GSL.DuttweilerDe.API:API': true
-  ui:
-    label: 'Latest News'
-    group: api
-    inspector:
-      groups:
-        chronik:
-          label: Chronik
-          position: 30
-'GSL.DuttweilerDe.API:Events':
-  superTypes:
-    'GSL.DuttweilerDe.API:API': true
-  ui:
-    label: Events
-    group: api
-    inspector:
-      groups:
-        events:
-          label: Events
-          position: 30
-  properties:
-    eventsRootNode:
-      type: reference
-      ui:
-        label: 'Events RootNode'
-        inspector:
-          group: events
-          editorOptions:
-            nodeTypes:
-              - 'GSL.DuttweilerDe.Pages:Default'
 'Neos.NodeTypes:TextMixin':
   properties:
     text:
