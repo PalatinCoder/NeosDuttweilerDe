@@ -3,8 +3,8 @@
     "type": "neos-site",
     "description": "Neos Site Package for duttweiler.de (c) www.jan-sl.de",
     "require": {
-        "neos/neos": "~3.2.0",
-        "neos/nodetypes": "~3.2.0",
+        "neos/neos": "~3.3.0",
+        "neos/nodetypes": "~3.3.0",
         "neos/seo": "*"
     },
     "authors": [
