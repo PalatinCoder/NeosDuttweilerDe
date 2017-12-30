@@ -3,6 +3,7 @@ prototype(GSL.DuttweilerDe.API:EventsList) < prototype(Neos.Fusion:Http.Message)
 		headers.Content-Type = 'application/json;charset=utf-8'
 	}
 	content = GSL.DuttweilerDe.Content:EventPromoter {
+		@context.eventsNode = ${q(site).find('#1801884b-729f-73f0-8d42-312949da02c7').get()}
 		templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/API/GenericList.html'
 		listCollection = ${q(eventsNode).children().children('[instanceof GSL.DuttweilerDe.Content:Event]').get()}
 		listItem = GSL.DuttweilerDe.Content:Event {
