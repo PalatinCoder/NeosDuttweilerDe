@@ -1,4 +1,4 @@
-﻿up:
+up:
   comments: 'Add dateAdditionalText property to GSL.DuttweilerDe.Pages:ChronikItem'
   migration:
     -
