@@ -43,3 +43,4 @@ prototype(Neos.Fusion:GlobalCacheIdentifiers) {
 }
 
 rss = GSL.DuttweilerDe.API:RSS
+atom = GSL.DuttweilerDe:Api.Atom.News

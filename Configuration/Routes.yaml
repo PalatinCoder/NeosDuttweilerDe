@@ -20,3 +20,12 @@
     'node': '/sites/duttweilerde'
   appendExceedingArguments: true
 
+-
+  name: 'News API :: Atom'
+  uriPattern: 'api/(v1/)news.xml'
+  defaults:
+    '@package': Neos.Neos
+    '@controller': Frontend\Node
+    '@action': show
+    '@format': atom
+    'node': '/sites/duttweilerde'
