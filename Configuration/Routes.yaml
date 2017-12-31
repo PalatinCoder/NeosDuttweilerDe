@@ -9,7 +9,6 @@
   routeParts:
     node:
       handler: Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface
-  appendExceedingArguments: true
 
 -
   name: 'Neos :: Frontend :: RSS API'
@@ -22,5 +21,4 @@
   routeParts:
     node:
       handler: Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface
-  appendExceedingArguments: true
 
