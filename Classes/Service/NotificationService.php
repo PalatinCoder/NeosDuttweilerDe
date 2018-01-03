@@ -81,8 +81,11 @@ class NotificationService {
 		    // check if node is in scope of the api
 		    // Current ChronikBranch is the first child?
 			&& ($documentNode->getParent()->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikBranch', 1, 0)[0] == $documentNode->getParent())
-            // node is among the first ten?
-			&& ($documentNode->getIndex() < $documentNode->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikItem', 1, 10)[0]->getIndex())
+            // node is among the first ten? (i.e. index is smaller than the tenth index or we have less than ten nodes anyway)
+			&& (
+				  count($documentNode->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikItem', 10)) <= 10
+				  || ($documentNode->getIndex() < $documentNode->getParent()->getChildNodes('GSL.DuttweilerDe.Pages:ChronikItem', 1, 10)[0]->getIndex())
+				 )
 			// we don't have a noficiation for this document already
 			&& (!$this->pushNotificationRepository->findOneByNodeName($documentNode->getName()))
 			)
