@@ -16,7 +16,7 @@
     '@package': Neos.Neos
     '@controller': Frontend\Node
     '@action': show
-    '@format': rss
+    '@format': atom
     'node': '/sites/duttweilerde'
   appendExceedingArguments: true
 
