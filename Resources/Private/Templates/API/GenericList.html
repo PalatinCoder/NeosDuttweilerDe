@@ -1,7 +1,0 @@
-{namespace fusion=Neos\Fusion\ViewHelpers}
-[
-<f:for each="{listCollection}" as="item" iteration="iterator">
-    <fusion:render path="listItem" context="{node: item}" />
-    <f:if condition="{iterator.isLast}"><f:else>,</f:else></f:if>
-</f:for>
-]
