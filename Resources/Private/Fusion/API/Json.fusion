@@ -33,8 +33,12 @@ prototype(GSL.DuttweilerDe:Api.Json.News) < prototype(GSL.DuttweilerDe:Api.Json.
       text = ${String.stripTags(q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('text'))}
       image = Neos.Neos:ImageUri {
         asset = ${q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('image')}
+        @if.1 = ${q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('image')}
       }
-      imageAlternativeText = ${q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('alternativeText')}
+      imageAlternativeText = Neos.Fusion:Value {
+        value = ${q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('alternativeText')}
+        @if.1 = ${q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('image')}
+      }
       url = Neos.Neos:NodeUri {
         absolute = ${false}
         format = 'html'
