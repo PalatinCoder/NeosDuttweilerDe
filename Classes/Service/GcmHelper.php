@@ -37,7 +37,7 @@ class GcmHelper {
 	 * @return void
 	 */
 	public function sendGcmMessage($payload, $channel) {
-		$url = "https://android.googleapis.com/gcm/send";
+		$url = "https://fcm.googleapis.com/fcm/send";
 		if ($this->debugOutput) {
 			$url = "http://localhost/not-existing-url";
 		}
