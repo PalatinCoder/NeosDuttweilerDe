@@ -1,0 +1,16 @@
+up:
+  comments: 'Remove the API nodes from the node tree. They are not needed anymore with the api rewrite'
+  warning: 'No down migration available!'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'GSL.DuttweilerDe.API:API'
+            withSubTypes: TRUE
+      transformations:
+        -
+          type: 'RemoveNode'
+          settings: []
+down: []

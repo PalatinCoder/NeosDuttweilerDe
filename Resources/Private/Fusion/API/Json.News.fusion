@@ -1,0 +1,37 @@
+prototype(GSL.DuttweilerDe:Api.Json.News) < prototype(GSL.DuttweilerDe:Api.Json.Object) {
+  @context.chronikNode = ${q(site).find('#529a59e2-1849-2782-471c-7635f47167de').get()}
+  @context.standaloneItems = ${q(site).find('/sites/duttweilerde').children('standalonenews').children().get()}
+  renderer = Neos.Fusion:RawCollection {
+    collection = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).orderByDate().get()}
+    itemName = 'item'
+    itemRenderer = Neos.Fusion:RawArray {
+      uid = ${q(item).property('_name')}
+      headline = ${q(item).property('title')}
+      subheadline = ${q(item).property('subheadline')}
+      date = ${Date.format(q(item).property('date'), 'd.m.Y')}
+      text = ${String.stripTags(q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('text'))}
+      imageUrl = Neos.Neos:ImageUri {
+        asset = ${q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('image')}
+        @if.1 = ${q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('image')}
+      }
+      imageAlternativeText = Neos.Fusion:Value {
+        value = ${q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('alternativeText')}
+        @if.1 = ${q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('image')}
+      }
+      url = Neos.Neos:NodeUri {
+        absolute = ${false}
+        format = 'html'
+        node = ${q(item).get(0)}
+      }
+    }
+  }
+  
+  @cache {
+    mode = 'cached'
+    entryTags {
+      1 = ${'NodeType_GSL.DuttweilerDe.Pages:ChronikItem'}
+      2 = ${'DescendantOf_' + chronikNode.identifier}
+      3 = ${'NodeType_GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone'}
+    }
+  }
+}

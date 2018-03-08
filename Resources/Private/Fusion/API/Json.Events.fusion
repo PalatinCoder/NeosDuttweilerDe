@@ -1,0 +1,28 @@
+prototype(GSL.DuttweilerDe:Api.Json.Events) < prototype(GSL.DuttweilerDe:Api.Json.Object) {
+  @context.eventsNode = ${q(site).find('#1801884b-729f-73f0-8d42-312949da02c7').get()}
+  renderer = Neos.Fusion:RawCollection {
+    collection = ${q(eventsNode).children().children('[instanceof GSL.DuttweilerDe.Content:Event]').get()}
+    itemName = 'event'
+    itemRenderer = Neos.Fusion:RawArray {
+      title = ${q(event).property('title')}
+      host = ${'' + q(event).property('host')}
+      location = ${''+ q(event).property('location')}
+      promote = ${q(event).property('promote')}
+      link = Neos.Neos:NodeUri {
+        node = ${q(event).property('link')}
+        format = 'html'
+        absolute = ${false}
+        @if.1 = ${q(event).property('link')}
+      }
+      startDate = ${Date.format(q(event).property('startDate'), 'd.m.Y H:i')}
+      endDate = ${Date.format(q(event).property('endDate'), 'd.m.Y H:i')}
+    }
+  }
+  
+  @cache {
+    mode = 'cached'
+    entryTags {
+      1 = ${'NodeType_GSL.DuttweilerDe.Content:Event'}
+    }
+  }
+}

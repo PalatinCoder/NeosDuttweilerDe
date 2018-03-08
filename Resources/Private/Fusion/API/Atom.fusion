@@ -1,0 +1,66 @@
+prototype(GSL.DuttweilerDe:Api.Atom.News) < prototype(Neos.Fusion:Http.Message) {
+	httpResponseHead {
+		headers.Content-Type = 'text/html'
+	}
+	
+	content = Neos.Fusion:Array {
+		doctype = '<?xml version="1.0" encoding="utf-8"?>'
+		feed = Neos.Fusion:Component {
+			@context.chronikNode = ${q(site).find('#529a59e2-1849-2782-471c-7635f47167de').get()}
+			@context.standaloneItems = ${q(site).find('/sites/duttweilerde').children('standalonenews').children().get()}
+			items = ${q(chronikNode).children('[instanceof GSL.DuttweilerDe.Pages:ChronikBranch]').first().children('[instanceof GSL.DuttweilerDe.Pages:ChronikItem]').slice(0,10).orderByDate().get()}
+			
+			iconUrl = Neos.Fusion:ResourceUri {
+				path = 'resource://GSL.DuttweilerDe/Public/Images/wappen.ico'
+			}
+				
+			renderer = afx`
+			<feed xmlns="http://www.w3.org/2005/Atom">
+				<title>Duttweiler.de Nachrichten</title>
+				<id>https://www.duttweiler.de/</id>
+				<link href="https://www.duttweiler.de/api/v1/news.xml" rel="self" />
+				<link href="https://www.duttweiler.de/" rel="alternate" hreflang="de-de"/>
+				<updated>2018-01-01T07:30:00Z</updated>
+				<subtitle>Aktuelle Nachrichten aus Duttweiler</subtitle>
+				<author>
+					<name>Gerhard Syring-Lingenfelder</name>
+					<email>redaktion@duttweiler.de</email>
+				</author>
+				<icon>{props.iconUrl}</icon>
+								
+				<Neos.Fusion:Collection collection={props.items} itemName="item" @children="itemRenderer">
+				<entry>
+					<title>{item.properties.title}</title>
+					<id>urn:uuid:{item.identifier}</id>
+					<GSL.DuttweilerDe:Api.News.Atom.LinkHelper attributes.href.node={item} />
+					<updated>{Date.format(item.properties.date, 'Y-m-d\TH:i:sP')}</updated>
+					<summary>{item.properties.subheadline}</summary>
+				</entry>
+				</Neos.Fusion:Collection>
+			</feed>
+			`
+		}
+	}
+	@cache {
+		mode = 'cached'
+		entryTags {
+			1 = ${'NodeType_GSL.DuttweilerDe.Pages:ChronikItem'}
+			2 = ${'DescendantOf_' + chronikNode.identifier}
+			3 = ${'NodeType_GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone'}
+		}
+	}
+}
+
+prototype(GSL.DuttweilerDe:Api.News.Atom.LinkHelper) < prototype(Neos.Fusion:Tag) {
+		tagName = 'link'
+		
+		attributes {
+			rel = 'alternate'
+			href = Neos.Neos:NodeUri {
+				absolute = ${true}
+				format = 'html'
+			}
+		}
+}
+
+//TODO standalone items break as the node uri can not be resolved
