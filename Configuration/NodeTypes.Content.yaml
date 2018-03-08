@@ -345,6 +345,8 @@
         reloadIfChanged: true
         inspector:
           group: general
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
     location:
       type: string
       ui:
@@ -368,6 +370,8 @@
           group: datetime
           editorOptions:
             format: 'd. F y H:i'
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
     endDate:
       type: DateTime
       ui:
