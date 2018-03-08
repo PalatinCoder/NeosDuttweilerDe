@@ -10,7 +10,7 @@ prototype(GSL.DuttweilerDe:Api.Json.News) < prototype(GSL.DuttweilerDe:Api.Json.
       subheadline = ${q(item).property('subheadline')}
       date = ${Date.format(q(item).property('date'), 'd.m.Y')}
       text = ${String.stripTags(q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('text'))}
-      image = Neos.Neos:ImageUri {
+      imageUrl = Neos.Neos:ImageUri {
         asset = ${q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('image')}
         @if.1 = ${q(item).children('[instanceof Neos.Neos:ContentCollection]').first().children().first().property('image')}
       }
