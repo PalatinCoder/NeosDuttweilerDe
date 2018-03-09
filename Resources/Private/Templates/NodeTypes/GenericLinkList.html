@@ -1,13 +1,21 @@
 {namespace fusion=Neos\Fusion\ViewHelpers}
-<f:for each="{listCollection}" as="item" iteration="iterator">
-	<f:if condition="{limit} == 0">
-		<f:then>
-			<fusion:render path="listItem" context="{node: item}" />
-		</f:then>
-		<f:else>
-			<f:if condition="{iterator.cycle} <= {limit}">
+<f:if condition="{listCollection}"><f:then>
+	<f:for each="{listCollection}" as="item" iteration="iterator">
+		<f:if condition="{limit} == 0">
+			<f:then>
 				<fusion:render path="listItem" context="{node: item}" />
-			</f:if>
-		</f:else>
-	</f:if>
-</f:for>
+			</f:then>
+			<f:else>
+				<f:if condition="{iterator.cycle} <= {limit}">
+					<fusion:render path="listItem" context="{node: item}" />
+				</f:if>
+			</f:else>
+		</f:if>
+	</f:for>
+</f:then><f:else>
+	<f:security.ifAccess privilegeTarget="Neos.Neos:Backend.GeneralAccess">
+		<f:if condition="{node.context.workspace.name} != 'live'">
+				<p>Empty list</p>
+		</f:if>
+	</f:security.ifAccess>
+</f:else></f:if>
