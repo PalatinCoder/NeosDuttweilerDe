@@ -182,11 +182,34 @@
   ui:
     label: 'Chronik - Meldung'
     group: chronik
+    creationDialog:
+      elements:
+        subheadline:
+          type: string
+          ui:
+            label: Unterüberschrift
+            editor: 'Neos.Neos/Inspector/Editors/TextFieldEditor'
+          validation:
+            'Neos.Neos/Validation/NotEmptyValidator': []
+        date:
+          type: DateTime
+          ui:
+            label: Datum
+            editor: 'Neos.Neos/Inspector/Editors/TextFieldEditor'
+            editorOptions:
+              placeholder: 'dd.mm.yyyy oder frei lassen für heutiges Datum'
+          validation:
+            'Neos.Neos/Validation/RegularExpressionValidator':
+              regularExpression: '^\d{2}\.\d{2}\.\d{4}$'
     inspector:
       groups:
         related:
           label: 'Kategorie/Übergeordnete Seite'
           position: 30
+  options:
+    nodeCreationHandlers:
+      chronikItem:
+        nodeCreationHandler: 'GSL\DuttweilerDe\NodeCreationHandler\ChronikItemHandler'
   properties:
     relatedPages:
       type: references
