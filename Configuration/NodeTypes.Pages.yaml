@@ -228,6 +228,12 @@
         reloadIfChanged: true
         inspector:
           group: general
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+        'Neos.Neos/Validation/DateTimeValidator': []
+    subheadline:
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
     dateAdditionalText:
       type: string
       ui:
