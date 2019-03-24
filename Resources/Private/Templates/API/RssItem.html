@@ -1,8 +1,0 @@
-{namespace neos=Neos\Neos\ViewHelpers}
-<item>
-  <title>{headline}</title>
-  <description>{subheadline}</description>
-  <link>https://www.duttweiler.de{neos:uri.node(node: node, format: 'html')}</link>
-  <guid isPermaLink="false">{uid}</guid>
-  <pubDate>{date -> f:format.date(format: "D, d M Y H:i:s O" )}</pubDate>
-</item>

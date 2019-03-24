@@ -1,5 +1,8 @@
 prototype(GSL.DuttweilerDe.Content:Menu) < prototype(Neos.NodeTypes:Menu) {
   templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/GenericLinkList.html'
-  listCollection = ${q(documentNode).children('[instanceof Neos.Neos:Document]').orderByDate().get()}
+  listCollection = Neos.Fusion:Value {
+    value = ${q(documentNode).children('[instanceof Neos.Neos:Document]').orderByDate().get()}
+    @if.not-empty = ${q(documentNode).children('[instanceof Neos.Neos:Document]').count() > 0}
+  }
   listItem = GSL.DuttweilerDe.Content:RelatedPagesBacklink
 }

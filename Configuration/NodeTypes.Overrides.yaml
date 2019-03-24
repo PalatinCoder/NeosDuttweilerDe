@@ -1,0 +1,131 @@
+'Neos.NodeTypes:TextMixin':
+  properties:
+    text:
+      ui:
+        aloha:
+          autoparagraph: false
+'Neos.NodeTypes:ContentImageMixin':
+  properties:
+    enableFancybox:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Fancybox aktivieren'
+        reloadIfChanged: true
+        inspector:
+          group: image
+          position: 500
+    fancyboxGroup:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Fancybox Gallery'
+        inspector:
+          group: image
+          position: 500
+    displayWidth:
+      type: integer
+      ui:
+        label: 'Breite'
+        reloadIfChanged: true
+        inspector:
+          group: image
+          position: 200
+      validation:
+        'Neos.Neos/Validation/ImageSizeValidator':
+    displayHeight:
+      type: integer
+      ui:
+        label: 'Höhe'
+        reloadIfChanged: true
+        inspector:
+          group: image
+          position: 200
+      validation:
+        'Neos.Neos/Validation/ImageSizeValidator':
+'Neos.NodeTypes:Headline':
+  ui:
+    inspector:
+      groups:
+        style:
+          label: 'Stil'
+          tab: default
+  properties:
+    layout:
+      type: string
+      defaultValue: 'underline'
+      ui:
+        label: 'Typ'
+        reloadIfChanged: TRUE
+        inspector:
+          group: style
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            allowEmpty: TRUE
+            placeholder: 'Stil auswählen'
+            values:
+              underline:
+                label: 'Unterstrichen'
+              boxed:
+                label: 'Kasten'
+'Neos.NodeTypes:Page':
+  properties:
+    layout:
+      ui:
+        inspector:
+          group: layout
+          editorOptions:
+            values:
+              'default':
+                label: 'Duttweiler.de Standard'
+              'frontpage':
+                label: 'Duttweiler.de Startseite'
+              'weinbau':
+                label: 'Duttweiler Wein'
+              'weinprinzessin':
+                label: 'Weinprinzessin'
+    subpageLayout:
+      ui:
+        inspector:
+          group: layout
+          editorOptions:
+            values:
+              'default':
+                label: 'Duttweiler.de Standard'
+              'weinbau':
+                label: 'Duttweiler Wein'
+              'weinprinzessin':
+                label: 'Weinprinzessin'
+'Neos.Neos:Shortcut':
+  properties:
+    date:
+      type: DateTime
+      ui:
+        label: Datum
+        reloadIfChanged: false
+        inspector:
+          group: document
+          position: 900
+'Neos.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'GSL.DuttweilerDe.Content:FrontpageNewsList': FALSE
+      'GSL.DuttweilerDe.Content:FrontpageInfoBox': FALSE
+      'GSL.DuttweilerDe.Content:FrontpageNewsItem': FALSE
+      'GSL.DuttweilerDe.Content:PressespiegelItem': FALSE
+'Neos.Neos:Document':
+  superTypes:
+    'Neos.Seo:TwitterCardMixin': FALSE
+  constraints:
+    nodeTypes:
+      'Neos.NodeTypes:Page': FALSE
+      'GSL.DuttweilerDe.Pages:Default': TRUE
+      'GSL.DuttweilerDe.Pages:ChronikRoot': TRUE
+      'GSL.DuttweilerDe.Pages:ChronikBranch': FALSE
+      'GSL.DuttweilerDe.Pages:ChronikItem': FALSE
+'Neos.Seo:OpenGraphMixin':
+  ui:
+    inspector:
+      groups:
+        openGraph:
+          label: 'OpenGraph (Facebook)'

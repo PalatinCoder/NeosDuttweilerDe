@@ -1,0 +1,20 @@
+prototype(GSL.DuttweilerDe:Api.Json) < prototype(Neos.Fusion:Http.Message) {
+  httpResponseHead {
+    headers.Content-Type = 'application/json;charset=utf-8'
+  }
+  
+  content = Neos.Fusion:Case {
+    news {
+      condition = ${request.arguments.endpoint == 'news'}
+      type = 'GSL.DuttweilerDe:Api.Json.News'
+    }
+    events {
+      condition = ${request.arguments.endpoint == 'events'}
+      type = 'GSL.DuttweilerDe:Api.Json.Events'
+    }
+  }
+}
+
+prototype(GSL.DuttweilerDe:Api.Json.Object) < prototype(Neos.Fusion:Component) {
+  @process.1 = ${Json.stringify(value)}
+}

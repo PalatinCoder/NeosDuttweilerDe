@@ -1,26 +1,29 @@
 -
-  name: 'Neos :: Frontend :: JSON API'
-  uriPattern: '{node}.json'
+  name: 'JSON API'
+  uriPattern: 'api/(v1/){endpoint}.json'
   defaults:
     '@package': Neos.Neos
     '@controller': Frontend\Node
     '@action': show
     '@format': json
-  routeParts:
-    node:
-      handler: Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface
-  appendExceedingArguments: true
+    'node': '/sites/duttweilerde'
 
 -
-  name: 'Neos :: Frontend :: RSS API'
-  uriPattern: '{node}.rss'
+  name: 'RSS API'
+  uriPattern: 'api/(v1/)news.rss'
   defaults:
     '@package': Neos.Neos
     '@controller': Frontend\Node
     '@action': show
-    '@format': rss
-  routeParts:
-    node:
-      handler: Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface
-  appendExceedingArguments: true
+    '@format': atom
+    'node': '/sites/duttweilerde'
 
+-
+  name: 'News API :: Atom'
+  uriPattern: 'api/(v1/)news.xml'
+  defaults:
+    '@package': Neos.Neos
+    '@controller': Frontend\Node
+    '@action': show
+    '@format': atom
+    'node': '/sites/duttweilerde'

@@ -1,0 +1,249 @@
+'GSL.DuttweilerDe.Pages:Frontpage':
+  superTypes:
+    'Neos.NodeTypes:Page': true
+  ui:
+    label: Startseite
+    inspector:
+      groups:
+        general:
+          label: Allgemein
+          position: 20
+        header-bg:
+          label: 'Header Hintergrundbilder'
+          position: 40
+          collapsed: TRUE
+  childNodes:
+    main:
+      constraints:
+        nodeTypes:
+          'GSL.DuttweilerDe.Content:FrontpageNewsList': true
+    rightcolumn:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'GSL.DuttweilerDe.Content:FrontpageInfoBox': true
+          '*': false
+    banner:
+      type: 'Neos.Neos:ContentCollection'
+    standaloneNews:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
+          '*': false
+  properties:
+    hasBanner:
+      type: boolean
+      ui:
+        label: Banner
+        reloadIfChanged: true
+        inspector:
+          group: general
+    headerImage:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Startseite'
+        reloadIfChanged: TRUE
+        inspector:
+          group: header-bg
+    childHeaderImage:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'normale Seiten'
+        inspector:
+          group: header-bg
+  constraints:
+    nodeTypes:
+      '*': false
+      'GSL.DuttweilerDe.Pages:Default': true
+      'Neos.Neos:Shortcut': true
+      'GSL.DuttweilerDe.API:API': true
+'GSL.DuttweilerDe.Pages:IndexPage':
+  superTypes:
+    'GSL.DuttweilerDe.Pages:Default': true
+  ui:
+    label: Inhaltsverzeichnis
+    inspector:
+      groups:
+        related:
+          label: Links
+          position: 50
+  properties:
+    relatedPages:
+      type: references
+      ui:
+        label: 'Verwandte Seiten'
+        reloadIfChanged: true
+        inspector:
+          group: related
+'GSL.DuttweilerDe.Pages:Default':
+  superTypes:
+    'Neos.NodeTypes:Page': true
+  ui:
+    label: Standardinhalt
+    icon: icon-file
+    inspector:
+      groups:
+        general:
+          label: Allgemein
+          position: 20
+        headerImageGroup:
+          label: 'Kopfzeile - Bild'
+          position: 30
+        presse:
+          label: Pressespiegel
+          position: 40
+        related:
+          label: Links
+          position: 50
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+    pressespiegel:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'GSL.DuttweilerDe.Content:PressespiegelItem': true
+          '*': false
+  constraints:
+    nodeTypes:
+      'GSL.DuttweilerDe.Pages:Default': true
+      'Neos.Neos:Shortcut': true
+      'GSL.DuttweilerDe.Pages:IndexPage': true
+      '*': false
+  properties:
+    subheadline:
+      type: string
+      ui:
+        inspector:
+          group: document
+        label: Unterüberschrift
+        reloadIfChanged: TRUE
+        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Unterüberschrift'
+          autoparagraph: FALSE
+          format:
+            removeFormat: TRUE
+            '*': FALSE
+    headerImage:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Kopfzeilenbild
+        reloadIfChanged: true
+        inspector:
+          group: headerImageGroup
+    headerImageAlternativeText:
+      type: string
+      ui:
+        label: Alternativtext
+        inspector:
+          group: headerImageGroup
+    hasPressespiegel:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: Pressespiegel
+        reloadIfChanged: true
+        inspector:
+          group: presse
+    pressespiegelTitle:
+      type: string
+      defaultValue: Pressespiegel
+      ui:
+        label: 'Überschrift Pressespiegel'
+        reloadIfChanged: true
+        inspector:
+          group: presse
+'GSL.DuttweilerDe.Pages:ChronikRoot':
+  superTypes:
+    'GSL.DuttweilerDe.Pages:IndexPage': true
+  ui:
+    label: 'Chronik - Wurzel'
+    group: chronik
+  constraints:
+    nodeTypes:
+      '*': false
+      'GSL.DuttweilerDe.Pages:ChronikBranch': true
+'GSL.DuttweilerDe.Pages:ChronikBranch':
+  superTypes:
+    'GSL.DuttweilerDe.Pages:IndexPage': true
+  ui:
+    label: 'Chronik - Jahr'
+    group: chronik
+  constraints:
+    nodeTypes:
+      '*': false
+      'GSL.DuttweilerDe.Pages:ChronikItem': true
+'GSL.DuttweilerDe.Pages:ChronikItem':
+  superTypes:
+    'GSL.DuttweilerDe.Pages:Default': true
+  label: ${Date.format(q(node).property('date'), 'd.m. / ') + q(node).property('title')}
+  ui:
+    label: 'Chronik - Meldung'
+    group: chronik
+    creationDialog:
+      elements:
+        subheadline:
+          type: string
+          ui:
+            label: Unterüberschrift
+            editor: 'Neos.Neos/Inspector/Editors/TextFieldEditor'
+          validation:
+            'Neos.Neos/Validation/NotEmptyValidator': []
+        date:
+          type: DateTime
+          ui:
+            label: Datum
+            editor: 'Neos.Neos/Inspector/Editors/TextFieldEditor'
+            editorOptions:
+              placeholder: 'dd.mm.yyyy'
+          validation:
+            'Neos.Neos/Validation/RegularExpressionValidator':
+              regularExpression: '^\d{2}\.\d{2}\.\d{4}$'
+            'Neos.Neos/Validation/NotEmptyValidator': []
+    inspector:
+      groups:
+        related:
+          label: 'Kategorie/Übergeordnete Seite'
+          position: 30
+  options:
+    nodeCreationHandlers:
+      chronikItem:
+        nodeCreationHandler: 'GSL\DuttweilerDe\NodeCreationHandler\ChronikItemHandler'
+  properties:
+    relatedPages:
+      type: references
+      ui:
+        label: 'Übergeordnete Seite'
+        reloadIfChanged: true
+        inspector:
+          group: related
+          editorOptions:
+            startingPoint: '/'
+    date:
+      type: DateTime
+      defaultValue: now
+      ui:
+        label: Datum
+        reloadIfChanged: true
+        inspector:
+          group: general
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+        'Neos.Neos/Validation/DateTimeValidator': []
+    subheadline:
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    dateAdditionalText:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: '(...)'
+          autoparagraph: FALSE
+          format:
+            '*': FALSE
+            removeFormat: TRUE
+    openGraphType:
+      defaultValue: 'article'

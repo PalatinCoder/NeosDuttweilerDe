@@ -34,7 +34,17 @@ Neos:
         api:
           label: 'Duttweiler - API'
           position: end
+    Ui:
+      contentCanvas:
+        backgroundColor: 'rgb(34, 34, 34)'
     userInterface:
+      editPreviewModes:
+        mobile:
+          title: 'Mobile'
+          isEditingMode: FALSE
+          isPreviewMode: TRUE
+          width: 480
+          height: 640
       navigateComponent:
         nodeTree:
           loadingDepth: 2

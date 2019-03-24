@@ -1,0 +1,19 @@
+up:
+  comments: 'Remove chronikRootNode property from Frontpage and API.News'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'GSL.DuttweilerDe.Pages:Frontpage'
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'GSL.DuttweilerDe.API:News'
+      transformations:
+        -
+          type: 'RemoveProperty'
+          settings:
+            property: 'chronikRootNode'
+down: []
