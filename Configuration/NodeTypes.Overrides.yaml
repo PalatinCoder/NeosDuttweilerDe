@@ -4,6 +4,11 @@
       ui:
         aloha:
           autoparagraph: false
+          alignment:
+            left: true
+            right: true
+            center: true
+            justify: true
 'Neos.NodeTypes:ContentImageMixin':
   properties:
     enableFancybox:
