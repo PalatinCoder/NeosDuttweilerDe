@@ -1,0 +1,22 @@
+Neos:
+  Flow:
+    persistence:
+      backendOptions:
+        host: db
+        driver: pdo_mysql
+        dbname: neos
+        user: root
+        password: db
+    mvc:
+      routes:
+        Neos.Flow: true
+  Imagine:
+    driver: Imagick
+    enabledDrivers:
+      Vips: true
+      Imagick: true
+      Gd: false
+  Media:
+    image:
+      defaultOptions:
+        interlace: null

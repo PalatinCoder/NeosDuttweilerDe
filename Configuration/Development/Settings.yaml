@@ -1,0 +1,6 @@
+GSL:
+  DuttweilerDe:
+    notificationService:
+      enabled: FALSE
+    googleCloudMessaging:
+      enabled: FALSE

@@ -1,0 +1,11 @@
+Neos:
+  Flow:
+    http:
+      applicationToken: 'MajorVersion'
+
+GSL:
+  DuttweilerDe:
+    notificationService:
+      enabled: FALSE
+    googleCloudMessaging:
+      enabled: FALSE

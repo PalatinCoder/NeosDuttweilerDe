@@ -1,0 +1,36 @@
+Neos_Fusion_Content:
+  backend: Neos\Flow\Cache\Backend\RedisBackend
+  backendOptions:
+    hostname: 'cache'
+    defaultLifetime: 0
+    database: 2
+Flow_Mvc_Routing_Resolve:
+  backend: Neos\Flow\Cache\Backend\RedisBackend
+  backendOptions:
+    hostname: 'cache'
+    defaultLifetime: 0
+    database: 3
+Flow_Mvc_Routing_Route:
+  backend: Neos\Flow\Cache\Backend\RedisBackend
+  backendOptions:
+    hostname: 'cache'
+    defaultLifetime: 0
+    database: 4
+Flow_Session_MetaData:
+  backend: Neos\Flow\Cache\Backend\RedisBackend
+  backendOptions:
+    hostname: 'cache'
+    defaultLifetime: 0
+    database: 5
+Flow_Session_Storage:
+  backend: Neos\Flow\Cache\Backend\RedisBackend
+  backendOptions:
+    hostname: 'cache'
+    defaultLifetime: 0
+    database: 6
+Neos_Media_ImageSize:
+  backend: Neos\Flow\Cache\Backend\RedisBackend
+  backendOptions:
+    hostname: 'cache'
+    defaultLifetime: 0
+    database: 7
