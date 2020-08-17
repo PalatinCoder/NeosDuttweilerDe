@@ -1,0 +1,39 @@
+{
+    "name": "neos/neos-base-distribution",
+    "description": "Neos Base Distribution",
+    "license": "GPL-3.0+",
+    "support": {
+        "email": "hello@neos.io",
+        "slack": "http://slack.neos.io/",
+        "forum": "https://discuss.neos.io/",
+        "wiki": "https://discuss.neos.io/c/the-neos-project/project-documentation",
+        "docs": "http://neos.readthedocs.org/",
+        "source": "https://github.com/neos/neos-base-distribution"
+    },
+    "config": {
+        "vendor-dir": "Packages/Libraries",
+        "bin-dir": "bin"
+    },
+    "require": {
+        "neos/neos": "~3.3.0",
+        "neos/nodetypes": "~3.3.0",
+        "neos/seo": "~2.0",
+        "neos/setup": "~4.0",
+        "neos/neos-ui": "~1.0",
+        "neos/neos-ui-compiled": "~1.0",
+        "rokka/imagine-vips": "0.*",
+        "gsl/duttweilerde": "@dev"
+    },
+    "repositories": {
+        "distribution": {
+            "type": "path",
+            "url": "./DistributionPackages/*"
+        }
+    },
+    "scripts": {
+        "post-update-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+    }
+}
