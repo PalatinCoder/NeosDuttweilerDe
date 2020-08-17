@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  neos:
+    image: neosduttweilerde
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: prod
+    volumes: 
+      - data:/neos/Data/Persistent/
+    environment:
+      FLOW_CONTEXT: 'Production/Docker'
+    depends_on: 
+      - db
+      - cache
+
+  db:
+    image: mariadb:10.3
+    environment: 
+      MYSQL_ROOT_PASSWORD: 'db'
+    volumes: 
+      - db:/var/lib/mysql
+
+  cache:
+    image: redis:alpine
+
+volumes:
+  db:
+  data:
