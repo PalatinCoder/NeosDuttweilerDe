@@ -3,16 +3,14 @@ version: '3.4'
 services:
   neos:
     build:
-      context: .
-      target: dev
       args: 
         context: development
+    environment: 
+      FLOW_CONTEXT: Development
     ports:
-      - 8081:8081
+      - 80:80
     volumes: 
       - ./composer.json:/neos/composer.json
       - ./composer.lock:/neos/composer.lock
       - ./Configuration/:/neos/Configuration/
       - ./DistributionPackages/:/neos/DistributionPackages/
-    environment:
-      FLOW_CONTEXT: 'Development/Docker'
