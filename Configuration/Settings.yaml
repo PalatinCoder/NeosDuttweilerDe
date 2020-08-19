@@ -10,6 +10,10 @@ Neos:
     mvc:
       routes:
         Neos.Flow: true
+    log:
+      systemLogger:
+        backendOptions:
+          logIpAddress: true
   Imagine:
     driver: Imagick
     enabledDrivers:
