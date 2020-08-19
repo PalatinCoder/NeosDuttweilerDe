@@ -55,14 +55,14 @@ Neos:
         label: DuttweilerApp
         controller: \Neos\Neos\Controller\Module\ManagementController
         description: 'Verschiedene Funktionen der DuttweilerApp'
-        icon: icon-android
+        icon: 'fab fa-android'
         privilegeTarget: 'GSL.DuttweilerDe:Backend.App'
         submodules:
           digital-shoutout:
             label: 'Digitale Ortsrufanlage'
             controller: \GSL\DuttweilerDe\Controller\Module\DuttweilerApp\DigitalShoutoutController
             description: 'Mit diesem Modul können "Digitale Durchsagen" an die DuttweilerApp gesendet werden.'
-            icon: icon-bullhorn
+            icon: 'fas fa-bullhorn'
             actions:
               index:
                 label: 'Durchsage machen!'
@@ -71,7 +71,7 @@ Neos:
             label: 'Push Benachrichtigungen'
             controller: \GSL\DuttweilerDe\Controller\Module\DuttweilerApp\NotificationReviewController
             description: 'Hier werden alle anfallenden Push Benachrichtigungen gesammelt und können freigegeben werden.'
-            icon: icon-cloud-download
+            icon: 'fas fa-cloud-download-alt'
             actions:
               index:
                 label: 'Benachrichtigungen prüfen!'
@@ -80,7 +80,7 @@ Neos:
         label: 'Facebook Sharing'
         controller: \GSL\DuttweilerDe\Controller\Module\FacebookSharingController
         description: 'Mit diesem Modul können Chronik Meldungen auf Facebook geteilt werden'
-        icon: icon-facebook
+        icon: 'fab fa-facebook-f'
   Fusion:
     defaultContext:
       'JSL.Rendering': 'GSL\DuttweilerDe\Eel\Helper\RenderingHelper'
