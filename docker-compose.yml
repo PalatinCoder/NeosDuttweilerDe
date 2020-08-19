@@ -9,6 +9,8 @@ services:
         context: production
     environment: 
       FLOW_CONTEXT: Production
+      # change this to the real traefik ip once we're in production with it
+      FLOW_HTTP_TRUSTED_PROXIES: '*'
     volumes: 
       - data:/neos/Data/Persistent/
     depends_on: 
