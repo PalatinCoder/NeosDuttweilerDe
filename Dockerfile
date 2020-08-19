@@ -36,8 +36,9 @@ RUN composer create-project neos/neos-base-distribution:~3.3.0 /neos --no-dev
 # adjust php settings (as late as possible so we can make use of build caching before)
 RUN echo 'memory_limit = 512M' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini && \
     echo 'expose_php = 0' >> /usr/local/etc/php/conf.d/docker-php-expose.ini && \
-    # set fpm log format so it matches nginx
-    echo 'access.format = "%R - - [%t] \"%m %r %q\" %s %{X-Forwarded-for}e"' >> /usr/local/etc/php-fpm.d/www-logformat.conf
+    # use socket for fpm/nginx communication
+    sed -i 's/^listen = .*/listen = \/var\/run\/nginx-fpm.sock/' /usr/local/etc/php-fpm.d/zz-docker.conf && \
+    echo -e 'listen.owner = nginx\nlisten.group = www-data' >> /usr/local/etc/php-fpm.d/zz-docker.conf
 
 ARG context
 RUN mv "$PHP_INI_DIR/php.ini-${context}" "$PHP_INI_DIR/php.ini"
