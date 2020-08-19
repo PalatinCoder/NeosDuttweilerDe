@@ -23,7 +23,7 @@ prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) < prototype(Neos.Neos:C
       renderer = Neos.Fusion:Case {
         node {
           condition = ${String.startsWith(q(node).property('target'), 'node://')}
-          renderer = ${Neos.Link.resolveNodeUri(q(node).property('target'), q(node).get(0), this.tsRuntime.controllerContext)}
+          renderer = ${Neos.Link.resolveNodeUri(q(node).property('target'), q(node).get(0), this.runtime.controllerContext)}
         }
         default {
           condition = ${true}
@@ -36,7 +36,7 @@ prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) < prototype(Neos.Neos:C
       renderer =  Neos.Fusion:Case {
         node {
           condition = ${String.startsWith(q(node).property('link'), 'node://')}
-          renderer = ${Neos.Link.resolveNodeUri(q(node).property('link'), q(node).get(0), this.tsRuntime.controllerContext)}
+          renderer = ${Neos.Link.resolveNodeUri(q(node).property('link'), q(node).get(0), this.runtime.controllerContext)}
         }
         default {
           condition = ${true}
