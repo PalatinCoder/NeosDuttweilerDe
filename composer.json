@@ -15,11 +15,10 @@
         "bin-dir": "bin"
     },
     "require": {
-        "neos/neos": "~4.2.0",
-        "neos/nodetypes": "~4.2.0",
-        "neos/seo": "~2.0",
-        "neos/setup": "~4.0",
-        "neos/neos-ui": "^1.4",
+        "neos/neos": "~4.3.0",
+        "neos/nodetypes": "~4.3.0",
+        "neos/seo": "~3.0",
+        "neos/neos-ui": "~4.0",
         "rokka/imagine-vips": "0.*",
         "gsl/duttweilerde": "@dev"
     },

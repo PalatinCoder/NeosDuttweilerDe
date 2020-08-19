@@ -22,7 +22,7 @@ RUN apk --no-cache add vips \
 
 # create base distribution (so it can be cached)
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
-RUN composer create-project neos/neos-base-distribution:~4.2.0 /neos --no-dev
+RUN composer create-project neos/neos-base-distribution:~4.3.0 /neos --no-dev
 
 # define run scripts
 RUN mkdir /etc/services.d/nginx && mkdir /etc/services.d/php-fpm \
