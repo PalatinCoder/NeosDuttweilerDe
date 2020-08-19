@@ -1,3 +1,4 @@
+
 'GSL.DuttweilerDe.Content:PressespiegelItem':
   superTypes:
     'Neos.Neos:Content': true
@@ -43,15 +44,15 @@
     'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
   ui:
     label: 'Ergenisse - Fußball'
-    group: 'frontpage'
+    group: frontpage
   properties:
     title:
       defaultValue: 'B-Klasse Rhein-Mittelhaardt West'
-    text: []
+    text: {  }
     date:
       defaultValue: now
     logo:
-      type: 'string'
+      type: string
       defaultValue: 'https://www.vfl-duttweiler.de/logos/lo_XXXX.gif'
       ui:
         label: 'Gegner Logo (URL)'
@@ -60,75 +61,75 @@
           group: news
     homeAway:
       type: string
-      defaultValue: 'home'
+      defaultValue: home
       ui:
-        label: 'Heim/Auswärts'
+        label: Heim/Auswärts
         reloadIfChanged: true
         inspector:
-          group: news   
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          group: news
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               home:
-                label: 'Heim'
+                label: Heim
               away:
-                label: 'Auswärts'
+                label: Auswärts
     score:
       type: string
       defaultValue: '0:0'
       ui:
-        label: 'Ergebnis'
+        label: Ergebnis
         reloadIfChanged: true
         inspector:
           group: news
       validation:
-        'Neos.Neos/Validation/RegularExpressionValidator':
+        Neos.Neos/Validation/RegularExpressionValidator:
           regularExpression: '^[0-9]{1,2}:[0-9]{1,2}$'
     scorers:
       type: string
       ui:
-        label: 'Torschützen'
+        label: Torschützen
         reloadIfChanged: true
         inspector:
           group: news
-          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
+          editor: Neos.Neos/Inspector/Editors/TextAreaEditor
           editorOptions:
-            rows: 4         
+            rows: 4
     link:
-      type: 'string'
+      type: string
       defaultValue: 'https://www.vfl-duttweiler.de/vYYMMDD.html'
       ui:
-        label: 'Link'
+        label: Link
         reloadIfChanged: true
         inspector:
           group: news
 'GSL.DuttweilerDe:FrontpageTTResults':
   superTypes:
     'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
-    'Neos.NodeTypes:Html': TRUE
+    'Neos.NodeTypes:Html': true
   ui:
     label: 'Ergebnisse - TT'
-    group: 'frontpage'
+    group: frontpage
   properties:
     title:
-      defaultValue: 'Tischtennis-Ergebnisse'
+      defaultValue: Tischtennis-Ergebnisse
     date:
       defaultValue: now
 'GSL.DuttweilerDe:FrontpageTTNews':
   superTypes:
     'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
   ui:
-    label: 'TT-News'
+    label: TT-News
   properties:
     title:
-      defaultValue: 'TT-News'
+      defaultValue: TT-News
     subheadline:
       defaultValue: 'Aktuelles aus der TT-Abteilung - Ausgabe XX'
     link:
-      type: 'string'
+      type: string
       defaultValue: 'https://www.vfl-duttweiler.de/ttnews/t16xxxxn.pdf'
       ui:
-        label: 'Link'
+        label: Link
         inspector:
           group: news
 'GSL.DuttweilerDe:FrontpageTTNews2':
@@ -145,13 +146,13 @@
   ui:
     label: 'News Liste'
     icon: icon-list
-    group: 'frontpage'
+    group: frontpage
 'GSL.DuttweilerDe.Content:FrontpageNewsItem':
   superTypes:
     'Neos.Neos:Content': true
   ui:
     label: 'News Meldung'
-    group: 'hidden'
+    group: hidden
     inspector:
       groups:
         news:
@@ -197,14 +198,13 @@
     text:
       ui:
         inlineEditable: true
-        aloha:
-          link:
-            a: true
-          list:
-            ul: true
-            ol: true
-          table:
-            table: true
+        inline:
+          editorOptions:
+            formatting:
+              table: true
+              a: true
+              ul: true
+              ol: true
 'GSL.DuttweilerDe.Content:FrontpageInfoBox':
   superTypes:
     'Neos.Neos:Content': true
@@ -230,14 +230,14 @@
       type: string
       defaultValue: default
       ui:
-        label: 'Stil'
-        reloadIfChanged: TRUE
+        label: Stil
+        reloadIfChanged: true
         inspector:
           group: general
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            allowEmpty: TRUE
-            placeholder: Stil auswählen
+            allowEmpty: true
+            placeholder: 'Stil auswählen'
             values:
               default:
                 label: Standard
@@ -252,7 +252,7 @@
   superTypes:
     'Neos.Neos:Content': true
   ui:
-    label: Referenzenliste (Aktuelle Seite)
+    label: 'Referenzenliste (Aktuelle Seite)'
     group: chronik
     icon: icon-list
   constraints:
@@ -263,10 +263,10 @@
   superTypes:
     'GSL.DuttweilerDe.Content:RelatedPagesBacklinkList': true
   ui:
-    label: Referenzenliste (nur Unterseiten)
+    label: 'Referenzenliste (nur Unterseiten)'
 'GSL.DuttweilerDe.Content:RelatedPagesBacklink':
   superTypes:
-   'Neos.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: Listenelement
     group: duttweiler-general
@@ -279,37 +279,38 @@
     title:
       type: string
       ui:
-        label: 'Titel'
+        label: Titel
         reloadIfChanged: true
         inspector:
           group: general
     subheadline:
       type: string
       ui:
-        label: 'Untertitel'
+        label: Untertitel
         reloadIfChanged: true
         inlineEditable: true
-        aloha:
-          'link':
-            'a': true
         inspector:
           group: general
-          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
+          editor: Neos.Neos/Inspector/Editors/TextAreaEditor
+        inline:
+          editorOptions:
+            formatting:
+              a: true
     date:
       type: DateTime
       ui:
-        label: 'Datum'
+        label: Datum
         reloadIfChanged: true
         inspector:
           group: general
     link:
       type: string
       ui:
-        label: 'Link'
+        label: Link
         reloadIfChanged: true
         inspector:
           group: general
-          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
+          editor: Neos.Neos/Inspector/Editors/LinkEditor
 'GSL.DuttweilerDe.Content:Menu':
   superTypes:
     'Neos.NodeTypes:Menu': true
@@ -321,7 +322,7 @@
   ui:
     group: duttweiler-general
     label: 'A bis Z Menu'
-  properties: []
+  properties: {  }
 'GSL.DuttweilerDe.Content:Event':
   superTypes:
     'Neos.Neos:Content': true
@@ -346,7 +347,7 @@
         inspector:
           group: general
       validation:
-        'Neos.Neos/Validation/NotEmptyValidator': []
+        Neos.Neos/Validation/NotEmptyValidator: {  }
     location:
       type: string
       ui:
@@ -371,7 +372,7 @@
           editorOptions:
             format: 'd. F y H:i'
       validation:
-        'Neos.Neos/Validation/NotEmptyValidator': []
+        Neos.Neos/Validation/NotEmptyValidator: {  }
     endDate:
       type: DateTime
       ui:
@@ -397,7 +398,7 @@
     banner:
       type: Neos\Media\Domain\Model\ImageInterface
       ui:
-        label: 'Banner'
+        label: Banner
         inspector:
           group: frontpage
 'GSL.DuttweilerDe.Content:EventPromoter':
@@ -431,18 +432,18 @@
         Neos.Neos/Validation/IntegerValidator: null
 'GSL.DuttweilerDe:MultipleImages':
   superTypes:
-    'Neos.NodeTypes:AssetList': TRUE
+    'Neos.NodeTypes:AssetList': true
   ui:
     label: 'Mehrere Bilder (Galerie)'
     icon: icon-picture
     inspector:
       groups:
         image:
-          label: 'Bilder'
+          label: Bilder
   properties:
     assets:
       ui:
-        label: 'Bilder'
+        label: Bilder
         inspector:
           group: image
     fancyboxGroup:
@@ -456,20 +457,20 @@
     displayWidth:
       type: integer
       ui:
-        label: 'Breite'
+        label: Breite
         reloadIfChanged: true
         inspector:
           group: image
           position: 200
       validation:
-        'Neos.Neos/Validation/ImageSizeValidator': TRUE
+        Neos.Neos/Validation/ImageSizeValidator: true
     displayHeight:
       type: integer
       ui:
-        label: 'Höhe'
+        label: Höhe
         reloadIfChanged: true
         inspector:
           group: image
           position: 200
       validation:
-        'Neos.Neos/Validation/ImageSizeValidator': TRUE
+        Neos.Neos/Validation/ImageSizeValidator: true

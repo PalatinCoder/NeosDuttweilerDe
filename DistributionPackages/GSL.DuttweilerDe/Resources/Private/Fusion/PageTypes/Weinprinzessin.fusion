@@ -1,4 +1,4 @@
-weinprinzessin = Page {
+weinprinzessin = Neos.Neos:Page {
 	head {
 		meta = Neos.Fusion:Template {
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinprinzessin.html'
@@ -38,16 +38,16 @@ weinprinzessin = Page {
 		prototype(Neos.NodeTypes:Headline).templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/Headline.html'
 
 		parts {
-			subpages = Menu {
+			subpages = Neos.Neos:Menu {
 				templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
 				entryLevel = 0
 				maximumLevels = 1
 			}
-			relatedPages = Menu {
+			relatedPages = Neos.Neos:Menu {
 				templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
 				itemCollection = ${q(documentNode).property('relatedPages')}
 			}
-			parentPage = Menu {
+			parentPage = Neos.Neos:Menu {
 				# hide a-bis-z, or the single letters
 				@if.1 = ${q(documentNode).parent().parent().get() != q(documentNode).find('#bb5879ad-b374-f384-874f-b705076e2c73').get()}
 
@@ -56,10 +56,10 @@ weinprinzessin = Page {
 			}
 		}
 		content {
-			main = PrimaryContent {
+			main = Neos.Neos:PrimaryContent {
 				nodePath = 'main'
 			}
-			pressespiegel = PrimaryContent {
+			pressespiegel = Neos.Neos:PrimaryContent {
 				nodePath = 'pressespiegel'
 			}
 		}

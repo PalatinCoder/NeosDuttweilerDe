@@ -1,4 +1,4 @@
-weinbau = Page {
+weinbau = Neos.Neos:Page {
 	head {
 		meta = Neos.Fusion:Template {
 			templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Weinbau.html'
@@ -31,18 +31,18 @@ weinbau = Page {
 				templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/NodeTypes/SectionMenu.html'
 				items = ${q(documentNode).children('[instanceof Neos.Neos:ContentCollection]').children('[instanceof Neos.NodeTypes:Headline]')}
 			}
-			subpages = Menu {
+			subpages = Neos.Neos:Menu {
 				templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
 				entryLevel = 0
 				maximumLevels = 1
 			}            
-			parentPage = Menu {
+			parentPage = Neos.Neos:Menu {
 				templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/FusionObjects/DefaultPageMenu.html'
 				itemCollection = ${q(documentNode).parent().get()}
 			}
 		}
 		content {
-			main = PrimaryContent {
+			main = Neos.Neos:PrimaryContent {
 				nodePath = 'main'
 			}
 		}

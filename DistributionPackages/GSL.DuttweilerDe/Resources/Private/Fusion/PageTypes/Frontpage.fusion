@@ -1,4 +1,4 @@
-frontpage = Page {
+frontpage = Neos.Neos:Page {
   head {
     meta = Neos.Fusion:Template {
       templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Frontpage.html'
@@ -22,25 +22,25 @@ frontpage = Page {
     headerBackgroundImage = ${q(node).property('headerImage')}
 
     parts {
-      menu = Menu {
+      menu = Neos.Neos:Menu {
       #renderHiddenInIndex = true
         maximumLevels = 1
       }
     }
 
     content {
-      rightColumn = PrimaryContent {
+      rightColumn = Neos.Neos:PrimaryContent {
         nodePath = 'rightColumn'
       }            
 
-      main = PrimaryContent {
+      main = Neos.Neos:PrimaryContent {
         nodePath = 'main'
       }
 
-      banner = PrimaryContent {
+      banner = Neos.Neos:PrimaryContent {
         nodePath = 'banner'
       }
-      standalonenews = PrimaryContent {
+      standalonenews = Neos.Neos:PrimaryContent {
         nodePath = 'standalonenews'
       }
     }

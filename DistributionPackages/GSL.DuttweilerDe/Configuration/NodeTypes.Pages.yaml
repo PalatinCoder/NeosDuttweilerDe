@@ -1,3 +1,4 @@
+
 'GSL.DuttweilerDe.Pages:Frontpage':
   superTypes:
     'Neos.NodeTypes:Page': true
@@ -11,7 +12,7 @@
         header-bg:
           label: 'Header Hintergrundbilder'
           position: 40
-          collapsed: TRUE
+          collapsed: true
   childNodes:
     main:
       constraints:
@@ -42,8 +43,8 @@
     headerImage:
       type: Neos\Media\Domain\Model\ImageInterface
       ui:
-        label: 'Startseite'
-        reloadIfChanged: TRUE
+        label: Startseite
+        reloadIfChanged: true
         inspector:
           group: header-bg
     childHeaderImage:
@@ -118,14 +119,15 @@
         inspector:
           group: document
         label: Unterüberschrift
-        reloadIfChanged: TRUE
-        inlineEditable: TRUE
-        aloha:
-          placeholder: 'Unterüberschrift'
-          autoparagraph: FALSE
-          format:
-            removeFormat: TRUE
-            '*': FALSE
+        reloadIfChanged: true
+        inlineEditable: true
+        inline:
+          editorOptions:
+            formatting:
+              removeFormat: true
+              '*': false
+            autoparagraph: false
+            placeholder: Unterüberschrift
     headerImage:
       type: Neos\Media\Domain\Model\ImageInterface
       ui:
@@ -178,7 +180,7 @@
 'GSL.DuttweilerDe.Pages:ChronikItem':
   superTypes:
     'GSL.DuttweilerDe.Pages:Default': true
-  label: ${Date.format(q(node).property('date'), 'd.m. / ') + q(node).property('title')}
+  label: '${Date.format(q(node).property(''date''), ''d.m. / '') + q(node).property(''title'')}'
   ui:
     label: 'Chronik - Meldung'
     group: chronik
@@ -188,20 +190,20 @@
           type: string
           ui:
             label: Unterüberschrift
-            editor: 'Neos.Neos/Inspector/Editors/TextFieldEditor'
+            editor: Neos.Neos/Inspector/Editors/TextFieldEditor
           validation:
-            'Neos.Neos/Validation/NotEmptyValidator': []
+            Neos.Neos/Validation/NotEmptyValidator: {  }
         date:
           type: DateTime
           ui:
             label: Datum
-            editor: 'Neos.Neos/Inspector/Editors/TextFieldEditor'
+            editor: Neos.Neos/Inspector/Editors/TextFieldEditor
             editorOptions:
-              placeholder: 'dd.mm.yyyy'
+              placeholder: dd.mm.yyyy
           validation:
-            'Neos.Neos/Validation/RegularExpressionValidator':
+            Neos.Neos/Validation/RegularExpressionValidator:
               regularExpression: '^\d{2}\.\d{2}\.\d{4}$'
-            'Neos.Neos/Validation/NotEmptyValidator': []
+            Neos.Neos/Validation/NotEmptyValidator: {  }
     inspector:
       groups:
         related:
@@ -210,7 +212,7 @@
   options:
     nodeCreationHandlers:
       chronikItem:
-        nodeCreationHandler: 'GSL\DuttweilerDe\NodeCreationHandler\ChronikItemHandler'
+        nodeCreationHandler: GSL\DuttweilerDe\NodeCreationHandler\ChronikItemHandler
   properties:
     relatedPages:
       type: references
@@ -220,7 +222,7 @@
         inspector:
           group: related
           editorOptions:
-            startingPoint: '/'
+            startingPoint: /
     date:
       type: DateTime
       defaultValue: now
@@ -230,20 +232,21 @@
         inspector:
           group: general
       validation:
-        'Neos.Neos/Validation/NotEmptyValidator': []
-        'Neos.Neos/Validation/DateTimeValidator': []
+        Neos.Neos/Validation/NotEmptyValidator: {  }
+        Neos.Neos/Validation/DateTimeValidator: {  }
     subheadline:
       validation:
-        'Neos.Neos/Validation/NotEmptyValidator': []
+        Neos.Neos/Validation/NotEmptyValidator: {  }
     dateAdditionalText:
       type: string
       ui:
-        inlineEditable: TRUE
-        aloha:
-          placeholder: '(...)'
-          autoparagraph: FALSE
-          format:
-            '*': FALSE
-            removeFormat: TRUE
+        inlineEditable: true
+        inline:
+          editorOptions:
+            formatting:
+              '*': false
+              removeFormat: true
+            autoparagraph: false
+            placeholder: (...)
     openGraphType:
-      defaultValue: 'article'
+      defaultValue: article

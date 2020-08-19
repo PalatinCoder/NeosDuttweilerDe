@@ -1,14 +1,16 @@
+
 'Neos.NodeTypes:TextMixin':
   properties:
     text:
       ui:
-        aloha:
-          autoparagraph: false
-          alignment:
-            left: true
-            right: true
-            center: true
-            justify: true
+        inline:
+          editorOptions:
+            formatting:
+              left: true
+              right: true
+              center: true
+              justify: true
+            autoparagraph: false
 'Neos.NodeTypes:ContentImageMixin':
   properties:
     enableFancybox:
@@ -31,48 +33,48 @@
     displayWidth:
       type: integer
       ui:
-        label: 'Breite'
+        label: Breite
         reloadIfChanged: true
         inspector:
           group: image
           position: 200
       validation:
-        'Neos.Neos/Validation/ImageSizeValidator':
+        Neos.Neos/Validation/ImageSizeValidator: null
     displayHeight:
       type: integer
       ui:
-        label: 'Höhe'
+        label: Höhe
         reloadIfChanged: true
         inspector:
           group: image
           position: 200
       validation:
-        'Neos.Neos/Validation/ImageSizeValidator':
+        Neos.Neos/Validation/ImageSizeValidator: null
 'Neos.NodeTypes:Headline':
   ui:
     inspector:
       groups:
         style:
-          label: 'Stil'
+          label: Stil
           tab: default
   properties:
     layout:
       type: string
-      defaultValue: 'underline'
+      defaultValue: underline
       ui:
-        label: 'Typ'
-        reloadIfChanged: TRUE
+        label: Typ
+        reloadIfChanged: true
         inspector:
           group: style
           editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            allowEmpty: TRUE
+            allowEmpty: true
             placeholder: 'Stil auswählen'
             values:
               underline:
-                label: 'Unterstrichen'
+                label: Unterstrichen
               boxed:
-                label: 'Kasten'
+                label: Kasten
 'Neos.NodeTypes:Page':
   properties:
     layout:
@@ -81,26 +83,26 @@
           group: layout
           editorOptions:
             values:
-              'default':
+              default:
                 label: 'Duttweiler.de Standard'
-              'frontpage':
+              frontpage:
                 label: 'Duttweiler.de Startseite'
-              'weinbau':
+              weinbau:
                 label: 'Duttweiler Wein'
-              'weinprinzessin':
-                label: 'Weinprinzessin'
+              weinprinzessin:
+                label: Weinprinzessin
     subpageLayout:
       ui:
         inspector:
           group: layout
           editorOptions:
             values:
-              'default':
+              default:
                 label: 'Duttweiler.de Standard'
-              'weinbau':
+              weinbau:
                 label: 'Duttweiler Wein'
-              'weinprinzessin':
-                label: 'Weinprinzessin'
+              weinprinzessin:
+                label: Weinprinzessin
 'Neos.Neos:Shortcut':
   properties:
     date:
@@ -114,20 +116,20 @@
 'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
-      'GSL.DuttweilerDe.Content:FrontpageNewsList': FALSE
-      'GSL.DuttweilerDe.Content:FrontpageInfoBox': FALSE
-      'GSL.DuttweilerDe.Content:FrontpageNewsItem': FALSE
-      'GSL.DuttweilerDe.Content:PressespiegelItem': FALSE
+      'GSL.DuttweilerDe.Content:FrontpageNewsList': false
+      'GSL.DuttweilerDe.Content:FrontpageInfoBox': false
+      'GSL.DuttweilerDe.Content:FrontpageNewsItem': false
+      'GSL.DuttweilerDe.Content:PressespiegelItem': false
 'Neos.Neos:Document':
   superTypes:
-    'Neos.Seo:TwitterCardMixin': FALSE
+    'Neos.Seo:TwitterCardMixin': false
   constraints:
     nodeTypes:
-      'Neos.NodeTypes:Page': FALSE
-      'GSL.DuttweilerDe.Pages:Default': TRUE
-      'GSL.DuttweilerDe.Pages:ChronikRoot': TRUE
-      'GSL.DuttweilerDe.Pages:ChronikBranch': FALSE
-      'GSL.DuttweilerDe.Pages:ChronikItem': FALSE
+      'Neos.NodeTypes:Page': false
+      'GSL.DuttweilerDe.Pages:Default': true
+      'GSL.DuttweilerDe.Pages:ChronikRoot': true
+      'GSL.DuttweilerDe.Pages:ChronikBranch': false
+      'GSL.DuttweilerDe.Pages:ChronikItem': false
 'Neos.Seo:OpenGraphMixin':
   ui:
     inspector:

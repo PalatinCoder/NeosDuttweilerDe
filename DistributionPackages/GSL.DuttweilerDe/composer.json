@@ -9,12 +9,12 @@
         "neos/seo": "*"
     },
     "authors": [
-      {
-        "name": "Jan Syring-Lingenfelder",
-        "email": "kontakt@jan-sl.de",
-        "homepage": "https://www.jan-sl.de",
-        "role": "Full stack developer"
-      }
+        {
+            "name": "Jan Syring-Lingenfelder",
+            "email": "kontakt@jan-sl.de",
+            "homepage": "https://www.jan-sl.de",
+            "role": "Full stack developer"
+        }
     ],
     "autoload": {
         "psr-4": {
@@ -94,7 +94,11 @@
             "Neos.Fusion-20170120013047",
             "Neos.Flow-20170125103800",
             "Neos.Seo-20170127154600",
-            "Neos.Flow-20170127183102"
+            "Neos.Flow-20170127183102",
+            "Neos.Fusion-20180211175500",
+            "Neos.Fusion-20180211184832",
+            "Neos.Flow-20180415105700",
+            "Neos.Neos-20180907103800"
         ]
     }
 }
