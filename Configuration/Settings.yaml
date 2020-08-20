@@ -29,3 +29,14 @@ Neos:
     image:
       defaultOptions:
         interlace: null
+Jonnitto:
+  PrettyEmbedHelper:
+    enableGdprMessage: true
+  PrettyEmbedYoutube:
+    url:
+      playlist:
+        embed: 'http://www.youtube-nocookie.com/embed/videoseries?list=%id%'
+        href: 'http://www.youtube-nocoockie.com/playlist?list=%id%'
+      video:
+        embed: 'http://www.youtube-nocookie.com/embed/%id%'
+        href: 'http://www.youtube-nocoockie.com/watch?v=%id%'
