@@ -33,12 +33,17 @@ RUN mkdir /etc/services.d/nginx && mkdir /etc/services.d/php-fpm \
 # define init script for neos
 RUN echo -e "#!/usr/bin/with-contenv sh\ns6-setuidgid www-data sh -c '/neos/flow cache:warmup && /neos/flow doctrine:migrate && /neos/flow resource:publish'" > /etc/cont-init.d/neos
 
+ARG max_upload_size=50M
 # adjust php settings (as late as possible so we can make use of build caching before)
 RUN echo 'memory_limit = 512M' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini && \
     echo 'expose_php = 0' >> /usr/local/etc/php/conf.d/docker-php-expose.ini && \
     # use socket for fpm/nginx communication
     sed -i 's/^listen = .*/listen = \/var\/run\/nginx-fpm.sock/' /usr/local/etc/php-fpm.d/zz-docker.conf && \
-    echo -e 'listen.owner = nginx\nlisten.group = www-data' >> /usr/local/etc/php-fpm.d/zz-docker.conf
+    echo -e 'listen.owner = nginx\nlisten.group = www-data' >> /usr/local/etc/php-fpm.d/zz-docker.conf && \
+    # adjust maximum upload size (yes, needs to be set three times...)
+    echo "upload_max_filesize = ${max_upload_size}" >> /usr/local/etc/php/conf.d/docker-php-filesize.ini && \
+    echo "post_max_size = ${max_upload_size}" >> /usr/local/etc/php/conf.d/docker-php-filesize.ini && \
+    sed -i "s/\(client_max_body_size\) \(\w*\)/\1 ${max_upload_size}/" /etc/nginx/nginx.conf
 
 ARG context
 RUN mv "$PHP_INI_DIR/php.ini-${context}" "$PHP_INI_DIR/php.ini"
