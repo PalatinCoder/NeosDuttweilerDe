@@ -4,16 +4,6 @@ Neos:
       routes:
         'GSL.DuttweilerDe':
           position: 'before Neos.Neos'
-    error:
-      exceptionHandler:
-        renderingGroups:
-          notFoundExceptions:
-            matchingStatusCodes:
-              - 404
-            options:
-              templatePathAndFilename: 'resource://GSL.DuttweilerDe/Private/Templates/Page/Error.html'
-              layoutRootPath: 'resource://Neos.Neos/Private/Layouts/'
-              format: html
   Neos:
     nodeTypes:
       groups:

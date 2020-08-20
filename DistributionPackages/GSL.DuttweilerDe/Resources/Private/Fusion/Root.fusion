@@ -24,6 +24,24 @@ prototype(Neos.NodeTypes:Headline).attributes.class = Neos.Fusion:Case {
     }
 }
 
+# custom error pages (https://github.com/neos/neos-development-collection/pull/2374)
+error {
+    @context.notfoundDocument = ${q(site).children('[uriPathSegment="error"]').children('[uriPathSegment="notfound"]').get(0)}
+
+    4xx {
+        @position = 'start'
+        condition = ${statusCode >= 400 && statusCode < 500 && notfoundDocument}
+        renderer = Neos.Fusion:Renderer {
+            @context {
+                site = ${notfoundDocument.context.currentSideNode}
+                documentNode = ${notfoundDocument}
+                node = ${notfoundDocument}
+            }
+            renderPath = '/default'
+        }
+    }
+}
+
 # API
 root.format.@position = 'end 9995'
 # API endpoint parameter
