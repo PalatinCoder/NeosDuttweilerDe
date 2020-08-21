@@ -2,6 +2,7 @@ version: '3.4'
 
 services:
   neos:
+    image: neosduttweilerde
     build:
       args: 
         context: development
