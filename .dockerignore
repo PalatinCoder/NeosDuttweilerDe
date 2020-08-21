@@ -2,5 +2,6 @@
 
 !Configuration/**
 !DistributionPackages/**
+DistributionPackages/*/Resources/Private/Content/
 !composer.*
 !nginx-fpm.conf
