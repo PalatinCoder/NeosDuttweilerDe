@@ -5,3 +5,4 @@
 DistributionPackages/*/Resources/Private/Content/
 !composer.*
 !nginx-fpm.conf
+!wetter-widget.html

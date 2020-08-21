@@ -52,7 +52,9 @@ RUN mv "$PHP_INI_DIR/php.ini-${context}" "$PHP_INI_DIR/php.ini"
 WORKDIR /neos
 COPY . .
 RUN composer install --no-dev
-# move nginx config file to where it belongs
-RUN mv nginx-fpm.conf /etc/nginx/conf.d/default.conf
+    # move nginx config file to where it belongs
+RUN mv nginx-fpm.conf /etc/nginx/conf.d/default.conf && \
+    # move the weather widget to the Web root
+    mv wetter-widget.html Web/
 
 ENTRYPOINT [ "/init" ]
