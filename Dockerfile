@@ -30,8 +30,9 @@ RUN mkdir /etc/services.d/nginx && mkdir /etc/services.d/php-fpm \
     && echo -e "#!/usr/bin/with-contenv sh\nphp-fpm" > /etc/services.d/php-fpm/run \
     && echo -e "#!/usr/bin/execlineb -S1\nif { s6-test \${1} -ne 0 }\nif { s6-test \${1} -ne 256 }\ns6-svscanctl -t /var/run/s6/services" | tee /etc/services.d/nginx/finish > /etc/services.d/php-fpm/finish
 
-# define init script for neos
-RUN echo -e "#!/usr/bin/with-contenv sh\ns6-setuidgid www-data sh -c '/neos/flow cache:warmup && /neos/flow doctrine:migrate && /neos/flow resource:publish'" > /etc/cont-init.d/neos
+# define init and finish script for neos
+RUN echo -e "#!/usr/bin/with-contenv sh\ns6-setuidgid www-data sh -c '/neos/flow cache:warmup && /neos/flow doctrine:migrate && /neos/flow resource:publish'" > /etc/cont-init.d/neos-warmup \
+ && echo -e "#!/usr/bin/with-contenv sh\ns6-setuidgid www-data sh -c '/neos/flow flow:cache:flush --force'" > /etc/cont-finish.d/neos-cache-flush
 
 ARG max_upload_size=50M
 # adjust php settings (as late as possible so we can make use of build caching before)
