@@ -19,6 +19,7 @@ services:
     restart: unless-stopped
     labels: 
       - traefik.enable=true
+      - traefik.docker.network=neosduttweilerde_public
       - traefik.http.routers.neos.rule=Host(`duttweiler.de`, `www.duttweiler.de`)
       - traefik.http.services.neos.loadbalancer.server.port=80
     networks: 
@@ -46,9 +47,7 @@ services:
 
 networks: 
   internal:
-    internal: true
   public:
-    external: true
 
 volumes:
   db:

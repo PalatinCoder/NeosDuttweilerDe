@@ -16,8 +16,3 @@ services:
       - ./composer.lock:/neos/composer.lock
       - ./Configuration/:/neos/Configuration/
       - ./DistributionPackages/:/neos/DistributionPackages/
-
-# override public network to be internal, this is traefik in prod
-networks:
-  public:
-    external: false
