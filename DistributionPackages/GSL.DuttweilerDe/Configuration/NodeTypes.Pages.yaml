@@ -202,7 +202,7 @@
               placeholder: dd.mm.yyyy
           validation:
             Neos.Neos/Validation/RegularExpressionValidator:
-              regularExpression: '^\d{2}\.\d{2}\.\d{4}$'
+              regularExpression: '/^\d{2}\.\d{2}\.\d{4}$/'
             Neos.Neos/Validation/NotEmptyValidator: {  }
     inspector:
       groups:

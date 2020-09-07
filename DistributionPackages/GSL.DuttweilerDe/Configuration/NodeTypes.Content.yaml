@@ -84,7 +84,7 @@
           group: news
       validation:
         Neos.Neos/Validation/RegularExpressionValidator:
-          regularExpression: '^[0-9]{1,2}:[0-9]{1,2}$'
+          regularExpression: '/^[0-9]{1,2}:[0-9]{1,2}$/'
     scorers:
       type: string
       ui:
