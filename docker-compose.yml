@@ -22,6 +22,8 @@ services:
       - traefik.docker.network=neosduttweilerde_public
       - traefik.http.routers.neos.rule=Host(`duttweiler.de`, `www.duttweiler.de`)
       - traefik.http.services.neos.loadbalancer.server.port=80
+      - traefik.http.middlewares.cors-duttweilerapp.headers.accesscontrolalloworiginlist=https://duttweiler.app
+      - traefik.http.routers.neos.middlewares=cors-duttweilerapp@docker
     networks: 
       - internal
       - public
