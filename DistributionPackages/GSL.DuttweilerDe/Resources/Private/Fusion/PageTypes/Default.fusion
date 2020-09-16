@@ -1,4 +1,4 @@
-default = Neos.Neos:Page {
+prototype(GSL.DuttweilerDe.Pages:Default) < prototype(Neos.Neos:Page) {
   head {
     meta = Neos.Fusion:Template {
       templatePath = 'resource://GSL.DuttweilerDe/Private/Templates/Page/Default.html'
@@ -70,3 +70,5 @@ default = Neos.Neos:Page {
     }        
   }
 }
+
+default = GSL.DuttweilerDe.Pages:Default
