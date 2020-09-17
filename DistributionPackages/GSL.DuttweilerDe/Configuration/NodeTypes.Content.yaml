@@ -43,11 +43,11 @@
   superTypes:
     'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
   ui:
-    label: 'Ergenisse - Fußball'
+    label: 'Ergebnisse - Fußball'
     group: frontpage
   properties:
-    title:
-      defaultValue: 'B-Klasse Rhein-Mittelhaardt West'
+    subheadline:
+      defaultValue: 'C-Klasse Rhein-Mittelhaardt Staffel Mitte'
     text: {  }
     date:
       defaultValue: now
