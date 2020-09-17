@@ -1,0 +1,82 @@
+prototype(GSL.DuttweilerDe:Api.Atom.Podcast) < prototype(Neos.Fusion:Http.Message) {
+    httpResponseHead.headers.Content-Type = "application/xml"
+
+    @context.podcast = ${q(node).find('[instanceof GSL.DuttweilerDe:Document.Podcast.Index]').get(0)}
+
+    content = Neos.Fusion:Array {
+		doctype = '<?xml version="1.0" encoding="UTF-8"?>'
+        rss = Neos.Fusion:Component {
+            podcast = ${podcast}
+            episodes = ${q(podcast).children('[instanceof GSL.DuttweilerDe:Document.Podcast.Episode]').get()}
+
+            # AFX resp. Neos.Fusion:Tag insist on <link> being a self closing tag and there's no possibility to override this, so this mess happens:
+            link = Neos.Fusion:Join {
+                open = "<link>"
+                value = Neos.Neos:NodeUri {
+                    node = ${podcast}
+                    absolute = true
+                    format = 'html'
+                }
+                close = "</link>"
+            }
+
+            renderer = afx`
+            <rss version="2.0">
+                <channel>
+                    <title>Duttweiler Ortsrufanlage {props.podcast.properties.title}</title>
+                    <description>Die Ortsverwaltung von Duttweiler gibt ihre Meldungen als Podcast bekannt</description>
+                    <language>de-de</language>
+                    {props.link}
+
+                    <Neos.Fusion:Collection collection={props.episodes} itemName="episode" @children="itemRenderer">
+                        <GSL.DuttweilerDe:Api.Atom.Podcast.Episode {...episode}></GSL.DuttweilerDe:Api.Atom.Podcast.Episode>
+                    </Neos.Fusion:Collection>
+
+                </channel>
+            </rss>
+            `
+        }
+    }
+
+	@cache {
+		mode = 'cached'
+		entryTags {
+			1 = ${'NodeType_GSL.DuttweilerDe:Document.Podcast.Episode'}
+			2 = ${'DescendantOf_' + podcast.dentifier}
+		}
+	}
+}
+
+prototype(GSL.DuttweilerDe:Api.Atom.Podcast.Episode) < prototype(Neos.Fusion:Component) {
+    episode = ${episode}
+    title = ${q(episode).property('title')}
+    date = ${q(episode).property('date')}
+    description = ${q(episode).children('main/text').property('text')}
+    @context.audio = ${Array.first(q(episode).children('main/audio').property('assets'))}
+    audio = ${audio}
+    audioUrl = Neos.Fusion:ResourceUri {
+        resource = ${audio.resource}
+    }
+
+    renderer = afx`
+        <item>
+            <title>{props.title}</title>
+            <pubDate>{Date.format(props.date, 'D, d M Y H:i:s O')}</pubDate>
+            <description @if.has={props.description}>
+                    {String.stripTags(props.description)}
+            </description>
+            <guid isPermaLink="false">{props.audio.identifier}</guid>
+            <enclosure url={props.audioUrl} length={props.audio.resource.fileSize} type={props.audio.mediaType} />
+        </item>
+    `
+    # TODO: allow some tags (<p>, <ol>, <ul>, <li>, <a>, <br>?) by wrapping description in a CDATA tag
+                        #<enclosure url="{f:uri.resource(resource: audio.resource)}" length="{audio.resource.fileSize}" type="{audio.mediaType}" />
+
+	@cache {
+		mode = 'cached'
+		entryTags {
+			1 = ${Neos.Caching.nodeTag(episode)}
+            2 = ${Neos.Caching.descendantOfTag(episode)}
+		}
+	}
+}

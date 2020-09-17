@@ -1,0 +1,65 @@
+'GSL.DuttweilerDe:Document.Podcast.Index':
+  superTypes:
+    'Neos.Neos:Document': true
+  ui:
+    label: 'Index'
+    icon: icon-podcast
+    group: podcast
+  constraints:
+    nodeTypes:
+      'Neos.Neos:Document': false
+      'GSL.DuttweilerDe.Pages:Default': false
+      'GSL.DuttweilerDe.Pages:ChronikRoot': false
+      'GSL.DuttweilerDe:Document.Podcast.Episode': true
+
+'GSL.DuttweilerDe:Document.Podcast.Episode':
+  superTypes:
+    'Neos.Neos:Document': true
+  ui:
+    label: 'Episode'
+    icon: icon-file
+    group: podcast
+    creationDialog:
+      elements:
+        date:
+          type: DateTime
+          ui:
+            label: Datum
+            editor: Neos.Neos/Inspector/Editors/TextFieldEditor
+            editorOptions:
+              placeholder: dd.mm.yyyy
+          validation:
+            Neos.Neos/Validation/RegularExpressionValidator:
+              regularExpression: '/^\d{2}\.\d{2}\.\d{4}$/'
+            Neos.Neos/Validation/NotEmptyValidator: {  }
+  constraints:
+    nodeTypes:
+      'Neos.Neos:Document': false
+      'GSL.DuttweilerDe.Pages:Default': false
+      'GSL.DuttweilerDe.Pages:ChronikRoot': false
+  properties:
+    date:
+      type: DateTime
+      defaultValue: now
+      ui:
+        label: Datum
+        reloadIfChanged: true
+        inspector:
+          group: document
+      validation:
+        Neos.Neos/Validation/NotEmptyValidator: {  }
+        Neos.Neos/Validation/DateTimeValidator: {  }
+  childNodes:
+    main:
+      type: GSL.DuttweilerDe:Collection.Podcast
+      constraints:
+        nodeTypes:
+          '*': false
+'GSL.DuttweilerDe:Collection.Podcast':
+  superTypes:
+    'Neos.Neos:ContentCollection': true
+  childNodes:
+    audio:
+      type: Jonnitto.PrettyEmbedAudio:Content.Audio
+    text:
+      type: Neos.NodeTypes:Text

@@ -19,6 +19,10 @@ Neos:
           label: 'Duttweiler - Chronik'
           position: 53
           collapsed: false
+        podcast:
+          label: 'Duttweiler - Podcast'
+          position: 55
+          collapsed: true
         api:
           label: 'Duttweiler - API'
           position: end

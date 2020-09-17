@@ -5,6 +5,7 @@
 include: NodeTypes/*
 include: PageTypes/*
 include: API/*
+include: Podcast/*
 
 
 prototype(Neos.NodeTypes:Image) {
@@ -51,3 +52,4 @@ prototype(Neos.Fusion:GlobalCacheIdentifiers) {
 
 json = GSL.DuttweilerDe:Api.Json
 atom = GSL.DuttweilerDe:Api.Atom.News
+podcast = GSL.DuttweilerDe:Api.Atom.Podcast

@@ -1,0 +1,24 @@
+prototype(GSL.DuttweilerDe:Document.Podcast.Index) < prototype(GSL.DuttweilerDe.Pages:Default) {
+    body {
+        isIndexPage = true
+        subheadline = "Ortsrufanlage"
+        content {
+            main = GSL.DuttweilerDe.Content:Menu {
+                listItem = GSL.DuttweilerDe:Content.Podcast.ListItem
+            }
+        }
+    }
+}
+
+prototype(GSL.DuttweilerDe:Content.Podcast.ListItem) < prototype(GSL.DuttweilerDe.Content:RelatedPagesBacklink) {
+    subheading = "anhören..."
+    linkType = 'node'
+    link = ${q(node).property('_path')}
+}
+
+prototype(GSL.DuttweilerDe:Document.Podcast.Episode) < prototype(GSL.DuttweilerDe.Pages:Default) {
+    body {
+        # well, actually not, but this tricks the template into displaying the date above the header...
+        isChronikItem = true 
+    }
+}

@@ -116,22 +116,22 @@
         },
         {
             "name": "carbon/includeassets",
-            "version": "3.7.1",
+            "version": "4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPackages/Carbon.IncludeAssets.git",
-                "reference": "120909737b747badecfe4708b21f8a4f7185a197"
+                "reference": "ade6d34a326085156e0d7d1570827cfedeacfa59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPackages/Carbon.IncludeAssets/zipball/120909737b747badecfe4708b21f8a4f7185a197",
-                "reference": "120909737b747badecfe4708b21f8a4f7185a197",
+                "url": "https://api.github.com/repos/CarbonPackages/Carbon.IncludeAssets/zipball/ade6d34a326085156e0d7d1570827cfedeacfa59",
+                "reference": "ade6d34a326085156e0d7d1570827cfedeacfa59",
                 "shasum": ""
             },
             "require": {
                 "carbon/eel": "^1.7 || dev-master",
                 "neos/fusion-afx": "^1.0 || dev-master",
-                "neos/neos": "~3.3 || ~4.0 || ~5.0 || dev-master"
+                "neos/neos": "^4.3 || ^5.0 || dev-master"
             },
             "type": "neos-carbon",
             "extra": {
@@ -148,7 +148,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "GPL-3.0-or-later"
             ],
             "authors": [
                 {
@@ -176,7 +176,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-08-17T13:38:48+00:00"
+            "time": "2020-09-15T06:54:06+00:00"
         },
         {
             "name": "carbon/notification",
@@ -242,16 +242,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.2.7",
+            "version": "1.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "95c63ab2117a72f48f5a55da9740a3273d45b7fd"
+                "reference": "8a7ecad675253e4654ea05505233285377405215"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/95c63ab2117a72f48f5a55da9740a3273d45b7fd",
-                "reference": "95c63ab2117a72f48f5a55da9740a3273d45b7fd",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/8a7ecad675253e4654ea05505233285377405215",
+                "reference": "8a7ecad675253e4654ea05505233285377405215",
                 "shasum": ""
             },
             "require": {
@@ -300,24 +300,28 @@
                     "type": "custom"
                 },
                 {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/composer/composer",
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-04-08T08:27:21+00:00"
+            "time": "2020-08-23T12:54:47+00:00"
         },
         {
             "name": "composer/composer",
-            "version": "1.10.10",
+            "version": "1.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "32966a3b1d48bc01472a8321fd6472b44fad033a"
+                "reference": "47c841ba3b2d3fc0b4b13282cf029ea18b66d78b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/32966a3b1d48bc01472a8321fd6472b44fad033a",
-                "reference": "32966a3b1d48bc01472a8321fd6472b44fad033a",
+                "url": "https://api.github.com/repos/composer/composer/zipball/47c841ba3b2d3fc0b4b13282cf029ea18b66d78b",
+                "reference": "47c841ba3b2d3fc0b4b13282cf029ea18b66d78b",
                 "shasum": ""
             },
             "require": {
@@ -398,20 +402,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-03T09:35:19+00:00"
+            "time": "2020-09-09T09:46:34+00:00"
         },
         {
             "name": "composer/semver",
-            "version": "1.5.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "c6bea70230ef4dd483e6bbcab6005f682ed3a8de"
+                "reference": "114f819054a2ea7db03287f5efb757e2af6e4079"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/c6bea70230ef4dd483e6bbcab6005f682ed3a8de",
-                "reference": "c6bea70230ef4dd483e6bbcab6005f682ed3a8de",
+                "url": "https://api.github.com/repos/composer/semver/zipball/114f819054a2ea7db03287f5efb757e2af6e4079",
+                "reference": "114f819054a2ea7db03287f5efb757e2af6e4079",
                 "shasum": ""
             },
             "require": {
@@ -459,7 +463,21 @@
                 "validation",
                 "versioning"
             ],
-            "time": "2020-01-13T12:06:48+00:00"
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-09-09T09:34:06+00:00"
         },
         {
             "name": "composer/spdx-licenses",
@@ -923,16 +941,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.10.2",
+            "version": "2.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "aab745e7b6b2de3b47019da81e7225e14dcfdac8"
+                "reference": "47433196b6390d14409a33885ee42b6208160643"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/aab745e7b6b2de3b47019da81e7225e14dcfdac8",
-                "reference": "aab745e7b6b2de3b47019da81e7225e14dcfdac8",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/47433196b6390d14409a33885ee42b6208160643",
+                "reference": "47433196b6390d14409a33885ee42b6208160643",
                 "shasum": ""
             },
             "require": {
@@ -942,13 +960,14 @@
                 "php": "^7.2"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^6.0",
+                "doctrine/coding-standard": "^8.1",
                 "jetbrains/phpstorm-stubs": "^2019.1",
                 "nikic/php-parser": "^4.4",
-                "phpstan/phpstan": "^0.12",
-                "phpunit/phpunit": "^8.4.1",
+                "phpstan/phpstan": "^0.12.40",
+                "phpunit/phpunit": "^8.5.5",
+                "psalm/plugin-phpunit": "^0.10.0",
                 "symfony/console": "^2.0.5|^3.0|^4.0|^5.0",
-                "vimeo/psalm": "^3.11"
+                "vimeo/psalm": "^3.14.2"
             },
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
@@ -1027,7 +1046,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-04-20T17:19:26+00:00"
+            "time": "2020-09-12T21:20:41+00:00"
         },
         {
             "name": "doctrine/event-manager",
@@ -1711,16 +1730,16 @@
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.4.41",
+            "version": "v2.4.42",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "e55a6727052f91834a968937c93b6fb193be8fb6"
+                "reference": "b6c4442b4f32ce05673fbdf1fa4a2d5e315cc0a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/e55a6727052f91834a968937c93b6fb193be8fb6",
-                "reference": "e55a6727052f91834a968937c93b6fb193be8fb6",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/b6c4442b4f32ce05673fbdf1fa4a2d5e315cc0a4",
+                "reference": "b6c4442b4f32ce05673fbdf1fa4a2d5e315cc0a4",
                 "shasum": ""
             },
             "require": {
@@ -1789,7 +1808,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2020-05-10T22:20:03+00:00"
+            "time": "2020-08-21T01:27:20+00:00"
         },
         {
             "name": "gsl/duttweilerde",
@@ -1797,9 +1816,10 @@
             "dist": {
                 "type": "path",
                 "url": "./DistributionPackages/GSL.DuttweilerDe",
-                "reference": "1447a0d3b0cb15e971d86b10be659d9603c680da"
+                "reference": "a009a9e8ee9ce9519822b50128e0ef1601b882b3"
             },
             "require": {
+                "jonnitto/prettyembedaudio": "^0.1",
                 "jonnitto/prettyembedcollection": "^3.0",
                 "neos/fusion-afx": "~1.2",
                 "neos/neos": "~4.3.0",
@@ -1965,29 +1985,28 @@
         },
         {
             "name": "jcupitt/vips",
-            "version": "v1.0.5",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libvips/php-vips.git",
-                "reference": "e0c3d3fb9727c6bd96bd1ff8622d1afae0791935"
+                "reference": "d3cf61bd087bd9c00cfc5ae32f6ded7165963058"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libvips/php-vips/zipball/e0c3d3fb9727c6bd96bd1ff8622d1afae0791935",
-                "reference": "e0c3d3fb9727c6bd96bd1ff8622d1afae0791935",
+                "url": "https://api.github.com/repos/libvips/php-vips/zipball/d3cf61bd087bd9c00cfc5ae32f6ded7165963058",
+                "reference": "d3cf61bd087bd9c00cfc5ae32f6ded7165963058",
                 "shasum": ""
             },
             "require": {
                 "ext-vips": ">=0.1.2",
-                "php": ">=7.0.11",
-                "psr/log": "^1.0.2"
+                "php": ">=7.1",
+                "psr/log": "^1.1.3"
             },
             "require-dev": {
-                "jakub-onderka/php-parallel-lint": "^1.0.0",
-                "jms/serializer": ">=0.12 < 1.8.0",
-                "phpdocumentor/phpdocumentor": "^2.9",
-                "phpunit/phpunit": "^6.5",
-                "squizlabs/php_codesniffer": "3.*"
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpdocumentor/phpdocumentor": "3.0.0-rc",
+                "phpunit/phpunit": "^9.3",
+                "squizlabs/php_codesniffer": "^3.5"
             },
             "type": "library",
             "extra": {
@@ -2019,7 +2038,72 @@
                 "libvips",
                 "processing"
             ],
-            "time": "2019-09-26T15:34:52+00:00"
+            "time": "2020-08-29T13:10:03+00:00"
+        },
+        {
+            "name": "jonnitto/prettyembedaudio",
+            "version": "0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedAudio.git",
+                "reference": "219936a4727700cc7710349b7f3821eb1ffe8989"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedAudio/zipball/219936a4727700cc7710349b7f3821eb1ffe8989",
+                "reference": "219936a4727700cc7710349b7f3821eb1ffe8989",
+                "shasum": ""
+            },
+            "require": {
+                "jonnitto/prettyembedhelper": "^1.1 || ^2.0"
+            },
+            "type": "neos-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Jonnitto\\PrettyEmbedAudio\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Markus Günther",
+                    "email": "info@unikka.de",
+                    "homepage": "https://unikka.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://jonnitto.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Prettier embeds for your audio files in Neos CMS.",
+            "homepage": "https://github.com/jonnitto/Jonnitto.PrettyEmbedAudio",
+            "keywords": [
+                "Neos",
+                "audio",
+                "contentelement",
+                "flow"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/Jonnitto/20eur",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/jonnitto",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/markusguenther",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-03-23T12:13:16+00:00"
         },
         {
             "name": "jonnitto/prettyembedcollection",
@@ -2089,21 +2173,21 @@
         },
         {
             "name": "jonnitto/prettyembedhelper",
-            "version": "2.3.1",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedHelper.git",
-                "reference": "969b0830407ad683cc15e47da75d42b06d3fc6b6"
+                "reference": "0f7259cb9a86850ada15bf17eb75661ffb67040f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedHelper/zipball/969b0830407ad683cc15e47da75d42b06d3fc6b6",
-                "reference": "969b0830407ad683cc15e47da75d42b06d3fc6b6",
+                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedHelper/zipball/0f7259cb9a86850ada15bf17eb75661ffb67040f",
+                "reference": "0f7259cb9a86850ada15bf17eb75661ffb67040f",
                 "shasum": ""
             },
             "require": {
                 "carbon/eel": "^1.5",
-                "carbon/includeassets": "^3.5",
+                "carbon/includeassets": "^3.5 || ^4.0",
                 "carbon/notification": "^1.3.1 || ^2.0",
                 "neos/fusion-afx": "^1.2",
                 "neos/neos": "^4.2 || ^5.0",
@@ -2152,7 +2236,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-05-05T09:22:06+00:00"
+            "time": "2020-08-22T14:38:15+00:00"
         },
         {
             "name": "jonnitto/prettyembedvideo",
@@ -2468,12 +2552,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/composer-plugin.git",
-                "reference": "ea92965c1b94da19b4f5efed5c35bf0be36c061d"
+                "reference": "ed7dc015e97ba71020d52f10168472559c3b60d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/composer-plugin/zipball/ea92965c1b94da19b4f5efed5c35bf0be36c061d",
-                "reference": "ea92965c1b94da19b4f5efed5c35bf0be36c061d",
+                "url": "https://api.github.com/repos/neos/composer-plugin/zipball/ed7dc015e97ba71020d52f10168472559c3b60d2",
+                "reference": "ed7dc015e97ba71020d52f10168472559c3b60d2",
                 "shasum": ""
             },
             "require": {
@@ -2889,16 +2973,16 @@
         },
         {
             "name": "neos/form",
-            "version": "4.3.1",
+            "version": "4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/form.git",
-                "reference": "b4a80481374b4dd54b2b8369a069f2c19637361a"
+                "reference": "e689f1250aab25a55819bff09dcfa50ada9cd22b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/form/zipball/b4a80481374b4dd54b2b8369a069f2c19637361a",
-                "reference": "b4a80481374b4dd54b2b8369a069f2c19637361a",
+                "url": "https://api.github.com/repos/neos/form/zipball/e689f1250aab25a55819bff09dcfa50ada9cd22b",
+                "reference": "e689f1250aab25a55819bff09dcfa50ada9cd22b",
                 "shasum": ""
             },
             "require": {
@@ -2989,7 +3073,7 @@
                 "MIT"
             ],
             "description": "Extensible and flexible API for building web forms",
-            "time": "2020-06-17T07:18:00+00:00"
+            "time": "2020-09-15T14:58:45+00:00"
         },
         {
             "name": "neos/fusion",
@@ -3622,16 +3706,16 @@
         },
         {
             "name": "neos/neos-ui",
-            "version": "4.0.9",
+            "version": "4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/neos-ui.git",
-                "reference": "e9694b38cb6f16ebdf0d49b7cc4bbf6ae5ebcba9"
+                "reference": "570db7cd957c1deeec09415adfb7b51d030a27cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/neos-ui/zipball/e9694b38cb6f16ebdf0d49b7cc4bbf6ae5ebcba9",
-                "reference": "e9694b38cb6f16ebdf0d49b7cc4bbf6ae5ebcba9",
+                "url": "https://api.github.com/repos/neos/neos-ui/zipball/570db7cd957c1deeec09415adfb7b51d030a27cf",
+                "reference": "570db7cd957c1deeec09415adfb7b51d030a27cf",
                 "shasum": ""
             },
             "require": {
@@ -3733,20 +3817,20 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-07-09T08:55:48+00:00"
+            "time": "2020-09-10T18:28:41+00:00"
         },
         {
             "name": "neos/neos-ui-compiled",
-            "version": "4.0.9",
+            "version": "4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/neos-ui-compiled.git",
-                "reference": "b1dbfd48ccbc0e52d60af6822fb875d69b85857e"
+                "reference": "8c1e600bed32d4c432f12542c2eef5747b855b98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/neos-ui-compiled/zipball/b1dbfd48ccbc0e52d60af6822fb875d69b85857e",
-                "reference": "b1dbfd48ccbc0e52d60af6822fb875d69b85857e",
+                "url": "https://api.github.com/repos/neos/neos-ui-compiled/zipball/8c1e600bed32d4c432f12542c2eef5747b855b98",
+                "reference": "8c1e600bed32d4c432f12542c2eef5747b855b98",
                 "shasum": ""
             },
             "require": {
@@ -3764,7 +3848,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2020-07-09T09:07:11+00:00"
+            "time": "2020-09-10T18:38:37+00:00"
         },
         {
             "name": "neos/nodetypes",
@@ -4764,16 +4848,16 @@
         },
         {
             "name": "neos/seo",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/neos-seo.git",
-                "reference": "9a78f20b4694746477183d489b26c724cbe1b745"
+                "reference": "129ad4fec836d014c6eb328ba255ac488287e97f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/neos-seo/zipball/9a78f20b4694746477183d489b26c724cbe1b745",
-                "reference": "9a78f20b4694746477183d489b26c724cbe1b745",
+                "url": "https://api.github.com/repos/neos/neos-seo/zipball/129ad4fec836d014c6eb328ba255ac488287e97f",
+                "reference": "129ad4fec836d014c6eb328ba255ac488287e97f",
                 "shasum": ""
             },
             "require": {
@@ -4869,7 +4953,7 @@
                 "GPL-3.0-or-later"
             ],
             "description": "SEO configuration and tools for Neos",
-            "time": "2020-04-02T00:06:05+00:00"
+            "time": "2020-08-20T11:12:39+00:00"
         },
         {
             "name": "neos/setup",
@@ -5941,16 +6025,16 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.8.1",
+            "version": "1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/jsonlint.git",
-                "reference": "3d5eb71705adfa34bd34b993400622932b2f62fd"
+                "reference": "590cfec960b77fd55e39b7d9246659e95dd6d337"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/3d5eb71705adfa34bd34b993400622932b2f62fd",
-                "reference": "3d5eb71705adfa34bd34b993400622932b2f62fd",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/590cfec960b77fd55e39b7d9246659e95dd6d337",
+                "reference": "590cfec960b77fd55e39b7d9246659e95dd6d337",
                 "shasum": ""
             },
             "require": {
@@ -5996,7 +6080,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-13T09:07:59+00:00"
+            "time": "2020-08-25T06:56:57+00:00"
         },
         {
             "name": "seld/phar-utils",
@@ -6044,16 +6128,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.4.11",
+            "version": "v4.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "55d07021da933dd0d633ffdab6f45d5b230c7e02"
+                "reference": "b39fd99b9297b67fb7633b7d8083957a97e1e727"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/55d07021da933dd0d633ffdab6f45d5b230c7e02",
-                "reference": "55d07021da933dd0d633ffdab6f45d5b230c7e02",
+                "url": "https://api.github.com/repos/symfony/console/zipball/b39fd99b9297b67fb7633b7d8083957a97e1e727",
+                "reference": "b39fd99b9297b67fb7633b7d8083957a97e1e727",
                 "shasum": ""
             },
             "require": {
@@ -6131,20 +6215,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-06T13:18:39+00:00"
+            "time": "2020-09-02T07:07:21+00:00"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v4.4.11",
+            "version": "v4.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "72b3a65ddd5052cf6d65eac6669748ed311f39bf"
+                "reference": "6dd1e7adef4b7efeeb9691fd619279027d4dcf85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/72b3a65ddd5052cf6d65eac6669748ed311f39bf",
-                "reference": "72b3a65ddd5052cf6d65eac6669748ed311f39bf",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/6dd1e7adef4b7efeeb9691fd619279027d4dcf85",
+                "reference": "6dd1e7adef4b7efeeb9691fd619279027d4dcf85",
                 "shasum": ""
             },
             "require": {
@@ -6206,20 +6290,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-23T08:31:43+00:00"
+            "time": "2020-08-12T06:20:35+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v5.1.3",
+            "version": "v5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "6e4320f06d5f2cce0d96530162491f4465179157"
+                "reference": "f7b9ed6142a34252d219801d9767dedbd711da1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/6e4320f06d5f2cce0d96530162491f4465179157",
-                "reference": "6e4320f06d5f2cce0d96530162491f4465179157",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/f7b9ed6142a34252d219801d9767dedbd711da1a",
+                "reference": "f7b9ed6142a34252d219801d9767dedbd711da1a",
                 "shasum": ""
             },
             "require": {
@@ -6270,20 +6354,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-30T20:35:19+00:00"
+            "time": "2020-08-21T17:19:47+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v5.1.3",
+            "version": "v5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "4298870062bfc667cb78d2b379be4bf5dec5f187"
+                "reference": "2b765f0cf6612b3636e738c0689b29aa63088d5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/4298870062bfc667cb78d2b379be4bf5dec5f187",
-                "reference": "4298870062bfc667cb78d2b379be4bf5dec5f187",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/2b765f0cf6612b3636e738c0689b29aa63088d5d",
+                "reference": "2b765f0cf6612b3636e738c0689b29aa63088d5d",
                 "shasum": ""
             },
             "require": {
@@ -6333,7 +6417,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-20T17:43:50+00:00"
+            "time": "2020-08-17T10:01:29+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -6646,7 +6730,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.1.3",
+            "version": "v5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -6710,16 +6794,16 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "v2.1.3",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "58c7475e5457c5492c26cc740cc0ad7464be9442"
+                "reference": "d15da7ba4957ffb8f1747218be9e1a121fd298a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/58c7475e5457c5492c26cc740cc0ad7464be9442",
-                "reference": "58c7475e5457c5492c26cc740cc0ad7464be9442",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/d15da7ba4957ffb8f1747218be9e1a121fd298a1",
+                "reference": "d15da7ba4957ffb8f1747218be9e1a121fd298a1",
                 "shasum": ""
             },
             "require": {
@@ -6732,7 +6816,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1-dev"
+                    "dev-master": "2.2-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -6782,20 +6866,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-06T13:23:11+00:00"
+            "time": "2020-09-07T11:33:47+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.4.11",
+            "version": "v4.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "c2d2cc66e892322cfcc03f8f12f8340dbd7a3f8a"
+                "reference": "e2a69525b11a33be51cb00b8d6d13a9258a296b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/c2d2cc66e892322cfcc03f8f12f8340dbd7a3f8a",
-                "reference": "c2d2cc66e892322cfcc03f8f12f8340dbd7a3f8a",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/e2a69525b11a33be51cb00b8d6d13a9258a296b1",
+                "reference": "e2a69525b11a33be51cb00b8d6d13a9258a296b1",
                 "shasum": ""
             },
             "require": {
@@ -6855,7 +6939,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-20T08:37:50+00:00"
+            "time": "2020-08-26T08:30:46+00:00"
         },
         {
             "name": "typo3fluid/fluid",

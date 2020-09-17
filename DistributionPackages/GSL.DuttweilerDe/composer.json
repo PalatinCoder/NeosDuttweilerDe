@@ -7,7 +7,8 @@
         "neos/nodetypes": "~4.3.0",
         "neos/fusion-afx": "~1.2",
         "neos/seo": "*",
-        "jonnitto/prettyembedcollection": "^3.0" 
+        "jonnitto/prettyembedcollection": "^3.0" ,
+        "jonnitto/prettyembedaudio": "^0.1"
     },
     "authors": [
         {

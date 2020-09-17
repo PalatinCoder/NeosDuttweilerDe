@@ -27,3 +27,13 @@
     '@action': show
     '@format': atom
     'node': '/sites/duttweilerde'
+
+-
+  name: 'Podcast :: XML'
+  uriPattern: 'podcast.xml'
+  defaults:
+    '@package': Neos.Neos
+    '@controller': Frontend\Node
+    '@action': show
+    '@format': 'podcast'
+    'node': '/sites/duttweilerde'
