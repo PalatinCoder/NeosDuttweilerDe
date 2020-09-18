@@ -25,13 +25,24 @@
           type: DateTime
           ui:
             label: Datum
-            editor: Neos.Neos/Inspector/Editors/TextFieldEditor
+            editor: Neos.Neos/Inspector/Editors/DateTimeEditor
             editorOptions:
-              placeholder: dd.mm.yyyy
-          validation:
-            Neos.Neos/Validation/RegularExpressionValidator:
-              regularExpression: '/^\d{2}\.\d{2}\.\d{4}$/'
+              format: 'd.m.Y'
             Neos.Neos/Validation/NotEmptyValidator: {  }
+        audio:
+          type: Neos\Media\Domain\Model\Audio
+          ui:
+            label: Audiodatei
+            editor: Neos.Neos/Inspector/Editors/AssetEditor
+            editorOptions:
+              disabled: false
+              features:
+                mediaBrowser: false
+              accept: 'audio/*'
+  options:
+    nodeCreationHandlers:
+      chronikItem:
+        nodeCreationHandler: GSL\DuttweilerDe\NodeCreationHandler\PodcastEpisodeHandler
   constraints:
     nodeTypes:
       'Neos.Neos:Document': false
@@ -46,6 +57,8 @@
         reloadIfChanged: true
         inspector:
           group: document
+          #editorOptions:
+          #  format: 'd.m.Y'
       validation:
         Neos.Neos/Validation/NotEmptyValidator: {  }
         Neos.Neos/Validation/DateTimeValidator: {  }
