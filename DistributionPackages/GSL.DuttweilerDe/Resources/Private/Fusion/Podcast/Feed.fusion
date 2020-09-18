@@ -41,8 +41,8 @@ prototype(GSL.DuttweilerDe:Api.Atom.Podcast) < prototype(Neos.Fusion:Http.Messag
 	@cache {
 		mode = 'cached'
 		entryTags {
-			1 = ${'NodeType_GSL.DuttweilerDe:Document.Podcast.Episode'}
-			2 = ${'DescendantOf_' + podcast.dentifier}
+            1 = ${Neos.Caching.nodeTag(podcast)}
+			2 = ${Neos.Caching.descendantOfTag(podcast)}
 		}
 	}
 }
@@ -74,6 +74,9 @@ prototype(GSL.DuttweilerDe:Api.Atom.Podcast.Episode) < prototype(Neos.Fusion:Com
 
 	@cache {
 		mode = 'cached'
+        entryIdentifier {
+            episode = ${episode}
+        }
 		entryTags {
 			1 = ${Neos.Caching.nodeTag(episode)}
             2 = ${Neos.Caching.descendantOfTag(episode)}
