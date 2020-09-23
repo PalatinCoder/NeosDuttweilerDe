@@ -1,0 +1,30 @@
+up:
+  comments: 'Add "link" property to GSL.DuttweilerDe:FrontpageTTResults with the default value'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'GSL.DuttweilerDe:FrontpageTTResults'
+      transformations:
+        -
+          type: 'AddNewProperty'
+          settings:
+            newPropertyName: 'link'
+            value: '<a href="https://www.vfl-duttweiler.de/vfl-tt.htm">mehr zu VfL Tischtennis</a>'
+down:
+  comments: 'Remove property "link" from GSL.DuttweilerDe:FrontpageTTResults'
+  warnings: 'Once deleted the property is lost on nodes that had them'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'GSL.DuttweilerDe:FrontpageTTResults'
+      transformations:
+        -
+          type: 'RemoveProperty'
+          settings:
+            property: 'link'

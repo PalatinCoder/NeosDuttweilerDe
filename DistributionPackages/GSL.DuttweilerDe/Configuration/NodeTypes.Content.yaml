@@ -115,6 +115,15 @@
       defaultValue: Tischtennis-Ergebnisse
     date:
       defaultValue: now
+    link:
+      type: string
+      defaultValue: '<a href="https://www.vfl-duttweiler.de/vfl-tt.htm">mehr zu VfL Tischtennis</a>'
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            formatting:
+              a: true
 'GSL.DuttweilerDe:FrontpageTTNews':
   superTypes:
     'GSL.DuttweilerDe.Content:FrontpageNewsItemStandalone': true
