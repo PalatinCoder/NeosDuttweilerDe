@@ -21,7 +21,7 @@ RUN apk --no-cache add vips \
     && apk del .vips-build
 
 # create base distribution (so it can be cached)
-RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --1 && mv composer.phar /usr/local/bin/composer
 RUN composer create-project neos/neos-base-distribution:~4.3.0 /neos --no-dev
 
 # define run scripts
