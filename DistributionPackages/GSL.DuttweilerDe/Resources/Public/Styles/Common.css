@@ -39,7 +39,11 @@ div.neos-contentcollection table th,
 div.neos-contentcollection table th,
 div.neos-contentcollection table td,
 div.neos-contentcollection table td
-{ padding: 0 10px; text-align: left; }
+{ padding: 10px; text-align: left; }
+
+/* Paragraphs in table cells shouldn't have margin, as the table cell itself has padding */
+div.neos-contentcollection table td p
+{ margin: 0; }
 
 div.neos-contentcollection table tr:nth-child(even),
 div.neos-contentcollection table tr:nth-child(even)
