@@ -23,6 +23,9 @@ div.neos-nodetypes-image figure.typo3-neos-alignment-right { margin: 1em 5px; }
 
 /* Table styling */
 
+div.neos-contentcollection figure.table 
+{ margin-left: 0; margin-right: 0; }
+
 div.neos-contentcollection table,
 div.neos-contentcollection table
 { border-collapse: collapse; }
